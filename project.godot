@@ -15,10 +15,15 @@ run/main_scene="uid://bmgtrlfllvee4"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Rooms="*res://utils/rooms.gd"
+
 [display]
 
-window/size/viewport_width=1400
-window/size/viewport_height=800
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

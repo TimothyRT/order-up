@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://begf4v2ehqq3k"]
+
+[ext_resource type="FontFile" uid="uid://ddw6e5nsl6p1u" path="res://fonts/Basophil.ttf" id="1_dtxbx"]
+[ext_resource type="Texture2D" uid="uid://cr48trulj5gnm" path="res://menus/shared/menu_button_texture_black-n-white.svg" id="2_dtxbx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me6v4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvg1t"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_dtxbx")
+texture_margin_left = 14.0
+texture_margin_top = 12.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phbox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m8ohl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_to63a"]
+
+[resource]
+Button/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+Button/colors/font_focus_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+Button/colors/font_hover_color = Color(0.20152655, 0.20152661, 0.20152646, 1)
+Button/colors/font_pressed_color = Color(0.5176471, 0.5176471, 0.5176471, 1)
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_dtxbx")
+Button/styles/disabled = SubResource("StyleBoxEmpty_me6v4")
+Button/styles/focus = SubResource("StyleBoxTexture_qvg1t")
+Button/styles/hover = SubResource("StyleBoxEmpty_phbox")
+Button/styles/normal = SubResource("StyleBoxEmpty_m8ohl")
+Button/styles/pressed = SubResource("StyleBoxEmpty_to63a")

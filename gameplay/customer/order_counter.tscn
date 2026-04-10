@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkh7140dfrgg5"]
+
+[ext_resource type="Texture2D" uid="uid://blxpspvs1maks" path="res://gameplay/customer/order_counter-f.png" id="1_3yikt"]
+[ext_resource type="Texture2D" uid="uid://coy534ok1qjsy" path="res://gameplay/customer/order_counter-o.png" id="2_dfb0w"]
+
+[node name="OrderCounter" type="Node2D"]
+
+[node name="OrderCounterF" type="Sprite2D" parent="."]
+texture = ExtResource("1_3yikt")
+
+[node name="OrderCounterO" type="Sprite2D" parent="."]
+texture = ExtResource("2_dfb0w")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://4sbustq17y5a"]
+
+[ext_resource type="Script" uid="uid://iuq2bpmhx4ko" path="res://gameplay/room_gameplay.gd" id="1_ej5xh"]
+[ext_resource type="PackedScene" uid="uid://bbnikiwry5kkk" path="res://frames/minigame_frame.tscn" id="1_ia51v"]
+[ext_resource type="PackedScene" uid="uid://cyqau6atmtgbn" path="res://frames/level_frame.tscn" id="2_j0qhs"]
+
+[node name="RoomGameplay" type="Node"]
+script = ExtResource("1_ej5xh")
+metadata/_custom_type_script = "uid://b56t1yahd1mo4"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ej5xh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FrameLeft" parent="CenterContainer/HBoxContainer" instance=ExtResource("1_ia51v")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(632, 948)
+layout_mode = 2
+
+[node name="FrameMid" parent="CenterContainer/HBoxContainer" instance=ExtResource("2_j0qhs")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FrameRight" parent="CenterContainer/HBoxContainer" instance=ExtResource("1_ia51v")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(632, 948)
+layout_mode = 2
