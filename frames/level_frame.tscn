@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyqau6atmtgbn"]
+
+[ext_resource type="Texture2D" uid="uid://b3aky6gg8e01t" path="res://frames/frame_thin-f.png" id="1_f51v1"]
+[ext_resource type="Texture2D" uid="uid://caa3ihdxaa3rj" path="res://frames/frame_thin-o.png" id="2_rs8uw"]
+[ext_resource type="PackedScene" uid="uid://cu8kj6vjb26ka" path="res://stations/station_blender.tscn" id="3_7lrlu"]
+[ext_resource type="PackedScene" uid="uid://dvub0u67767ht" path="res://stations/station_bowl.tscn" id="4_1ujkg"]
+[ext_resource type="PackedScene" uid="uid://oadko466ahd5" path="res://stations/station_oven.tscn" id="5_0rckq"]
+[ext_resource type="PackedScene" uid="uid://1bvghg4iijxm" path="res://player/player.tscn" id="6_lqf1e"]
+[ext_resource type="PackedScene" uid="uid://dkh7140dfrgg5" path="res://customer/order_counter.tscn" id="7_cgsi8"]
+[ext_resource type="PackedScene" uid="uid://dyvxsc7nochch" path="res://customer/customer.tscn" id="8_yjrq8"]
+[ext_resource type="PackedScene" uid="uid://qp3majwb1kcx" path="res://customer/decoy_customer.tscn" id="9_w7iv6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt0p8"]
+size = Vector2(27.70433, 38.17254)
+
+[node name="FrameMid" type="Control"]
+y_sort_enabled = true
+custom_minimum_size = Vector2(272, 628)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 272.0
+offset_bottom = 628.0
+pivot_offset = Vector2(136, 314)
+
+[node name="FrameThinF" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(137, 315)
+texture = ExtResource("1_f51v1")
+
+[node name="FrameThinO" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(137, 315)
+texture = ExtResource("2_rs8uw")
+
+[node name="PlayerBoundaries" type="StaticBody2D" parent="."]
+position = Vector2(139.15887, 315.7196)
+scale = Vector2(1, 18.068766)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(141.04036, -0.11947632)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_wt0p8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(-141.04036, -0.8761543)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_wt0p8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(11.513543, 18.080677)
+scale = Vector2(14.898416, -0.056630846)
+shape = SubResource("RectangleShape2D_wt0p8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayerBoundaries"]
+position = Vector2(4.8411236, -18.248041)
+scale = Vector2(14.898416, -0.056630846)
+shape = SubResource("RectangleShape2D_wt0p8")
+
+[node name="StationBlender" parent="." instance=ExtResource("3_7lrlu")]
+unique_name_in_owner = true
+position = Vector2(63.60138, 150.21301)
+
+[node name="StationBowl" parent="." instance=ExtResource("4_1ujkg")]
+unique_name_in_owner = true
+position = Vector2(118.2905, 273.26358)
+
+[node name="StationOven" parent="." instance=ExtResource("5_0rckq")]
+unique_name_in_owner = true
+position = Vector2(211.83765, 272.54395)
+
+[node name="Player" parent="." instance=ExtResource("6_lqf1e")]
+position = Vector2(208.23969, 114.95296)
+
+[node name="OrderCounter" parent="." instance=ExtResource("7_cgsi8")]
+visible = false
+position = Vector2(-394.06836, 385.7055)
+
+[node name="Customer" parent="." instance=ExtResource("8_yjrq8")]
+position = Vector2(72.956085, 531.5977)
+
+[node name="DecoyCustomer" parent="." instance=ExtResource("9_w7iv6")]
+position = Vector2(104.618195, 552.46594)
+
+[node name="DecoyCustomer2" parent="." instance=ExtResource("9_w7iv6")]
+position = Vector2(196.7262, 551.02673)

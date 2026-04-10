@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://1bvghg4iijxm"]
+
+[ext_resource type="Script" uid="uid://lemtvsfg7ib2" path="res://minigame/bake_cake/player/player.gd" id="1_7asq5"]
+[ext_resource type="Texture2D" uid="uid://dihu1gfp7b0sh" path="res://minigame/bake_cake/player/player-f.png" id="2_y4f52"]
+[ext_resource type="Texture2D" uid="uid://dp0ukw4htqvwv" path="res://minigame/bake_cake/player/player-o.png" id="3_06py3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20nfj"]
+radius = 25.019993
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_7asq5")
+
+[node name="PlayerSkin" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="PlayerF" type="Sprite2D" parent="PlayerSkin"]
+texture = ExtResource("2_y4f52")
+
+[node name="PlayerO" type="Sprite2D" parent="PlayerSkin"]
+texture = ExtResource("3_06py3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.9999847, 2.0000381)
+scale = Vector2(1.3436924, 2.186951)
+shape = SubResource("CircleShape2D_20nfj")
+debug_color = Color(0.73389286, 0.3812854, 0.717043, 0.41960785)

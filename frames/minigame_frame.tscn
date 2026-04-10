@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbnikiwry5kkk"]
+
+[ext_resource type="Script" uid="uid://c80jn3vd88qby" path="res://frames/minigame_frame.gd" id="1_8hwth"]
+[ext_resource type="Texture2D" uid="uid://csxyac33ujc8m" path="res://frames/frame_thick-f.png" id="1_mc3a5"]
+[ext_resource type="Texture2D" uid="uid://3dfh00536gk7" path="res://frames/frame_thick-o.png" id="2_8hwth"]
+
+[node name="MinigameFrame" type="Control"]
+custom_minimum_size = Vector2(421, 632)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 421.0
+offset_bottom = 632.0
+scale = Vector2(1.389673, 1.389673)
+script = ExtResource("1_8hwth")
+
+[node name="Placeholder" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(214.09799, 318.87836)
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+visible = false
+clip_children = 2
+position = Vector2(214.09798, 318.87836)
+texture = ExtResource("1_mc3a5")
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(214.09798, 318.87836)
+texture = ExtResource("2_8hwth")

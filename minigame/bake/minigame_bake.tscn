@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu7xl2flbm0ba"]
+
+[ext_resource type="Script" uid="uid://crhejpalj3p81" path="res://minigame/bake/minigame_bake.gd" id="1_h3adq"]
+[ext_resource type="Texture2D" uid="uid://dwki3v8mhtw7n" path="res://minigame/bake/oven-f.png" id="1_u0vf4"]
+[ext_resource type="Texture2D" uid="uid://bxqgc5l54viaq" path="res://minigame/bake/dough-f.png" id="2_h3adq"]
+[ext_resource type="Texture2D" uid="uid://mwtqowydn2oh" path="res://minigame/bake/oven-o.png" id="3_exv15"]
+[ext_resource type="Texture2D" uid="uid://djqmcvnailcn6" path="res://minigame/bake/alarm-f.png" id="4_tloc2"]
+[ext_resource type="Texture2D" uid="uid://cgo07xs57maox" path="res://minigame/bake/alarm-o.png" id="5_onb06"]
+[ext_resource type="AudioStream" uid="uid://soia3lu2da1a" path="res://stations/oven_ding.wav" id="7_exv15"]
+[ext_resource type="Texture2D" uid="uid://cuvawldakv8ig" path="res://cheesecake.png" id="8_tloc2"]
+
+[node name="GameplayBake" type="Node2D"]
+script = ExtResource("1_h3adq")
+
+[node name="GameplayBakeF" type="Sprite2D" parent="."]
+texture = ExtResource("1_u0vf4")
+
+[node name="GameplayBakeOverlayF" type="Sprite2D" parent="."]
+position = Vector2(10, 74)
+texture = ExtResource("2_h3adq")
+
+[node name="GameplayBakeO" type="Sprite2D" parent="."]
+texture = ExtResource("3_exv15")
+
+[node name="Alarm" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-148, -205)
+
+[node name="GameplayBakeAlarmF" type="Sprite2D" parent="Alarm"]
+position = Vector2(-9, -22)
+texture = ExtResource("4_tloc2")
+
+[node name="GameplayBakeAlarmO" type="Sprite2D" parent="Alarm"]
+position = Vector2(-6, -19)
+texture = ExtResource("5_onb06")
+
+[node name="OvenAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_exv15")
+
+[node name="Cake" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-1, -5)
+scale = Vector2(1.011347, 1.011347)
+texture = ExtResource("8_tloc2")
