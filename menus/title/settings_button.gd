@@ -1,4 +1,4 @@
-extends Button
+extends DropShadowButton
 
 
 func _pressed() -> void:

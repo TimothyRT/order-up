@@ -1,24 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmgtrlfllvee4"]
+[gd_scene load_steps=7 format=3 uid="uid://bmgtrlfllvee4"]
 
+[ext_resource type="Script" uid="uid://b1nuw1g5y338" path="res://bg_layer.gd" id="1_7jktm"]
 [ext_resource type="Shader" uid="uid://bly340bdtqcrj" path="res://shaders/balatro_bg.gdshader" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://b2g7kpjlhmy50" path="res://backgrounds/pattern_bg/pattern_bg.tscn" id="2_fc0e3"]
 [ext_resource type="Script" uid="uid://s02pj6u1k8w1" path="res://button.gd" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://cflx8r7owup1n" path="res://utils/room_switcher.gd" id="5_7jktm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3nd6"]
 shader = ExtResource("1_feb5d")
-shader_parameter/time_val = 0.0
-shader_parameter/spin_time = 0.0
-shader_parameter/colour_1 = Color(0.90757585, 0.9293259, 0.8983763, 1)
-shader_parameter/colour_2 = Color(0.9487676, 0.87951773, 0.9834241, 1)
-shader_parameter/colour_3 = Color(0.90872586, 0.8487598, 0.80172175, 1)
+shader_parameter/time_val = 5.0
+shader_parameter/spin_time = 2.0
+shader_parameter/colour_1 = Color(0.7490196, 0.2627451, 0.31764707, 1)
+shader_parameter/colour_2 = Color(0.654902, 0.1882353, 0.24313726, 1)
+shader_parameter/colour_3 = Color(0.74, 0.46866667, 0.333, 1)
 shader_parameter/contrast = 1.0
 shader_parameter/spin_amount = 1.05
 
 [node name="Game" type="Node"]
 
 [node name="BGLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_7jktm")
 
-[node name="ColorRect" type="ColorRect" parent="BGLayer"]
+[node name="BalatroBG" type="ColorRect" parent="BGLayer"]
+visible = false
 material = SubResource("ShaderMaterial_i3nd6")
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +31,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.9388636, 0.9214202, 0.9155079, 1)
+
+[node name="PatternBG" parent="BGLayer" instance=ExtResource("2_fc0e3")]
 
 [node name="RoomLayer" type="CanvasLayer" parent="."]
 

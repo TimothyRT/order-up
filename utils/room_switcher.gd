@@ -25,8 +25,10 @@ func clear_room() -> void:
 
 
 func _ready() -> void:
-	set_room(Rooms.TITLE.instantiate())
+	set_room(Rooms.TITLE["scene"].instantiate())
+	%BGLayer.set_background(Rooms.TITLE["bg_scene"].instantiate())
 
 
-func _on_room_switch_requested(new_room: PackedScene) -> void:
-	set_room(new_room.instantiate())
+func _on_room_switch_requested(room: Dictionary) -> void:
+	set_room(room["scene"].instantiate())
+	%BGLayer.set_background(room["bg_scene"].instantiate())

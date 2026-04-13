@@ -33,3 +33,5 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(632, 948)
 layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

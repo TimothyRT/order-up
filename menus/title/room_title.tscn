@@ -60,16 +60,19 @@ theme_override_constants/separation = 16
 alignment = 1
 
 [node name="StartGameButton" type="Button" parent="CenterContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "START GAME"
 script = ExtResource("7_vhj45")
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "SETTINGS"
 script = ExtResource("5_fg4v0")
 
 [node name="QuitButton" type="Button" parent="CenterContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "EXIT"
 script = ExtResource("5_qoe2l")

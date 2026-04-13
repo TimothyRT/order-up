@@ -2,7 +2,7 @@ extends Node
 class_name Room
 
 
-signal room_switch_requested(next_room: PackedScene)
+signal room_switch_requested(room: Dictionary)
 
 
 func enter() -> void:

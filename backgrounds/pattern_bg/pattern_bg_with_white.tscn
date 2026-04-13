@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwofla0dh4o87"]
+
+[ext_resource type="PackedScene" uid="uid://b2g7kpjlhmy50" path="res://backgrounds/pattern_bg/pattern_bg.tscn" id="1_jtaqj"]
+[ext_resource type="Shader" uid="uid://cgse20rikl6u5" path="res://shaders/drop_shadow.gdshader" id="2_kuie4"]
+[ext_resource type="Texture2D" uid="uid://dngedx0s7txp3" path="res://backgrounds/pattern_bg/bg_white_ornament.png" id="3_b6u0q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtyn4"]
+shader = ExtResource("2_kuie4")
+
+[node name="PatternBgWithWhite" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PatternBG" parent="." instance=ExtResource("1_jtaqj")]
+layout_mode = 1
+
+[node name="WhiteOrnament" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_qtyn4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_b6u0q")
+expand_mode = 3

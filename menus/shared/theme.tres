@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://begf4v2ehqq3k"]
 
 [ext_resource type="FontFile" uid="uid://ddw6e5nsl6p1u" path="res://fonts/Basophil.ttf" id="1_dtxbx"]
-[ext_resource type="Texture2D" uid="uid://cr48trulj5gnm" path="res://menus/shared/menu_button_texture_black-n-white.svg" id="2_dtxbx"]
+[ext_resource type="Texture2D" uid="uid://cr48trulj5gnm" path="res://menus/shared/menu_button/menu_button_texture_black-n-white.svg" id="2_dtxbx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me6v4"]
 
@@ -37,3 +37,9 @@ Button/styles/focus = SubResource("StyleBoxTexture_qvg1t")
 Button/styles/hover = SubResource("StyleBoxEmpty_phbox")
 Button/styles/normal = SubResource("StyleBoxEmpty_m8ohl")
 Button/styles/pressed = SubResource("StyleBoxEmpty_to63a")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+Label/constants/shadow_offset_x = 4
+Label/constants/shadow_offset_y = 4
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_dtxbx")

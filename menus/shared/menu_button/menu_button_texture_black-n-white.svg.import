@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byl0phcr8h1ko"
-path="res://.godot/imported/menu_button_texture.svg-66e9f4fd5ad7663e2b0ece0754252359.ctex"
+uid="uid://cr48trulj5gnm"
+path="res://.godot/imported/menu_button_texture_black-n-white.svg-843a6d9c77467b748c2cec7099151c73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/shared/menu_button_texture.svg"
-dest_files=["res://.godot/imported/menu_button_texture.svg-66e9f4fd5ad7663e2b0ece0754252359.ctex"]
+source_file="res://menus/shared/menu_button/menu_button_texture_black-n-white.svg"
+dest_files=["res://.godot/imported/menu_button_texture_black-n-white.svg-843a6d9c77467b748c2cec7099151c73.ctex"]
 
 [params]
 
