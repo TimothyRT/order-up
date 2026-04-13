@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cys5522wfjkef"]
+[gd_scene load_steps=11 format=3 uid="uid://cys5522wfjkef"]
 
 [ext_resource type="Script" uid="uid://cgia86gmk8to6" path="res://menus/title/room_title.gd" id="1_n0d2n"]
 [ext_resource type="Texture2D" uid="uid://dxr2rmqvdugnt" path="res://menus/title/truck_decal.svg" id="1_vrg7e"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://banfvgluq0vnd" path="res://menus/title/settings_button.gd" id="5_fg4v0"]
 [ext_resource type="Script" uid="uid://b32rare1gcf8p" path="res://menus/title/quit_button.gd" id="5_qoe2l"]
 [ext_resource type="Script" uid="uid://bbn2kx823l5b0" path="res://menus/title/start_game_button.gd" id="7_vhj45"]
+[ext_resource type="Script" uid="uid://bu6xk2vld37wo" path="res://menus/title/game_version_label.gd" id="10_cjvm6"]
 
 [node name="RoomTitle" type="Node"]
 script = ExtResource("1_n0d2n")
@@ -76,3 +77,20 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "EXIT"
 script = ExtResource("5_qoe2l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_0x1x2")
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="GameVersionLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 48
+text = "Version X.Y.Z"
+script = ExtResource("10_cjvm6")

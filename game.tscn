@@ -39,7 +39,6 @@ color = Color(0.9388636, 0.9214202, 0.9155079, 1)
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="UILayer"]
-visible = false
 custom_minimum_size = Vector2(0, 200)
 anchors_preset = 10
 anchor_right = 1.0

@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="OrderUp"
-config/version="0.1.1"
+config/name="Order Up!"
+config/version="0.1.2"
 run/main_scene="uid://bmgtrlfllvee4"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
