@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://cys5522wfjkef"]
+
+[ext_resource type="Script" uid="uid://cgia86gmk8to6" path="res://rooms/title/room_title.gd" id="1_n0d2n"]
+[ext_resource type="Texture2D" uid="uid://dxr2rmqvdugnt" path="res://rooms/title/truck_decal.svg" id="1_vrg7e"]
+[ext_resource type="Texture2D" uid="uid://b4fmt5p5xihf7" path="res://rooms/title/logo_text.svg" id="2_0x1x2"]
+[ext_resource type="Texture2D" uid="uid://ckv7o4q6awx03" path="res://rooms/title/protag.svg" id="3_qoe2l"]
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="4_0x1x2"]
+[ext_resource type="Script" uid="uid://df1wbsy2aekjf" path="res://rooms/title/protag.gd" id="5_02dcg"]
+[ext_resource type="Script" uid="uid://banfvgluq0vnd" path="res://rooms/title/settings_button.gd" id="5_fg4v0"]
+[ext_resource type="Script" uid="uid://b32rare1gcf8p" path="res://rooms/title/quit_button.gd" id="5_qoe2l"]
+[ext_resource type="Script" uid="uid://bbn2kx823l5b0" path="res://rooms/title/start_game_button.gd" id="7_vhj45"]
+[ext_resource type="Script" uid="uid://bu6xk2vld37wo" path="res://rooms/title/game_version_label.gd" id="10_cjvm6"]
+
+[node name="RoomTitle" type="Node"]
+script = ExtResource("1_n0d2n")
+metadata/_custom_type_script = "uid://b56t1yahd1mo4"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 2
+
+[node name="TruckDecal" type="Sprite2D" parent="CenterContainer/HBoxContainer/Control"]
+position = Vector2(458.00006, 329)
+scale = Vector2(1.1505208, 1.1505208)
+texture = ExtResource("1_vrg7e")
+
+[node name="LogoText" type="Sprite2D" parent="CenterContainer/HBoxContainer/Control"]
+position = Vector2(403, 584.00006)
+scale = Vector2(1.1505208, 1.1505208)
+texture = ExtResource("2_0x1x2")
+
+[node name="Protag" type="Sprite2D" parent="CenterContainer/HBoxContainer/Control"]
+position = Vector2(201.99998, 445)
+scale = Vector2(1.1505208, 1.1505208)
+texture = ExtResource("3_qoe2l")
+offset = Vector2(-13.906738, -131.24487)
+script = ExtResource("5_02dcg")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_bottom = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("4_0x1x2")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="CenterContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "START GAME"
+script = ExtResource("7_vhj45")
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SETTINGS"
+script = ExtResource("5_fg4v0")
+
+[node name="QuitButton" type="Button" parent="CenterContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "EXIT"
+script = ExtResource("5_qoe2l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_0x1x2")
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="GameVersionLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 48
+text = "Version X.Y.Z"
+script = ExtResource("10_cjvm6")

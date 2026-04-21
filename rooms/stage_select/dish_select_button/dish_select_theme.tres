@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dpsy1s0o7l2i4"]
+
+[ext_resource type="FontFile" uid="uid://ddw6e5nsl6p1u" path="res://fonts/Basophil.ttf" id="1_dsfmf"]
+
+[resource]
+Label/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+Label/font_sizes/font_size = 36
+Label/fonts/font = ExtResource("1_dsfmf")

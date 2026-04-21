@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu8kj6vjb26ka"]
+
+[ext_resource type="Texture2D" uid="uid://bch3f7i5qx5dy" path="res://rooms/gameplay/stations/blender-f.png" id="1_qx4gp"]
+[ext_resource type="Script" uid="uid://b14ffybp2dtj5" path="res://rooms/gameplay/stations/station_blender.gd" id="1_yn858"]
+[ext_resource type="Texture2D" uid="uid://capc3ho2bnaqe" path="res://rooms/gameplay/stations/blender-o.png" id="2_yn858"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qx4gp"]
+
+[node name="StationBlender" type="Node2D"]
+script = ExtResource("1_yn858")
+
+[node name="BlenderF" type="Sprite2D" parent="."]
+texture = ExtResource("1_qx4gp")
+
+[node name="BlenderO" type="Sprite2D" parent="."]
+texture = ExtResource("2_yn858")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.26244834, 0.33151537)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(15.48, 15.48)
+shape = SubResource("CircleShape2D_qx4gp")
+debug_color = Color(0.7753225, 0.8443726, 0.6759026, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

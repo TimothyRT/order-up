@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://cyqau6atmtgbn"]
 
 [ext_resource type="Texture2D" uid="uid://d0coaxg35xt5c" path="res://frames/frame_thin-f.svg" id="1_0d6t8"]
-[ext_resource type="PackedScene" uid="uid://cu8kj6vjb26ka" path="res://gameplay/stations/station_blender.tscn" id="3_7lrlu"]
-[ext_resource type="PackedScene" uid="uid://dvub0u67767ht" path="res://gameplay/stations/station_bowl.tscn" id="4_1ujkg"]
-[ext_resource type="PackedScene" uid="uid://oadko466ahd5" path="res://gameplay/stations/station_oven.tscn" id="5_0rckq"]
-[ext_resource type="PackedScene" uid="uid://1bvghg4iijxm" path="res://gameplay/player/player.tscn" id="6_lqf1e"]
-[ext_resource type="PackedScene" uid="uid://dkh7140dfrgg5" path="res://gameplay/customer/order_counter.tscn" id="7_cgsi8"]
-[ext_resource type="PackedScene" uid="uid://dyvxsc7nochch" path="res://gameplay/customer/customer.tscn" id="8_yjrq8"]
-[ext_resource type="PackedScene" uid="uid://qp3majwb1kcx" path="res://gameplay/customer/decoy_customer.tscn" id="9_w7iv6"]
+[ext_resource type="PackedScene" uid="uid://cu8kj6vjb26ka" path="res://rooms/gameplay/stations/station_blender.tscn" id="3_7lrlu"]
+[ext_resource type="PackedScene" uid="uid://dvub0u67767ht" path="res://rooms/gameplay/stations/station_bowl.tscn" id="4_1ujkg"]
+[ext_resource type="PackedScene" uid="uid://oadko466ahd5" path="res://rooms/gameplay/stations/station_oven.tscn" id="5_0rckq"]
+[ext_resource type="PackedScene" uid="uid://1bvghg4iijxm" path="res://rooms/gameplay/player/player.tscn" id="6_lqf1e"]
+[ext_resource type="PackedScene" uid="uid://dkh7140dfrgg5" path="res://rooms/gameplay/customer/order_counter.tscn" id="7_cgsi8"]
+[ext_resource type="PackedScene" uid="uid://dyvxsc7nochch" path="res://rooms/gameplay/customer/customer.tscn" id="8_yjrq8"]
+[ext_resource type="PackedScene" uid="uid://qp3majwb1kcx" path="res://rooms/gameplay/customer/decoy_customer.tscn" id="9_w7iv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wt0p8"]
 size = Vector2(27.70433, 38.17254)

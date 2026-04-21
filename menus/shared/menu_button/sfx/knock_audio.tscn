@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://opbse0iolha3"]
-
-[ext_resource type="AudioStream" uid="uid://c40d8ok5616lb" path="res://menus/shared/menu_button/sfx/knock.wav" id="1_gmgj7"]
-[ext_resource type="Script" uid="uid://d0byoqp56kusm" path="res://menus/shared/menu_button/sfx/knock_audio.gd" id="2_j23di"]
-
-[node name="KnockAudio" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_gmgj7")
-script = ExtResource("2_j23di")
