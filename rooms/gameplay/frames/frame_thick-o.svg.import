@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0coaxg35xt5c"
-path="res://.godot/imported/frame_thin-f.svg-dd6956932a92cc45575f6daecb05867b.ctex"
+uid="uid://clr7bkkst6yr6"
+path="res://.godot/imported/frame_thick-o.svg-50effdcdfdcb473253aeab20d280d4b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://frames/frame_thin-f.svg"
-dest_files=["res://.godot/imported/frame_thin-f.svg-dd6956932a92cc45575f6daecb05867b.ctex"]
+source_file="res://rooms/gameplay/frames/frame_thick-o.svg"
+dest_files=["res://.godot/imported/frame_thick-o.svg-50effdcdfdcb473253aeab20d280d4b7.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

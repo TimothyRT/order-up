@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbnikiwry5kkk"]
 
-[ext_resource type="Script" uid="uid://c80jn3vd88qby" path="res://frames/minigame_frame.gd" id="1_8hwth"]
-[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://frames/frame_thick-f.svg" id="2_3kfwg"]
-[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://frames/frame_thick-o.svg" id="3_al4qn"]
+[ext_resource type="Script" uid="uid://c80jn3vd88qby" path="res://rooms/gameplay/frames/minigame_frame.gd" id="1_8hwth"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_3kfwg"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_al4qn"]
 
 [node name="MinigameFrame" type="Control"]
 custom_minimum_size = Vector2(421, 632)
@@ -15,17 +15,15 @@ script = ExtResource("1_8hwth")
 
 [node name="Placeholder" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(316, 474)
+position = Vector2(470, 474)
 
 [node name="FrameThickF" type="Sprite2D" parent="."]
-visible = false
 clip_children = 2
-position = Vector2(315.99997, 474)
+position = Vector2(470, 474)
 texture = ExtResource("2_3kfwg")
 
 [node name="FrameThickO" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(315.99997, 474)
+position = Vector2(470, 474)
 texture = ExtResource("3_al4qn")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

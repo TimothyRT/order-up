@@ -3,12 +3,12 @@ extends Node
 
 var KERAK_TELOR = {
 	'label': "Kerak Telor",
-	'dish_icon': "uid://chkm5tonge8d5",
+	'dish_icon': "uid://bd6f3kd7vjs5b",
 	'minigames': [],
 }
 var KLEPON = {
 	'label': "Klepon",
-	'dish_icon': "uid://bd6f3kd7vjs5b",
+	'dish_icon': "uid://chkm5tonge8d5",
 	'minigames': [],
 }
 var NASI_GORENG = {

@@ -1,18 +1,20 @@
 extends Room
 
 
-var dish_select_button = preload("uid://drnejreq5cqmn")
+const dish_select_button := preload("uid://drnejreq5cqmn")
 
 
 func setup_buttons() -> void:
 	for child in %VFlowContainer.get_children():
 		%VFlowContainer.remove_child(child)
+		child.queue_free()
 	
 	for dish in Dishes.All:
-		var button := dish_select_button.instantiate()
+		var button: DishSelectButton = dish_select_button.instantiate()
 		button.label = dish["label"]
 		button.dish_icon = load(dish["dish_icon"])
 		%VFlowContainer.add_child(button)
+		button.set_owner(self)
 
 
 func reset_focus() -> void:

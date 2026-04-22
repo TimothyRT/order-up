@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://nrm45lcxyqqm"]
+
+[ext_resource type="Script" uid="uid://bw1323r20dqwn" path="res://rooms/gameplay/minigames/shared/minigame_progress_bar.gd" id="1_s57j5"]
+
+[node name="MinigameProgressBar" type="Node2D"]
+script = ExtResource("1_s57j5")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 40)
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 20.0
+pivot_offset = Vector2(150, 20)

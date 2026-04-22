@@ -1,5 +1,5 @@
 @tool
-extends Control
+extends Button
 class_name DishSelectButton
 
 
@@ -21,6 +21,11 @@ func _ready() -> void:
 	grab_focus.call_deferred()
 	
 	%IconAnimationPlayer.play("RESET")
+
+
+func _pressed() -> void:
+	print(get_parent().get_parent().get_parent().get_parent())
+	owner.room_switch_requested.emit(Rooms.GAMEPLAY)
 
 
 func _on_focus_entered() -> void:

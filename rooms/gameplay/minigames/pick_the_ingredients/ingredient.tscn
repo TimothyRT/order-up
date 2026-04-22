@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfu77ampn2v0r"]
+
+[ext_resource type="Texture2D" uid="uid://dhj85c5mrhc6l" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/chili_peppers.svg" id="1_j7sm7"]
+
+[node name="Ingredient" type="Sprite2D"]
+texture = ExtResource("1_j7sm7")

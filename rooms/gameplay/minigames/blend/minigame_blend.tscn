@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://3eitw878nuje" path="res://rooms/gameplay/minigames/blend/minigame_blend.gd" id="1_assva"]
 [ext_resource type="Texture2D" uid="uid://doc2u0dhprla8" path="res://rooms/gameplay/minigames/blend/blender-f.png" id="1_qrrsb"]
 [ext_resource type="Texture2D" uid="uid://cr6kxe4yag6yb" path="res://rooms/gameplay/minigames/blend/blender-o.png" id="2_assva"]
-[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://frames/frame_thick-f.svg" id="2_neirh"]
-[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://frames/frame_thick-o.svg" id="5_063yc"]
-[ext_resource type="Script" uid="uid://bw1323r20dqwn" path="res://rooms/gameplay/minigames/shared/progress_bar.gd" id="6_ka631"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_neirh"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="5_063yc"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/minigame_progress_bar.tscn" id="6_xutvn"]
 
 [sub_resource type="Animation" id="Animation_assva"]
 length = 0.001
@@ -95,11 +95,5 @@ texture = ExtResource("2_assva")
 [node name="FrameThickO" type="Sprite2D" parent="."]
 texture = ExtResource("5_063yc")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 40)
-offset_left = -125.0
-offset_top = 215.0
-offset_right = 175.0
-offset_bottom = 255.0
-script = ExtResource("6_ka631")
+[node name="MinigameProgressBar" parent="." instance=ExtResource("6_xutvn")]
+position = Vector2(0, 300)

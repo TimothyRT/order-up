@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clr7bkkst6yr6"
-path="res://.godot/imported/frame_thick-o.svg-dbac8f83c7f71ad24467e4076ec9e8b2.ctex"
+uid="uid://b4nsbcwgl1062"
+path="res://.godot/imported/sugar.svg-b7e2f4c1d4217981205f6de1e039a0db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://frames/frame_thick-o.svg"
-dest_files=["res://.godot/imported/frame_thick-o.svg-dbac8f83c7f71ad24467e4076ec9e8b2.ctex"]
+source_file="res://rooms/gameplay/minigames/pick_the_ingredients/icons/sugar.svg"
+dest_files=["res://.godot/imported/sugar.svg-b7e2f4c1d4217981205f6de1e039a0db.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

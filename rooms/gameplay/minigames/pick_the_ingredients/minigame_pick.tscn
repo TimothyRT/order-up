@@ -1,0 +1,229 @@
+[gd_scene load_steps=22 format=3 uid="uid://bmq27boelc242"]
+
+[ext_resource type="Script" uid="uid://dmpcydaaelt7j" path="res://rooms/gameplay/minigames/pick_the_ingredients/minigame_pick.gd" id="1_7myku"]
+[ext_resource type="Texture2D" uid="uid://dhj85c5mrhc6l" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/chili_peppers.svg" id="2_alwl2"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_ibfhn"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_55wxy"]
+[ext_resource type="Texture2D" uid="uid://bvriu1ymx15v" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/coriander.svg" id="3_le6s1"]
+[ext_resource type="PackedScene" uid="uid://dfu77ampn2v0r" path="res://rooms/gameplay/minigames/pick_the_ingredients/ingredient.tscn" id="3_qe08s"]
+[ext_resource type="Texture2D" uid="uid://dl7qabpkut8hw" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/ginger.svg" id="4_5jgvh"]
+[ext_resource type="Texture2D" uid="uid://dw0qv73ds76ep" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/merica_pepper.svg" id="5_t11h2"]
+[ext_resource type="Texture2D" uid="uid://bfg3k6lqmd54m" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/pandan_leaves.svg" id="6_nactg"]
+[ext_resource type="Texture2D" uid="uid://mt1cbpoe2jf8" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/salt.svg" id="7_ptalq"]
+[ext_resource type="Texture2D" uid="uid://752hpt570mfb" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/shrimp_paste.svg" id="8_k710w"]
+[ext_resource type="Texture2D" uid="uid://b4nsbcwgl1062" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/sugar.svg" id="9_2w7n4"]
+[ext_resource type="Texture2D" uid="uid://cwgeb3d4cy12f" path="res://rooms/gameplay/minigames/pick_the_ingredients/icons/tapioca.svg" id="10_c22qj"]
+[ext_resource type="Script" uid="uid://datxhjs0an3w7" path="res://rooms/gameplay/minigames/pick_the_ingredients/ingredient_group.gd" id="12_le6s1"]
+[ext_resource type="Texture2D" uid="uid://cpgai3fd55ga2" path="res://rooms/gameplay/minigames/pick_the_ingredients/grid.svg" id="12_ptalq"]
+[ext_resource type="Theme" uid="uid://bgq684mfybslc" path="res://rooms/gameplay/minigames/minigame_theme.tres" id="15_5jgvh"]
+[ext_resource type="AudioStream" uid="uid://bew4r5fqwm385" path="res://rooms/gameplay/minigames/shared/sfx/buzzer.wav" id="16_t11h2"]
+[ext_resource type="AudioStream" uid="uid://c3g0arrgru7bn" path="res://rooms/gameplay/minigames/shared/sfx/correct.wav" id="17_nactg"]
+
+[sub_resource type="Animation" id="Animation_nactg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(193, -315)]
+}
+
+[sub_resource type="Animation" id="Animation_t11h2"]
+resource_name = "bounce"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25, 0.4),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(0.9, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(193, -315), Vector2(188, -336), Vector2(193, -315)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ptalq"]
+_data = {
+&"RESET": SubResource("Animation_nactg"),
+&"bounce": SubResource("Animation_t11h2")
+}
+
+[node name="MinigamePick" type="Node2D"]
+script = ExtResource("1_7myku")
+ingredient_labels = Array[String](["Cabai", "Ketumbar", "Jahe", "Merica", "Daun pandan", "Garam", "Terasi", "Gula", "Tapioka"])
+ingredient_textures = Array[Texture]([ExtResource("2_alwl2"), ExtResource("3_le6s1"), ExtResource("4_5jgvh"), ExtResource("5_t11h2"), ExtResource("6_nactg"), ExtResource("7_ptalq"), ExtResource("8_k710w"), ExtResource("9_2w7n4"), ExtResource("10_c22qj")])
+unused_ingredients = Array[int]([1, 4, 6])
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_ibfhn")
+
+[node name="ColorRect" type="ColorRect" parent="FrameThickF"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -467.5
+offset_top = -467.0
+offset_right = -467.5
+offset_bottom = -467.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.89, 0.72386664, 0.53400004, 1)
+
+[node name="GridGroup" type="Marker2D" parent="FrameThickF"]
+position = Vector2(14, -25)
+
+[node name="Grid" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(-213, -108)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid2" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(-21, -106)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid3" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(174, -108)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid4" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(-215, 88.5)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid5" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(-23, 90.5)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid6" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(172, 88.5)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid7" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(-217, 295.5)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid8" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(-25, 297.5)
+texture = ExtResource("12_ptalq")
+
+[node name="Grid9" type="Sprite2D" parent="FrameThickF/GridGroup"]
+position = Vector2(170, 295.5)
+texture = ExtResource("12_ptalq")
+
+[node name="IngredientGroup" type="Marker2D" parent="FrameThickF"]
+unique_name_in_owner = true
+position = Vector2(3, 32)
+script = ExtResource("12_le6s1")
+
+[node name="Ingredient1" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(-211, -161)
+
+[node name="Ingredient2" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(-11.5, -161)
+texture = ExtResource("3_le6s1")
+
+[node name="Ingredient3" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(188.5, -161)
+texture = ExtResource("4_5jgvh")
+
+[node name="Ingredient4" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(-204, 35)
+texture = ExtResource("5_t11h2")
+
+[node name="Ingredient5" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(-14, 33)
+texture = ExtResource("6_nactg")
+
+[node name="Ingredient6" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(175, 34)
+texture = ExtResource("7_ptalq")
+
+[node name="Ingredient7" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(-211, 236)
+texture = ExtResource("8_k710w")
+
+[node name="Ingredient8" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(-19, 248)
+texture = ExtResource("9_2w7n4")
+
+[node name="Ingredient9" parent="FrameThickF/IngredientGroup" instance=ExtResource("3_qe08s")]
+position = Vector2(181, 241)
+texture = ExtResource("10_c22qj")
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("3_55wxy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HandTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.8
+autostart = true
+
+[node name="GuideLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -332.0
+offset_top = -364.0
+offset_right = 512.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("15_5jgvh")
+text = "Perform HIT when this
+ingredient is highlighted:"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighlightedIngredient" parent="." instance=ExtResource("3_qe08s")]
+unique_name_in_owner = true
+position = Vector2(193, -315)
+texture = ExtResource("10_c22qj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HighlightedIngredient"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_ptalq")
+}
+
+[node name="BuzzerAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("16_t11h2")
+
+[node name="CorrectAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("17_nactg")
+
+[connection signal="timeout" from="HandTimer" to="." method="_on_hand_timer_timeout"]

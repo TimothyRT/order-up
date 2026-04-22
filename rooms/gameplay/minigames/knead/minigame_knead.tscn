@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://cipdrn8dou0at" path="res://rooms/gameplay/minigames/knead/minigame_knead.gd" id="1_5edq6"]
 [ext_resource type="Texture2D" uid="uid://crys16t8kqcf5" path="res://rooms/gameplay/minigames/knead/bowl-f.png" id="1_u1yb5"]
 [ext_resource type="Texture2D" uid="uid://cmqgh7ondeh61" path="res://rooms/gameplay/minigames/knead/bowl-o.png" id="2_5edq6"]
-[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://frames/frame_thick-f.svg" id="2_8ui8w"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_8ui8w"]
 [ext_resource type="Texture2D" uid="uid://eyewv783yf5d" path="res://rooms/gameplay/minigames/knead/knead_hand-f.png" id="3_3w4pg"]
 [ext_resource type="Texture2D" uid="uid://bjjb182561hjp" path="res://rooms/gameplay/minigames/knead/knead_hand-o.png" id="4_ycq26"]
 [ext_resource type="Texture2D" uid="uid://bxbred4vxpwg1" path="res://rooms/gameplay/minigames/knead/arrow-f.png" id="5_1yecr"]
 [ext_resource type="Script" uid="uid://b230ci0fx533e" path="res://rooms/gameplay/minigames/knead/arrow.gd" id="6_4377k"]
 [ext_resource type="Texture2D" uid="uid://dfyronx7ket7v" path="res://rooms/gameplay/minigames/knead/arrow-o.png" id="6_pc8cd"]
-[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://frames/frame_thick-o.svg" id="10_vsbh8"]
-[ext_resource type="Script" uid="uid://bw1323r20dqwn" path="res://rooms/gameplay/minigames/shared/progress_bar.gd" id="11_8ui8w"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="10_vsbh8"]
+[ext_resource type="Script" uid="uid://bw1323r20dqwn" path="res://rooms/gameplay/minigames/shared/minigame_progress_bar.gd" id="11_8ui8w"]
 
 [sub_resource type="Animation" id="Animation_3w4pg"]
 length = 0.001

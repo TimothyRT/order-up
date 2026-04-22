@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cgo07xs57maox" path="res://rooms/gameplay/minigames/bake/alarm-o.png" id="5_onb06"]
 [ext_resource type="AudioStream" uid="uid://soia3lu2da1a" path="res://rooms/gameplay/stations/oven_ding.wav" id="7_exv15"]
 [ext_resource type="Texture2D" uid="uid://cuvawldakv8ig" path="res://cheesecake.png" id="8_tloc2"]
-[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://frames/frame_thick-o.svg" id="9_toyls"]
-[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://frames/frame_thick-f.svg" id="10_0tirf"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="9_toyls"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="10_0tirf"]
 
 [node name="GameplayBake" type="Node2D"]
 script = ExtResource("1_h3adq")

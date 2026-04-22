@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmgneq0er455i"
-path="res://.godot/imported/frame_thick-f.svg-2afcd7754ef3c407e7365000a32ec690.ctex"
+uid="uid://mt1cbpoe2jf8"
+path="res://.godot/imported/salt.svg-3b95cf6e59eb3c3952087601ef8c8e1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://frames/frame_thick-f.svg"
-dest_files=["res://.godot/imported/frame_thick-f.svg-2afcd7754ef3c407e7365000a32ec690.ctex"]
+source_file="res://rooms/gameplay/minigames/pick_the_ingredients/icons/salt.svg"
+dest_files=["res://.godot/imported/salt.svg-3b95cf6e59eb3c3952087601ef8c8e1d.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
