@@ -21,6 +21,15 @@ config/icon="res://icon.svg"
 Dishes="*res://rooms/gameplay/dishes.gd"
 Minigames="*res://rooms/gameplay/minigames/minigames.gd"
 Rooms="*res://utils/rooms.gd"
+IpAddress="*res://utils/IPAddress.tscn"
+Config="*res://utils/config.tscn"
+Datetime="*res://utils/datetime.tscn"
+Classifier="*res://utils/classifier/classifier.tscn"
+SocketManager="*res://utils/socket_manager.tscn"
+SignalBus="*res://utils/signal_bus.tscn"
+SensorLeakyBucket="*res://utils/sensor_leaky_bucket.tscn"
+SensorDataStore="*res://utils/sensor_data_store.tscn"
+MotionRecognition="*res://utils/motion_recognition/motion_recognition.tscn"
 
 [display]
 

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxmeye8b0irbd"]
+
+[ext_resource type="Script" uid="uid://bljogdxajxemy" path="res://utils/motion_recognition/motion_recognition.gd" id="1_bq00k"]
+[ext_resource type="AudioStream" uid="uid://c4eraiuc8tlw5" path="res://utils/motion_recognition/audio/hit.wav" id="2_c6o5e"]
+[ext_resource type="AudioStream" uid="uid://cnwhv7yb7rt0g" path="res://utils/motion_recognition/audio/shake.wav" id="3_w2qyi"]
+[ext_resource type="AudioStream" uid="uid://dntmx2cwrwpuo" path="res://utils/motion_recognition/audio/stir.wav" id="4_cnpfg"]
+[ext_resource type="AudioStream" uid="uid://d22phs0wxtrp4" path="res://utils/motion_recognition/audio/swing_left.wav" id="5_oljtg"]
+[ext_resource type="AudioStream" uid="uid://bm3byrrnntgkm" path="res://utils/motion_recognition/audio/swing_right.wav" id="6_i5ea0"]
+
+[node name="MotionRecognition" type="Node"]
+script = ExtResource("1_bq00k")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.2
+one_shot = true
+
+[node name="AudioHit" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_c6o5e")
+
+[node name="AudioShake" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_w2qyi")
+
+[node name="AudioStir" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_cnpfg")
+
+[node name="AudioSwingLeft" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_oljtg")
+
+[node name="AudioSwingRight" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_i5ea0")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
