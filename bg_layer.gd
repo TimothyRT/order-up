@@ -14,7 +14,3 @@ func clear_background() -> void:
 	for bg in get_children():
 		remove_child(bg)
 		bg.queue_free()
-
-
-func _ready() -> void:
-	set_background(Rooms.TITLE["bg_scene"].instantiate())

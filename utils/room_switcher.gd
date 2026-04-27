@@ -4,12 +4,13 @@ class_name RoomSwitcher
 
 @onready var room_layer: CanvasLayer = get_tree().current_scene.get_node("RoomLayer")
 var current_room: Room
+var room_state: Dictionary = {}
 
 
 func set_room(room: Room) -> void:
 	clear_room()
 	room_layer.add_child(room)
-	room.enter()
+	room.enter(room_state)
 	room.room_switch_requested.connect(_on_room_switch_requested)
 	current_room = room
 
@@ -17,7 +18,7 @@ func set_room(room: Room) -> void:
 func clear_room() -> void:
 	for room in room_layer.get_children():
 		if room.has_method(&"exit"):
-			room.exit()
+			room_state = room.exit()
 		if room.room_switch_requested.is_connected(_on_room_switch_requested):
 			room.room_switch_requested.disconnect(_on_room_switch_requested)
 		room_layer.remove_child(room)

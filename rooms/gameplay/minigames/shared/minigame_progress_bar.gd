@@ -12,7 +12,6 @@ func set_bar_value(new_progress_value: int) -> void:
 func _ready() -> void:
 	owner.progress_changed.connect(_on_progress_changed)
 	owner.progress_threshold_changed.connect(_on_progress_threshold_changed)
-	set_bar_max(owner.progress_threshold)  # not necessary?
 
 
 func _on_progress_changed(new_progress_value: int, _progress_diff: int) -> void:

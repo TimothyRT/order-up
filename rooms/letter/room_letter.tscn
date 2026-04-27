@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://tnvdcgexfs1p"]
+
+[ext_resource type="Script" uid="uid://b56t1yahd1mo4" path="res://utils/room.gd" id="1_huf1o"]
+[ext_resource type="Texture2D" uid="uid://dpjugc1lueem4" path="res://rooms/letter/frame_thick-f.svg" id="2_pd5k7"]
+[ext_resource type="Texture2D" uid="uid://bteew3tieekth" path="res://rooms/letter/frame_thick-o.svg" id="3_l6gka"]
+
+[node name="RoomLetter" type="Node"]
+script = ExtResource("1_huf1o")
+metadata/_custom_type_script = "uid://b56t1yahd1mo4"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Node" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+
+[node name="FrameThickF" type="Sprite2D" parent="CenterContainer/HBoxContainer/Node"]
+position = Vector2(970, 568)
+texture = ExtResource("2_pd5k7")
+
+[node name="FrameThickO" type="Sprite2D" parent="CenterContainer/HBoxContainer/Node"]
+position = Vector2(970, 568)
+texture = ExtResource("3_l6gka")
