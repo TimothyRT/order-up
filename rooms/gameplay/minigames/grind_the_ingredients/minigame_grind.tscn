@@ -11,6 +11,33 @@
 [ext_resource type="Texture2D" uid="uid://co7fcaur53h7u" path="res://rooms/gameplay/minigames/grind_the_ingredients/ulekan.svg" id="7_kg32a"]
 [ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/minigame_progress_bar.tscn" id="10_wk4b2"]
 
+[sub_resource type="Animation" id="Animation_wk4b2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FrameThickF/Marker2D/Spice:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FrameThickF/Marker2D/Spice:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_kg32a"]
 resource_name = "shake"
 length = 0.5
@@ -40,37 +67,37 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(1.05, 0.95), Vector2(0.95, 1.05), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_wk4b2"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gx4t"]
+_data = {
+&"RESET": SubResource("Animation_wk4b2"),
+&"shake": SubResource("Animation_kg32a")
+}
+
+[sub_resource type="Animation" id="Animation_4qqnn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("FrameThickF/Marker2D/Spice:rotation")
+tracks/0/path = NodePath("FrameThickF/Marker2D/Ulekan:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(99, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FrameThickF/Marker2D/Spice:scale")
+tracks/1/path = NodePath("FrameThickF/Marker2D/Ulekan:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7gx4t"]
-_data = {
-&"RESET": SubResource("Animation_wk4b2"),
-&"shake": SubResource("Animation_kg32a")
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_0jd71"]
@@ -100,33 +127,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, -2.5, -2.5, 1),
 "update": 0,
 "values": [0.0, -0.13962634015954636, 0.08726646259971647, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_4qqnn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FrameThickF/Marker2D/Ulekan:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(99, 32)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FrameThickF/Marker2D/Ulekan:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4ndc5"]

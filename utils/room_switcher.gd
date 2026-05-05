@@ -2,7 +2,10 @@ extends Node
 class_name RoomSwitcher
 
 
+@onready var transition_screen: Control = %TransitionBG
 @onready var room_layer: CanvasLayer = get_tree().current_scene.get_node("RoomLayer")
+@export var switch_duration = 1.0
+
 var current_room: Room
 var room_state: Dictionary = {}
 
@@ -26,10 +29,36 @@ func clear_room() -> void:
 
 
 func _ready() -> void:
-	set_room(Rooms.TITLE["scene"].instantiate())
-	%BGLayer.set_background(Rooms.TITLE["bg_scene"].instantiate())
+	set_room(load(RoomService.get_scene_uid(&"Title menu")).instantiate())
+	%BGLayer.set_background(load(RoomService.get_bg_scene_uid(&"Title menu")).instantiate())
 
 
-func _on_room_switch_requested(room: Dictionary) -> void:
-	set_room(room["scene"].instantiate())
-	%BGLayer.set_background(room["bg_scene"].instantiate())
+func _find_top_control(node: Node) -> Control:
+	if node is Control:
+		return node
+	for child in node.get_children():
+		var result = _find_top_control(child)
+		if result:
+			return result
+	return null
+
+
+func _on_room_switch_requested(room_label: String) -> void:
+	_find_top_control(room_layer).mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	var tween = get_tree().create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(transition_screen, "modulate:a", 1, switch_duration / 2.0).from(0.0)
+	await tween.finished
+	
+	var room: Room = load(RoomService.get_scene_uid(room_label)).instantiate()
+	var bg: Control = load(RoomService.get_bg_scene_uid(room_label)).instantiate()
+	set_room(room)
+	%BGLayer.set_background(bg)
+	
+	get_tree().paused = false
+	tween = get_tree().create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(transition_screen, "modulate:a", 0, switch_duration / 2.0)
+	
+	_find_top_control(room_layer).mouse_filter = Control.MOUSE_FILTER_IGNORE

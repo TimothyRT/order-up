@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://0axig4yy0hdn"]
+
+[node name="TransitionBG" type="ColorRect"]
+modulate = Color(0.06666667, 0.105882354, 0.03529412, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

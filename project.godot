@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Order Up!"
-config/version="0.1.2"
+config/version="0.1.3"
 run/main_scene="uid://bmgtrlfllvee4"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 
 Dishes="*res://rooms/gameplay/dishes.gd"
 Minigames="*res://rooms/gameplay/minigames/minigames.gd"
-Rooms="*res://utils/rooms.gd"
 IpAddress="*res://utils/IPAddress.tscn"
 Config="*res://utils/config.tscn"
 Datetime="*res://utils/datetime.tscn"
@@ -30,6 +29,12 @@ SignalBus="*res://utils/signal_bus.tscn"
 SensorLeakyBucket="*res://utils/sensor_leaky_bucket.tscn"
 SensorDataStore="*res://utils/sensor_data_store.tscn"
 MotionRecognition="*res://utils/motion_recognition/motion_recognition.tscn"
+DBConn="*res://utils/data_access/db_conn/db_conn.tscn"
+DBSeeder="*res://utils/data_access/db_seeder/db_seeder.tscn"
+Shutdown="*res://utils/shutdown/shutdown.tscn"
+RoomService="*res://utils/data_access/services/room_service.tscn"
+SaveService="*res://utils/data_access/services/save_service.tscn"
+CSVToDict="*res://utils/csv_to_dict.gd"
 
 [display]
 
@@ -38,6 +43,10 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
 
 [input]
 

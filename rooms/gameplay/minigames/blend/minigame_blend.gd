@@ -2,7 +2,7 @@ extends Minigame
 
 
 func _ready() -> void:
-	progress_threshold = 6
+	progress_threshold = 13
 
 
 func _input(event: InputEvent) -> void:

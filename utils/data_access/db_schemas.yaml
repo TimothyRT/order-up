@@ -1,0 +1,36 @@
+dishes:
+  id:
+    "data_type": "int"
+    "primary_key": true
+    "not_null": true
+  label:
+    "data_type": "text"
+    "not_null": true
+  dish_icon:
+    "data_type": "text"
+    "not_null": true
+
+rooms:
+  id:
+    "data_type": "int"
+    "primary_key": true
+    "not_null": true
+  label:
+    "data_type": "text"
+    "not_null": true
+  scene:
+    "data_type": "text"
+    "not_null": true
+  bg_scene:
+    "data_type": "text"
+    "not_null": true
+
+saves:
+  id:
+    "data_type": "int"
+    "primary_key": true
+    "not_null": true
+  last_unlocked_stage:
+    "data_type": "int"
+    "not_null": true
+    "default": 0

@@ -70,7 +70,7 @@ func _on_client_sensor_stored(_sample_count: int) -> void:
 
 		match predicted_motion:
 			MOTION.SHAKE:
-				time_steps_to_ignore = 10
+				time_steps_to_ignore = 5
 			MOTION.STIR, MOTION.SPIN:
 				time_steps_to_ignore = 20
 			_:
@@ -81,29 +81,31 @@ func _on_client_sensor_stored(_sample_count: int) -> void:
 
 
 func play_input_event(i: int) -> void:
+	var delay := 0.02
+	
 	match i:
 		MOTION.HIT:
 			%AudioHit.play()
-			generate_input_event("motion_hit", 0.5)
+			generate_input_event("motion_hit", delay)
 		MOTION.SHAKE:
 			%AudioShake.play()
-			generate_input_event("motion_shake", 0.5)
+			generate_input_event("motion_shake", delay)
 		MOTION.SWING_LEFT:
 			%AudioSwingLeft.play()
-			generate_input_event("motion_swing_left", 0.5)
+			generate_input_event("motion_swing_left", delay)
 		MOTION.SWING_RIGHT:
 			%AudioSwingRight.play()
-			generate_input_event("motion_swing_right", 0.5)
+			generate_input_event("motion_swing_right", delay)
 		MOTION.FAN:
-			generate_input_event("motion_fan", 0.5)
+			generate_input_event("motion_fan", delay)
 		MOTION.STIR:
-			generate_input_event("motion_stir", 0.5)
+			generate_input_event("motion_stir", delay)
 		MOTION.LIFT:
-			generate_input_event("motion_lift", 0.5)
+			generate_input_event("motion_lift", delay)
 		MOTION.SPIN:
-			generate_input_event("motion_spin", 0.5)
+			generate_input_event("motion_spin", delay)
 		MOTION.IDLE:
-			generate_input_event("motion_idle", 0.5)
+			generate_input_event("motion_idle", delay)
 
 
 func generate_input_event(event_name: String, delay: float, player_index=0) -> void:

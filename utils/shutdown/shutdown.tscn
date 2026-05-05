@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://scxix2pf8rm8"]
+
+[ext_resource type="Script" uid="uid://ckup3aj3ypudp" path="res://utils/shutdown/shutdown.gd" id="1_nvk16"]
+
+[node name="Shutdown" type="Node"]
+script = ExtResource("1_nvk16")

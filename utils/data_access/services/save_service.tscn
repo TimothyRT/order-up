@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b35pkvigc5u4y"]
+
+[ext_resource type="Script" uid="uid://c7dvidisekfwm" path="res://utils/data_access/services/save_service.gd" id="1_rophb"]
+
+[node name="SaveService" type="Node"]
+script = ExtResource("1_rophb")

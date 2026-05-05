@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c3lrnjlwwywtj"
+
+[deps]
+
+files=["res://utils/data_access/db_seeder/room_seeder.scene.translation", "res://utils/data_access/db_seeder/room_seeder.bg.translation"]
+
+source_file="res://utils/data_access/db_seeder/room_seeder.csv"
+dest_files=["res://utils/data_access/db_seeder/room_seeder.scene.translation", "res://utils/data_access/db_seeder/room_seeder.bg.translation"]
+
+[params]
+
+compress=true
+delimiter=0

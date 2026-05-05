@@ -8,3 +8,5 @@ signal classification_made(input_arr: Array, predicted_class: int)
 
 signal avg_acc_y_changed(val: float)
 signal peak_detected
+
+signal room_entered

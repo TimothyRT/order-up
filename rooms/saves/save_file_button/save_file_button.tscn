@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1iqdjxe1mrai"]
+
+[ext_resource type="Texture2D" uid="uid://c7eruppy5alrt" path="res://rooms/saves/save_file_button/dish.png" id="1_7su47"]
+[ext_resource type="Script" uid="uid://b0ypbmj0jdoqc" path="res://rooms/saves/save_file_button/save_file_button.gd" id="1_x4ag1"]
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="2_84mnx"]
+
+[sub_resource type="Animation" id="Animation_meunp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_wp8qh"]
+resource_name = "idle"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [Vector2(13, 22), Vector2(13, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrryq"]
+_data = {
+&"RESET": SubResource("Animation_meunp"),
+&"idle": SubResource("Animation_wp8qh")
+}
+
+[node name="SaveFileButton" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(500, 500)
+offset_right = 474.0
+offset_bottom = 8.0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_x4ag1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_yrryq")
+}
+
+[node name="Control" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(250, 250)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 22.0
+offset_right = 487.0
+offset_bottom = 477.0
+pivot_offset = Vector2(237, 227)
+alignment = 1
+
+[node name="Button" type="TextureButton" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("1_7su47")
+stretch_mode = 3
+
+[node name="SaveNumberLabel" type="Label" parent="Control/VBoxContainer/Button"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -18.0
+offset_top = 246.0
+offset_right = 456.0
+offset_bottom = 443.0
+rotation = -0.43751946
+theme = ExtResource("2_84mnx")
+theme_override_colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+theme_override_colors/font_shadow_color = Color(0.06666667, 0.105882354, 0.03529412, 0)
+theme_override_colors/font_outline_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 96
+text = "SAVE
+#1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnlockedMovesLabel" type="Label" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_84mnx")
+text = "Unlocked moves: 0/9"
+horizontal_alignment = 1
+vertical_alignment = 1

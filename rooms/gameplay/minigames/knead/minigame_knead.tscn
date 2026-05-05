@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://b230ci0fx533e" path="res://rooms/gameplay/minigames/knead/arrow.gd" id="6_4377k"]
 [ext_resource type="Texture2D" uid="uid://dfyronx7ket7v" path="res://rooms/gameplay/minigames/knead/arrow-o.png" id="6_pc8cd"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="10_vsbh8"]
-[ext_resource type="Script" uid="uid://bw1323r20dqwn" path="res://rooms/gameplay/minigames/shared/minigame_progress_bar.gd" id="11_8ui8w"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/minigame_progress_bar.tscn" id="11_lt07s"]
 
 [sub_resource type="Animation" id="Animation_3w4pg"]
 length = 0.001
@@ -123,14 +123,9 @@ texture = ExtResource("6_pc8cd")
 [node name="FrameThickO" type="Sprite2D" parent="."]
 texture = ExtResource("10_vsbh8")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(300, 40)
-offset_left = -150.0
-offset_top = 289.0
-offset_right = 150.0
-offset_bottom = 329.0
-max_value = 10.0
-script = ExtResource("11_8ui8w")
+[node name="MinigameProgressBar" parent="." instance=ExtResource("11_lt07s")]
+position = Vector2(0, 260)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="kneading_direction_changed" from="." to="FrameThickF/Arrow" method="_on_kneading_direction_changed"]

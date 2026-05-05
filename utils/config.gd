@@ -21,7 +21,6 @@ var csv_col_names := PackedStringArray([
 	"gesture"
 ])
 
-
 var csv_col_names_for_recognition := PackedStringArray([
 	"gyro_x",
 	"gyro_y",

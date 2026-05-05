@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djm1vdeut4kcn"]
+
+[ext_resource type="Script" uid="uid://6asa8lh6s3ck" path="res://utils/data_access/db_seeder/room_seeder.gd" id="1_45l80"]
+
+[node name="RoomSeeder" type="Node"]
+script = ExtResource("1_45l80")

@@ -97,3 +97,5 @@ texture = ExtResource("5_063yc")
 
 [node name="MinigameProgressBar" parent="." instance=ExtResource("6_xutvn")]
 position = Vector2(0, 300)
+
+[node name="Camera2D" type="Camera2D" parent="."]

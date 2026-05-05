@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhhy84l02gms7"]
+
+[ext_resource type="Script" uid="uid://f78midloycho" path="res://utils/data_access/db_seeder/db_seeder.gd" id="1_b6ebo"]
+
+[node name="DBSeeder" type="Node2D"]
+script = ExtResource("1_b6ebo")
