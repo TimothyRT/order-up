@@ -9,12 +9,12 @@ func setup_buttons() -> void:
 		%VFlowContainer.remove_child(child)
 		child.queue_free()
 	
-	#for dish in Dishes.All:
-		#var button: DishSelectButton = dish_select_button.instantiate()
-		#button.label = dish["label"]
-		#button.dish_icon = load(dish["dish_icon"])
-		#%VFlowContainer.add_child(button)
-		#button.set_owner(self)
+	for dish: Dictionary in DishService.select_all():
+		var button: DishSelectButton = dish_select_button.instantiate()
+		button.label = dish.label
+		button.dish_icon = load(dish.dish_icon)
+		%VFlowContainer.add_child(button)
+		button.set_owner(self)
 
 
 func reset_focus() -> void:
