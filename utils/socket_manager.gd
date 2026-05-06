@@ -8,6 +8,7 @@ var connected_peers := []
 
 
 func _ready() -> void:
+	add_to_group("NetworkBridge")
 	var err = ws_server.create_server(PORT)
 	if err != OK:
 		print("[SOCKET] Failed to start WebSocket server: %s" % err)
@@ -54,3 +55,8 @@ func _parse_message(msg: String):
 	var parsed = JSON.parse_string(msg)
 	if parsed != null:
 		SignalBus.client_sensor_batch_received.emit(parsed)
+		
+func stop_connection() -> void:
+	print("[SOCKET] Shutting down WebSocket Connection")
+	ws_server.close()
+	connected_peers.clear()
