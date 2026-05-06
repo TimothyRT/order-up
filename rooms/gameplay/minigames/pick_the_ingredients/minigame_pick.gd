@@ -48,7 +48,7 @@ func construct_ingredient_sequence(
 
 
 func _ready() -> void:
-	progress_threshold = 9
+	progress_threshold = INGREDIENT_COUNT - len(unused_ingredients)
 	
 	hand = HAND.instantiate()
 	current_hand_position = 0
@@ -69,6 +69,7 @@ func _input(event: InputEvent) -> void:
 			collected_ingredients.append(highlighted_ingredient)
 			%IngredientGroup.get_child(highlighted_ingredient).texture = null
 			progress += 1
+			print("progress: %d" % progress)
 			%CorrectAudio.play()
 			if progress < len(ingredient_sequence):
 				highlighted_ingredient = ingredient_sequence[progress]

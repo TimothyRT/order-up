@@ -9,7 +9,6 @@ var state: Dictionary
 
 func enter(room_state: Dictionary) -> void:
 	state = room_state
-	print('entered')
 	SignalBus.room_entered.emit()
 
 

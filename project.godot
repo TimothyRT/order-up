@@ -34,6 +34,7 @@ DBSeeder="*res://utils/data_access/db_seeder/db_seeder.tscn"
 Shutdown="*res://utils/shutdown/shutdown.tscn"
 RoomService="*res://utils/data_access/services/room_service.tscn"
 SaveService="*res://utils/data_access/services/save_service.tscn"
+DishService="*res://utils/data_access/services/dish_service.tscn"
 CSVToDict="*res://utils/csv_to_dict.gd"
 
 [display]
@@ -46,7 +47,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg", "res://addons/yaml/plugin.cfg")
 
 [input]
 

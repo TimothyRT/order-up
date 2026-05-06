@@ -1,12 +1,37 @@
 extends Minigame
 
 
+signal direction_changed(direction_is_left: bool)
+
+var direction_is_left := true:
+	get:
+		return direction_is_left
+	set(value):
+		if direction_is_left != value:
+			direction_is_left = value
+			direction_changed.emit(direction_is_left)
+			progress += 1
+			
+			if progress == progress_threshold:
+				%Arrow.fade_out()
+
+
 func _ready() -> void:
 	progress_threshold = 9
+	
+	direction_changed.connect(%Arrow.flip_sprite)
+	direction_changed.connect(%Ulekan.flip_sprite)
+	
+	super()
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("motion_hit"):
+	if event.is_action_pressed("motion_swing_left") and direction_is_left:
 		%SpiceAnimationPlayer.play("shake")
 		%UlekanAnimationPlayer.play("hit")
-		progress += 1
+		direction_is_left = false
+	
+	if event.is_action_pressed("motion_swing_right") and not direction_is_left:
+		%SpiceAnimationPlayer.play("shake")
+		%UlekanAnimationPlayer.play("hit")
+		direction_is_left = true

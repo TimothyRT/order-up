@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dff86cmhlmt5m"]
+
+[ext_resource type="Script" uid="uid://doxvjfqm6bp0l" path="res://utils/data_access/services/dish_service.gd" id="1_xhl8g"]
+
+[node name="DishService" type="Node"]
+script = ExtResource("1_xhl8g")
+metadata/_custom_type_script = "uid://bfik550ygi0ce"

@@ -2,7 +2,8 @@ extends Node2D
 
 
 var seeders := {
-	"room": preload("uid://djm1vdeut4kcn")
+	"room": preload("uid://djm1vdeut4kcn"),
+	"dish": preload("uid://ctc6ri354idvc")
 }
 
 

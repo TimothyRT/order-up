@@ -22,6 +22,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_wp8qh"]
 resource_name = "idle"
 length = 2.0
+loop_mode = 1
 step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false

@@ -18,11 +18,13 @@ unique_name_in_owner = true
 position = Vector2(470, 474)
 
 [node name="FrameThickF" type="Sprite2D" parent="."]
+visible = false
 clip_children = 2
 position = Vector2(470, 474)
 texture = ExtResource("2_3kfwg")
 
 [node name="FrameThickO" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(470, 474)
 texture = ExtResource("3_al4qn")
 

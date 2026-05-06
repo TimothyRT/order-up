@@ -1,0 +1,152 @@
+[gd_scene load_steps=12 format=3 uid="uid://nrm45lcxyqqm"]
+
+[ext_resource type="Script" uid="uid://bw1323r20dqwn" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.gd" id="1_s57j5"]
+[ext_resource type="Texture2D" uid="uid://6hd14pchodo3" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar_fill.svg" id="2_vh4yd"]
+[ext_resource type="Theme" uid="uid://bgq684mfybslc" path="res://rooms/gameplay/minigames/minigame_theme.tres" id="3_fl216"]
+[ext_resource type="Texture2D" uid="uid://dfkq5qvkp4xkw" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar_outline.svg" id="3_vpevc"]
+[ext_resource type="Texture2D" uid="uid://b1wnu60b4d7w1" path="res://rooms/shared/menu_button/selection_icon.svg" id="4_vpevc"]
+
+[sub_resource type="Animation" id="Animation_0tye1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fl216"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [-0.20943951023931956, 0.20943951023931956]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewwtw"]
+_data = {
+&"RESET": SubResource("Animation_0tye1"),
+&"idle": SubResource("Animation_fl216")
+}
+
+[sub_resource type="Animation" id="Animation_fhuk4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ewwtw"]
+resource_name = "bounce"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.96, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fhuk4"]
+_data = {
+&"RESET": SubResource("Animation_fhuk4"),
+&"bounce": SubResource("Animation_ewwtw")
+}
+
+[node name="MinigameProgressBar" type="Node2D"]
+script = ExtResource("1_s57j5")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MinigameProgressBarFill" type="Sprite2D" parent="Marker2D"]
+clip_children = 2
+position = Vector2(260, 40)
+texture = ExtResource("2_vh4yd")
+
+[node name="ProgressBar" type="ProgressBar" parent="Marker2D/MinigameProgressBarFill"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(520, 80)
+offset_left = -260.0
+offset_top = -40.0
+offset_right = 260.0
+offset_bottom = 40.0
+pivot_offset = Vector2(260, 40)
+theme = ExtResource("3_fl216")
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="MinigameProgressBarOutline" type="Sprite2D" parent="Marker2D"]
+position = Vector2(260, 40)
+texture = ExtResource("3_vpevc")
+
+[node name="Icon" type="Sprite2D" parent="Marker2D"]
+unique_name_in_owner = true
+position = Vector2(35, 40)
+texture = ExtResource("4_vpevc")
+
+[node name="IconAnimationPlayer" type="AnimationPlayer" parent="Marker2D/Icon"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_ewwtw")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Marker2D"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_fhuk4")
+}

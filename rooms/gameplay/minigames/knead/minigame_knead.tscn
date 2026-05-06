@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://b230ci0fx533e" path="res://rooms/gameplay/minigames/knead/arrow.gd" id="6_4377k"]
 [ext_resource type="Texture2D" uid="uid://dfyronx7ket7v" path="res://rooms/gameplay/minigames/knead/arrow-o.png" id="6_pc8cd"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="10_vsbh8"]
-[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/minigame_progress_bar.tscn" id="11_lt07s"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="11_lt07s"]
 
 [sub_resource type="Animation" id="Animation_3w4pg"]
 length = 0.001
@@ -74,7 +74,7 @@ _data = {
 &"knead": SubResource("Animation_5edq6")
 }
 
-[node name="GameplayKnead" type="Node2D"]
+[node name="MinigameKnead" type="Node2D"]
 script = ExtResource("1_5edq6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

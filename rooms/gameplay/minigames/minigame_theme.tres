@@ -1,8 +1,16 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bgq684mfybslc"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bgq684mfybslc"]
 
 [ext_resource type="FontFile" uid="uid://ddw6e5nsl6p1u" path="res://fonts/Basophil.ttf" id="1_b2oww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2oww"]
+bg_color = Color(0.76, 0.74784, 0.7144, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rvth"]
+bg_color = Color(0.99607843, 0.9647059, 0.8784314, 1)
 
 [resource]
 Label/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
 Label/font_sizes/font_size = 48
 Label/fonts/font = ExtResource("1_b2oww")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_b2oww")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1rvth")
