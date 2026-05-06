@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://quudq7imgrd6"]
+[gd_scene load_steps=10 format=3 uid="uid://quudq7imgrd6"]
 
 [ext_resource type="Script" uid="uid://uln8ngrljvhr" path="res://rooms/stage_select/room_stage_select.gd" id="1_026h8"]
 [ext_resource type="PackedScene" uid="uid://drnejreq5cqmn" path="res://rooms/stage_select/dish_select_button/dish_select_button.tscn" id="2_05hxn"]
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="2_84nsn"]
+[ext_resource type="PackedScene" uid="uid://dd22p2raqgxb4" path="res://rooms/stage_select/mode_select_button/mode_select_button.tscn" id="2_twlvj"]
 [ext_resource type="Texture2D" uid="uid://bd6f3kd7vjs5b" path="res://rooms/stage_select/dish_select_button/dish_icons/kerak_telor.svg" id="3_0k8ij"]
+[ext_resource type="Texture2D" uid="uid://c6tvop76yl8vw" path="res://rooms/stage_select/mode_select_button/cook-off_mode.svg" id="3_twlvj"]
 [ext_resource type="Texture2D" uid="uid://chkm5tonge8d5" path="res://rooms/stage_select/dish_select_button/dish_icons/klepon.svg" id="4_5c5bk"]
 [ext_resource type="Texture2D" uid="uid://cso8nhnq2nn02" path="res://rooms/stage_select/dish_select_button/dish_icons/fried_rice.svg" id="5_xpg3v"]
 [ext_resource type="Texture2D" uid="uid://dyuyiobl6bb1w" path="res://rooms/stage_select/dish_select_button/dish_icons/coto_makassar.svg" id="6_twlvj"]
@@ -18,26 +21,98 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VFlowContainer" type="VFlowContainer" parent="CenterContainer"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="DishSelectButton" parent="CenterContainer/VFlowContainer" instance=ExtResource("2_05hxn")]
+[node name="LeftGroup" type="Control" parent="CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(840, 1080)
+layout_mode = 2
+
+[node name="ModeSelectButton" parent="CenterContainer/HBoxContainer/LeftGroup" instance=ExtResource("2_twlvj")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 57.0
+offset_top = 121.0
+offset_right = 803.0
+offset_bottom = 566.0
+
+[node name="ModeSelectButton2" parent="CenterContainer/HBoxContainer/LeftGroup" instance=ExtResource("2_twlvj")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 57.0
+offset_top = 578.0
+offset_right = 803.0
+offset_bottom = 1023.0
+texture_normal = ExtResource("3_twlvj")
+
+[node name="RightGroup" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(720, 1080)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/RightGroup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="TutorialLabel" type="Label" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_84nsn")
+text = "Tutorial (0/9)"
+
+[node name="DishFlowContainer2" type="HFlowContainer" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+last_wrap_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+
+[node name="DishesLabel" type="Label" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_84nsn")
+text = "Dishes (0/10)"
+
+[node name="DishFlowContainer" type="HFlowContainer" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+last_wrap_alignment = 1
+
+[node name="DishSelectButton" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer/DishFlowContainer" instance=ExtResource("2_05hxn")]
 layout_mode = 2
 label = "Kerak Telor"
 dish_icon = ExtResource("3_0k8ij")
 
-[node name="DishSelectButton2" parent="CenterContainer/VFlowContainer" instance=ExtResource("2_05hxn")]
+[node name="DishSelectButton2" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer/DishFlowContainer" instance=ExtResource("2_05hxn")]
 layout_mode = 2
 label = "Klepon"
 dish_icon = ExtResource("4_5c5bk")
 
-[node name="DishSelectButton3" parent="CenterContainer/VFlowContainer" instance=ExtResource("2_05hxn")]
+[node name="DishSelectButton3" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer/DishFlowContainer" instance=ExtResource("2_05hxn")]
 layout_mode = 2
 label = "Nasi Goreng"
 dish_icon = ExtResource("5_xpg3v")
 
-[node name="DishSelectButton4" parent="CenterContainer/VFlowContainer" instance=ExtResource("2_05hxn")]
+[node name="DishSelectButton4" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer/DishFlowContainer" instance=ExtResource("2_05hxn")]
 layout_mode = 2
 label = "Coto Makassar"
 dish_icon = ExtResource("6_twlvj")

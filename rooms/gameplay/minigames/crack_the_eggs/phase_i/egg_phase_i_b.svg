@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="22.53767mm"
+   height="25.703968mm"
+   viewBox="0 0 22.53767 25.703968"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="egg_phase_i.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.93103385"
+     inkscape:cx="54.777815"
+     inkscape:cy="28.462982"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g17" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer27"
+     inkscape:label="Egg Cracked"
+     transform="translate(-102.10234,-117.12135)">
+    <path
+       style="opacity:1;fill:#f0edd9;fill-opacity:1;stroke-width:2.117;stroke-linejoin:round;stroke-miterlimit:3.1;paint-order:markers stroke fill"
+       d="m 123.28112,125.34083 c 0,0 -2.71279,12.35825 -3.56681,12.86062 -0.85403,0.50237 -7.48528,2.26066 -10.14784,1.10521 -2.66255,-1.15544 -7.13362,-6.22936 -7.13362,-6.22936 0,0 1.70805,-6.93268 3.31563,-9.29381 1.60757,-2.36113 4.87297,-5.3251 6.2796,-5.22463 1.40663,0.10047 4.72226,-0.30142 4.72226,-0.30142 l 4.01894,2.91373 z"
+       id="path8" />
+    <path
+       style="opacity:1;fill:#d4cab4;fill-opacity:1;stroke-width:2.117;stroke-linejoin:round;stroke-miterlimit:3.1;paint-order:markers stroke fill"
+       d="m 102.98545,132.72564 c 0,0 2.41137,3.86823 5.57629,5.07392 3.16492,1.20568 8.69097,1.35639 11.40375,-3.46634 2.71279,-4.82273 2.66255,-10.70044 2.66255,-10.70044 l 1.30616,3.46634 v 4.47107 l -0.80379,4.57155 -2.96397,4.37061 c 0,0 -5.67676,1.95923 -9.1431,0.80378 -3.46634,-1.15544 -4.82273,0.30143 -6.2796,-3.36586 -1.45687,-3.66729 -1.75829,-5.22463 -1.75829,-5.22463 z"
+       id="path7" />
+    <path
+       id="path2"
+       style="opacity:1;fill:#111b09;fill-opacity:1;stroke-width:2.117;stroke-linejoin:round;stroke-miterlimit:3.1;paint-order:markers stroke fill"
+       d="m 114.51652,117.12153 c -5.21462,0.0388 -10.62015,5.61697 -11.8556,10.68927 -2.21303,9.0858 2.50664,13.32222 7.88582,14.56449 7.21678,1.66665 13.37676,-1.10139 14.06736,-11.58017 0.35829,-5.4365 -3.01591,-12.7561 -9.05836,-13.60537 -0.34465,-0.0484 -0.69157,-0.0708 -1.03922,-0.0682 z m 0.35916,1.726 c 0.31053,-0.003 0.6206,0.0157 0.9281,0.0589 5.3911,0.75772 8.25046,7.03719 7.93079,11.88764 -0.61615,9.3492 -6.01105,11.16599 -12.44989,9.679 -4.79933,-1.10836 -9.01073,-3.83294 -7.03626,-11.93932 1.10227,-4.52553 5.96923,-9.63504 10.62726,-9.68623 z" />
+    <path
+       style="opacity:1;fill:#111b09;fill-opacity:1;stroke-width:2.117;stroke-linejoin:round;stroke-miterlimit:3.1;paint-order:markers stroke fill"
+       d="m 103.48782,129.20907 1.6327,1.10521 c 0,0 -0.50237,2.33601 0.37677,3.16491 0.87915,0.82891 2.08483,1.25592 2.23554,0.92939 0.15071,-0.32655 -1.45687,-0.80379 -1.50711,-1.23081 -0.0502,-0.42701 0.10048,-2.23554 0.10048,-2.23554 0,0 0.87914,0.92939 1.10521,0.75356 0.22607,-0.17583 0.45213,-2.23554 0.42701,-2.61232 -0.0251,-0.37677 0.30142,-0.9545 0.30142,-0.9545 0,0 0.87915,1.50711 2.03459,1.20569 1.15545,-0.30142 1.13033,-3.71753 0.9545,-3.49146 -0.17583,0.22607 -0.10047,-0.10048 -0.70331,0.70331 -0.60284,0.80379 -0.57773,1.20569 -1.10521,0.87915 -0.52749,-0.32654 -1.20568,-1.25592 -1.38151,-1.20569 -0.17583,0.0502 -0.70332,0.0502 -0.72844,0.37678 -0.0251,0.32654 -0.10047,2.78814 -0.5526,2.41137 -0.45214,-0.37678 -1.78341,-2.8635 -1.78341,-2.8635 z"
+       id="path6" />
+  </g>
+</svg>

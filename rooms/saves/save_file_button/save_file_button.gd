@@ -17,7 +17,6 @@ var unlocked_moves_label_text := "Unlocked moves: %d/%d"
 	set(value):
 		enabled = value
 		if enabled:
-			%AnimationPlayer.play(&"idle")
 			%Button.modulate = Color(1, 1, 1)
 			%SaveNumberLabel.text = save_number_label_text % save_number
 			%UnlockedMovesLabel.text = unlocked_moves_label_text % [
@@ -32,6 +31,8 @@ var unlocked_moves_label_text := "Unlocked moves: %d/%d"
 
 
 func _ready() -> void:
+	%AnimationPlayer.play(&"idle")
+	
 	focus_entered.connect(_on_button_focus_entered)
 	focus_exited.connect(_on_button_focus_exited)
 	

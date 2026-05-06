@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf0xfnp4kdvsc"]
+
+[ext_resource type="Script" uid="uid://dyjcexa1m38sx" path="res://rooms/gameplay/minigames/crack_the_eggs/minigame_crack_the_eggs.gd" id="1_vcrty"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_0ojt2"]
+[ext_resource type="Texture2D" uid="uid://t8ag00umvg80" path="res://rooms/gameplay/minigames/crack_the_eggs/phase_i/bg.svg" id="3_8dacg"]
+[ext_resource type="Texture2D" uid="uid://bbu1i7r8pxuhy" path="res://rooms/gameplay/minigames/crack_the_eggs/phase_i/table.svg" id="4_8dacg"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_vcrty"]
+[ext_resource type="PackedScene" uid="uid://dwgqm0nyufepr" path="res://rooms/gameplay/minigames/crack_the_eggs/egg_cracking_bar.tscn" id="5_vcrty"]
+[ext_resource type="AudioStream" uid="uid://bpbcrllt2hsmg" path="res://rooms/gameplay/minigames/shared/sfx/twhing.wav" id="7_gwue1"]
+
+[node name="MinigameCrackTheEggs" type="Node2D"]
+script = ExtResource("1_vcrty")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_0ojt2")
+
+[node name="TextureRect" type="TextureRect" parent="FrameThickF"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -467.5
+offset_top = -467.0
+offset_right = -467.5
+offset_bottom = -467.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8dacg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Table" type="Sprite2D" parent="FrameThickF"]
+position = Vector2(-257, 314)
+texture = ExtResource("4_8dacg")
+
+[node name="Bar" parent="FrameThickF" instance=ExtResource("5_vcrty")]
+unique_name_in_owner = true
+position = Vector2(-380, -51)
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("4_vcrty")
+
+[node name="CrackAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_gwue1")
+
+[node name="Camera2D" type="Camera2D" parent="."]

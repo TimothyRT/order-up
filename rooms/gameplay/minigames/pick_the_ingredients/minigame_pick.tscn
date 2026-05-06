@@ -189,7 +189,7 @@ texture = ExtResource("3_55wxy")
 
 [node name="HandTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 1.4
+wait_time = 0.9
 autostart = true
 
 [node name="GuideLabel" type="Label" parent="."]

@@ -4,17 +4,22 @@ extends Room
 @onready var save_buttons: Array[SaveFileButton] = [
 	%SaveFileButton1,
 	%SaveFileButton2,
-	%SaveFileButton3]
+	%SaveFileButton3
+]
 
 
 func _ready() -> void:
+	print("saves ready")
+	
 	%SaveFileButton1.grab_click_focus()
 	%SaveFileButton1.grab_focus.call_deferred()
 	
 	for btn in save_buttons:
-		var save = SaveService.select_by_id(btn.save_number)
-		if not save:
-			btn.enabled = false
-		else:
+		var id: int = btn.save_number
+		var save = SaveService.select_by_id(id)
+		if save:
 			btn.save_number = save.id
-			btn.unlocked_moves_count = save.last_unlocked_stage
+			btn.unlocked_moves_count = SaveService.get_unlocked_moves_count(id)
+			btn.enabled = true
+		else:
+			btn.enabled = false

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd22p2raqgxb4"]
+
+[ext_resource type="Shader" uid="uid://bt1t5sg0kwutb" path="res://shaders/displacement.gdshader" id="1_oe01f"]
+[ext_resource type="Texture2D" uid="uid://dnxw3r5lpqxur" path="res://rooms/stage_select/mode_select_button/story_mode.svg" id="2_20pw8"]
+[ext_resource type="Script" uid="uid://ck8g4n3wjlc20" path="res://rooms/stage_select/mode_select_button/mode_select_button.gd" id="3_20pw8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdwy1"]
+shader = ExtResource("1_oe01f")
+shader_parameter/interval = 0.5
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 10.0
+shader_parameter/intensityY = 10.0
+shader_parameter/seed = 42.0
+
+[node name="ModeSelectButton" type="TextureButton"]
+material = SubResource("ShaderMaterial_mdwy1")
+offset_right = 746.0
+offset_bottom = 445.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_20pw8")
+stretch_mode = 3
+script = ExtResource("3_20pw8")
