@@ -65,63 +65,39 @@ func _on_client_sensor_stored(_sample_count: int) -> void:
 	var predicted_motion: int = Classifier.classify(input_arr)
 
 	if predicted_motion != -1:
-		play_input_event(predicted_motion)
 		SignalBus.classification_made.emit(input_arr, predicted_motion)
 
 		match predicted_motion:
+			MOTION.HIT:
+				time_steps_to_ignore = 12
+				%AudioHit.play()
 			MOTION.SHAKE:
 				time_steps_to_ignore = 5
-			MOTION.STIR, MOTION.SPIN:
-				time_steps_to_ignore = 20
-			_:
+				%AudioShake.play()
+			MOTION.SWING_LEFT:
 				time_steps_to_ignore = 12
+				%AudioSwingLeft.play()
+			MOTION.SWING_RIGHT:
+				time_steps_to_ignore = 12
+				%AudioSwingRight.play()
+			MOTION.FAN:
+				time_steps_to_ignore = 12
+				%AudioFan.play()
+			MOTION.STIR:
+				time_steps_to_ignore = 20
+				%AudioStir.play()
+			MOTION.SPIN:
+				time_steps_to_ignore = 20
+				%AudioSpin.play()
+			MOTION.LIFT:
+				time_steps_to_ignore = 12
+				%AudioLift.play()
+			MOTION.POUR:
+				time_steps_to_ignore = 12
+				%AudioPour.play()
 
 		if last_predicted_motion == null or predicted_motion != last_predicted_motion:
 			last_predicted_motion = predicted_motion
-
-
-func play_input_event(i: int) -> void:
-	var delay := 0.02
-	
-	match i:
-		MOTION.HIT:
-			%AudioHit.play()
-			generate_input_event("motion_hit", delay)
-		MOTION.SHAKE:
-			%AudioShake.play()
-			generate_input_event("motion_shake", delay)
-		MOTION.SWING_LEFT:
-			%AudioSwingLeft.play()
-			generate_input_event("motion_swing_left", delay)
-		MOTION.SWING_RIGHT:
-			%AudioSwingRight.play()
-			generate_input_event("motion_swing_right", delay)
-		MOTION.FAN:
-			generate_input_event("motion_fan", delay)
-		MOTION.STIR:
-			generate_input_event("motion_stir", delay)
-		MOTION.LIFT:
-			generate_input_event("motion_lift", delay)
-		MOTION.SPIN:
-			generate_input_event("motion_spin", delay)
-		MOTION.IDLE:
-			generate_input_event("motion_idle", delay)
-
-
-func generate_input_event(event_name: String, delay: float, player_index=0) -> void:
-	var input_event = InputEventAction.new()
-	if player_index == 0 or player_index == 1:
-		input_event.strength = player_index
-	else:
-		print("player_index must either be 0 (for player #1) or 1 (for player #2).")
-		return
-	input_event.action = event_name
-	input_event.pressed = true
-	Input.parse_input_event(input_event)
-
-	await get_tree().create_timer(delay).timeout
-	input_event.pressed = false
-	Input.parse_input_event(input_event)
 
 
 func _compute_acc_magnitude(idx: int) -> float:

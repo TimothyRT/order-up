@@ -8,11 +8,13 @@ signal minigame_finished(player: int)
 @export var player := 1  # 1 if player #1, 2 otherwise
 
 
-func set_minigame(minigame_node: Minigame) -> void:
+func set_minigame(minigame_node: Minigame, minigame_current: int, minigame_total: int) -> void:
 	clear_minigame()
 	%Placeholder.add_child(minigame_node)
 	minigame_node.minigame_started.connect(_on_minigame_started)
 	minigame_node.minigame_finished.connect(_on_minigame_finished)
+	
+	%StepXofYLabel.text = "Step %d of %d" % [minigame_current + 1, minigame_total]
 
 
 func clear_minigame() -> void:

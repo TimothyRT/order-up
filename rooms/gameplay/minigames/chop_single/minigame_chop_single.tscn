@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://da6uvv3tnoll0"]
+
+[ext_resource type="Script" uid="uid://iwu5gmydk8y5" path="res://rooms/gameplay/minigames/chop_single/minigame_chop_single.gd" id="1_6py8q"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_7yid1"]
+[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_background.svg" id="3_7mxmi"]
+[ext_resource type="PackedScene" uid="uid://d0ka2fht6ypbg" path="res://rooms/gameplay/minigames/chop_single/chopping.tscn" id="3_180jf"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_u35qe"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="4_180jf"]
+
+[node name="MinigameChopSingle" type="Node2D"]
+script = ExtResource("1_6py8q")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_7yid1")
+
+[node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
+texture = ExtResource("3_7mxmi")
+
+[node name="Chopping" parent="FrameThickF" instance=ExtResource("3_180jf")]
+unique_name_in_owner = true
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("3_u35qe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MinigameProgressBar" parent="." instance=ExtResource("4_180jf")]
+position = Vector2(-272, -409)

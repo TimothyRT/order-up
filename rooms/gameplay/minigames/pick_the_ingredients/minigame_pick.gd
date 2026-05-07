@@ -48,6 +48,7 @@ func construct_ingredient_sequence(
 
 
 func _ready() -> void:
+	pause_time = 0.0
 	progress_threshold = INGREDIENT_COUNT - len(unused_ingredients)
 	
 	hand = HAND.instantiate()
@@ -58,10 +59,12 @@ func _ready() -> void:
 		unused_ingredients
 	)
 	highlighted_ingredient = ingredient_sequence[0]
+	
+	super()
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("motion_hit"):
+func _on_motion_detected(motion: int) -> void:
+	if motion == MotionRecognition.MOTION.HIT:
 		if progress >= len(ingredient_sequence):
 			return
 		
@@ -69,7 +72,6 @@ func _input(event: InputEvent) -> void:
 			collected_ingredients.append(highlighted_ingredient)
 			%IngredientGroup.get_child(highlighted_ingredient).texture = null
 			progress += 1
-			print("progress: %d" % progress)
 			%CorrectAudio.play()
 			if progress < len(ingredient_sequence):
 				highlighted_ingredient = ingredient_sequence[progress]

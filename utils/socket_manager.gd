@@ -3,6 +3,8 @@ extends Node
 
 const MAX_PEERS := 4
 const PORT := 9080
+
+var verbose := false
 var ws_server := WebSocketMultiplayerPeer.new()
 var connected_peers := []
 
@@ -40,14 +42,9 @@ func _process(_delta):
 			var pkt = ws_server.get_packet()
 
 			var msg = pkt.get_string_from_utf8()
-			#print("[SOCKET] Got from %d: %s" % [_id, msg])
+			if verbose:
+				print("[SOCKET] Got from %d: %s" % [_id, msg])
 			_parse_message(msg)
-			
-			# Broadcast to all other clients
-			#for peer_id in connected_peers:
-				#if peer_id != id and ws_server.is_peer_connected(peer_id):
-					#ws_server.set_target_peer(peer_id)
-					#ws_server.put_packet(msg.to_utf8_buffer())
 
 
 func _parse_message(msg: String):

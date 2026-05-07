@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct4lrs66crucj"]
+
+[ext_resource type="Script" uid="uid://bwm7c7osx1do0" path="res://rooms/result/room_result.gd" id="1_jcvuo"]
+[ext_resource type="PackedScene" uid="uid://b04tejge3ghqc" path="res://rooms/result/character/victory/character_victory.tscn" id="2_fgdre"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_m6evq"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_ddba6"]
+
+[node name="RoomResult" type="Node"]
+script = ExtResource("1_jcvuo")
+metadata/_custom_type_script = "uid://b56t1yahd1mo4"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+
+[node name="FrameThickF" type="Sprite2D" parent="CenterContainer/HBoxContainer/Control"]
+position = Vector2(1059, 529)
+texture = ExtResource("2_m6evq")
+
+[node name="FrameThickO" type="Sprite2D" parent="CenterContainer/HBoxContainer/Control"]
+position = Vector2(1059, 529)
+texture = ExtResource("3_ddba6")
+
+[node name="CharacterVictory" parent="CenterContainer/HBoxContainer/Control" instance=ExtResource("2_fgdre")]
+position = Vector2(553, 663)

@@ -17,6 +17,7 @@ var direction_is_left := true:
 
 
 func _ready() -> void:
+	pause_time = 0.8
 	progress_threshold = 9
 	
 	direction_changed.connect(%Arrow.flip_sprite)
@@ -25,13 +26,15 @@ func _ready() -> void:
 	super()
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("motion_swing_left") and direction_is_left:
+func _on_motion_detected(motion: int) -> void:
+	print("[HIT] MOTION")
+	
+	if motion == MotionRecognition.MOTION.SWING_LEFT and direction_is_left:
 		%SpiceAnimationPlayer.play("shake")
 		%UlekanAnimationPlayer.play("hit")
 		direction_is_left = false
 	
-	if event.is_action_pressed("motion_swing_right") and not direction_is_left:
+	if motion == MotionRecognition.MOTION.SWING_RIGHT and not direction_is_left:
 		%SpiceAnimationPlayer.play("shake")
 		%UlekanAnimationPlayer.play("hit")
 		direction_is_left = true

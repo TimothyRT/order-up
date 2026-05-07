@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://g4p7wd7hqvkc"]
+
+[ext_resource type="Script" uid="uid://bmck3mgmesiev" path="res://rooms/gameplay/minigames/coat_in_batter/minigame_coat_in_batter.gd" id="1_pkjah"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_on3ji"]
+[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_background.svg" id="3_y4j64"]
+[ext_resource type="Texture2D" uid="uid://i0rp5wccrnme" path="res://rooms/gameplay/minigames/sprinkle_in/plate_shadow.svg" id="4_4p6j8"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_f4fx6"]
+[ext_resource type="PackedScene" uid="uid://tv2wan3khlja" path="res://rooms/gameplay/minigames/coat_in_batter/batter_bowl.tscn" id="4_y4j64"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="5_4p6j8"]
+
+[node name="MinigameCoatInBatter" type="Node2D"]
+script = ExtResource("1_pkjah")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_on3ji")
+
+[node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
+texture = ExtResource("3_y4j64")
+
+[node name="PlateShadow" type="Sprite2D" parent="FrameThickF"]
+position = Vector2(-45, 75)
+texture = ExtResource("4_4p6j8")
+
+[node name="BatterBowl" parent="FrameThickF" instance=ExtResource("4_y4j64")]
+unique_name_in_owner = true
+position = Vector2(0, 88)
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("4_f4fx6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MinigameProgressBar" parent="." instance=ExtResource("5_4p6j8")]
+position = Vector2(-267, 242)

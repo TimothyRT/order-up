@@ -7,9 +7,12 @@ const LETS_COOK_TEXT := preload("uid://d1eq3hbiwpduh")
 var is_multiplayer := false
 
 var minigame_uids: Array[String] = [
-	"uid://bf0xfnp4kdvsc",
+	"uid://da6uvv3tnoll0",
 	"uid://rovym6mxyn1u",
-	"uid://bmq27boelc242"
+	"uid://bf0xfnp4kdvsc",
+	"uid://cls2d7iky5hmt",
+	"uid://2fuupsbvwtay",
+	"uid://bmq27boelc242",
 ]
 var minigames: Array[Minigame]
 
@@ -30,8 +33,6 @@ var time_limited := true
 var time_limit: int = 120
 var timer: CountdownTimer
 
-var progress_tracker
-
 
 func load_minigames() -> void:
 	minigames.clear()
@@ -41,13 +42,11 @@ func load_minigames() -> void:
 
 
 func begin_first_minigame() -> void:
-	print("begin_first_minigame()")
 	if not minigames or len(minigames) == 0:
-		print("minigames null")
 		return
-	%FrameLeft.set_minigame(minigames[0])
+	%FrameLeft.set_minigame(minigames[0].duplicate(), minigame_current[1], len(minigames))
 	if is_multiplayer:
-		%FrameRight.set_minigame(minigames[0])
+		%FrameRight.set_minigame(minigames[0].duplicate(), minigame_current[2], len(minigames))
 	
 	var text: GameText = LETS_COOK_TEXT.instantiate()
 	add_child(text)
@@ -64,11 +63,9 @@ func enter(room_state: Dictionary) -> void:
 	if is_multiplayer:
 		%FrameRight.visible = true
 		%FrameRight.minigame_finished.connect(_on_minigame_finished)
-	
 	_setup_timer()
 	begin_first_minigame()
 	
-	print("FrameLeft's children: %s" % str(%FrameLeft.get_children()))
 	super(room_state)
 
 
@@ -95,9 +92,9 @@ func _on_minigame_finished(player: int) -> void:
 		load_minigames()
 	
 	if player == 1:
-		%FrameLeft.set_minigame(minigames[minigame_current[player]])
+		%FrameLeft.set_minigame(minigames[minigame_current[player]].duplicate(), minigame_current[player], len(minigames))
 	else:
-		%FrameRight.set_minigame(minigames[minigame_current[player]])
+		%FrameRight.set_minigame(minigames[minigame_current[player]].duplicate(), minigame_current[player], len(minigames))
 
 
 #func _input(event: InputEvent) -> void:
