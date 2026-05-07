@@ -13,8 +13,12 @@ func shutdown() -> void:
 		return
 	shutting_down = true
 	
-	DBConn.close_conn()
+	# Stop Connection to Kotlin
+	get_tree().call_group("NetworkBridge", "stop_connection")
+	await get_tree().create_timer(0.2).timeout
 	
+	DBConn.close_conn()
+
 	get_tree().quit()
 
 
