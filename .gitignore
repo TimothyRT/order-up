@@ -3,6 +3,7 @@
 /android/
 *.translation
 
+~*.dll
 addons/
 *.psd
 *.tmp
