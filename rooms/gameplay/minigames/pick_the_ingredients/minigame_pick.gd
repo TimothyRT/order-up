@@ -84,3 +84,8 @@ func _on_motion_detected(motion: int) -> void:
 
 func _on_hand_timer_timeout() -> void:
 	current_hand_position = (current_hand_position + 1) % INGREDIENT_COUNT
+
+
+func _on_player_changed() -> void:
+	if hand:
+		hand.set_color(player)

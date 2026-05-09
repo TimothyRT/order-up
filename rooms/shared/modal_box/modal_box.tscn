@@ -1,0 +1,196 @@
+[gd_scene load_steps=11 format=3 uid="uid://brks0plyxcldr"]
+
+[ext_resource type="Script" uid="uid://226o4yboscxh" path="res://rooms/shared/modal_box/modal_box.gd" id="1_cmcao"]
+[ext_resource type="Texture2D" uid="uid://vsb5o5s3boym" path="res://rooms/shared/modal_box/modal_box_base_small.png" id="1_qqbue"]
+[ext_resource type="Texture2D" uid="uid://c8kxdx24amc12" path="res://rooms/shared/modal_box/button_cancel.png" id="2_kp2rx"]
+[ext_resource type="Texture2D" uid="uid://cuogunqe6ybuv" path="res://rooms/shared/modal_box/button_proceed.png" id="3_c7dy0"]
+[ext_resource type="Theme" uid="uid://bgq684mfybslc" path="res://rooms/gameplay/minigames/minigame_theme.tres" id="4_c7dy0"]
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="4_rmaki"]
+[ext_resource type="Script" uid="uid://dfuiyy5wjtcbx" path="res://rooms/shared/modal_box/modal_button.gd" id="6_rmaki"]
+
+[sub_resource type="Animation" id="Animation_pbuti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CancelButton:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProceedButton:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rmaki"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CancelButton:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [-0.017453292519943295, 0.017453292519943295]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProceedButton:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [-0.017453292519943295, 0.017453292519943295]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbuti"]
+_data = {
+&"RESET": SubResource("Animation_pbuti"),
+&"idle": SubResource("Animation_rmaki")
+}
+
+[node name="ModalBox" type="Control"]
+custom_minimum_size = Vector2(706, 378)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 706.0
+offset_bottom = 378.0
+script = ExtResource("1_cmcao")
+
+[node name="BaseRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qqbue")
+
+[node name="CancelButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(233, 124)
+layout_mode = 0
+offset_left = 417.0
+offset_top = 253.0
+offset_right = 650.0
+offset_bottom = 377.0
+pivot_offset = Vector2(129, 60)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_kp2rx")
+script = ExtResource("6_rmaki")
+
+[node name="CancelLabel" type="Label" parent="CancelButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.490876
+offset_top = -0.585639
+offset_right = -2.4908752
+offset_bottom = -0.58563995
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.06517862
+pivot_offset = Vector2(114.58658, 57.612305)
+theme = ExtResource("4_rmaki")
+text = "NO"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ProceedButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 67.0
+offset_top = 294.0
+offset_right = 369.0
+offset_bottom = 415.0
+pivot_offset = Vector2(155, 62)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_c7dy0")
+script = ExtResource("6_rmaki")
+
+[node name="ProceedLabel" type="Label" parent="ProceedButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.911189
+offset_top = -1.7656555
+offset_right = -2.9111938
+offset_bottom = -1.7656555
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.15116724
+pivot_offset = Vector2(156.05779, 65.84265)
+theme = ExtResource("4_rmaki")
+text = "YES"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MessageContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 86.0
+offset_top = 112.0
+offset_right = 566.0
+offset_bottom = 312.0
+rotation = -0.0768949
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MessageContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.53773403
+offset_top = -6.979316
+offset_right = 0.5377197
+offset_bottom = -6.979309
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderLabel" type="Label" parent="MessageContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme = ExtResource("4_c7dy0")
+theme_override_font_sizes/font_size = 60
+text = "Lorem Ipsum"
+autowrap_mode = 2
+
+[node name="MessageLabel" type="Label" parent="MessageContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 0)
+layout_mode = 2
+theme = ExtResource("4_c7dy0")
+text = "dolor sit amet consectetur adipiscing elit"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_pbuti")
+}

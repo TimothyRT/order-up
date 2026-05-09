@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="5_3ihof"]
 
 [node name="MinigameFrame" type="Control"]
+process_mode = 1
 custom_minimum_size = Vector2(421, 632)
 layout_mode = 3
 anchors_preset = 0

@@ -2,6 +2,7 @@ extends Node2D
 
 
 var seeders := {
+	"audio_settings": preload("uid://0wl4xo55ckdv"),
 	"room": preload("uid://djm1vdeut4kcn"),
 	"dish": preload("uid://ctc6ri354idvc")
 }
@@ -26,7 +27,9 @@ func seed_db() -> void:
 		DBConn.db.create_table(table_name, dict)
 	
 	for seeder in seeders.values():
-		seeder.instantiate().seed()
+		var seeder_instance: Seeder = seeder.instantiate()
+		seeder_instance.seed()
+		seeder_instance.queue_free()
 	
 	#var saves_dict : Dictionary = Dictionary()
 	#saves_dict["id"] = {"data_type": "int", "primary_key": true, "not_null": true}

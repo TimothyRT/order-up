@@ -5,4 +5,4 @@ extends Label
 
 
 func _ready() -> void:
-	text = "Game version %s" % application_version
+	text = "Game version %s \nIP address: %s" % [application_version, IpAddress.ip]

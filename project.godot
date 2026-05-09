@@ -18,8 +18,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Dishes="*res://rooms/gameplay/dishes.gd"
-Minigames="*res://rooms/gameplay/minigames/minigames.gd"
 IpAddress="*res://utils/IPAddress.tscn"
 Config="*res://utils/config.tscn"
 Datetime="*res://utils/datetime.tscn"
@@ -30,11 +28,12 @@ SensorLeakyBucket="*res://utils/sensor_leaky_bucket.tscn"
 SensorDataStore="*res://utils/sensor_data_store.tscn"
 MotionRecognition="*res://utils/motion_recognition/motion_recognition.tscn"
 DBConn="*res://utils/data_access/db_conn/db_conn.tscn"
-DBSeeder="*res://utils/data_access/db_seeder/db_seeder.tscn"
 Shutdown="*res://utils/shutdown/shutdown.tscn"
+AudioSettingsService="*res://utils/data_access/services/audio_settings_service.tscn"
 RoomService="*res://utils/data_access/services/room_service.tscn"
 SaveService="*res://utils/data_access/services/save_service.tscn"
 DishService="*res://utils/data_access/services/dish_service.tscn"
+DBSeeder="*res://utils/data_access/db_seeder/db_seeder.tscn"
 CSVToDict="*res://utils/csv_to_dict.gd"
 
 [display]

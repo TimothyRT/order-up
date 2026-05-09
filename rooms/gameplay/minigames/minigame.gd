@@ -6,6 +6,7 @@ signal minigame_started
 signal minigame_finished
 signal minigame_paused
 signal minigame_unpaused
+signal player_changed
 signal progress_changed(new_progress_value: int, progress_diff: int)
 signal progress_threshold_changed(new_threshold_value: int, threshold_diff: int)
 
@@ -18,13 +19,16 @@ var paused := false:
 			minigame_unpaused.emit()
 var pause_time := 0.0
 
+var player: int:
+	set(new_value):
+		player = new_value
+		player_changed.emit()
 
 var progress := 0:
 	set(new_value):
 		var progress_diff = new_value - progress
 		progress_changed.emit(new_value, progress_diff)
 		progress = min(new_value, progress_threshold)
-		print("setting progress to %d" % progress)
 		if progress == progress_threshold:
 			finish_minigame()
 
@@ -54,13 +58,6 @@ func pause_minigame(time_s=0.0) -> void:
 		paused = false
 
 
-func get_player() -> int:
-	if owner and owner.player:
-		return owner.player
-	else:
-		return 1
-
-
 func _on_peak_detected() -> void:
 	pause_minigame(pause_time)
 	var res: Array = await SignalBus.classification_made
@@ -71,5 +68,10 @@ func _on_motion_detected(_motion: int) -> void:
 	pass
 
 
+func _on_player_changed() -> void:
+	pass
+
+
 func _ready() -> void:
+	player_changed.connect(_on_player_changed)
 	start_minigame()

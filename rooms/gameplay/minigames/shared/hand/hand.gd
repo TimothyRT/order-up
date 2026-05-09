@@ -13,7 +13,3 @@ func set_color(player: int) -> void:
 		white_segment.modulate = Config.RED
 	else:
 		white_segment.modulate = Config.BLUE
-
-
-func _ready() -> void:
-	set_color(1)

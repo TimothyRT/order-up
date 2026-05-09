@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://buqn3ajrqhouy"]
+
+[ext_resource type="Texture2D" uid="uid://cqbwjgjycnvmy" path="res://rooms/gameplay/pause/checkbox_off.svg" id="1_fnswd"]
+[ext_resource type="Script" uid="uid://doljjo6p5d3tp" path="res://rooms/gameplay/pause/special_checkbox.gd" id="2_ljy2j"]
+
+[node name="Checkbox" type="TextureButton"]
+offset_right = 61.0
+offset_bottom = 63.0
+pivot_offset = Vector2(30, 31)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_fnswd")
+script = ExtResource("2_ljy2j")

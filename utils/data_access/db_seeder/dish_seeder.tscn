@@ -1,6 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctc6ri354idvc"]
 
-[ext_resource type="Script" uid="uid://bg21nunu3cq0p" path="res://utils/data_access/db_seeder/dish_seeder.gd" id="1_4sx3o"]
+[ext_resource type="Script" uid="uid://ekomk8bkkenu" path="res://utils/data_access/db_seeder/simple_csv_seeder.gd" id="1_4sx3o"]
 
 [node name="DishSeeder" type="Node"]
 script = ExtResource("1_4sx3o")
+file_uid = "uid://dkel7uu4ggtxa"
+table_name = "dishes"
+metadata/_custom_type_script = "uid://ekomk8bkkenu"

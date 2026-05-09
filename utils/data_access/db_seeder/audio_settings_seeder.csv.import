@@ -1,0 +1,15 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bowkhavfcyk7g"
+valid=false
+
+[deps]
+
+source_file="res://utils/data_access/db_seeder/audio_settings_seeder.csv"
+
+[params]
+
+compress=true
+delimiter=0

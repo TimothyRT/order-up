@@ -27,7 +27,6 @@ func get_random_serundeng_sprite() -> Sprite2D:
 	var texture: CompressedTexture2D = serundeng_sprites.pick_random()
 	var sprite := Sprite2D.new()
 	sprite.texture = texture
-	print("Sprite: %s" % sprite)
 	return sprite
 
 

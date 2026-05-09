@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1iqdjxe1mrai"]
+[gd_scene load_steps=8 format=3 uid="uid://b1iqdjxe1mrai"]
 
 [ext_resource type="Texture2D" uid="uid://c7eruppy5alrt" path="res://rooms/saves/save_file_button/dish.png" id="1_7su47"]
 [ext_resource type="Script" uid="uid://b0ypbmj0jdoqc" path="res://rooms/saves/save_file_button/save_file_button.gd" id="1_x4ag1"]
 [ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="2_84mnx"]
+[ext_resource type="PackedScene" uid="uid://dndj6u2ierval" path="res://rooms/saves/delete_button/delete_button.tscn" id="4_wp8qh"]
 
 [sub_resource type="Animation" id="Animation_meunp"]
 length = 0.001
@@ -34,7 +35,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(-2.5, -2.5),
 "update": 0,
-"values": [Vector2(13, 22), Vector2(13, 48)]
+"values": [Vector2(13, 22), Vector2(13, 26)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yrryq"]
@@ -74,7 +75,7 @@ layout_mode = 0
 offset_left = 13.0
 offset_top = 22.0
 offset_right = 487.0
-offset_bottom = 477.0
+offset_bottom = 577.0
 pivot_offset = Vector2(237, 227)
 alignment = 1
 
@@ -113,3 +114,8 @@ theme = ExtResource("2_84mnx")
 text = "Unlocked moves: 0/9"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="DeleteButton" parent="Control/VBoxContainer" instance=ExtResource("4_wp8qh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4

@@ -6,7 +6,7 @@ const dish_select_button := preload("uid://drnejreq5cqmn")
 var mode_select_button_group := ButtonGroup.new()
 
 
-func setup_buttons() -> void:	
+func setup_buttons() -> void:
 	for child in %DishFlowContainer.get_children():
 		%DishFlowContainer.remove_child(child)
 		child.queue_free()
@@ -56,8 +56,6 @@ func _on_button_focused_while_outside_view(button: Control) -> void:
 
 
 func _ready() -> void:
-	print("stage select ready")
-	
 	setup_buttons()
 	reset_focus()
 	

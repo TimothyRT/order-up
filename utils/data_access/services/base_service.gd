@@ -38,10 +38,10 @@ func select_one(conditions="", columns=["*"]) -> Variant:
 	if not DBConn.db:
 		return null
 	var selected_arr = select_all(conditions, columns)
-	if not selected_arr or len(selected_arr) > 0:
-		return selected_arr[0]  # dict
-	else:
+	if not selected_arr or len(selected_arr) == 0:
 		return null
+	else:
+		return selected_arr[0]  # dict
 
 
 func select_by_id(id: int, conditions="", columns=["*"]) -> Variant:

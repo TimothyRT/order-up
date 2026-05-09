@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://0wl4xo55ckdv"]
+
+[ext_resource type="Script" uid="uid://ekomk8bkkenu" path="res://utils/data_access/db_seeder/simple_csv_seeder.gd" id="1_ra0ya"]
+
+[node name="AudioSettingsSeeder" type="Node"]
+script = ExtResource("1_ra0ya")
+file_uid = "uid://bowkhavfcyk7g"
+table_name = "audio_settings"
+metadata/_custom_type_script = "uid://ekomk8bkkenu"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1a560turfu5a"]
+
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="1_b48ux"]
+[ext_resource type="Script" uid="uid://s0nnjttuoypi" path="res://rooms/gameplay/pause/volume_slider.gd" id="1_hrqxk"]
+
+[node name="VolumeSlider" type="HSlider"]
+custom_minimum_size = Vector2(300, 30)
+offset_right = 8.0
+offset_bottom = 16.0
+theme = ExtResource("1_b48ux")
+max_value = 1.0
+step = 0.05
+script = ExtResource("1_hrqxk")

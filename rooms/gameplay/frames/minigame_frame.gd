@@ -11,6 +11,7 @@ signal minigame_finished(player: int)
 func set_minigame(minigame_node: Minigame, minigame_current: int, minigame_total: int) -> void:
 	clear_minigame()
 	%Placeholder.add_child(minigame_node)
+	minigame_node.player = player
 	minigame_node.minigame_started.connect(_on_minigame_started)
 	minigame_node.minigame_finished.connect(_on_minigame_finished)
 	

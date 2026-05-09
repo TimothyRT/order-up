@@ -34,3 +34,19 @@ saves:
     "data_type": "int"
     "not_null": true
     "default": 0
+
+audio_settings:
+  id:
+    "data_type": "text"
+    "primary_key": true
+    "not_null": true
+  label:
+    "data_type": "text"
+    "not_null": true
+  bus:
+    "data_type": "text"
+    "not_null": true
+  decibels:
+    "data_type": "float"
+    "not_null": true
+    "default": 0

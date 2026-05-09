@@ -25,10 +25,8 @@ func _ready() -> void:
 
 
 func _on_progress_changed(new_progress_value: int, _progress_diff: int) -> void:
-	print("fr progress changed")
 	set_bar_value(new_progress_value)
 
 
 func _on_progress_threshold_changed(new_threshold_value: int, _threshold_diff: int) -> void:
-	print("fr progress threshold changed")
 	set_bar_max(new_threshold_value)

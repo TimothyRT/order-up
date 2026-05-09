@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dge2k4peo23x0"]
+[gd_scene load_steps=5 format=3 uid="uid://dge2k4peo23x0"]
 
 [ext_resource type="Script" uid="uid://b61n4xr40tp11" path="res://rooms/saves/room_saves.gd" id="1_f0gxx"]
 [ext_resource type="PackedScene" uid="uid://b1iqdjxe1mrai" path="res://rooms/saves/save_file_button/save_file_button.tscn" id="2_3gj48"]
+[ext_resource type="Script" uid="uid://bu7sy7yvjfgn6" path="res://rooms/saves/deletion_modal_controller.gd" id="3_mobn1"]
+[ext_resource type="PackedScene" uid="uid://brks0plyxcldr" path="res://rooms/shared/modal_box/modal_box.tscn" id="3_xjtt5"]
 
 [node name="RoomSaves" type="Node"]
 script = ExtResource("1_f0gxx")
@@ -18,29 +20,80 @@ grow_vertical = 2
 custom_minimum_size = Vector2(1500, 800)
 layout_mode = 2
 
-[node name="SaveFileButton1" parent="CenterContainer/Control" instance=ExtResource("2_3gj48")]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="SaveFileButton1" parent="CenterContainer/Control/HBoxContainer/VBoxContainer" instance=ExtResource("2_3gj48")]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = -47.0
-offset_top = 50.0
-offset_right = 427.0
-offset_bottom = 50.0
+layout_mode = 2
 save_number = 1
+unlocked_dishes_count = null
+unlocked_dishes_max = null
 
-[node name="SaveFileButton2" parent="CenterContainer/Control" instance=ExtResource("2_3gj48")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/Control/HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="SaveFileButton2" parent="CenterContainer/Control/HBoxContainer/VBoxContainer2" instance=ExtResource("2_3gj48")]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 512.0
-offset_top = 288.0
-offset_right = 986.0
-offset_bottom = 288.0
+layout_mode = 2
 save_number = 2
+unlocked_dishes_count = null
+unlocked_dishes_max = null
 
-[node name="SaveFileButton3" parent="CenterContainer/Control" instance=ExtResource("2_3gj48")]
+[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="SaveFileButton3" parent="CenterContainer/Control/HBoxContainer/VBoxContainer3" instance=ExtResource("2_3gj48")]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1080.0
-offset_top = 71.0
-offset_right = 1554.0
-offset_bottom = 71.0
+layout_mode = 2
 save_number = 3
+unlocked_dishes_count = null
+unlocked_dishes_max = null
+
+[node name="ModalContainer" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DeletionModalController" type="Node" parent="ModalContainer"]
+unique_name_in_owner = true
+script = ExtResource("3_mobn1")
+
+[node name="ModalOverlay" type="ColorRect" parent="ModalContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25882354, 0.25882354, 0.25882354, 0.78431374)
+
+[node name="CenterContainer" type="CenterContainer" parent="ModalContainer/ModalOverlay"]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 351.0
+offset_right = 1313.0
+offset_bottom = 729.0
+
+[node name="ModalBox" parent="ModalContainer/ModalOverlay/CenterContainer" instance=ExtResource("3_xjtt5")]
+unique_name_in_owner = true
+layout_mode = 2
+header_text = "Caution!"
+message_text = "Do you wish to delete save file #1?"

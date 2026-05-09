@@ -12,6 +12,6 @@ func insert_new_save(id: int) -> void:
 	})
 
 
-func get_unlocked_moves_count(id: int) -> int:
+func get_unlocked_dishes_count(id: int) -> int:
 	# TODO: Implement actual functionality
 	return 6

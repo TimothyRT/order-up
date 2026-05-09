@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.149967mm"
+   height="16.544868mm"
+   viewBox="0 0 16.149967 16.544868"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="checkbox_on.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.71891835"
+     inkscape:cx="30.601528"
+     inkscape:cy="31.297017"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-96.837499,-140.22917)">
+    <path
+       id="path6"
+       style="fill:#111b09;fill-opacity:1;stroke-width:0.264583"
+       d="m 109.17336,140.70691 c -1.82518,-0.49882 -4.32859,-0.78606 -7.03992,0.0608 -5.42268,1.69375 -6.01657,3.82103 -4.70905,5.20204 1.30753,1.38101 0.69012,0.27256 0.93851,1.52388 0.24839,1.2513 -0.76335,5.74095 -0.38129,7.02661 0.38206,1.28566 0.16078,1.03898 2.44208,1.95779 2.28129,0.91879 8.09335,-0.62726 9.09522,-0.27477 1.00189,0.35248 1.04544,0.55328 1.47434,-0.19146 0.42889,-0.74475 1.44959,-1.57479 1.05233,-2.24687 -0.39725,-0.67208 -0.70304,-0.038 -0.56313,-0.952 0.13992,-0.91402 0.51765,-5.70953 0.91844,-7.26898 0.40079,-1.55945 1.20998,-2.49108 -0.25537,-3.62767 0,0 -1.14696,-0.71061 -2.97216,-1.20939 z m 0.35204,4.02174 c 0.87013,0.1974 1.13522,2.1215 0.003,2.45401 -1.20738,0.35468 -5.11899,5.8398 -5.70183,6.67896 -0.33392,0.48078 -0.84665,-0.58583 -1.2108,-1.2019 -0.36415,-0.61609 -1.54082,-1.95184 -2.02333,-2.38459 -0.48252,-0.43276 -0.56642,-1.53953 1.11881,-1.30353 0.71065,0.0995 1.78701,1.58462 2.0652,1.48104 0.23306,-0.0868 0.24217,-0.29406 1.11527,-1.56588 0.79476,-1.15769 3.50987,-4.41307 4.63337,-4.15811 z"
+       sodipodi:nodetypes="ssssssssssscscsssssssc" />
+  </g>
+</svg>

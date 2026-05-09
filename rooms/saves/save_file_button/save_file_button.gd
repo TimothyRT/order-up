@@ -4,14 +4,16 @@ extends Button
 
 
 @export var save_number := 0
-@export var unlocked_moves_count := 0
-@export var unlocked_moves_max := 9
+@export var unlocked_dishes_count := 0
+@export var unlocked_dishes_max := 9
+
+var delete_button: TextureButton
 
 var save_number_label_text := """SAVE
 #%d
 """
 
-var unlocked_moves_label_text := "Unlocked moves: %d/%d"
+var unlocked_moves_label_text := "Unlocked dishes: %d/%d"
 
 @onready var enabled := true:
 	set(value):
@@ -20,8 +22,8 @@ var unlocked_moves_label_text := "Unlocked moves: %d/%d"
 			%Button.modulate = Color(1, 1, 1)
 			%SaveNumberLabel.text = save_number_label_text % save_number
 			%UnlockedMovesLabel.text = unlocked_moves_label_text % [
-				unlocked_moves_count,
-				unlocked_moves_max
+				unlocked_dishes_count,
+				unlocked_dishes_max
 			]
 		else:
 			%AnimationPlayer.stop()
@@ -31,6 +33,8 @@ var unlocked_moves_label_text := "Unlocked moves: %d/%d"
 
 
 func _ready() -> void:
+	delete_button = %DeleteButton
+	
 	%AnimationPlayer.play(&"idle")
 	
 	focus_entered.connect(_on_button_focus_entered)

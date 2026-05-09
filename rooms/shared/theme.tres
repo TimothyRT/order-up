@@ -1,7 +1,10 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://begf4v2ehqq3k"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://begf4v2ehqq3k"]
 
 [ext_resource type="FontFile" uid="uid://ddw6e5nsl6p1u" path="res://fonts/Basophil.ttf" id="1_dtxbx"]
 [ext_resource type="Texture2D" uid="uid://cr48trulj5gnm" path="res://rooms/shared/menu_button/menu_button_texture_black-n-white.svg" id="2_dtxbx"]
+[ext_resource type="Texture2D" uid="uid://da1sen63l3lwq" path="res://rooms/gameplay/pause/grabber.svg" id="3_n1c4x"]
+[ext_resource type="Texture2D" uid="uid://c0jqnsq2t8psh" path="res://rooms/gameplay/pause/grabber_disabled.svg" id="4_7gwti"]
+[ext_resource type="Texture2D" uid="uid://bxfm8oe7akppx" path="res://rooms/gameplay/pause/grabber_highlight.svg" id="5_yuc8n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me6v4"]
 
@@ -25,6 +28,46 @@ expand_margin_right = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_to63a"]
 
+[sub_resource type="DPITexture" id="DPITexture_vmagn"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4\" height=\"8\"><path fill=\"#fff\" fill-opacity=\".25\" d=\"M1 0h2v16H1z\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuixb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8mg1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg8as"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
 [resource]
 Button/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
 Button/colors/font_focus_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
@@ -37,6 +80,16 @@ Button/styles/focus = SubResource("StyleBoxTexture_qvg1t")
 Button/styles/hover = SubResource("StyleBoxEmpty_phbox")
 Button/styles/normal = SubResource("StyleBoxEmpty_m8ohl")
 Button/styles/pressed = SubResource("StyleBoxEmpty_to63a")
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/constants/tick_offset = 0
+HSlider/icons/grabber = ExtResource("3_n1c4x")
+HSlider/icons/grabber_disabled = ExtResource("4_7gwti")
+HSlider/icons/grabber_highlight = ExtResource("5_yuc8n")
+HSlider/icons/tick = SubResource("DPITexture_vmagn")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_cuixb")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_a8mg1")
+HSlider/styles/slider = SubResource("StyleBoxFlat_lg8as")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_shadow_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
 Label/constants/shadow_offset_x = 4

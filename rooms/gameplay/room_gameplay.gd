@@ -8,11 +8,11 @@ var is_multiplayer := false
 
 var minigame_uids: Array[String] = [
 	"uid://da6uvv3tnoll0",
+	"uid://bmq27boelc242",
 	"uid://rovym6mxyn1u",
 	"uid://bf0xfnp4kdvsc",
 	"uid://cls2d7iky5hmt",
 	"uid://2fuupsbvwtay",
-	"uid://bmq27boelc242",
 ]
 var minigames: Array[Minigame]
 
@@ -49,15 +49,14 @@ func begin_first_minigame() -> void:
 		%FrameRight.set_minigame(minigames[0].duplicate(), minigame_current[2], len(minigames))
 	
 	var text: GameText = LETS_COOK_TEXT.instantiate()
-	add_child(text)
+	%AlertContainer.add_child(text)
 	text.center(%CenterContainer.get_global_rect())
 	await get_tree().create_timer(0.2).timeout
 	text.fly_in()
 
 
 func enter(room_state: Dictionary) -> void:
-	is_multiplayer = room_state.get("multiplayer", false)
-	
+	is_multiplayer = room_state.get("multiplayer", true)
 	%FrameLeft.minigame_finished.connect(_on_minigame_finished)
 	%FrameRight.visible = false
 	if is_multiplayer:
@@ -65,7 +64,6 @@ func enter(room_state: Dictionary) -> void:
 		%FrameRight.minigame_finished.connect(_on_minigame_finished)
 	_setup_timer()
 	begin_first_minigame()
-	
 	super(room_state)
 
 

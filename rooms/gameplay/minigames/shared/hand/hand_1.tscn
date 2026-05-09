@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dx7a7wrwb3xx6" path="res://rooms/gameplay/minigames/shared/hand/hand_1_2.png" id="3_jntrv"]
 [ext_resource type="Texture2D" uid="uid://woi8fce2xn64" path="res://rooms/gameplay/minigames/shared/hand/hand_1_3.png" id="4_y5cc1"]
 
-[node name="Hand1" type="Node2D"]
+[node name="Hand1" type="Node2D" node_paths=PackedStringArray("white_segment")]
 script = ExtResource("1_2fta2")
+white_segment = NodePath("Hand12")
 
 [node name="Hand11" type="Sprite2D" parent="."]
 position = Vector2(0.5, -202)
