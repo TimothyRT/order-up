@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c04d8lahbwomr"]
+
+[ext_resource type="Script" uid="uid://ekomk8bkkenu" path="res://utils/data_access/db_seeder/simple_csv_seeder.gd" id="1_yacil"]
+
+[node name="MinigameSeeder" type="Node"]
+script = ExtResource("1_yacil")
+file_uid = "uid://hxvmehtlq8ih"
+table_name = "minigames"
+metadata/_custom_type_script = "uid://ekomk8bkkenu"

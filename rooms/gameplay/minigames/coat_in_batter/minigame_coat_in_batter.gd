@@ -4,6 +4,10 @@ extends Minigame
 func _ready() -> void:
 	pause_time = 0.0
 	progress_threshold = 6
+	nodes_with_variable_texture.append(%BatterBowl.get_node("Ingredient"))
+	nodes_with_variable_color.append(%WoodenBackground)
+	configure_visual_assets('uid://drjb6qg2plnwm')
+	configure_color('#fcaf17')
 	super()
 
 

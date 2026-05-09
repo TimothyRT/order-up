@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://crrw80bbl7vvs"]
+
+[ext_resource type="Script" uid="uid://ekomk8bkkenu" path="res://utils/data_access/db_seeder/simple_csv_seeder.gd" id="1_k51jj"]
+
+[node name="RecipeSeeder" type="Node"]
+script = ExtResource("1_k51jj")
+file_uid = "uid://dti3hha2fjy62"
+table_name = "recipes"
+metadata/_custom_type_script = "uid://ekomk8bkkenu"

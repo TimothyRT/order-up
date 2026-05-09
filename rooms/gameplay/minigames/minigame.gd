@@ -38,6 +38,9 @@ var progress_threshold := 3:
 		progress_threshold_changed.emit(new_value, threshold_diff)
 		progress_threshold = new_value
 
+var nodes_with_variable_texture: Array[Node2D] = []
+var nodes_with_variable_color: Array[Node2D] = []
+
 var quality: float = 5.0
 
 
@@ -56,6 +59,24 @@ func pause_minigame(time_s=0.0) -> void:
 	if time_s > 0.0:
 		await get_tree().create_timer(time_s).timeout
 		paused = false
+
+
+func setup_visually_variable_nodes() -> void:
+	pass
+
+
+func configure_visual_assets(asset_package_uid: String) -> void:
+	var pkg: AssetPackage = load(asset_package_uid).instantiate()
+	var i := 0
+	for node in nodes_with_variable_texture:
+		node.texture = pkg.get_asset(i)
+		i += 1
+	pkg.queue_free()
+
+
+func configure_color(color_code: String) -> void:
+	for node in nodes_with_variable_color:
+		node.self_modulate = Color(color_code)
 
 
 func _on_peak_detected() -> void:

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbc6mlpd5o87i"]
+
+[ext_resource type="Script" uid="uid://bbw45mqcrq5vf" path="res://utils/data_access/services/recipe_service.gd" id="1_guorp"]
+
+[node name="RecipeService" type="Node"]
+script = ExtResource("1_guorp")
+metadata/_custom_type_script = "uid://bfik550ygi0ce"

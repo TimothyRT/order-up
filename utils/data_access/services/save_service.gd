@@ -6,9 +6,10 @@ func _enter_tree() -> void:
 
 
 func insert_new_save(id: int) -> void:
+	print('fuckyu')
 	insert({
 		&"id": id,
-		&"last_unlocked_stage": 0,
+		&"last_unlocked_dish": 0,
 	})
 
 

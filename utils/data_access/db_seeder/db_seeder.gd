@@ -4,9 +4,10 @@ extends Node2D
 var seeders := {
 	"audio_settings": preload("uid://0wl4xo55ckdv"),
 	"room": preload("uid://djm1vdeut4kcn"),
-	"dish": preload("uid://ctc6ri354idvc")
+	"dish": preload("uid://ctc6ri354idvc"),
+	"recipe": preload("uid://crrw80bbl7vvs"),
+	"minigame": preload("uid://c04d8lahbwomr"),
 }
-
 
 func seed_db() -> void:
 	if not DBConn.db:
@@ -27,25 +28,26 @@ func seed_db() -> void:
 		DBConn.db.create_table(table_name, dict)
 	
 	for seeder in seeders.values():
-		var seeder_instance: Seeder = seeder.instantiate()
+		var seeder_instance: SimpleCSVSeeder = seeder.instantiate()
+		print("[DB] Seeding table %s" % str(seeder_instance))
 		seeder_instance.seed()
 		seeder_instance.queue_free()
 	
 	#var saves_dict : Dictionary = Dictionary()
 	#saves_dict["id"] = {"data_type": "int", "primary_key": true, "not_null": true}
-	#saves_dict["last_unlocked_stage"] = {"data_type":"int", "not_null": true, "default": 67}
+	#saves_dict["last_unlocked_dish"] = {"data_type":"int", "not_null": true, "default": 67}
 	#DBConn.db.create_table("saves", saves_dict)
 	
-	#SaveService.insert({"last_unlocked_stage": 7})
-	#SaveService.insert({"last_unlocked_stage": 8})
-	#SaveService.insert({"last_unlocked_stage": 9})
+	#SaveService.insert({"last_unlocked_dish": 7})
+	#SaveService.insert({"last_unlocked_dish": 8})
+	#SaveService.insert({"last_unlocked_dish": 9})
 	#SaveService.select_all()
 	#SaveService.select_by_id(3)
 	
 	#SaveService.delete_by_id(2)
 	#SaveService.select_all()
 	
-	#SaveService.update({"last_unlocked_stage": 100}, "id = 3")
+	#SaveService.update({"last_unlocked_dish": 100}, "id = 3")
 	#SaveService.select_all()
 	
 	#SaveService.delete_all()

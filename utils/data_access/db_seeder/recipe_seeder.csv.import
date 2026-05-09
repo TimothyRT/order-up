@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dti3hha2fjy62"
+
+[deps]
+
+files=["res://utils/data_access/db_seeder/recipe_seeder.ingredients.translation", "res://utils/data_access/db_seeder/recipe_seeder.color.translation", "res://utils/data_access/db_seeder/recipe_seeder.minigame.translation", "res://utils/data_access/db_seeder/recipe_seeder.time.translation"]
+
+source_file="res://utils/data_access/db_seeder/recipe_seeder.csv"
+dest_files=["res://utils/data_access/db_seeder/recipe_seeder.ingredients.translation", "res://utils/data_access/db_seeder/recipe_seeder.color.translation", "res://utils/data_access/db_seeder/recipe_seeder.minigame.translation", "res://utils/data_access/db_seeder/recipe_seeder.time.translation"]
+
+[params]
+
+compress=true
+delimiter=0

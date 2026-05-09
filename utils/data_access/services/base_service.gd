@@ -44,10 +44,14 @@ func select_one(conditions="", columns=["*"]) -> Variant:
 		return selected_arr[0]  # dict
 
 
-func select_by_id(id: int, conditions="", columns=["*"]) -> Variant:
+func select_by_id(id: Variant, conditions="", columns=["*"]) -> Variant:
 	if not DBConn.db:
 		return null
-	var conditions_merged := "id = %d" % id
+	var conditions_merged: String
+	if id is int:
+		conditions_merged = "id = %d" % id
+	else:
+		conditions_merged = "id = '%s'" % id
 	if len(conditions) > 0:
 		conditions_merged += " AND %s" % conditions
 	var selected_arr = select_all(conditions_merged, columns)
@@ -65,7 +69,11 @@ func delete_all(conditions="") -> void:
 func delete_by_id(id: int, conditions="") -> void:
 	if not DBConn.db:
 		return
-	var conditions_merged := "id = %d" % id
+	var conditions_merged: String
+	if id is int:
+		conditions_merged = "id = %d" % id
+	else:
+		conditions_merged = "id = '%s'" % id
 	if len(conditions) > 0:
 		conditions_merged += " AND %s" % conditions
 	delete_all(conditions_merged)

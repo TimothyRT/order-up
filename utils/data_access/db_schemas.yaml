@@ -1,14 +1,18 @@
-dishes:
+audio_settings:
   id:
-    "data_type": "int"
+    "data_type": "text"
     "primary_key": true
     "not_null": true
   label:
     "data_type": "text"
     "not_null": true
-  dish_icon:
+  bus:
     "data_type": "text"
     "not_null": true
+  decibels:
+    "data_type": "float"
+    "not_null": true
+    "default": 0.0
 
 rooms:
   id:
@@ -25,17 +29,7 @@ rooms:
     "data_type": "text"
     "not_null": true
 
-saves:
-  id:
-    "data_type": "int"
-    "primary_key": true
-    "not_null": true
-  last_unlocked_stage:
-    "data_type": "int"
-    "not_null": true
-    "default": 0
-
-audio_settings:
+dishes:
   id:
     "data_type": "text"
     "primary_key": true
@@ -43,10 +37,69 @@ audio_settings:
   label:
     "data_type": "text"
     "not_null": true
-  bus:
+  dish_icon:
     "data_type": "text"
     "not_null": true
-  decibels:
-    "data_type": "float"
+  ordering_index:
+    "data_type": "int"
     "not_null": true
-    "default": 0
+
+minigames:
+  id:
+    "data_type": "text"
+    "primary_key": true
+    "not_null": true
+  description:
+    "data_type": "text"
+    "not_null": true
+  scene:
+    "data_type": "text"
+    "not_null": true
+
+recipes:
+  id:
+    "data_type": "int"
+    "primary_key": true
+    "not_null": true
+  dish_id:
+    "data_type": "text"
+    "foreign_key": "dishes.id"
+    "not_null": true
+  ingredients:
+    "data_type": "text"
+  color:
+    "data_type": "text"
+  minigame_id:
+    "data_type": "text"
+    "foreign_key": "minigames.id"
+    "not_null": true
+  time_limit:
+    "data_type": "int"
+
+saves:
+  id:
+    "data_type": "int"
+    "primary_key": true
+  last_unlocked_dish:
+    "data_type": "int"
+    "foreign_key": "dishes.id"
+
+dish_completions:
+  id:
+    "data_type": "int"
+    "primary_key": true
+    "not_null": true
+  save_id:
+    "data_type": "int"
+    "foreign_key": "saves.id"
+    "not_null": true
+  dish_id:
+    "data_type": "text"
+    "foreign_key": "dishes.id"
+    "not_null": true
+  high_score:
+    "data_type": "int"
+    "not_null": true
+  updated_at:
+    "data_type": "text"
+    "not_null": true

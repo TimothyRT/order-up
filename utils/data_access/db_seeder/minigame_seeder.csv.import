@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://hxvmehtlq8ih"
+
+[deps]
+
+files=["res://utils/data_access/db_seeder/minigame_seeder.description.translation", "res://utils/data_access/db_seeder/minigame_seeder.scene.translation"]
+
+source_file="res://utils/data_access/db_seeder/minigame_seeder.csv"
+dest_files=["res://utils/data_access/db_seeder/minigame_seeder.description.translation", "res://utils/data_access/db_seeder/minigame_seeder.scene.translation"]
+
+[params]
+
+compress=true
+delimiter=0

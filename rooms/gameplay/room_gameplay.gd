@@ -7,6 +7,7 @@ const LETS_COOK_TEXT := preload("uid://d1eq3hbiwpduh")
 var is_multiplayer := false
 
 var minigame_uids: Array[String] = [
+	"uid://g4p7wd7hqvkc",
 	"uid://da6uvv3tnoll0",
 	"uid://bmq27boelc242",
 	"uid://rovym6mxyn1u",

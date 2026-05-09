@@ -5,15 +5,21 @@ extends Node
 @export var table_name: String
 
 
-func get_service(table_name: String) -> BaseService:
+func get_service() -> BaseService:
 	match table_name:
-		"dishes":
-			return DishService
-		"rooms":
-			return RoomService
-		"saves":
-			return SaveService
 		"audio_settings":
 			return AudioSettingsService
+		"rooms":
+			return RoomService
+		"dishes":
+			return DishService
+		"minigames":
+			return MinigameService
+		"recipes":
+			return RecipeService
+		"saves":
+			return SaveService
+		"dish_completions":
+			return DishCompletionService
 		_:
 			return null
