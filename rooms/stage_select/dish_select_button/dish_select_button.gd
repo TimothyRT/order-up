@@ -4,12 +4,15 @@ class_name DishSelectButton
 
 
 signal focused_while_outside_view(button: Control)
+signal dish_selected(dish_id: String)
 
 @export var label := ""
 @export var dish_icon: Texture
 
+var dish_id: String
 
-func is_partially_outside_view() -> bool:	
+
+func is_partially_outside_view() -> bool:
 	var viewport_rect = get_viewport_rect()
 	var sprite_rect = get_global_rect()
 	# Check if any edge of the sprite is outside the viewport edges
@@ -34,7 +37,7 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
-	owner.room_switch_requested.emit(&"Gameplay")
+	dish_selected.emit(dish_id)
 
 
 func _on_focus_entered() -> void:

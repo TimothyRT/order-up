@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyccmthltpd6q"]
+
+[ext_resource type="Script" uid="uid://dewgur2wdtesl" path="res://rooms/gameplay/minigames/shared/hand/hand.gd" id="1_tvfsj"]
+[ext_resource type="Texture2D" uid="uid://dqkmoy765f678" path="res://rooms/gameplay/minigames/shared/hand/hand_2_1.svg" id="2_aesrg"]
+[ext_resource type="Texture2D" uid="uid://bq2w4cwmsq8ef" path="res://rooms/gameplay/minigames/shared/hand/hand_2_2.svg" id="3_yhgql"]
+[ext_resource type="Texture2D" uid="uid://ck8asfy61wn3e" path="res://rooms/gameplay/minigames/shared/hand/hand_2_3.svg" id="4_0jq7a"]
+
+[node name="Sprite" type="Node2D" node_paths=PackedStringArray("white_segment")]
+script = ExtResource("1_tvfsj")
+white_segment = NodePath("Hand22")
+
+[node name="Hand21" type="Sprite2D" parent="."]
+position = Vector2(19, 20)
+texture = ExtResource("2_aesrg")
+
+[node name="Hand22" type="Sprite2D" parent="."]
+modulate = Color(0.9254902, 0.37254903, 0.26666668, 1)
+position = Vector2(42, 40)
+texture = ExtResource("3_yhgql")
+
+[node name="Hand23" type="Sprite2D" parent="."]
+position = Vector2(62, 56)
+texture = ExtResource("4_0jq7a")

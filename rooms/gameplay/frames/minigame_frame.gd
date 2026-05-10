@@ -28,4 +28,7 @@ func _on_minigame_started() -> void:
 
 
 func _on_minigame_finished() -> void:
+	%FinishAudio.play()
+	%AnimationPlayer.play(&"finish")
+	await get_tree().create_timer(1.0).timeout
 	minigame_finished.emit(player)

@@ -1,0 +1,158 @@
+[gd_scene load_steps=10 format=3 uid="uid://drdn8sh8vx2aa"]
+
+[ext_resource type="Script" uid="uid://b78im22gjykbg" path="res://rooms/gameplay/minigames/pour/hand/bowl_in_hand.gd" id="1_qveip"]
+[ext_resource type="Texture2D" uid="uid://ccelbkr0d33sr" path="res://rooms/gameplay/minigames/pour/hand/bowl_in_hand_back.png" id="1_r7le0"]
+[ext_resource type="Texture2D" uid="uid://dj7dkqq674n8" path="res://rooms/gameplay/minigames/pour/hand/flour_in_hand_fill.png" id="2_c7msq"]
+[ext_resource type="Texture2D" uid="uid://de7t6xskgc3cs" path="res://rooms/gameplay/minigames/pour/hand/flour_in_hand_outline.png" id="3_g42cy"]
+[ext_resource type="Texture2D" uid="uid://e0pnehe1qynk" path="res://rooms/gameplay/minigames/pour/hand/bowl_in_hand_front.png" id="4_qveip"]
+[ext_resource type="PackedScene" uid="uid://l0cw1crto6et" path="res://rooms/gameplay/minigames/shared/hand/hand_3.tscn" id="5_g42cy"]
+
+[sub_resource type="Animation" id="Animation_6fgmj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerHand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(118, -15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerHand/MarkerBowl:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarkerHand/MarkerBowl/BowlInHandBack/MarkerFlour:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qveip"]
+resource_name = "pour"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerHand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.2617993877991494]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [Vector2(118, -15), Vector2(20, 21)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerHand/MarkerBowl:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.3839724354387525]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarkerHand/MarkerBowl/BowlInHandBack/MarkerFlour:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.96, 1.04), Vector2(1.04, 0.96), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fgmj"]
+_data = {
+&"RESET": SubResource("Animation_6fgmj"),
+&"pour": SubResource("Animation_qveip")
+}
+
+[node name="BowlInHand" type="Node2D" node_paths=PackedStringArray("ingredient", "ingredient_outline")]
+script = ExtResource("1_qveip")
+ingredient = NodePath("MarkerHand/MarkerBowl/BowlInHandBack/MarkerFlour/FlourInHandFill")
+ingredient_outline = NodePath("MarkerHand/MarkerBowl/BowlInHandBack/MarkerFlour/FlourInHandOutline")
+
+[node name="MarkerHand" type="Marker2D" parent="."]
+position = Vector2(118, -15)
+
+[node name="MarkerBowl" type="Marker2D" parent="MarkerHand"]
+position = Vector2(-196, -21)
+
+[node name="BowlInHandBack" type="Sprite2D" parent="MarkerHand/MarkerBowl"]
+clip_children = 2
+position = Vector2(-154.5, -97)
+texture = ExtResource("1_r7le0")
+
+[node name="MarkerFlour" type="Marker2D" parent="MarkerHand/MarkerBowl/BowlInHandBack"]
+
+[node name="FlourInHandFill" type="Sprite2D" parent="MarkerHand/MarkerBowl/BowlInHandBack/MarkerFlour"]
+position = Vector2(41.5, 36.999977)
+texture = ExtResource("2_c7msq")
+
+[node name="FlourInHandOutline" type="Sprite2D" parent="MarkerHand/MarkerBowl/BowlInHandBack/MarkerFlour"]
+position = Vector2(52.5, 59.999985)
+texture = ExtResource("3_g42cy")
+
+[node name="BowlInHandFront" type="Sprite2D" parent="MarkerHand/MarkerBowl"]
+position = Vector2(-112.5, -84)
+texture = ExtResource("4_qveip")
+
+[node name="Hand3" parent="MarkerHand" instance=ExtResource("5_g42cy")]
+unique_name_in_owner = true
+position = Vector2(-86, -18)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_6fgmj")
+}
+speed_scale = 3.0

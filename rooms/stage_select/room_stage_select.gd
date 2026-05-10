@@ -14,12 +14,14 @@ func setup_buttons() -> void:
 	var buttons: Array[DishSelectButton] = []
 	for dish: Dictionary in DishService.select_all():
 		var button: DishSelectButton = dish_select_button.instantiate()
+		button.dish_id = dish.id
 		button.label = dish.label
 		button.dish_icon = load(dish.dish_icon)
 		%DishFlowContainer.add_child(button)
 		button.set_owner(self)
 		buttons.append(button)
 		button.focused_while_outside_view.connect(_on_button_focused_while_outside_view)
+		button.dish_selected.connect(_on_dish_selected)
 	
 	for i in range(len(buttons)):
 		var button := buttons[i]
@@ -53,6 +55,12 @@ func scroll_to_node(node: Control) -> void:
 
 func _on_button_focused_while_outside_view(button: Control) -> void:
 	scroll_to_node(button)
+
+
+func _on_dish_selected(dish_id: String) -> void:
+	var recipe_arr: Array = DishService.select_dish_recipe(dish_id)
+	state["recipe"] = recipe_arr
+	room_switch_requested.emit(&"Gameplay")
 
 
 func _ready() -> void:

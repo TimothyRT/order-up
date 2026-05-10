@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://be7vl2eg4i6av" path="res://rooms/gameplay/pause/pause_menu_base.png" id="1_witrs"]
 [ext_resource type="Theme" uid="uid://bgq684mfybslc" path="res://rooms/gameplay/minigames/minigame_theme.tres" id="2_wvj8r"]
 [ext_resource type="Texture2D" uid="uid://durgkvneux8jo" path="res://rooms/gameplay/pause/line.svg" id="3_hmfn0"]
-[ext_resource type="PackedScene" uid="uid://c1a560turfu5a" path="res://rooms/gameplay/pause/volume_slider.tscn" id="3_iegrq"]
+[ext_resource type="PackedScene" uid="uid://cm0jtndiubcwx" path="res://rooms/shared/volume_settings/volume_settings.tscn" id="3_iegrq"]
 [ext_resource type="Texture2D" uid="uid://cfndoa3kax7kq" path="res://rooms/gameplay/pause/continue_button.svg" id="4_hmfn0"]
 [ext_resource type="Script" uid="uid://c3irovb3lu8xi" path="res://rooms/gameplay/pause/ip_address_label.gd" id="5_7ifry"]
 [ext_resource type="Script" uid="uid://cd0abcaxpdend" path="res://rooms/gameplay/pause/continue_button.gd" id="6_7ifry"]
@@ -59,42 +59,12 @@ script = ExtResource("1_7ifry")
 position = Vector2(400, 349)
 texture = ExtResource("1_witrs")
 
-[node name="VolumeSettings" type="Control" parent="."]
-custom_minimum_size = Vector2(420, 0)
-anchors_preset = 0
-offset_left = 197.0
-offset_top = 368.0
-offset_right = 617.0
-offset_bottom = 368.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VolumeSettings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SFXLabel" type="Label" parent="VolumeSettings/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_wvj8r")
-theme_override_font_sizes/font_size = 40
-text = "Sound effect:"
-
-[node name="SFXSlider" parent="VolumeSettings/VBoxContainer" instance=ExtResource("3_iegrq")]
-layout_mode = 2
-
-[node name="BGMLabel" type="Label" parent="VolumeSettings/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("2_wvj8r")
-theme_override_font_sizes/font_size = 40
-text = "Music:"
-
-[node name="BGMSlider" parent="VolumeSettings/VBoxContainer" instance=ExtResource("3_iegrq")]
-layout_mode = 2
-audio_bus_name = "Background"
+[node name="VolumeSettings" parent="." instance=ExtResource("3_iegrq")]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 310.0
+offset_right = 611.0
+offset_bottom = 510.0
 
 [node name="Table" type="Control" parent="."]
 visible = false

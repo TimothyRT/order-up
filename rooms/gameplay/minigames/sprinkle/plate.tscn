@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7jwbd1bihuuh"]
+
+[ext_resource type="Texture2D" uid="uid://i0rp5wccrnme" path="res://rooms/gameplay/minigames/sprinkle/plate_shadow.svg" id="1_2ydk6"]
+[ext_resource type="Script" uid="uid://dn6m2wyeowe48" path="res://rooms/gameplay/minigames/sprinkle/plate.gd" id="1_s33y1"]
+[ext_resource type="Texture2D" uid="uid://cykfg35yvbsla" path="res://rooms/gameplay/minigames/sprinkle/plate.svg" id="2_ufla6"]
+[ext_resource type="Texture2D" uid="uid://dsjhk0ws8tg6f" path="res://rooms/gameplay/minigames/sprinkle/egg.svg" id="3_ufla6"]
+
+[node name="Plate" type="Node2D"]
+script = ExtResource("1_s33y1")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(2, 45)
+
+[node name="PlateShadow" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-92.5, -106.5)
+texture = ExtResource("1_2ydk6")
+
+[node name="PlateSprite" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-12.5, -158.5)
+texture = ExtResource("2_ufla6")
+
+[node name="Egg" type="Sprite2D" parent="Marker2D"]
+unique_name_in_owner = true
+position = Vector2(-13, -178)
+texture = ExtResource("3_ufla6")
+
+[node name="Marker2D" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(-120, -8)
+
+[node name="Marker2D2" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(-50, -46)
+
+[node name="Marker2D3" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(61, 2)
+
+[node name="Marker2D4" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(90, -90)
+
+[node name="Marker2D5" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(143, -19)
+
+[node name="Marker2D6" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(129, 69)
+
+[node name="Marker2D7" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(-21, 24)
+
+[node name="Marker2D8" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(-141, 65)
+
+[node name="Marker2D9" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(-183, -9)
+
+[node name="Marker2D10" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(-77, 48)
+
+[node name="Marker2D11" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(10, 77)
+
+[node name="Marker2D12" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(78, 48)
+
+[node name="Marker2D13" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(22, -51)
+
+[node name="Marker2D14" type="Marker2D" parent="Marker2D/Egg"]
+position = Vector2(2, -102)

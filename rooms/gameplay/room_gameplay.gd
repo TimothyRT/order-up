@@ -6,15 +6,7 @@ const LETS_COOK_TEXT := preload("uid://d1eq3hbiwpduh")
 
 var is_multiplayer := false
 
-var minigame_uids: Array[String] = [
-	"uid://g4p7wd7hqvkc",
-	"uid://da6uvv3tnoll0",
-	"uid://bmq27boelc242",
-	"uid://rovym6mxyn1u",
-	"uid://bf0xfnp4kdvsc",
-	"uid://cls2d7iky5hmt",
-	"uid://2fuupsbvwtay",
-]
+var recipe_steps: Array
 var minigames: Array[Minigame]
 
 var minigame_current := {
@@ -35,10 +27,18 @@ var time_limit: int = 120
 var timer: CountdownTimer
 
 
-func load_minigames() -> void:
+func load_minigames(recipe_arr: Array) -> void:
+	recipe_steps = recipe_arr
+	if recipe_steps.is_empty():
+		return
 	minigames.clear()
-	for uid in minigame_uids:
-		var minigame: Minigame = load(uid).instantiate()
+	for recipe_step in recipe_steps:
+		var minigame: Minigame = load(recipe_step.minigame_uid).instantiate()
+		minigame.description = recipe_step.minigame_description
+		minigame.asset_package_uid = recipe_step.asset_package_uid
+		minigame.color_code = recipe_step.color
+		minigame.time_limit = recipe_step.time_limit
+		minigame.configure_visuals()
 		minigames.append(minigame)
 
 
@@ -63,9 +63,16 @@ func enter(room_state: Dictionary) -> void:
 	if is_multiplayer:
 		%FrameRight.visible = true
 		%FrameRight.minigame_finished.connect(_on_minigame_finished)
-	_setup_timer()
+	load_minigames(room_state.get("recipe", []))
 	begin_first_minigame()
 	super(room_state)
+
+
+func get_frame(player: int) -> MinigameFrame:
+	if player == 1:
+		return %FrameLeft
+	else:
+		return %FrameRight
 
 
 func _setup_timer() -> void:
@@ -76,25 +83,17 @@ func _setup_timer() -> void:
 		timer.position = Vector2(400.0, -300.0)
 
 
-func _ready() -> void:
-	load_minigames()
-
-
 func _on_minigame_finished(player: int) -> void:
 	minigames_progress[player].append(true)
-	minigame_current[player] += 1
+	minigame_current[player] = (minigame_current[player] + 1) % len(minigames)
 	
 	if len(minigames_progress[player]) == len(minigames):
 		dishes_progress[player].append(true)
 		minigames_progress[player].clear()
 		minigame_current[player] = 0
-		load_minigames()
+		load_minigames(state.get("recipe", []))
 	
-	if player == 1:
-		%FrameLeft.set_minigame(minigames[minigame_current[player]].duplicate(), minigame_current[player], len(minigames))
-	else:
-		%FrameRight.set_minigame(minigames[minigame_current[player]].duplicate(), minigame_current[player], len(minigames))
-
+	get_frame(player).set_minigame(minigames[minigame_current[player]].duplicate(), minigame_current[player], len(minigames))
 
 #func _input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

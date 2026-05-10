@@ -3,5 +3,6 @@ dish_id,ingredients,color,minigame_id,time_limit
 "kerak","","","grind",20
 "kerak","","","stir",20
 "kerak","","","sprinkle",20
+"klepon","","","pour",20
 "pisgor","","","slice",20
-"pisgor","","","coat",20
+"pisgor","uid://drjb6qg2plnwm",,"coat",20

@@ -9,3 +9,4 @@ id,description,scene
 "pick","LIFT the required ingredient at the right time","uid://bmq27boelc242"
 "sprinkle","POUR the jar, then SHAKE it","uid://2fuupsbvwtay"
 "stir","STIR to mix the ingredients well","uid://cls2d7iky5hmt"
+"pour","POUR the ingredient into the bowl","uid://3pm8shrauurr"

@@ -1,0 +1,205 @@
+[gd_scene load_steps=11 format=3 uid="uid://u7j3lai3guxw"]
+
+[ext_resource type="Script" uid="uid://bfx6xi1t8b7a7" path="res://rooms/gameplay/minigames/stir/wok.gd" id="1_i0n6h"]
+[ext_resource type="Texture2D" uid="uid://i3fhtrjdngwu" path="res://rooms/gameplay/minigames/stir/wok_back.svg" id="2_hhhf4"]
+[ext_resource type="Texture2D" uid="uid://cewy0hbcvtx1h" path="res://rooms/gameplay/minigames/stir/rice_base.png" id="3_mfdlb"]
+[ext_resource type="Texture2D" uid="uid://crvugat8uq2kf" path="res://rooms/gameplay/minigames/stir/eggs.svg" id="4_hhhf4"]
+[ext_resource type="Texture2D" uid="uid://nul608arf2s7" path="res://rooms/gameplay/minigames/stir/big_wooden_spoon.svg" id="4_pjtp4"]
+[ext_resource type="Texture2D" uid="uid://cpi5sxyh3waq" path="res://rooms/gameplay/minigames/stir/rice_overlay.svg" id="5_c7nh6"]
+[ext_resource type="Texture2D" uid="uid://djh4vhfb28slb" path="res://rooms/gameplay/minigames/stir/wok_front.svg" id="7_hhhf4"]
+
+[sub_resource type="Animation" id="Animation_hhhf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ingredient:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Ingredient:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-49, -150)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WokBack:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../WokFront:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_i0n6h"]
+resource_name = "stir"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Ingredient:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.35, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.05235987755982989, 0.03490658503988659, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Ingredient:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
+"update": 0,
+"values": [0.0, 0.05235987755982989, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.14999999, 0.25, 0.29999998, 0.35, 0.4, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-49, -150), Vector2(-163, -78), Vector2(-66, -22.000008), Vector2(136, -18), Vector2(270, -104), Vector2(191.99998, -190), Vector2(115, -220.00002), Vector2(-49, -150)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [0.0, 0.19198621771937624, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WokBack:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2, -2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.06981317007977318, -0.03490658503988659, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../WokFront:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2, -2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.06981317007977318, -0.03490658503988659, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfdlb"]
+_data = {
+&"RESET": SubResource("Animation_hhhf4"),
+&"stir": SubResource("Animation_i0n6h")
+}
+
+[node name="Wok" type="Node2D"]
+script = ExtResource("1_i0n6h")
+
+[node name="WokBack" type="Sprite2D" parent="."]
+position = Vector2(12, -183)
+texture = ExtResource("2_hhhf4")
+
+[node name="Ingredient" type="Sprite2D" parent="."]
+position = Vector2(3, -104)
+texture = ExtResource("3_mfdlb")
+
+[node name="Eggs" type="Sprite2D" parent="Ingredient"]
+position = Vector2(114, -30)
+texture = ExtResource("4_hhhf4")
+
+[node name="Spoon" type="Node2D" parent="."]
+position = Vector2(-49, -150)
+
+[node name="BigWoodenSpoon" type="Sprite2D" parent="Spoon"]
+position = Vector2(-166, -154)
+texture = ExtResource("4_pjtp4")
+
+[node name="RiceOverlay" type="Sprite2D" parent="Spoon"]
+position = Vector2(-59, -13)
+texture = ExtResource("5_c7nh6")
+
+[node name="WokFront" type="Sprite2D" parent="."]
+position = Vector2(9, -14)
+texture = ExtResource("7_hhhf4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Spoon")
+libraries = {
+&"": SubResource("AnimationLibrary_mfdlb")
+}
+speed_scale = 1.6

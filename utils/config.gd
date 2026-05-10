@@ -7,6 +7,8 @@ const WINDOW_WIDTH := 30
 const RED := Color("ec5f44ff")
 const BLUE := Color(0.132, 0.618, 0.88, 1.0)
 
+const KEYBOARD_INPUT := true
+
 var csv_col_names := PackedStringArray([
 	"gyro_x",
 	"gyro_y",

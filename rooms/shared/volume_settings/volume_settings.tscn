@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm0jtndiubcwx"]
+
+[ext_resource type="Theme" uid="uid://bgq684mfybslc" path="res://rooms/gameplay/minigames/minigame_theme.tres" id="1_mjvey"]
+[ext_resource type="PackedScene" uid="uid://c1a560turfu5a" path="res://rooms/gameplay/pause/volume_slider.tscn" id="2_lbfqm"]
+
+[node name="VolumeSettings" type="Control"]
+custom_minimum_size = Vector2(420, 180)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 420.0
+offset_bottom = 200.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SFXLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_mjvey")
+theme_override_font_sizes/font_size = 40
+text = "Sound effect:"
+
+[node name="SFXSlider" parent="VBoxContainer" instance=ExtResource("2_lbfqm")]
+layout_mode = 2
+
+[node name="BGMLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_mjvey")
+theme_override_font_sizes/font_size = 40
+text = "Music:"
+
+[node name="BGMSlider" parent="VBoxContainer" instance=ExtResource("2_lbfqm")]
+layout_mode = 2
+audio_bus_name = "Background"

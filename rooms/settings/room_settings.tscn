@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://186dyh4npvmq"]
+[gd_scene load_steps=4 format=3 uid="uid://186dyh4npvmq"]
 
 [ext_resource type="Script" uid="uid://b6rca3d57k06e" path="res://rooms/settings/room_settings.gd" id="1_ww7y8"]
+[ext_resource type="Texture2D" uid="uid://k3gwrhab55yh" path="res://rooms/shared/modal_box/modal_box_base_large.png" id="2_n3n2n"]
+[ext_resource type="PackedScene" uid="uid://cm0jtndiubcwx" path="res://rooms/shared/volume_settings/volume_settings.tscn" id="3_mffcr"]
 
 [node name="RoomSettings" type="Node"]
 script = ExtResource("1_ww7y8")
@@ -13,6 +15,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+[node name="Container" type="Control" parent="CenterContainer"]
+custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
-alignment = 1
+
+[node name="ModalBoxBaseLarge" type="Sprite2D" parent="CenterContainer/Container"]
+position = Vector2(502, 667)
+texture = ExtResource("2_n3n2n")
+
+[node name="VolumeSettings" parent="CenterContainer/Container" instance=ExtResource("3_mffcr")]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 488.0
+offset_right = 668.0
+offset_bottom = 688.0

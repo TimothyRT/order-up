@@ -1,0 +1,172 @@
+[gd_scene load_steps=10 format=3 uid="uid://tv2wan3khlja"]
+
+[ext_resource type="Script" uid="uid://b6h1kx8m1y046" path="res://rooms/gameplay/minigames/coat/batter_bowl.gd" id="1_q3y1k"]
+[ext_resource type="Texture2D" uid="uid://bajick6n6pgg1" path="res://rooms/gameplay/minigames/coat/bowl_back.png" id="2_1ux2c"]
+[ext_resource type="Texture2D" uid="uid://i7osy6xpebp1" path="res://rooms/gameplay/minigames/coat/batter_back.png" id="3_qf7yk"]
+[ext_resource type="Texture2D" uid="uid://cmhglvg1jfwy6" path="res://rooms/gameplay/minigames/coat/batter_front.png" id="4_j152a"]
+[ext_resource type="Texture2D" uid="uid://iljumyat18sg" path="res://rooms/gameplay/minigames/slice/left_banana.png" id="4_qf7yk"]
+[ext_resource type="Texture2D" uid="uid://dakm6vm11r5j8" path="res://rooms/gameplay/minigames/coat/bowl_front.png" id="5_jwhcv"]
+
+[sub_resource type="Animation" id="Animation_j152a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ingredient:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10.000001, -261)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ingredient:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BatterBack:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BatterFront:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ingredient:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qf7yk"]
+resource_name = "dip"
+length = 1.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ingredient:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-10, -250), Vector2(-13.000001, -131), Vector2(-13.000001, -183), Vector2(-8.000002, -51.000015), Vector2(-10, -250)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ingredient:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.29670597283903605, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BatterBack:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.7),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.08, 0.92), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BatterFront:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.7, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.04, 0.96), Vector2(1, 1), Vector2(1.04, 0.96), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ingredient:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jwhcv"]
+_data = {
+&"RESET": SubResource("Animation_j152a"),
+&"dip": SubResource("Animation_qf7yk")
+}
+
+[node name="BatterBowl" type="Node2D"]
+script = ExtResource("1_q3y1k")
+
+[node name="BowlBack" type="Sprite2D" parent="."]
+position = Vector2(-10, -85)
+texture = ExtResource("2_1ux2c")
+
+[node name="BatterBack" type="Sprite2D" parent="."]
+position = Vector2(-9, -89.99999)
+texture = ExtResource("3_qf7yk")
+
+[node name="Ingredient" type="Sprite2D" parent="."]
+position = Vector2(-10.000001, -261)
+scale = Vector2(0.59836066, 0.5983606)
+texture = ExtResource("4_qf7yk")
+
+[node name="BatterFront" type="Sprite2D" parent="."]
+position = Vector2(-22, -61)
+texture = ExtResource("4_j152a")
+
+[node name="BowlFront" type="Sprite2D" parent="."]
+position = Vector2(-6, -50)
+texture = ExtResource("5_jwhcv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_jwhcv")
+}
