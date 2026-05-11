@@ -29,4 +29,3 @@ var csv_col_names_for_recognition := PackedStringArray([
 	"acc_y",
 	"acc_z",
 ])
-
