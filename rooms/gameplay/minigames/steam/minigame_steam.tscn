@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dktv2w5c5da51"]
+
+[ext_resource type="Script" uid="uid://0kvia2b821v1" path="res://rooms/gameplay/minigames/steam/minigame_steam.gd" id="1_0rdic"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_ot2x2"]
+[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_background.svg" id="3_mgwj2"]
+[ext_resource type="PackedScene" uid="uid://blp0riomwp5co" path="res://rooms/gameplay/minigames/steam/steamer.tscn" id="4_csm8o"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="10_c7t1t"]
+
+[node name="MinigameSteam" type="Node2D"]
+script = ExtResource("1_0rdic")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_ot2x2")
+
+[node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
+modulate = Color(0.36863938, 0.45978802, 0.6007629, 1)
+texture = ExtResource("3_mgwj2")
+
+[node name="Steamer" parent="FrameThickF" instance=ExtResource("4_csm8o")]
+unique_name_in_owner = true
+position = Vector2(-15, 213)
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("10_c7t1t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="SteamingAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true

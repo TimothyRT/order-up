@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxbred4vxpwg1"
-path="res://.godot/imported/arrow-f.png-03a7bf45721d78676a510e53b0c99f36.ctex"
+uid="uid://7giyxqg74cya"
+path="res://.godot/imported/bowl_back_outline.png-eada624dc9ac838c5f287f8064e7aa77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/minigames/knead/arrow-f.png"
-dest_files=["res://.godot/imported/arrow-f.png-03a7bf45721d78676a510e53b0c99f36.ctex"]
+source_file="res://rooms/gameplay/minigames/knead/bowl_back_outline.png"
+dest_files=["res://.godot/imported/bowl_back_outline.png-eada624dc9ac838c5f287f8064e7aa77.ctex"]
 
 [params]
 

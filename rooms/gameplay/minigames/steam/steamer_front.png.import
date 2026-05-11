@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crys16t8kqcf5"
-path="res://.godot/imported/bowl-f.png-089d7f37644a0cf1b429fd38f5758f99.ctex"
+uid="uid://chcdmjtrnakk5"
+path="res://.godot/imported/steamer_front.png-ea3fe0e2930fc2b43ebf013235039469.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/minigames/knead/bowl-f.png"
-dest_files=["res://.godot/imported/bowl-f.png-089d7f37644a0cf1b429fd38f5758f99.ctex"]
+source_file="res://rooms/gameplay/minigames/steam/steamer_front.png"
+dest_files=["res://.godot/imported/steamer_front.png-ea3fe0e2930fc2b43ebf013235039469.ctex"]
 
 [params]
 

@@ -27,7 +27,7 @@ var time_limit: int = 120
 var timer: CountdownTimer
 
 
-func load_minigames(recipe_arr: Array) -> void:
+func load_minigames(recipe_arr: Array) -> void:	
 	recipe_steps = recipe_arr
 	if recipe_steps.is_empty():
 		return
@@ -59,7 +59,7 @@ func begin_first_minigame() -> void:
 func enter(room_state: Dictionary) -> void:
 	%PauseMenu.quit_pressed.connect(_on_quit_pressed)
 	
-	is_multiplayer = room_state.get("multiplayer", true)
+	is_multiplayer = room_state.get("multiplayer", false)
 	%FrameLeft.minigame_finished.connect(_on_minigame_finished)
 	%FrameRight.visible = false
 	if is_multiplayer:

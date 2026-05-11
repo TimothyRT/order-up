@@ -1,0 +1,154 @@
+[gd_scene load_steps=13 format=3 uid="uid://barhpq23g3rh4"]
+
+[ext_resource type="Texture2D" uid="uid://cgyr0k3nrt182" path="res://rooms/gameplay/minigames/knead/bowl_back_fill.png" id="1_aag3f"]
+[ext_resource type="Script" uid="uid://cx10e3a18jxsl" path="res://rooms/gameplay/minigames/knead/batter_bowl.gd" id="1_xm6e1"]
+[ext_resource type="Texture2D" uid="uid://b5vtji2pri3d3" path="res://rooms/gameplay/minigames/knead/shadow.png" id="2_6seq2"]
+[ext_resource type="Texture2D" uid="uid://b6c6vannth5rt" path="res://rooms/gameplay/minigames/knead/batter_dried.png" id="2_r8nyr"]
+[ext_resource type="Texture2D" uid="uid://7giyxqg74cya" path="res://rooms/gameplay/minigames/knead/bowl_back_outline.png" id="3_0u5vg"]
+[ext_resource type="Texture2D" uid="uid://4227358ehi0i" path="res://rooms/gameplay/minigames/knead/batter_fill.png" id="4_q3fa4"]
+[ext_resource type="Texture2D" uid="uid://g8ulqcvw684f" path="res://rooms/gameplay/minigames/knead/bowl_front.png" id="4_r8nyr"]
+[ext_resource type="PackedScene" uid="uid://bvye2iij0qwvu" path="res://rooms/gameplay/minigames/shared/hand/hand_6.tscn" id="5_0u5vg"]
+[ext_resource type="Texture2D" uid="uid://buxja2ur7o2g4" path="res://rooms/gameplay/minigames/knead/batter_outline.png" id="5_xm6e1"]
+
+[sub_resource type="Animation" id="Animation_xm6e1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBowl/MarkerBatter:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBowl/MarkerBatter:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerHandPivot:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6seq2"]
+resource_name = "knead"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBowl/MarkerBatter:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.2001, 0.3),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.05235987755982989, 0.05235987755982989, 0.12217304763960307, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBowl/MarkerBatter:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.15, 0.25),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.08, 0.92), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerHandPivot:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.05, 0.15, 0.25),
+"transitions": PackedFloat32Array(-2.5, -2.6794338, -2.5),
+"update": 0,
+"values": [0.0, 0.20943951023931956, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fb5y8"]
+_data = {
+&"RESET": SubResource("Animation_xm6e1"),
+&"knead": SubResource("Animation_6seq2")
+}
+
+[node name="BatterBowl" type="Node2D" node_paths=PackedStringArray("batter", "hand_pivot")]
+script = ExtResource("1_xm6e1")
+batter = NodePath("MarkerBowl/MarkerBatter/BatterFill")
+hand_pivot = NodePath("MarkerHandPivot")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(-65, -332)
+texture = ExtResource("2_6seq2")
+
+[node name="MarkerBowl" type="Marker2D" parent="."]
+position = Vector2(0, 26)
+
+[node name="BowlBackFill" type="Sprite2D" parent="MarkerBowl"]
+position = Vector2(-4, -340)
+texture = ExtResource("1_aag3f")
+
+[node name="BatterDried" type="Sprite2D" parent="MarkerBowl/BowlBackFill"]
+modulate = Color(1, 1, 1, 0.5372549)
+position = Vector2(25, -25)
+texture = ExtResource("2_r8nyr")
+
+[node name="BowlBackOutline" type="Sprite2D" parent="MarkerBowl/BowlBackFill"]
+position = Vector2(-2, 1)
+texture = ExtResource("3_0u5vg")
+
+[node name="MarkerBatter" type="Marker2D" parent="MarkerBowl"]
+position = Vector2(-2, -258)
+
+[node name="BatterFill" type="Sprite2D" parent="MarkerBowl/MarkerBatter"]
+position = Vector2(-6, -114.5)
+texture = ExtResource("4_q3fa4")
+
+[node name="BatterOutline" type="Sprite2D" parent="MarkerBowl/MarkerBatter"]
+position = Vector2(-5, -115.5)
+texture = ExtResource("5_xm6e1")
+
+[node name="BowlFront" type="Sprite2D" parent="MarkerBowl"]
+position = Vector2(-7, -354)
+texture = ExtResource("4_r8nyr")
+
+[node name="MarkerHandPivot" type="Marker2D" parent="."]
+position = Vector2(0, -49)
+
+[node name="MarkerHand" type="Marker2D" parent="MarkerHandPivot"]
+position = Vector2(377, 58)
+
+[node name="Hand6" parent="MarkerHandPivot/MarkerHand" instance=ExtResource("5_0u5vg")]
+unique_name_in_owner = true
+position = Vector2(8, -13)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_fb5y8")
+}

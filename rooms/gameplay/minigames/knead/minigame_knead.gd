@@ -1,8 +1,7 @@
 extends Minigame
 
 
-signal kneading_direction_changed(direction_is_left: bool)
-
+signal direction_changed(direction_is_left: bool)
 
 var direction_is_left := true:
 	get:
@@ -10,20 +9,31 @@ var direction_is_left := true:
 	set(value):
 		if direction_is_left != value:
 			direction_is_left = value
-			kneading_direction_changed.emit(direction_is_left)
+			direction_changed.emit(direction_is_left)
 			progress += 1
+			
+			if progress == progress_threshold:
+				%Arrow.fade_out()
 
 
-func _ready() -> void:
-	progress_threshold = 10
+func configure_visuals() -> void:
+	nodes_with_variable_color.append(%BatterBowl.batter)
 	super()
 
 
-func _on_motion_detected(motion: int) -> void:
+func _ready() -> void:
+	pause_time = 0.0
+	progress_threshold = 12
+	
+	direction_changed.connect(%Arrow.flip_sprite)
+	direction_changed.connect(%BatterBowl.flip_sprite)
+	
+	super()
+
+
+func _on_motion_detected(motion: int) -> void:	
 	if motion == MotionRecognition.MOTION.SWING_LEFT and direction_is_left:
-		%AnimationPlayer.play("knead")
 		direction_is_left = false
 	
 	if motion == MotionRecognition.MOTION.SWING_RIGHT and not direction_is_left:
-		%AnimationPlayer.play("knead")
 		direction_is_left = true

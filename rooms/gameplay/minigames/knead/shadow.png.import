@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfyronx7ket7v"
-path="res://.godot/imported/arrow-o.png-747ddd21114acb5191399483535261ae.ctex"
+uid="uid://b5vtji2pri3d3"
+path="res://.godot/imported/shadow.png-0697355659d25218f281097518121b3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/minigames/knead/arrow-o.png"
-dest_files=["res://.godot/imported/arrow-o.png-747ddd21114acb5191399483535261ae.ctex"]
+source_file="res://rooms/gameplay/minigames/knead/shadow.png"
+dest_files=["res://.godot/imported/shadow.png-0697355659d25218f281097518121b3b.ctex"]
 
 [params]
 

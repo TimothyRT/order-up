@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjjb182561hjp"
-path="res://.godot/imported/knead_hand-o.png-261849b3d51ad8bd3b637d28b248fcdc.ctex"
+uid="uid://2gwc5anybl88"
+path="res://.godot/imported/hand_6_1.png-20cc552cafd4827eb943752574056de7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/minigames/knead/knead_hand-o.png"
-dest_files=["res://.godot/imported/knead_hand-o.png-261849b3d51ad8bd3b637d28b248fcdc.ctex"]
+source_file="res://rooms/gameplay/minigames/shared/hand/hand_6_1.png"
+dest_files=["res://.godot/imported/hand_6_1.png-20cc552cafd4827eb943752574056de7.ctex"]
 
 [params]
 

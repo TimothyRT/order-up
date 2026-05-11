@@ -7,6 +7,8 @@ dish_id,ingredients,color,minigame_id,time_limit
 "klepon","","","pour",20
 "klepon","uid://csw3fphxoqkpw","","grate",15
 "klepon","uid://c0w3r55yxhoxh","#624B34","grate",15
+"klepon","","#8f5f47","knead",20
+"klepon","","","steam",10
 "nasgor","uid://cfuuil8hhuwlx","","dice",30
 "nasgor","uid://bs6w01xe0lrxr","","dice",30
 "nasgor","uid://t0xbfj55ksl8","","dice",30

@@ -27,8 +27,6 @@ func _ready() -> void:
 
 
 func _on_motion_detected(motion: int) -> void:
-	print("[HIT] MOTION")
-	
 	if motion == MotionRecognition.MOTION.SWING_LEFT and direction_is_left:
 		%SpiceAnimationPlayer.play("shake")
 		%UlekanAnimationPlayer.play("hit")
