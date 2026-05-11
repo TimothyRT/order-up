@@ -19,48 +19,30 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
 	while udp.get_available_packet_count() > 0:
-		var packet = udp.get_packet()
+		var packet  = udp.get_packet()
 		client_ip   = udp.get_packet_ip()
 		client_port = udp.get_packet_port()
-		var packet_type = packet[0]
-		
-		if packet_type == 1:
-			_parse_binary_sensors(packet)
-		else:
-			var msg = packet.get_string_from_utf8()
-			_parse_message(msg)
-
+		print("[UDP] Received packet from %s:%d" % [client_ip, client_port])
+		print("[UDP] Packet size: %d bytes" % packet.size())
+		var msg = packet.get_string_from_utf8()
+		_parse_message(msg)
 	if client_ip != "":
 		time_since_last_heartbeat += _delta
-		if time_since_last_heartbeat >= 1.0: 
+		if time_since_last_heartbeat >= 1.0: # Send a ping every 1 second
 			send_to_client("STATUS:ALIVE")
 			time_since_last_heartbeat = 0.0
 
-func _parse_binary_sensors(packet: PackedByteArray) -> void:
-	if packet.size() < 26: 
-		print("[UDP-ERROR] Received incomplete packet. Size: ", packet.size(), " bytes")
-		return 
-	#print("[UDP-RAW] ", packet.hex_encode())
-	var sensor_sample = {
-		"acc_x": packet.decode_float(1),
-		"acc_y": packet.decode_float(5),
-		"acc_z": packet.decode_float(9),
-		"gyro_x": packet.decode_float(13),
-		"gyro_y": packet.decode_float(17),
-		"gyro_z": packet.decode_float(21),
-		"gesture": packet[25] == 1
-	}
-	print("[UDP-SENSOR] Acc(%.2f, %.2f, %.2f) | Gyro(%.2f, %.2f, %.2f) | Gesture: %s" % [
-		sensor_sample.acc_x, sensor_sample.acc_y, sensor_sample.acc_z,
-		sensor_sample.gyro_x, sensor_sample.gyro_y, sensor_sample.gyro_z,
-		str(sensor_sample.gesture)
-	])
-	SignalBus.client_sensor_retrieved.emit(sensor_sample)
-
 func _parse_message(msg: String) -> void:
-	if msg.begins_with("CMD:") or msg.begins_with("AXIS:") or msg.begins_with("BTN:"):
+	# Handle control
+	if msg.begins_with("CMD:") or msg.begins_with("BTN:") or msg.begins_with("AXIS:"):
 		_handle_command(msg)
 		return
+
+	var parsed = JSON.parse_string(msg)
+	if parsed != null:
+		SignalBus.client_sensor_batch_received.emit(parsed)
+	else:
+		print("[UDP] Failed to parse message as JSON: ", msg)
 
 func _handle_command(msg: String) -> void:
 	match msg:

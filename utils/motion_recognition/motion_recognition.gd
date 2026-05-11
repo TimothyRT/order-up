@@ -53,16 +53,22 @@ func _on_client_sensor_stored(_sample_count: int) -> void:
 
 	SignalBus.peak_detected.emit()
 
-	var input_arr := []
-	for i in range(buffer_size - Config.WINDOW_WIDTH, buffer_size, 3):
-		input_arr += SensorDataStore.data_dict["gyro_x"].slice(i, i + 3)
-		input_arr += SensorDataStore.data_dict["gyro_y"].slice(i, i + 3)
-		input_arr += SensorDataStore.data_dict["gyro_z"].slice(i, i + 3)
-		input_arr += SensorDataStore.data_dict["acc_x"].slice(i, i + 3)
-		input_arr += SensorDataStore.data_dict["acc_y"].slice(i, i + 3)
-		input_arr += SensorDataStore.data_dict["acc_z"].slice(i, i + 3)
+	var input_arr := PackedFloat32Array()
+	input_arr.append_array(SensorDataStore.data_dict["gyro_x"].slice(offset_begin, offset_end))
+	input_arr.append_array(SensorDataStore.data_dict["gyro_y"].slice(offset_begin, offset_end))
+	input_arr.append_array(SensorDataStore.data_dict["gyro_z"].slice(offset_begin, offset_end))
+	input_arr.append_array(SensorDataStore.data_dict["acc_x"].slice(offset_begin, offset_end))
+	input_arr.append_array(SensorDataStore.data_dict["acc_y"].slice(offset_begin, offset_end))
+	input_arr.append_array(SensorDataStore.data_dict["acc_z"].slice(offset_begin, offset_end))
+	
+	print("Array Received: ", input_arr)
+
+	# Debug size
+	if input_arr.size() != 90:
+		print("ERROR: Array size is ", input_arr.size(), " (Expected 90). Classifier will fail.")
 
 	var predicted_motion: int = Classifier.classify(input_arr)
+	print("Prediction Guess: ", predicted_motion)
 
 	if predicted_motion != -1:
 		SignalBus.classification_made.emit(input_arr, predicted_motion)
@@ -72,22 +78,22 @@ func _on_client_sensor_stored(_sample_count: int) -> void:
 				time_steps_to_ignore = 12
 				%AudioHit.play()
 			MOTION.SHAKE:
-				time_steps_to_ignore = 5
+				time_steps_to_ignore = 12
 				%AudioShake.play()
 			MOTION.SWING_LEFT:
-				time_steps_to_ignore = 12
+				time_steps_to_ignore = 15
 				%AudioSwingLeft.play()
 			MOTION.SWING_RIGHT:
-				time_steps_to_ignore = 12
+				time_steps_to_ignore = 15
 				%AudioSwingRight.play()
 			MOTION.FAN:
 				time_steps_to_ignore = 12
 				%AudioFan.play()
 			MOTION.STIR:
-				time_steps_to_ignore = 20
+				time_steps_to_ignore = 12
 				%AudioStir.play()
 			MOTION.SPIN:
-				time_steps_to_ignore = 20
+				time_steps_to_ignore = 12
 				%AudioSpin.play()
 			MOTION.LIFT:
 				time_steps_to_ignore = 12
