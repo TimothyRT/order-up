@@ -54,7 +54,8 @@ var time_limit: int
 
 
 func start_minigame() -> void:
-	SignalBus.peak_detected.connect(_on_peak_detected)
+	print('start miniga')
+	SignalBus.classification_made.connect(_on_classification_made)
 	minigame_started.emit()
 
 
@@ -64,11 +65,12 @@ func finish_minigame() -> void:
 
 
 func pause_minigame(time_s=0.0) -> void:
+	if time_s <= 0.0:
+		return 
+		
 	paused = true
-	
-	if time_s > 0.0:
-		await get_tree().create_timer(time_s).timeout
-		paused = false
+	await get_tree().create_timer(time_s).timeout
+	paused = false
 
 
 func setup_visually_variable_nodes() -> void:
@@ -96,12 +98,26 @@ func configure_color() -> void:
 		node.self_modulate = Color(color_code)
 
 
-func _on_peak_detected() -> void:
-	if finished:
+#func _on_peak_detected() -> void:
+	#if finished:
+		#return
+	#pause_minigame(pause_time)
+	#var res: Array = await SignalBus.classification_made
+	#_on_motion_detected(res[1])
+	
+func _on_classification_made(incoming_player_id: int, _input_arr: Array, predicted_motion: int) -> void:	
+	if incoming_player_id != player:
 		return
+		
+	print("\n[Minigame P%d] Heard motion %d from phone P%d" % [player, predicted_motion, incoming_player_id])
+	
+	if finished or paused:
+		print("[Minigame P%d] REJECTED: Game is either finished or on cooldown!" % player)
+		return
+	
+	print("[Minigame P%d] ACCEPTED motion!" % player)
 	pause_minigame(pause_time)
-	var res: Array = await SignalBus.classification_made
-	_on_motion_detected(res[1])
+	_on_motion_detected(predicted_motion)
 
 
 func _on_motion_detected(_motion: int) -> void:
@@ -115,7 +131,7 @@ func _on_player_changed() -> void:
 func _input(event: InputEvent) -> void:
 	if not Config.KEYBOARD_INPUT:
 		return
-	if finished:
+	if finished or paused:
 		return
 	if event is InputEventKey:
 		if event.pressed:
