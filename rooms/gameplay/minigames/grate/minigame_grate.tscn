@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cne0atsrgt7vj"]
+[gd_scene load_steps=8 format=3 uid="uid://cne0atsrgt7vj"]
 
 [ext_resource type="Script" uid="uid://b17sgfqqoqljo" path="res://rooms/gameplay/minigames/grate/minigame_grate.gd" id="1_qcktj"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_aryf4"]
 [ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_background.svg" id="3_gwj8n"]
+[ext_resource type="PackedScene" uid="uid://v63f7amtw1v5" path="res://rooms/gameplay/minigames/grate/bowl.tscn" id="4_agc1w"]
+[ext_resource type="PackedScene" uid="uid://df7bui26l7edw" path="res://rooms/gameplay/minigames/grate/parutan.tscn" id="5_aryf4"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="6_nme78"]
 [ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="7_mwdfi"]
 
@@ -17,10 +19,18 @@ texture = ExtResource("2_aryf4")
 [node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
 texture = ExtResource("3_gwj8n")
 
+[node name="Bowl" parent="FrameThickF" instance=ExtResource("4_agc1w")]
+unique_name_in_owner = true
+position = Vector2(-2, 322)
+
+[node name="Parutan" parent="FrameThickF" instance=ExtResource("5_aryf4")]
+unique_name_in_owner = true
+position = Vector2(130, -264)
+
 [node name="FrameThickO" type="Sprite2D" parent="."]
 texture = ExtResource("6_nme78")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="MinigameProgressBar" parent="." instance=ExtResource("7_mwdfi")]
-position = Vector2(-262, 274)
+position = Vector2(-105, 311)

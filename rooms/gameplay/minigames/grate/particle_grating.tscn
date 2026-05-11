@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://qcw6d33ljpir"]
+
+[ext_resource type="Texture2D" uid="uid://kw48clgskxgl" path="res://rooms/gameplay/minigames/grate/particle_gula_aren2.png" id="1_l258w"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vi3vr"]
+lifetime_randomness = 0.15
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1.5, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 10.0
+angle_min = -54.79999
+angle_max = 320.90002
+radial_velocity_min = 49.999977
+radial_velocity_max = 64.99998
+gravity = Vector3(0, 64, 0)
+linear_accel_min = -31.500002
+linear_accel_max = 54.689995
+radial_accel_min = 36.789997
+radial_accel_max = 80.27
+
+[node name="ParticleGrating" type="GPUParticles2D"]
+amount = 2
+texture = ExtResource("1_l258w")
+process_material = SubResource("ParticleProcessMaterial_vi3vr")

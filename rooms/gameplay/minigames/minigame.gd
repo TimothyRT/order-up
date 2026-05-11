@@ -81,6 +81,7 @@ func configure_visual_assets() -> void:
 	var pkg: AssetPackage = load(asset_package_uid).instantiate()
 	var i := 0
 	for node in nodes_with_variable_texture:
+		print("THIS: %s, %s" % [node, nodes_with_variable_texture])
 		node.texture = pkg.get_asset(i)
 		i += 1
 	pkg.queue_free()

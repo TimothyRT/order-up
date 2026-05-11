@@ -2,10 +2,10 @@ extends Minigame
 
 
 func configure_visuals() -> void:
-	nodes_with_variable_texture.append(%Ingredient)
-	nodes_with_variable_texture.append(%Ingredient.particle_1)
-	nodes_with_variable_texture.append(%Ingredient.particle_2)
-	nodes_with_variable_color.append(%Ingredient.pile)
+	nodes_with_variable_texture.append(%Parutan.ingredient)
+	nodes_with_variable_texture.append(%Parutan.particle)
+	nodes_with_variable_color.append(%Bowl.pile)
+	print('THAT: %s, %s' % [nodes_with_variable_texture, nodes_with_variable_color])
 	super()
 
 
@@ -17,7 +17,6 @@ func _ready() -> void:
 
 func _on_motion_detected(motion: int) -> void:
 	if motion == MotionRecognition.MOTION.SHAKE:
-		%Ingredient.grate()
 		progress += 1
 
 

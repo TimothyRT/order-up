@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://csw3fphxoqkpw"]
+
+[ext_resource type="Script" uid="uid://cwsivvkbgnm7d" path="res://rooms/gameplay/minigames/shared/asset_package/asset_package.gd" id="1_kt4kb"]
+[ext_resource type="Texture2D" uid="uid://gspi5ugj1qr1" path="res://rooms/gameplay/minigames/grate/coconut.png" id="2_fsgo6"]
+[ext_resource type="Texture2D" uid="uid://utj1c21vcu5l" path="res://rooms/gameplay/minigames/grate/particle_kelapa2.png" id="3_1quk1"]
+[ext_resource type="Texture2D" uid="uid://cgp45ji5gh3sy" path="res://rooms/gameplay/minigames/grate/particle_kelapa.png" id="4_w8vnn"]
+
+[node name="AssetCoconut" type="Node"]
+script = ExtResource("1_kt4kb")
+metadata/_custom_type_script = "uid://cwsivvkbgnm7d"
+
+[node name="Coconut" type="Sprite2D" parent="."]
+texture = ExtResource("2_fsgo6")
+
+[node name="ParticleKelapa2" type="Sprite2D" parent="."]
+texture = ExtResource("3_1quk1")
+
+[node name="ParticleKelapa" type="Sprite2D" parent="."]
+texture = ExtResource("4_w8vnn")

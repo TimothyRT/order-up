@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://v63f7amtw1v5"]
+
+[ext_resource type="Script" uid="uid://cnipu72o2gr0m" path="res://rooms/gameplay/minigames/grate/bowl.gd" id="1_ayixg"]
+[ext_resource type="Texture2D" uid="uid://cnn4n5av3dk8j" path="res://rooms/gameplay/minigames/grate/bowl_back.png" id="1_ytko6"]
+[ext_resource type="Texture2D" uid="uid://yr4q0jfamvjb" path="res://rooms/gameplay/minigames/grate/shadow.png" id="2_0w611"]
+[ext_resource type="Texture2D" uid="uid://2386exj2vk4u" path="res://rooms/gameplay/minigames/grate/pile_01.png" id="2_3xuhb"]
+[ext_resource type="Texture2D" uid="uid://dc3jnf0oos6m2" path="res://rooms/gameplay/minigames/grate/bowl_front.png" id="2_ccfdl"]
+[ext_resource type="Texture2D" uid="uid://cxpobli8tcwv8" path="res://rooms/gameplay/minigames/grate/pile_02.png" id="3_3xuhb"]
+[ext_resource type="Texture2D" uid="uid://d4fim81bw8ggu" path="res://rooms/gameplay/minigames/grate/pile_03.png" id="4_1d2a0"]
+
+[node name="Bowl" type="Node2D" node_paths=PackedStringArray("pile")]
+script = ExtResource("1_ayixg")
+pile = NodePath("MarkerBowl/BowlBack/MarkerPile")
+
+[node name="MarkerBowl" type="Marker2D" parent="."]
+position = Vector2(0, 3)
+
+[node name="Shadow" type="Sprite2D" parent="MarkerBowl"]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(-51, -16)
+texture = ExtResource("2_0w611")
+
+[node name="BowlBack" type="Sprite2D" parent="MarkerBowl"]
+position = Vector2(-5, -202.5)
+texture = ExtResource("1_ytko6")
+
+[node name="MarkerPile" type="Marker2D" parent="MarkerBowl/BowlBack"]
+unique_name_in_owner = true
+position = Vector2(-2, 123.5)
+
+[node name="Pile01" type="Sprite2D" parent="MarkerBowl/BowlBack/MarkerPile"]
+unique_name_in_owner = true
+position = Vector2(-15, 23)
+texture = ExtResource("2_3xuhb")
+offset = Vector2(1, -40)
+
+[node name="Pile02" type="Sprite2D" parent="MarkerBowl/BowlBack/MarkerPile"]
+unique_name_in_owner = true
+position = Vector2(-15, 33)
+texture = ExtResource("3_3xuhb")
+offset = Vector2(0, -62)
+
+[node name="Pile03" type="Sprite2D" parent="MarkerBowl/BowlBack/MarkerPile"]
+unique_name_in_owner = true
+position = Vector2(7, 57)
+texture = ExtResource("4_1d2a0")
+offset = Vector2(-9, -101)
+
+[node name="BowlFront" type="Sprite2D" parent="MarkerBowl"]
+position = Vector2(-8, -93.5)
+texture = ExtResource("2_ccfdl")
