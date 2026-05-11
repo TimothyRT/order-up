@@ -57,12 +57,15 @@ func begin_first_minigame() -> void:
 
 
 func enter(room_state: Dictionary) -> void:
+	%PauseMenu.quit_pressed.connect(_on_quit_pressed)
+	
 	is_multiplayer = room_state.get("multiplayer", true)
 	%FrameLeft.minigame_finished.connect(_on_minigame_finished)
 	%FrameRight.visible = false
 	if is_multiplayer:
 		%FrameRight.visible = true
 		%FrameRight.minigame_finished.connect(_on_minigame_finished)
+	
 	load_minigames(room_state.get("recipe", []))
 	begin_first_minigame()
 	super(room_state)
@@ -94,6 +97,11 @@ func _on_minigame_finished(player: int) -> void:
 		load_minigames(state.get("recipe", []))
 	
 	get_frame(player).set_minigame(minigames[minigame_current[player]].duplicate(), minigame_current[player], len(minigames))
+
+
+func _on_quit_pressed() -> void:
+	room_switch_requested.emit(&"Stage select")
+
 
 #func _input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

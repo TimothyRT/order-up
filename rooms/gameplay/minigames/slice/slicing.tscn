@@ -1,168 +1,128 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0ka2fht6ypbg"]
+[gd_scene load_steps=9 format=3 uid="uid://d0ka2fht6ypbg"]
 
 [ext_resource type="Texture2D" uid="uid://d2cuuj7m5or72" path="res://rooms/gameplay/minigames/slice/wood_plate.png" id="1_3c6sk"]
 [ext_resource type="Script" uid="uid://ki8o8bgcn4rn" path="res://rooms/gameplay/minigames/slice/slicing.gd" id="1_ss2h3"]
 [ext_resource type="Texture2D" uid="uid://bow4qw7klopwn" path="res://rooms/gameplay/minigames/slice/right_banana.png" id="2_dmwad"]
 [ext_resource type="Texture2D" uid="uid://iljumyat18sg" path="res://rooms/gameplay/minigames/slice/left_banana.png" id="3_qrmfi"]
 [ext_resource type="Texture2D" uid="uid://t14mjmntl4o8" path="res://rooms/gameplay/minigames/slice/banana_whole.png" id="4_5rpu4"]
-[ext_resource type="Texture2D" uid="uid://b1b5usu7c4f2y" path="res://rooms/gameplay/minigames/slice/knife.png" id="5_5rpu4"]
-[ext_resource type="Texture2D" uid="uid://dbng36exvh3kh" path="res://rooms/gameplay/minigames/slice/chop_bubble.png" id="5_ss2h3"]
-[ext_resource type="Texture2D" uid="uid://bn3jeyvkon42m" path="res://rooms/gameplay/minigames/slice/chop_text.png" id="6_emw26"]
-[ext_resource type="PackedScene" uid="uid://dvk2n51phqj6p" path="res://rooms/gameplay/minigames/shared/hand/hand_1.tscn" id="6_ss2h3"]
 
 [sub_resource type="Animation" id="Animation_emw26"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Bubble:modulate")
+tracks/0/path = NodePath("BananaWhole:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarkerKnife:skew")
+tracks/1/path = NodePath("BananaWhole:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarkerKnife:position")
+tracks/2/path = NodePath("LeftBanana:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(103, 355)]
+"update": 1,
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("BananaWhole:visible")
+tracks/3/path = NodePath("RightBanana:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("BananaWhole:scale")
+tracks/4/path = NodePath("RightBanana:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(100, -33)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("LeftBanana:visible")
+tracks/5/path = NodePath("RightBanana:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("RightBanana:visible")
+tracks/6/path = NodePath("LeftBanana:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(-50, -63)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("RightBanana:position")
+tracks/7/path = NodePath("LeftBanana:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(100, -33)]
+"values": [0.0]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("RightBanana:rotation")
+tracks/8/path = NodePath("LeftBanana:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("LeftBanana:position")
+tracks/9/path = NodePath("RightBanana:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-50, -63)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("LeftBanana:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("LeftBanana:modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("RightBanana:modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -272,58 +232,22 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("MarkerKnife:position")
+tracks/8/path = NodePath("RightBanana:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.2, 0.8, 1),
-"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
-"update": 0,
-"values": [Vector2(103, 355), Vector2(82, 341), Vector2(103, 355)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("MarkerKnife:skew")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.4, 0.6, 0.8001),
-"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
-"update": 0,
-"values": [0.0, -0.08726646259971647, 0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Bubble:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.4, 2.2, 2.4),
-"transitions": PackedFloat32Array(-2.5, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("RightBanana:modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(2.4, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("LeftBanana:modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LeftBanana:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(2.4, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -355,29 +279,6 @@ texture = ExtResource("3_qrmfi")
 [node name="BananaWhole" type="Sprite2D" parent="."]
 position = Vector2(15, -34)
 texture = ExtResource("4_5rpu4")
-
-[node name="MarkerKnife" type="Marker2D" parent="."]
-position = Vector2(103, 355)
-
-[node name="Knife" type="Sprite2D" parent="MarkerKnife"]
-position = Vector2(-22.5, -354.5)
-texture = ExtResource("5_5rpu4")
-
-[node name="Hand1" parent="MarkerKnife" instance=ExtResource("6_ss2h3")]
-unique_name_in_owner = true
-position = Vector2(48, -7)
-
-[node name="Bubble" type="Node2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-3, 177)
-
-[node name="ChopBubble" type="Sprite2D" parent="Bubble"]
-position = Vector2(0, -180)
-texture = ExtResource("5_ss2h3")
-
-[node name="ChopText" type="Sprite2D" parent="Bubble"]
-position = Vector2(21, -188)
-texture = ExtResource("6_emw26")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

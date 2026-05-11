@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dm6uia2vfygpt"]
+[gd_scene load_steps=14 format=3 uid="uid://dm6uia2vfygpt"]
 
 [ext_resource type="Script" uid="uid://ctunqn03ad5tv" path="res://rooms/gameplay/pause/pause_menu.gd" id="1_7ifry"]
 [ext_resource type="Texture2D" uid="uid://be7vl2eg4i6av" path="res://rooms/gameplay/pause/pause_menu_base.png" id="1_witrs"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cfndoa3kax7kq" path="res://rooms/gameplay/pause/continue_button.svg" id="4_hmfn0"]
 [ext_resource type="Script" uid="uid://c3irovb3lu8xi" path="res://rooms/gameplay/pause/ip_address_label.gd" id="5_7ifry"]
 [ext_resource type="Script" uid="uid://cd0abcaxpdend" path="res://rooms/gameplay/pause/continue_button.gd" id="6_7ifry"]
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="9_xytcw"]
+[ext_resource type="Script" uid="uid://cmr5xla686dh1" path="res://rooms/gameplay/pause/quit_button.gd" id="10_ed2xq"]
 
 [sub_resource type="Animation" id="Animation_iegrq"]
 length = 0.001
@@ -59,13 +61,6 @@ script = ExtResource("1_7ifry")
 position = Vector2(400, 349)
 texture = ExtResource("1_witrs")
 
-[node name="VolumeSettings" parent="." instance=ExtResource("3_iegrq")]
-layout_mode = 0
-offset_left = 191.0
-offset_top = 310.0
-offset_right = 611.0
-offset_bottom = 510.0
-
 [node name="Table" type="Control" parent="."]
 visible = false
 custom_minimum_size = Vector2(600, 200)
@@ -102,12 +97,19 @@ theme = ExtResource("2_wvj8r")
 theme_override_font_sizes/font_size = 40
 text = "08545541"
 
+[node name="VolumeSettings" parent="." instance=ExtResource("3_iegrq")]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 275.0
+offset_right = 617.0
+offset_bottom = 475.0
+
 [node name="IPAddress" type="Node2D" parent="."]
-position = Vector2(408, 543)
+position = Vector2(414, 508)
 
 [node name="Line" type="Sprite2D" parent="IPAddress"]
 modulate = Color(0.78, 0.08580001, 0.08580001, 0.44313726)
-position = Vector2(-10.5, -8.999908)
+position = Vector2(-10, 1)
 texture = ExtResource("3_hmfn0")
 
 [node name="IPAddressLabel" type="Label" parent="IPAddress"]
@@ -124,10 +126,10 @@ script = ExtResource("5_7ifry")
 
 [node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 435.0
-offset_top = 568.0
-offset_right = 704.0
-offset_bottom = 726.0
+offset_left = 556.0
+offset_top = 547.0
+offset_right = 825.0
+offset_bottom = 705.0
 rotation = -0.05235988
 pivot_offset = Vector2(133, 80)
 mouse_default_cursor_shape = 2
@@ -151,3 +153,13 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_ed2xq")
 }
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 563.0
+offset_right = 467.0
+offset_bottom = 628.0
+theme = ExtResource("9_xytcw")
+text = "Quit?"
+script = ExtResource("10_ed2xq")

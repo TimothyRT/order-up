@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://da6uvv3tnoll0"]
+[gd_scene load_steps=8 format=3 uid="uid://da6uvv3tnoll0"]
 
 [ext_resource type="Script" uid="uid://iwu5gmydk8y5" path="res://rooms/gameplay/minigames/slice/minigame_slice.gd" id="1_6py8q"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_7yid1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ka2fht6ypbg" path="res://rooms/gameplay/minigames/slice/slicing.tscn" id="3_180jf"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_u35qe"]
 [ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="4_180jf"]
+[ext_resource type="PackedScene" uid="uid://e3v5we5qtn5o" path="res://rooms/gameplay/minigames/shared/hand/knife/hand_with_knife.tscn" id="5_xwa8u"]
 
 [node name="MinigameSlice" type="Node2D"]
 script = ExtResource("1_6py8q")
@@ -20,6 +21,10 @@ texture = ExtResource("3_7mxmi")
 
 [node name="Slicing" parent="FrameThickF" instance=ExtResource("3_180jf")]
 unique_name_in_owner = true
+
+[node name="HandWithKnife" parent="FrameThickF" instance=ExtResource("5_xwa8u")]
+unique_name_in_owner = true
+position = Vector2(205, 352)
 
 [node name="FrameThickO" type="Sprite2D" parent="."]
 texture = ExtResource("3_u35qe")

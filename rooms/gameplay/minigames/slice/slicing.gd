@@ -8,10 +8,6 @@ var animation_is_playing: bool:
 		return %AnimationPlayer.is_playing()
 
 
-func set_color(player: int) -> void:
-	%Hand1.set_color(player)
-
-
 func play_chop_animation() -> void:
 	%AnimationPlayer.play(&"chop")
 	var anim_name = await %AnimationPlayer.animation_finished

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bti4i53w5xyge"]
+
+[ext_resource type="Script" uid="uid://ceuym6bryvqi1" path="res://rooms/gameplay/minigames/dice/minigame_dice.gd" id="1_l7ug3"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_as6ky"]
+[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_background.svg" id="3_l7ug3"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_axkh8"]
+[ext_resource type="Texture2D" uid="uid://h3010nkgfm2i" path="res://rooms/gameplay/minigames/dice/talenan.png" id="4_l7ug3"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="5_7nr82"]
+[ext_resource type="PackedScene" uid="uid://rfbp3i0wie7g" path="res://rooms/gameplay/minigames/dice/ingredients/ingredient.tscn" id="7_axkh8"]
+
+[node name="MinigameDice" type="Node2D"]
+script = ExtResource("1_l7ug3")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_as6ky")
+
+[node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
+texture = ExtResource("3_l7ug3")
+
+[node name="Talenan" type="Sprite2D" parent="FrameThickF"]
+position = Vector2(6, -75)
+texture = ExtResource("4_l7ug3")
+
+[node name="Ingredient" parent="FrameThickF" instance=ExtResource("7_axkh8")]
+unique_name_in_owner = true
+position = Vector2(6, 85)
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("4_axkh8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MinigameProgressBar" parent="." instance=ExtResource("5_7nr82")]
+position = Vector2(-262, 274)

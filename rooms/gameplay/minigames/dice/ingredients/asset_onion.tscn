@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs6w01xe0lrxr"]
+
+[ext_resource type="Script" uid="uid://cwsivvkbgnm7d" path="res://rooms/gameplay/minigames/shared/asset_package/asset_package.gd" id="1_3qifr"]
+[ext_resource type="Texture2D" uid="uid://bxfle76hylf75" path="res://rooms/gameplay/minigames/dice/ingredients/onion_1.png" id="2_6incp"]
+[ext_resource type="Texture2D" uid="uid://bwxhmbu1u7bdl" path="res://rooms/gameplay/minigames/dice/ingredients/onion_2.png" id="3_nrqc6"]
+[ext_resource type="Texture2D" uid="uid://cd3g7dt2437jk" path="res://rooms/gameplay/minigames/dice/ingredients/onion_3.png" id="4_i7i1s"]
+
+[node name="AssetOnion" type="Node"]
+script = ExtResource("1_3qifr")
+metadata/_custom_type_script = "uid://cwsivvkbgnm7d"
+
+[node name="Onion1" type="Sprite2D" parent="."]
+position = Vector2(-4, -9)
+texture = ExtResource("2_6incp")
+
+[node name="Onion2" type="Sprite2D" parent="."]
+position = Vector2(-4, -9)
+texture = ExtResource("3_nrqc6")
+
+[node name="Onion3" type="Sprite2D" parent="."]
+position = Vector2(-4, -9)
+texture = ExtResource("4_i7i1s")

@@ -10,6 +10,7 @@ func _ready() -> void:
 func _on_motion_detected(motion: int) -> void:
 	if motion == MotionRecognition.MOTION.HIT and not %Slicing.animation_is_playing:
 		%Slicing.play_chop_animation()
+		%HandWithKnife.chop()
 		await %Slicing.animation_finished
 		progress += 1
 		if progress < progress_threshold:
@@ -17,4 +18,4 @@ func _on_motion_detected(motion: int) -> void:
 
 
 func _on_player_changed() -> void:
-	%Slicing.set_color(player)
+	%HandWithKnife.set_color(player)

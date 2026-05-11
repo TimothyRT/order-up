@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_3kfwg"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_al4qn"]
 [ext_resource type="AudioStream" uid="uid://bpbcrllt2hsmg" path="res://rooms/gameplay/minigames/shared/sfx/twhing.wav" id="4_3ihof"]
-[ext_resource type="Material" uid="uid://blwn851l5ji1d" path="res://rooms/gameplay/minigames/crack_the_eggs/bubble_shader_material.tres" id="4_p7aun"]
+[ext_resource type="Material" uid="uid://blwn851l5ji1d" path="res://rooms/gameplay/minigames/crack/bubble_shader_material.tres" id="4_p7aun"]
 [ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="5_3ihof"]
 
 [sub_resource type="Animation" id="Animation_3ihof"]
@@ -34,9 +34,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"transitions": PackedFloat32Array(-2, -2, -2),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1.04, 1.04), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_77kkd"]
@@ -93,3 +93,4 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_77kkd")
 }
+speed_scale = 2.0

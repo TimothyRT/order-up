@@ -9,6 +9,7 @@ signal minigame_unpaused
 signal player_changed
 signal progress_changed(new_progress_value: int, progress_diff: int)
 signal progress_threshold_changed(new_threshold_value: int, threshold_diff: int)
+signal visuals_configured
 
 var finished := false
 
@@ -95,6 +96,8 @@ func configure_color() -> void:
 
 
 func _on_peak_detected() -> void:
+	if finished:
+		return
 	pause_minigame(pause_time)
 	var res: Array = await SignalBus.classification_made
 	_on_motion_detected(res[1])
@@ -110,6 +113,8 @@ func _on_player_changed() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not Config.KEYBOARD_INPUT:
+		return
+	if finished:
 		return
 	if event is InputEventKey:
 		if event.pressed:
@@ -139,6 +144,7 @@ func _input(event: InputEvent) -> void:
 func configure_visuals() -> void:
 	configure_visual_assets()
 	configure_color()
+	visuals_configured.emit()
 
 
 func _ready() -> void:
