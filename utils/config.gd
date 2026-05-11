@@ -1,8 +1,10 @@
+
+
 extends Node
 
 
 const MAX_PLAYERS := 2
-const WINDOW_WIDTH := 30
+const WINDOW_WIDTH := 15
 
 const RED := Color("ec5f44ff")
 const BLUE := Color(0.132, 0.618, 0.88, 1.0)
@@ -16,13 +18,6 @@ var csv_col_names := PackedStringArray([
 	"acc_x",
 	"acc_y",
 	"acc_z",
-	"mag_x",
-	"mag_y",
-	"mag_z",
-	"ahrs_x",
-	"ahrs_y",
-	"ahrs_z",
-	"ahrs_w",
 	"gesture"
 ])
 
