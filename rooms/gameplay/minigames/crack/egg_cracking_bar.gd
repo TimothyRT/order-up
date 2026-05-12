@@ -24,8 +24,10 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_paused() -> void:
+	print('paused')
 	%Arrow.paused = true
 
 
 func _on_unpaused() -> void:
+	print('unpaused')
 	%Arrow.paused = false

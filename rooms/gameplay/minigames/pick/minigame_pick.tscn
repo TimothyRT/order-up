@@ -81,11 +81,12 @@ _data = {
 &"bounce": SubResource("Animation_t11h2")
 }
 
-[node name="MinigamePick" type="Node2D"]
+[node name="MinigamePick" type="Node2D" node_paths=PackedStringArray("label_node")]
 script = ExtResource("1_7myku")
 ingredient_labels = Array[String](["Cabai", "Ketumbar", "Jahe", "Merica", "Daun pandan", "Garam", "Terasi", "Gula", "Tapioka"])
 ingredient_textures = Array[Texture]([ExtResource("2_alwl2"), ExtResource("3_le6s1"), ExtResource("4_5jgvh"), ExtResource("5_t11h2"), ExtResource("6_nactg"), ExtResource("7_ptalq"), ExtResource("8_k710w"), ExtResource("9_2w7n4"), ExtResource("10_c22qj")])
 unused_ingredients = Array[int]([1, 4, 6])
+label_node = NodePath("Control/GuideLabel")
 
 [node name="FrameThickF" type="Sprite2D" parent="."]
 clip_children = 2
@@ -193,20 +194,25 @@ unique_name_in_owner = true
 wait_time = 0.9
 autostart = true
 
-[node name="GuideLabel" type="Label" parent="."]
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(480, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -370.0
+offset_top = -380.0
+offset_right = 110.0
+offset_bottom = -252.0
+
+[node name="GuideLabel" type="Label" parent="Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -332.0
-offset_top = -364.0
-offset_right = 512.0
-offset_bottom = -263.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("15_5jgvh")
-text = "Perform HIT when this
-ingredient is highlighted:"
-metadata/_edit_use_anchors_ = true
+text = "*PANDUAN*"
+autowrap_mode = 2
 
 [node name="HighlightedIngredient" parent="." instance=ExtResource("3_qe08s")]
 unique_name_in_owner = true

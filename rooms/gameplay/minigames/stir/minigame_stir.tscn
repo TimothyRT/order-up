@@ -41,10 +41,6 @@ texture = ExtResource("6_alt38")
 [node name="MinigameProgressBar" parent="." instance=ExtResource("7_iajxw")]
 position = Vector2(-262, 293)
 
-[node name="Timer" type="Timer" parent="."]
-unique_name_in_owner = true
-autostart = true
-
 [node name="SizzlingAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_3nlmf")
 autoplay = true
@@ -54,5 +50,3 @@ metadata/_custom_type_script = "uid://dkimue6n1nxxa"
 [node name="GasStoveAudio" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("8_alt38")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

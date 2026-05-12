@@ -15,7 +15,7 @@ clip_children = 2
 texture = ExtResource("2_ot2x2")
 
 [node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
-modulate = Color(0.36863938, 0.45978802, 0.6007629, 1)
+modulate = Color(0.36600003, 0.53760004, 0.6, 0.63529414)
 texture = ExtResource("3_mgwj2")
 
 [node name="Steamer" parent="FrameThickF" instance=ExtResource("4_csm8o")]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://clq4u6qh3mi3n"]
+
+[ext_resource type="Script" uid="uid://3wucgmwt3j22" path="res://rooms/gameplay/minigames/grab/spinner.gd" id="1_olr5j"]
+[ext_resource type="Texture2D" uid="uid://cleoses0xqch1" path="res://rooms/gameplay/minigames/grab/spinner_base.png" id="1_qxm4i"]
+[ext_resource type="Texture2D" uid="uid://b2fwrlb5ru66j" path="res://rooms/gameplay/minigames/grab/spinner_arrow.png" id="2_6pfjj"]
+[ext_resource type="Texture2D" uid="uid://b54fydkn3msb4" path="res://rooms/gameplay/minigames/grab/icon_muscle.png" id="3_jqhes"]
+[ext_resource type="Texture2D" uid="uid://btd7x4wtldfrm" path="res://rooms/gameplay/minigames/grab/icon_weak_nerd_arm.png" id="4_jqhes"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1q4e4"]
+radius = 24.55281
+height = 76.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jqhes"]
+height = 131.65259
+
+[node name="Spinner" type="Node2D"]
+script = ExtResource("1_olr5j")
+
+[node name="MarkerBase" type="Marker2D" parent="."]
+
+[node name="SpinnerBase" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(-6, -255)
+texture = ExtResource("1_qxm4i")
+
+[node name="ValidBody" type="StaticBody2D" parent="MarkerBase/SpinnerBase"]
+unique_name_in_owner = true
+position = Vector2(-142, 202)
+rotation = -0.1375823
+scale = Vector2(1.0269618, 1.0116439)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarkerBase/SpinnerBase/ValidBody"]
+position = Vector2(159, -323)
+rotation = 3.091797
+scale = Vector2(5.8958497, 1)
+shape = SubResource("CapsuleShape2D_1q4e4")
+debug_color = Color(0.5503742, 0.54529804, 0.40950316, 0.41960785)
+
+[node name="IconMuscle" type="Sprite2D" parent="MarkerBase/SpinnerBase"]
+position = Vector2(-41, -180)
+texture = ExtResource("3_jqhes")
+
+[node name="IconWeakNerdArm" type="Sprite2D" parent="MarkerBase/SpinnerBase"]
+position = Vector2(50, 202)
+texture = ExtResource("4_jqhes")
+
+[node name="MarkerArrow" type="Marker2D" parent="MarkerBase/SpinnerBase"]
+unique_name_in_owner = true
+position = Vector2(-4, 37)
+
+[node name="SpinnerArrow" type="Sprite2D" parent="MarkerBase/SpinnerBase/MarkerArrow"]
+position = Vector2(-6, -81)
+texture = ExtResource("2_6pfjj")
+
+[node name="ArrowArea" type="Area2D" parent="MarkerBase/SpinnerBase/MarkerArrow"]
+unique_name_in_owner = true
+position = Vector2(-275, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarkerBase/SpinnerBase/MarkerArrow/ArrowArea"]
+position = Vector2(264, -151)
+rotation = -0.17902975
+scale = Vector2(1.3200012, 1)
+shape = SubResource("CapsuleShape2D_jqhes")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true

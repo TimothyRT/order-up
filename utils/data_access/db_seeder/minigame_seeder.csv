@@ -13,3 +13,5 @@ id,description,scene
 "dice","HIT to dice the ingredient","uid://bti4i53w5xyge"
 "grate","SHAKE to grate the ingredient","uid://cne0atsrgt7vj"
 "steam","LIFT the cap when the food has fully steamed","uid://dktv2w5c5da51"
+"sprinkle_bowl","POUR the jar, then SHAKE it","uid://brod4yt7cwdp6"
+"grab","LIFT when you have gathered your energy","uid://0o27derx2ox5"

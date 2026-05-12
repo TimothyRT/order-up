@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bdhlht0c7nd8n" path="res://rooms/gameplay/minigames/sprinkle/jar.tscn" id="5_d47fg"]
 [ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="6_yrktj"]
 
-[node name="MinigameSprinkle" type="Node2D"]
+[node name="MinigameSprinkle" type="Node2D" node_paths=PackedStringArray("plate")]
 script = ExtResource("1_pefuk")
+plate = NodePath("FrameThickF/Plate")
 metadata/_custom_type_script = "uid://csqf5b58jqi2t"
 
 [node name="FrameThickF" type="Sprite2D" parent="."]

@@ -64,7 +64,7 @@ func _ready() -> void:
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.HIT:
+	if motion == MotionRecognition.MOTION.LIFT:
 		if progress >= len(ingredient_sequence):
 			return
 		

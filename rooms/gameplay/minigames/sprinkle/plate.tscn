@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cykfg35yvbsla" path="res://rooms/gameplay/minigames/sprinkle/plate.svg" id="2_ufla6"]
 [ext_resource type="Texture2D" uid="uid://dsjhk0ws8tg6f" path="res://rooms/gameplay/minigames/sprinkle/egg.svg" id="3_ufla6"]
 
-[node name="Plate" type="Node2D"]
+[node name="Plate" type="Node2D" node_paths=PackedStringArray("marker_group")]
 script = ExtResource("1_s33y1")
+marker_group = NodePath("Marker2D/Egg")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(2, 45)

@@ -14,5 +14,9 @@ dish_id,ingredients,color,minigame_id,time_limit
 "nasgor","uid://t0xbfj55ksl8","","dice",30
 "nasgor","","","crack",20
 "nasgor","","","stir",20
+"coto","uid://c1an25y5p5sti","","dice",40
+"coto","","","grind",18
+"coto","","","sprinkle_bowl",15
 "pisgor","","","slice",20
 "pisgor","uid://drjb6qg2plnwm",,"coat",20
+"pisgor","","#ffc655","grab",15

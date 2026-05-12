@@ -1,0 +1,278 @@
+[gd_scene load_steps=10 format=3 uid="uid://ch0joqkmacy1u"]
+
+[ext_resource type="Script" uid="uid://2uh5wavis1v0" path="res://rooms/gameplay/minigames/grab/lifted_item.gd" id="1_g3kx8"]
+[ext_resource type="Texture2D" uid="uid://cvfywbw2sund1" path="res://rooms/gameplay/minigames/grab/grabber_back.png" id="1_kbh2p"]
+[ext_resource type="Texture2D" uid="uid://chiwsaf6qhdio" path="res://rooms/gameplay/minigames/grab/pisgor.png" id="2_6qmqj"]
+[ext_resource type="Texture2D" uid="uid://bxdafvuvki2ps" path="res://rooms/gameplay/minigames/grab/grabber_front.png" id="2_tgafi"]
+[ext_resource type="Texture2D" uid="uid://blh72prwyx3wn" path="res://rooms/gameplay/minigames/grab/splash.png" id="3_g3kx8"]
+
+[sub_resource type="Animation" id="Animation_yrvai"]
+resource_name = "success"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerGrabberBack:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-53, -820), Vector2(-53, -748), Vector2(-53, -748), Vector2(-53, -1000)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerGrabberFront:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-53, -820), Vector2(-53, -748), Vector2(-53, -748), Vector2(-53, -1000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerItem:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.7, 0.9, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(24, 6), Vector2(21, 6), Vector2(15, -36), Vector2(13, -353)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarkerGrabberFront:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.06981317007977318]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarkerGrabberBack:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [0.0, 0.06981317007977318]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarkerSplash:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.7, 0.79999995, 0.9, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 0.95), Vector2(0.95, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g3kx8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerGrabberFront:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-53, -820)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerGrabberBack:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-53, -820)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerItem:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarkerGrabberFront:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarkerGrabberBack:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarkerSplash:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ma37q"]
+resource_name = "fail"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerGrabberBack:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-53, -820), Vector2(-53, -800), Vector2(-53, -950), Vector2(-53, -1000)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerGrabberFront:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.8, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-53, -820), Vector2(-53, -800), Vector2(-53, -950), Vector2(-53, -1000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerItem:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(24, 6), Vector2(18, -6), Vector2(15, 6), Vector2(24, -6), Vector2(24, 6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarkerGrabberFront:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.05235987755982989]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarkerGrabberBack:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [0.0, 0.05235987755982989]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarkerSplash:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.59999996, 0.6999999, 0.79999995, 0.9),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 0.95), Vector2(0.95, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ma37q"]
+_data = {
+&"RESET": SubResource("Animation_g3kx8"),
+&"fail": SubResource("Animation_ma37q"),
+&"success": SubResource("Animation_yrvai")
+}
+
+[node name="LiftedItem" type="Node2D"]
+script = ExtResource("1_g3kx8")
+
+[node name="MarkerGrabberBack" type="Marker2D" parent="."]
+position = Vector2(-53, -820)
+
+[node name="GrabberBack" type="Sprite2D" parent="MarkerGrabberBack"]
+position = Vector2(58, 350)
+texture = ExtResource("1_kbh2p")
+
+[node name="MarkerItem" type="Marker2D" parent="."]
+position = Vector2(24, 6)
+
+[node name="Pisgor" type="Sprite2D" parent="MarkerItem"]
+position = Vector2(-42, -57)
+texture = ExtResource("2_6qmqj")
+
+[node name="MarkerGrabberFront" type="Marker2D" parent="."]
+position = Vector2(-53, -820)
+
+[node name="GrabberFront" type="Sprite2D" parent="MarkerGrabberFront"]
+position = Vector2(-45, 347)
+texture = ExtResource("2_tgafi")
+
+[node name="MarkerSplash" type="Marker2D" parent="."]
+position = Vector2(-53, -748)
+
+[node name="Splash" type="Sprite2D" parent="MarkerSplash"]
+position = Vector2(27, 758)
+texture = ExtResource("3_g3kx8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_ma37q")
+}

@@ -2,7 +2,7 @@ extends Minigame
 
 
 func _ready() -> void:
-	pause_time = 0.8
+	pause_time = 1.5
 	progress_threshold = 3
 	super()
 

@@ -1,9 +1,11 @@
 extends Node2D
 
 
-func stir() -> void:
+
+func _on_progress_changed(_new_progress_value: int, _progress_diff: int) -> void:
 	%AnimationPlayer.play(&"stir")
 
 
-func stop() -> void:
-	%AnimationPlayer.stop(false)
+func _ready() -> void:
+	if owner:
+		owner.progress_changed.connect(_on_progress_changed)

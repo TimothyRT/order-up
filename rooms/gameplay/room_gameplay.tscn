@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://iuq2bpmhx4ko" path="res://rooms/gameplay/room_gameplay.gd" id="1_ej5xh"]
 [ext_resource type="PackedScene" uid="uid://bbnikiwry5kkk" path="res://rooms/gameplay/frames/minigame_frame.tscn" id="1_ia51v"]
-[ext_resource type="Script" uid="uid://b4k0qbu1ris2w" path="res://rooms/gameplay/pause_controller.gd" id="3_a103s"]
+[ext_resource type="Script" path="res://rooms/gameplay/pause_controller.gd" id="3_a103s"]
 [ext_resource type="PackedScene" uid="uid://caw10bgcn63gt" path="res://rooms/gameplay/pause/PauseButton.tscn" id="3_pe4hu"]
 [ext_resource type="PackedScene" uid="uid://dm6uia2vfygpt" path="res://rooms/gameplay/pause/pause_menu.tscn" id="4_o0ugv"]
 
@@ -46,6 +46,7 @@ mouse_filter = 2
 
 [node name="PauseController" type="Control" parent="."]
 unique_name_in_owner = true
+z_index = 10
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 3
 anchors_preset = 15

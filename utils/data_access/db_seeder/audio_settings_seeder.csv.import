@@ -3,11 +3,13 @@
 importer="csv_translation"
 type="Translation"
 uid="uid://bowkhavfcyk7g"
-valid=false
 
 [deps]
 
+files=["res://utils/data_access/db_seeder/audio_settings_seeder.label.translation", "res://utils/data_access/db_seeder/audio_settings_seeder.bus.translation", "res://utils/data_access/db_seeder/audio_settings_seeder.decibels.translation"]
+
 source_file="res://utils/data_access/db_seeder/audio_settings_seeder.csv"
+dest_files=["res://utils/data_access/db_seeder/audio_settings_seeder.label.translation", "res://utils/data_access/db_seeder/audio_settings_seeder.bus.translation", "res://utils/data_access/db_seeder/audio_settings_seeder.decibels.translation"]
 
 [params]
 

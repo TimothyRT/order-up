@@ -17,7 +17,7 @@ var direction_is_left := true:
 
 
 func _ready() -> void:
-	pause_time = 0.8
+	pause_time = 0.0
 	progress_threshold = 9
 	
 	direction_changed.connect(%Arrow.flip_sprite)

@@ -1,5 +1,8 @@
 extends Node2D
+class_name SerundengPlate
 
+
+@export var marker_group: Node2D
 
 var serundeng_count: int
 var serundeng_indices: Array[Node]
@@ -16,7 +19,7 @@ var serundeng_sprites := [
 ]
 
 
-func add_serundeng() -> void:
+func _on_progress_changed(_new_progress_value: int, _progress_diff: int) -> void:
 	if current_index >= serundeng_count:
 		return
 	serundeng_indices[current_index].add_child(get_random_serundeng_sprite())
@@ -37,5 +40,7 @@ func get_serundeng_count() -> int:
 
 
 func _ready() -> void:
-	serundeng_indices = %Egg.get_children()
+	serundeng_indices = marker_group.get_children()
 	serundeng_count = len(serundeng_indices)
+	if owner:
+		owner.progress_changed.connect(_on_progress_changed)

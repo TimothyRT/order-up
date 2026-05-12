@@ -67,8 +67,8 @@ var total_cuts := 0:
 				and current_state == state.SLICED:
 				current_state = state.DICED
 
-var sliced_threshold := 5
-var diced_threshold := 4
+var sliced_threshold := 3
+var diced_threshold := 3
 var total_cuts_threshold := sliced_threshold + sliced_threshold * diced_threshold
 
 var sliced_sprite: Texture2D

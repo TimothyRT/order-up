@@ -11,6 +11,8 @@ signal progress_changed(new_progress_value: int, progress_diff: int)
 signal progress_threshold_changed(new_threshold_value: int, threshold_diff: int)
 signal visuals_configured
 
+@export var label_node: Label
+
 var finished := false
 
 var paused := false:
@@ -47,14 +49,17 @@ var nodes_with_variable_self_color: Array[CanvasItem] = []
 
 var quality: float = 5.0
 
-var description: String
+var description: String:
+	set(val):
+		description = val
+		if label_node:
+			label_node.text = description
 var asset_package_uid: String
 var color_code: String
 var time_limit: int
 
 
 func start_minigame() -> void:
-	print('start miniga')
 	SignalBus.classification_made.connect(_on_classification_made)
 	minigame_started.emit()
 
@@ -131,6 +136,7 @@ func _on_player_changed() -> void:
 func _input(event: InputEvent) -> void:
 	if not Config.KEYBOARD_INPUT:
 		return
+	print("finished: %s; paused: %s" % [str(finished), str(paused)])
 	if finished or paused:
 		return
 	if event is InputEventKey:
@@ -155,6 +161,8 @@ func _input(event: InputEvent) -> void:
 					motion = MotionRecognition.MOTION.LIFT
 				KEY_O:
 					motion = MotionRecognition.MOTION.POUR
+				_:
+					return
 			_on_motion_detected(motion)
 
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1an25y5p5sti"]
+
+[ext_resource type="Script" uid="uid://cwsivvkbgnm7d" path="res://rooms/gameplay/minigames/shared/asset_package/asset_package.gd" id="1_ojiqy"]
+[ext_resource type="Texture2D" uid="uid://w2qe2xm1yh5d" path="res://rooms/gameplay/minigames/dice/ingredients/beef_1.png" id="2_l73kr"]
+[ext_resource type="Texture2D" uid="uid://c02rpxen11jxq" path="res://rooms/gameplay/minigames/dice/ingredients/beef_2.png" id="3_gfx45"]
+[ext_resource type="Texture2D" uid="uid://b6u6tmfsheyta" path="res://rooms/gameplay/minigames/dice/ingredients/beef_3.png" id="4_5yrvm"]
+
+[node name="AssetBeef" type="Node"]
+script = ExtResource("1_ojiqy")
+metadata/_custom_type_script = "uid://cwsivvkbgnm7d"
+
+[node name="Beef3" type="Sprite2D" parent="."]
+texture = ExtResource("4_5yrvm")
+
+[node name="Beef2" type="Sprite2D" parent="."]
+texture = ExtResource("3_gfx45")
+
+[node name="Beef1" type="Sprite2D" parent="."]
+texture = ExtResource("2_l73kr")

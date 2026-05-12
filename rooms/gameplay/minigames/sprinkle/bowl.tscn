@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://m6iupipga6oo"]
+
+[ext_resource type="Texture2D" uid="uid://d21wcp666hvvo" path="res://rooms/gameplay/minigames/sprinkle/coto_daging_1.png" id="1_2g84d"]
+[ext_resource type="Script" uid="uid://dn6m2wyeowe48" path="res://rooms/gameplay/minigames/sprinkle/plate.gd" id="1_nvnv7"]
+[ext_resource type="Texture2D" uid="uid://uf22hl4i27pn" path="res://rooms/gameplay/minigames/steam/shadow.png" id="2_7n3tr"]
+[ext_resource type="Texture2D" uid="uid://r7um0l3c877l" path="res://rooms/gameplay/minigames/sprinkle/coto_daging_2.png" id="2_nvnv7"]
+[ext_resource type="Texture2D" uid="uid://b8fyxva8d7s1l" path="res://rooms/gameplay/minigames/sprinkle/limes.png" id="3_7n3tr"]
+[ext_resource type="Texture2D" uid="uid://bwnsgtrleuu15" path="res://rooms/gameplay/minigames/sprinkle/coto_bowl_back.png" id="4_u6ctv"]
+[ext_resource type="Texture2D" uid="uid://5i23koxff1mr" path="res://rooms/gameplay/minigames/sprinkle/kuah_coto.png" id="5_ohi0h"]
+[ext_resource type="Texture2D" uid="uid://bhgu7woovnwtd" path="res://rooms/gameplay/minigames/sprinkle/coto_bowl_front.png" id="6_pns4g"]
+
+[node name="Bowl" type="Node2D" node_paths=PackedStringArray("marker_group")]
+script = ExtResource("1_nvnv7")
+marker_group = NodePath("MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup")
+metadata/_custom_type_script = "uid://dn6m2wyeowe48"
+
+[node name="MarkerBowl" type="Marker2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="MarkerBowl"]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(-42, -125.99999)
+rotation = 2.9741585
+texture = ExtResource("2_7n3tr")
+
+[node name="CotoBowlBack" type="Sprite2D" parent="MarkerBowl"]
+position = Vector2(-1, -322.5)
+texture = ExtResource("4_u6ctv")
+
+[node name="MarkerSoup" type="Marker2D" parent="MarkerBowl"]
+position = Vector2(14, -118)
+
+[node name="KuahCoto" type="Sprite2D" parent="MarkerBowl/MarkerSoup"]
+position = Vector2(-14, -172.5)
+texture = ExtResource("5_ohi0h")
+
+[node name="MarkerSoupContent" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto"]
+position = Vector2(-3, 22.5)
+
+[node name="CotoDaging2" type="Sprite2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerSoupContent"]
+position = Vector2(-18, -141)
+texture = ExtResource("2_nvnv7")
+
+[node name="Limes" type="Sprite2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerSoupContent"]
+position = Vector2(88, -34)
+texture = ExtResource("3_7n3tr")
+
+[node name="CotoDaging1" type="Sprite2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerSoupContent"]
+position = Vector2(-86, -33)
+texture = ExtResource("1_2g84d")
+
+[node name="MarkerGroup" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto"]
+position = Vector2(3, 75.5)
+
+[node name="Marker1" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(-230, -55)
+
+[node name="Marker2" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(-25, -206)
+
+[node name="Marker3" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(205, -156)
+
+[node name="Marker4" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(104, -85)
+
+[node name="Marker5" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(224, -79)
+
+[node name="Marker6" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(-254, -124)
+
+[node name="Marker7" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(-112, -66)
+
+[node name="Marker8" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(18, -14)
+
+[node name="Marker9" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(234, -34)
+
+[node name="Marker10" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(-27, -135)
+
+[node name="Marker11" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(155, -201)
+
+[node name="Marker12" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(142, -105)
+
+[node name="Marker13" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(-17, -85)
+
+[node name="Marker14" type="Marker2D" parent="MarkerBowl/MarkerSoup/KuahCoto/MarkerGroup"]
+position = Vector2(-128, -206)
+
+[node name="CotoBowlFront" type="Sprite2D" parent="MarkerBowl"]
+position = Vector2(3, -206.5)
+texture = ExtResource("6_pns4g")
