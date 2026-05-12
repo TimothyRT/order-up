@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://d0ka2fht6ypbg"]
 
-[ext_resource type="Texture2D" uid="uid://d2cuuj7m5or72" path="res://rooms/gameplay/minigames/slice/wood_plate.png" id="1_3c6sk"]
+[ext_resource type="Texture2D" uid="uid://d2cuuj7m5or72" path="res://rooms/gameplay/minigames/shared/objects/cutting_board/cutting_board_round.png" id="1_3c6sk"]
 [ext_resource type="Script" uid="uid://ki8o8bgcn4rn" path="res://rooms/gameplay/minigames/slice/slicing.gd" id="1_ss2h3"]
-[ext_resource type="Texture2D" uid="uid://bow4qw7klopwn" path="res://rooms/gameplay/minigames/slice/right_banana.png" id="2_dmwad"]
-[ext_resource type="Texture2D" uid="uid://iljumyat18sg" path="res://rooms/gameplay/minigames/slice/left_banana.png" id="3_qrmfi"]
-[ext_resource type="Texture2D" uid="uid://t14mjmntl4o8" path="res://rooms/gameplay/minigames/slice/banana_whole.png" id="4_5rpu4"]
+[ext_resource type="Texture2D" uid="uid://bow4qw7klopwn" path="res://rooms/gameplay/minigames/shared/objects/banana/right_banana.png" id="2_dmwad"]
+[ext_resource type="Texture2D" uid="uid://iljumyat18sg" path="res://rooms/gameplay/minigames/shared/objects/banana/left_banana.png" id="3_qrmfi"]
+[ext_resource type="Texture2D" uid="uid://t14mjmntl4o8" path="res://rooms/gameplay/minigames/shared/objects/banana/banana_whole.png" id="4_5rpu4"]
 
 [sub_resource type="Animation" id="Animation_emw26"]
 length = 0.001

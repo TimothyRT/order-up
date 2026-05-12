@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwgqm0nyufepr"]
 
 [ext_resource type="Script" uid="uid://1cfeukd273wi" path="res://rooms/gameplay/minigames/crack/egg_cracking_bar.gd" id="1_hf3do"]
-[ext_resource type="Texture2D" uid="uid://ce42ah1sqh2k4" path="res://rooms/gameplay/minigames/crack/phase_i/bar.png" id="2_3qw6p"]
-[ext_resource type="PackedScene" uid="uid://bi4oab3sn0lbx" path="res://rooms/gameplay/minigames/crack/arrow.tscn" id="3_3qw6p"]
+[ext_resource type="Texture2D" uid="uid://ce42ah1sqh2k4" path="res://rooms/gameplay/minigames/crack/assets/bar.png" id="2_3qw6p"]
+[ext_resource type="PackedScene" uid="uid://bi4oab3sn0lbx" path="res://rooms/gameplay/minigames/crack/vertical_arrow.tscn" id="3_3qw6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qw6p"]
 size = Vector2(275, 20)

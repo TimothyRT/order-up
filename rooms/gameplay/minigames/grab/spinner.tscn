@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://3wucgmwt3j22" path="res://rooms/gameplay/minigames/grab/spinner.gd" id="1_olr5j"]
 [ext_resource type="Texture2D" uid="uid://cleoses0xqch1" path="res://rooms/gameplay/minigames/grab/spinner_base.png" id="1_qxm4i"]
 [ext_resource type="Texture2D" uid="uid://b2fwrlb5ru66j" path="res://rooms/gameplay/minigames/grab/spinner_arrow.png" id="2_6pfjj"]
-[ext_resource type="Texture2D" uid="uid://b54fydkn3msb4" path="res://rooms/gameplay/minigames/grab/icon_muscle.png" id="3_jqhes"]
-[ext_resource type="Texture2D" uid="uid://btd7x4wtldfrm" path="res://rooms/gameplay/minigames/grab/icon_weak_nerd_arm.png" id="4_jqhes"]
+[ext_resource type="Texture2D" uid="uid://b54fydkn3msb4" path="res://rooms/gameplay/minigames/grab/spinner_icon_muscle.png" id="3_jqhes"]
+[ext_resource type="Texture2D" uid="uid://btd7x4wtldfrm" path="res://rooms/gameplay/minigames/grab/spinner_icon_weak_nerd_arm.png" id="4_jqhes"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1q4e4"]
 radius = 24.55281

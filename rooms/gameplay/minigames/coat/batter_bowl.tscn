@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://tv2wan3khlja"]
 
 [ext_resource type="Script" uid="uid://b6h1kx8m1y046" path="res://rooms/gameplay/minigames/coat/batter_bowl.gd" id="1_q3y1k"]
-[ext_resource type="Texture2D" uid="uid://bajick6n6pgg1" path="res://rooms/gameplay/minigames/coat/bowl_back.png" id="2_1ux2c"]
-[ext_resource type="Texture2D" uid="uid://i7osy6xpebp1" path="res://rooms/gameplay/minigames/coat/batter_back.png" id="3_qf7yk"]
-[ext_resource type="Texture2D" uid="uid://cmhglvg1jfwy6" path="res://rooms/gameplay/minigames/coat/batter_front.png" id="4_j152a"]
-[ext_resource type="Texture2D" uid="uid://iljumyat18sg" path="res://rooms/gameplay/minigames/slice/left_banana.png" id="4_qf7yk"]
-[ext_resource type="Texture2D" uid="uid://dakm6vm11r5j8" path="res://rooms/gameplay/minigames/coat/bowl_front.png" id="5_jwhcv"]
+[ext_resource type="Texture2D" uid="uid://bajick6n6pgg1" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_yellowish_back.png" id="2_1ux2c"]
+[ext_resource type="Texture2D" uid="uid://i7osy6xpebp1" path="res://rooms/gameplay/minigames/shared/objects/batter/batter_yellowish_back.png" id="3_qf7yk"]
+[ext_resource type="Texture2D" uid="uid://cmhglvg1jfwy6" path="res://rooms/gameplay/minigames/shared/objects/batter/batter_yellowish_front.png" id="4_j152a"]
+[ext_resource type="Texture2D" uid="uid://iljumyat18sg" path="res://rooms/gameplay/minigames/shared/objects/banana/left_banana.png" id="4_qf7yk"]
+[ext_resource type="Texture2D" uid="uid://dakm6vm11r5j8" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_yellowish_front.png" id="5_jwhcv"]
 
 [sub_resource type="Animation" id="Animation_j152a"]
 length = 0.001

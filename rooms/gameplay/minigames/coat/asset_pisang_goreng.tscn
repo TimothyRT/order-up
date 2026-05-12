@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://drjb6qg2plnwm"]
 
 [ext_resource type="Script" uid="uid://cwsivvkbgnm7d" path="res://rooms/gameplay/minigames/shared/asset_package/asset_package.gd" id="1_oqimg"]
-[ext_resource type="Texture2D" uid="uid://qyandwal35rn" path="res://rooms/gameplay/minigames/coat/banana.png" id="2_ebb6n"]
+[ext_resource type="Texture2D" uid="uid://iljumyat18sg" path="res://rooms/gameplay/minigames/shared/objects/banana/left_banana.png" id="2_63s0i"]
 
 [node name="AssetPackage" type="Node"]
 script = ExtResource("1_oqimg")
@@ -9,4 +9,4 @@ metadata/_custom_type_script = "uid://cwsivvkbgnm7d"
 
 [node name="Banana" type="Sprite2D" parent="."]
 position = Vector2(-13, -2)
-texture = ExtResource("2_ebb6n")
+texture = ExtResource("2_63s0i")

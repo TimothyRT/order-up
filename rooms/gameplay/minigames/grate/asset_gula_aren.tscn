@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0w3r55yxhoxh"]
 
 [ext_resource type="Script" uid="uid://cwsivvkbgnm7d" path="res://rooms/gameplay/minigames/shared/asset_package/asset_package.gd" id="1_vc02q"]
-[ext_resource type="Texture2D" uid="uid://dj8n54bqv8247" path="res://rooms/gameplay/minigames/grate/gula_aren.png" id="2_8dphl"]
-[ext_resource type="Texture2D" uid="uid://b7jx1mddc1wci" path="res://rooms/gameplay/minigames/grate/particle_gula_aren.png" id="3_n2bop"]
-[ext_resource type="Texture2D" uid="uid://kw48clgskxgl" path="res://rooms/gameplay/minigames/grate/particle_gula_aren2.png" id="4_inc2r"]
+[ext_resource type="Texture2D" uid="uid://dj8n54bqv8247" path="res://rooms/gameplay/minigames/shared/objects/palm_sugar/gula_aren.png" id="2_8dphl"]
+[ext_resource type="Texture2D" uid="uid://b7jx1mddc1wci" path="res://rooms/gameplay/minigames/shared/objects/palm_sugar/particle_gula_aren.png" id="3_n2bop"]
+[ext_resource type="Texture2D" uid="uid://kw48clgskxgl" path="res://rooms/gameplay/minigames/shared/objects/palm_sugar/particle_gula_aren2.png" id="4_inc2r"]
 
 [node name="AssetGulaAren" type="Node"]
 script = ExtResource("1_vc02q")

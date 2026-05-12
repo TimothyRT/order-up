@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://v63f7amtw1v5"]
 
 [ext_resource type="Script" uid="uid://cnipu72o2gr0m" path="res://rooms/gameplay/minigames/grate/bowl.gd" id="1_ayixg"]
-[ext_resource type="Texture2D" uid="uid://cnn4n5av3dk8j" path="res://rooms/gameplay/minigames/grate/bowl_back.png" id="1_ytko6"]
-[ext_resource type="Texture2D" uid="uid://yr4q0jfamvjb" path="res://rooms/gameplay/minigames/grate/shadow.png" id="2_0w611"]
-[ext_resource type="Texture2D" uid="uid://2386exj2vk4u" path="res://rooms/gameplay/minigames/grate/pile_01.png" id="2_3xuhb"]
-[ext_resource type="Texture2D" uid="uid://dc3jnf0oos6m2" path="res://rooms/gameplay/minigames/grate/bowl_front.png" id="2_ccfdl"]
-[ext_resource type="Texture2D" uid="uid://cxpobli8tcwv8" path="res://rooms/gameplay/minigames/grate/pile_02.png" id="3_3xuhb"]
-[ext_resource type="Texture2D" uid="uid://d4fim81bw8ggu" path="res://rooms/gameplay/minigames/grate/pile_03.png" id="4_1d2a0"]
+[ext_resource type="Texture2D" uid="uid://cnn4n5av3dk8j" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_small_brown_back.png" id="1_ytko6"]
+[ext_resource type="Texture2D" uid="uid://yr4q0jfamvjb" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_small_brown_shadow.png" id="2_0w611"]
+[ext_resource type="Texture2D" uid="uid://2386exj2vk4u" path="res://rooms/gameplay/minigames/shared/objects/pile/pile_coconut_shavings_01.png" id="2_3xuhb"]
+[ext_resource type="Texture2D" uid="uid://dc3jnf0oos6m2" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_small_brown_front.png" id="2_ccfdl"]
+[ext_resource type="Texture2D" uid="uid://cxpobli8tcwv8" path="res://rooms/gameplay/minigames/shared/objects/pile/pile_coconut_shavings_02.png" id="3_3xuhb"]
+[ext_resource type="Texture2D" uid="uid://d4fim81bw8ggu" path="res://rooms/gameplay/minigames/shared/objects/pile/pile_coconut_shavings_03.png" id="4_1d2a0"]
 
 [node name="Bowl" type="Node2D" node_paths=PackedStringArray("pile")]
 script = ExtResource("1_ayixg")

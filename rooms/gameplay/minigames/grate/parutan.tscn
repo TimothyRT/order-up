@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://df7bui26l7edw"]
 
-[ext_resource type="Script" uid="uid://4d5o6y6adgwk" path="res://parutan.gd" id="1_abiqi"]
+[ext_resource type="Script" path="res://parutan.gd" id="1_abiqi"]
 [ext_resource type="Texture2D" uid="uid://cjkapprtxev42" path="res://rooms/gameplay/minigames/grate/parutan.png" id="2_fylcm"]
 [ext_resource type="Texture2D" uid="uid://dwxu33kgcx4jh" path="res://rooms/gameplay/minigames/shared/hand/hand_5_no_white.png" id="3_lkkg1"]
-[ext_resource type="Texture2D" uid="uid://gspi5ugj1qr1" path="res://rooms/gameplay/minigames/grate/coconut.png" id="4_q7ipu"]
+[ext_resource type="Texture2D" uid="uid://gspi5ugj1qr1" path="res://rooms/gameplay/minigames/shared/objects/coconut/coconut.png" id="4_q7ipu"]
 [ext_resource type="PackedScene" uid="uid://qcw6d33ljpir" path="res://rooms/gameplay/minigames/grate/particle_grating.tscn" id="5_fylcm"]
 [ext_resource type="PackedScene" uid="uid://cjf0iar6sahx5" path="res://rooms/gameplay/minigames/shared/hand/hand_4.tscn" id="5_g875o"]
 

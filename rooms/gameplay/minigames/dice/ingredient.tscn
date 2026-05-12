@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=3 uid="uid://rfbp3i0wie7g"]
+
+[ext_resource type="Script" uid="uid://vcxhwv8yj130" path="res://rooms/gameplay/minigames/dice/ingredient.gd" id="1_5c5de"]
+[ext_resource type="Texture2D" uid="uid://bxfle76hylf75" path="res://rooms/gameplay/minigames/shared/objects/roots/onion_1.png" id="1_wvmfd"]
+[ext_resource type="Texture2D" uid="uid://bwxhmbu1u7bdl" path="res://rooms/gameplay/minigames/shared/objects/roots/onion_2.png" id="2_5c5de"]
+[ext_resource type="Shader" path="res://shaders/horizontal_clip.gdshader" id="2_fxgyi"]
+[ext_resource type="Shader" path="res://shaders/vertical_clip.gdshader" id="4_vmmm8"]
+[ext_resource type="Script" uid="uid://c76ldl6wlmxin" path="res://rooms/gameplay/minigames/dice/item_dicing_area.gd" id="5_h1eld"]
+[ext_resource type="Texture2D" uid="uid://cd3g7dt2437jk" path="res://rooms/gameplay/minigames/shared/objects/roots/onion_3.png" id="7_kpfha"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00f8b"]
+shader = ExtResource("2_fxgyi")
+shader_parameter/fill_amount = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbe4r"]
+shader = ExtResource("4_vmmm8")
+shader_parameter/fill_amount = 1.0
+
+[sub_resource type="Animation" id="Animation_h1eld"]
+length = 0.001
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemSlicesMarker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vmmm8"]
+resource_name = "phase_update"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemSlicesMarker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fbe4r"]
+_data = {
+&"RESET": SubResource("Animation_h1eld"),
+&"phase_update": SubResource("Animation_vmmm8")
+}
+
+[node name="Ingredient" type="Node2D" node_paths=PackedStringArray("item_whole", "item_slice", "item_diced")]
+script = ExtResource("1_5c5de")
+item_whole = NodePath("ItemWholeMarker/ItemWhole")
+item_slice = NodePath("ItemSliceMarker/ItemSlice")
+item_diced = NodePath("ItemDiced")
+
+[node name="ItemWholeMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-192, -186)
+
+[node name="ItemWhole" type="Sprite2D" parent="ItemWholeMarker"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_00f8b")
+texture = ExtResource("1_wvmfd")
+
+[node name="ItemSliceMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-231, -223)
+
+[node name="ItemSlice" type="Sprite2D" parent="ItemSliceMarker"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fbe4r")
+texture = ExtResource("2_5c5de")
+
+[node name="ItemSlicesMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(28, -160)
+
+[node name="ItemDicingArea" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-77, -344)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(0, 0, 500, 0, 500, 300, 0, 300)
+script = ExtResource("5_h1eld")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_fbe4r")
+}
+speed_scale = 4.0
+
+[node name="ItemDiced" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1187, 463)
+texture = ExtResource("7_kpfha")

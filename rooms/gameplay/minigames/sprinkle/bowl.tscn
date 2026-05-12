@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://m6iupipga6oo"]
 
-[ext_resource type="Texture2D" uid="uid://d21wcp666hvvo" path="res://rooms/gameplay/minigames/sprinkle/coto_daging_1.png" id="1_2g84d"]
+[ext_resource type="Texture2D" uid="uid://d21wcp666hvvo" path="res://rooms/gameplay/minigames/shared/objects/beef/beef_in_coto_1.png" id="1_2g84d"]
 [ext_resource type="Script" uid="uid://dn6m2wyeowe48" path="res://rooms/gameplay/minigames/sprinkle/plate.gd" id="1_nvnv7"]
-[ext_resource type="Texture2D" uid="uid://uf22hl4i27pn" path="res://rooms/gameplay/minigames/steam/shadow.png" id="2_7n3tr"]
-[ext_resource type="Texture2D" uid="uid://r7um0l3c877l" path="res://rooms/gameplay/minigames/sprinkle/coto_daging_2.png" id="2_nvnv7"]
-[ext_resource type="Texture2D" uid="uid://b8fyxva8d7s1l" path="res://rooms/gameplay/minigames/sprinkle/limes.png" id="3_7n3tr"]
-[ext_resource type="Texture2D" uid="uid://bwnsgtrleuu15" path="res://rooms/gameplay/minigames/sprinkle/coto_bowl_back.png" id="4_u6ctv"]
-[ext_resource type="Texture2D" uid="uid://5i23koxff1mr" path="res://rooms/gameplay/minigames/sprinkle/kuah_coto.png" id="5_ohi0h"]
-[ext_resource type="Texture2D" uid="uid://bhgu7woovnwtd" path="res://rooms/gameplay/minigames/sprinkle/coto_bowl_front.png" id="6_pns4g"]
+[ext_resource type="Texture2D" uid="uid://uf22hl4i27pn" path="res://rooms/gameplay/minigames/steam/steamer_shadow.png" id="2_7n3tr"]
+[ext_resource type="Texture2D" uid="uid://r7um0l3c877l" path="res://rooms/gameplay/minigames/shared/objects/beef/beef_in_coto_2.png" id="2_nvnv7"]
+[ext_resource type="Texture2D" uid="uid://b8fyxva8d7s1l" path="res://rooms/gameplay/minigames/shared/objects/citrus/limes.png" id="3_7n3tr"]
+[ext_resource type="Texture2D" uid="uid://bwnsgtrleuu15" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_coto_back.png" id="4_u6ctv"]
+[ext_resource type="Texture2D" uid="uid://5i23koxff1mr" path="res://rooms/gameplay/minigames/shared/objects/soup/soup_coto.png" id="5_ohi0h"]
+[ext_resource type="Texture2D" uid="uid://bhgu7woovnwtd" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_coto_front.png" id="6_pns4g"]
 
 [node name="Bowl" type="Node2D" node_paths=PackedStringArray("marker_group")]
 script = ExtResource("1_nvnv7")

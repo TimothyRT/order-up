@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://u7j3lai3guxw"]
 
 [ext_resource type="Script" uid="uid://bfx6xi1t8b7a7" path="res://rooms/gameplay/minigames/stir/wok.gd" id="1_i0n6h"]
-[ext_resource type="Texture2D" uid="uid://i3fhtrjdngwu" path="res://rooms/gameplay/minigames/stir/wok_back.svg" id="2_hhhf4"]
-[ext_resource type="Texture2D" uid="uid://cewy0hbcvtx1h" path="res://rooms/gameplay/minigames/stir/rice_base.png" id="3_mfdlb"]
-[ext_resource type="Texture2D" uid="uid://crvugat8uq2kf" path="res://rooms/gameplay/minigames/stir/eggs.svg" id="4_hhhf4"]
-[ext_resource type="Texture2D" uid="uid://nul608arf2s7" path="res://rooms/gameplay/minigames/stir/big_wooden_spoon.svg" id="4_pjtp4"]
-[ext_resource type="Texture2D" uid="uid://cpi5sxyh3waq" path="res://rooms/gameplay/minigames/stir/rice_overlay.svg" id="5_c7nh6"]
-[ext_resource type="Texture2D" uid="uid://djh4vhfb28slb" path="res://rooms/gameplay/minigames/stir/wok_front.svg" id="7_hhhf4"]
+[ext_resource type="Texture2D" uid="uid://i3fhtrjdngwu" path="res://rooms/gameplay/minigames/shared/objects/wok/wok_back.svg" id="2_hhhf4"]
+[ext_resource type="Texture2D" uid="uid://cewy0hbcvtx1h" path="res://rooms/gameplay/minigames/shared/objects/rice/rice_ebi_base.png" id="3_mfdlb"]
+[ext_resource type="Texture2D" uid="uid://crvugat8uq2kf" path="res://rooms/gameplay/minigames/shared/objects/egg/eggs.svg" id="4_hhhf4"]
+[ext_resource type="Texture2D" uid="uid://nul608arf2s7" path="res://rooms/gameplay/minigames/shared/objects/spoon/spoon_wooden_large.svg" id="4_pjtp4"]
+[ext_resource type="Texture2D" uid="uid://cpi5sxyh3waq" path="res://rooms/gameplay/minigames/shared/objects/rice/rice_overlay.svg" id="5_c7nh6"]
+[ext_resource type="Texture2D" uid="uid://djh4vhfb28slb" path="res://rooms/gameplay/minigames/shared/objects/wok/wok_front.svg" id="7_hhhf4"]
 
 [sub_resource type="Animation" id="Animation_hhhf4"]
 length = 0.001

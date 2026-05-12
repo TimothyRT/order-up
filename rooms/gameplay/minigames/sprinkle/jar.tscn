@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdhlht0c7nd8n"]
 
 [ext_resource type="Script" uid="uid://dfxcy1tigposa" path="res://rooms/gameplay/minigames/sprinkle/jar.gd" id="1_bjqnb"]
-[ext_resource type="Texture2D" uid="uid://cdbqpyut4mx3d" path="res://rooms/gameplay/minigames/sprinkle/serundeng_jar.png" id="1_m2k11"]
+[ext_resource type="Texture2D" uid="uid://cdbqpyut4mx3d" path="res://rooms/gameplay/minigames/sprinkle/jar_serundeng.png" id="1_m2k11"]
 
 [sub_resource type="Animation" id="Animation_cxyln"]
 length = 0.001

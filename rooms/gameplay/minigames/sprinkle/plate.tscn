@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7jwbd1bihuuh"]
 
-[ext_resource type="Texture2D" uid="uid://i0rp5wccrnme" path="res://rooms/gameplay/minigames/sprinkle/plate_shadow.svg" id="1_2ydk6"]
+[ext_resource type="Texture2D" uid="uid://i0rp5wccrnme" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/plate_shadow.svg" id="1_2ydk6"]
 [ext_resource type="Script" uid="uid://dn6m2wyeowe48" path="res://rooms/gameplay/minigames/sprinkle/plate.gd" id="1_s33y1"]
-[ext_resource type="Texture2D" uid="uid://cykfg35yvbsla" path="res://rooms/gameplay/minigames/sprinkle/plate.svg" id="2_ufla6"]
-[ext_resource type="Texture2D" uid="uid://dsjhk0ws8tg6f" path="res://rooms/gameplay/minigames/sprinkle/egg.svg" id="3_ufla6"]
+[ext_resource type="Texture2D" uid="uid://cykfg35yvbsla" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/plate.svg" id="2_ufla6"]
+[ext_resource type="Texture2D" uid="uid://dsjhk0ws8tg6f" path="res://rooms/gameplay/minigames/shared/objects/kerak_telor/kerak_telor_orange.svg" id="3_ufla6"]
 
 [node name="Plate" type="Node2D" node_paths=PackedStringArray("marker_group")]
 script = ExtResource("1_s33y1")

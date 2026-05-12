@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi4oab3sn0lbx"]
+
+[ext_resource type="Script" uid="uid://p8snk25ojie0" path="res://rooms/gameplay/minigames/crack/vertical_arrow.gd" id="1_t7t4s"]
+[ext_resource type="Texture2D" uid="uid://bhltxby1dr6lj" path="res://rooms/gameplay/minigames/crack/vertical_arrow.svg" id="2_o8ty8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2a3f"]
+size = Vector2(120, 20)
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_t7t4s")
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+position = Vector2(96, 2)
+texture = ExtResource("2_o8ty8")
+
+[node name="ArrowArea2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(10, -218)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowArea2D"]
+position = Vector2(-10, 218)
+shape = SubResource("RectangleShape2D_s2a3f")
+debug_color = Color(0.96743315, 0.721854, 0.42928606, 0.41960785)

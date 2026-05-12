@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://46dl747j2ghq" path="res://rooms/gameplay/minigames/grab/minigame_grab.gd" id="1_dq3yr"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_dq3yr"]
 [ext_resource type="Texture2D" uid="uid://fxt53v813hc8" path="res://rooms/gameplay/frames/bg/yellow_bg.png" id="3_vp8fw"]
-[ext_resource type="Texture2D" uid="uid://dquywcv78vggu" path="res://rooms/gameplay/minigames/grab/pan_bg.png" id="4_aaa34"]
+[ext_resource type="Texture2D" uid="uid://dquywcv78vggu" path="res://rooms/gameplay/frames/bg/pan_bg.png" id="4_aaa34"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_i0xd1"]
-[ext_resource type="Texture2D" uid="uid://dcrm8m2yvwylb" path="res://rooms/gameplay/minigames/grab/water.png" id="5_6xklo"]
+[ext_resource type="Texture2D" uid="uid://dcrm8m2yvwylb" path="res://rooms/gameplay/minigames/shared/water/water.png" id="5_6xklo"]
 [ext_resource type="PackedScene" uid="uid://ch0joqkmacy1u" path="res://rooms/gameplay/minigames/grab/lifted_item.tscn" id="6_6xklo"]
 [ext_resource type="PackedScene" uid="uid://clq4u6qh3mi3n" path="res://rooms/gameplay/minigames/grab/spinner.tscn" id="7_aaa34"]
 

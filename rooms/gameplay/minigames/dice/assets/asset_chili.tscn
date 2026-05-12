@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://t0xbfj55ksl8"]
+
+[ext_resource type="Script" uid="uid://cwsivvkbgnm7d" path="res://rooms/gameplay/minigames/shared/asset_package/asset_package.gd" id="1_pt6e6"]
+[ext_resource type="Texture2D" uid="uid://bmphxndh3wipa" path="res://rooms/gameplay/minigames/shared/objects/chili/chili_1.png" id="2_lupls"]
+[ext_resource type="Texture2D" uid="uid://bmeqdypy3cumh" path="res://rooms/gameplay/minigames/shared/objects/chili/chili_2.png" id="3_7lxmw"]
+[ext_resource type="Texture2D" uid="uid://cfa475tqvr4th" path="res://rooms/gameplay/minigames/shared/objects/chili/chili_3.png" id="4_ttog8"]
+
+[node name="AssetChili" type="Node"]
+script = ExtResource("1_pt6e6")
+metadata/_custom_type_script = "uid://cwsivvkbgnm7d"
+
+[node name="Chili1" type="Sprite2D" parent="."]
+position = Vector2(-10.5, -0.5)
+texture = ExtResource("2_lupls")
+
+[node name="Chili2" type="Sprite2D" parent="."]
+position = Vector2(-9, 3)
+texture = ExtResource("3_7lxmw")
+
+[node name="Chili3" type="Sprite2D" parent="."]
+position = Vector2(5, -3)
+texture = ExtResource("4_ttog8")

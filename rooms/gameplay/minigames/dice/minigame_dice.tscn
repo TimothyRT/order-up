@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_as6ky"]
 [ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_background.svg" id="3_l7ug3"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_axkh8"]
-[ext_resource type="Texture2D" uid="uid://h3010nkgfm2i" path="res://rooms/gameplay/minigames/dice/talenan.png" id="4_l7ug3"]
+[ext_resource type="Texture2D" uid="uid://h3010nkgfm2i" path="res://rooms/gameplay/minigames/shared/objects/cutting_board/cutting_board.png" id="4_l7ug3"]
 [ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="5_7nr82"]
 [ext_resource type="PackedScene" uid="uid://e3v5we5qtn5o" path="res://rooms/gameplay/minigames/shared/hand/knife/hand_with_knife.tscn" id="6_7nr82"]
-[ext_resource type="PackedScene" uid="uid://rfbp3i0wie7g" path="res://rooms/gameplay/minigames/dice/ingredients/ingredient.tscn" id="7_axkh8"]
+[ext_resource type="PackedScene" uid="uid://rfbp3i0wie7g" path="res://rooms/gameplay/minigames/dice/ingredient.tscn" id="7_axkh8"]
 
 [node name="MinigameDice" type="Node2D"]
 script = ExtResource("1_l7ug3")

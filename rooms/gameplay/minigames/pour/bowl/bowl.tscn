@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://yfe8kra8y0ae"]
 
-[ext_resource type="Texture2D" uid="uid://uculdtalix57" path="res://rooms/gameplay/minigames/pour/bowl/bowl_back.png" id="1_iui6i"]
+[ext_resource type="Texture2D" uid="uid://uculdtalix57" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_pink_back.png" id="1_iui6i"]
 [ext_resource type="Script" uid="uid://dlk4vgwqtwek1" path="res://rooms/gameplay/minigames/pour/bowl/bowl.gd" id="1_joeh3"]
-[ext_resource type="Texture2D" uid="uid://dvwci7vfrhoyo" path="res://rooms/gameplay/minigames/pour/bowl/flour_fill.png" id="2_joeh3"]
-[ext_resource type="Texture2D" uid="uid://d4bymsi8nse1d" path="res://rooms/gameplay/minigames/pour/bowl/flour_outline.png" id="3_lhxtm"]
-[ext_resource type="Texture2D" uid="uid://d08a3xk7yse30" path="res://rooms/gameplay/minigames/pour/bowl/bowl_front.png" id="4_2q5yd"]
+[ext_resource type="Texture2D" uid="uid://dvwci7vfrhoyo" path="res://rooms/gameplay/minigames/shared/objects/pile/pile_flour_fill.png" id="2_joeh3"]
+[ext_resource type="Texture2D" uid="uid://d4bymsi8nse1d" path="res://rooms/gameplay/minigames/shared/objects/pile/pile_flour_outline.png" id="3_lhxtm"]
+[ext_resource type="Texture2D" uid="uid://d08a3xk7yse30" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/bowl_pink_front.png" id="4_2q5yd"]
 
 [node name="Bowl" type="Node2D"]
 script = ExtResource("1_joeh3")

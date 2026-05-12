@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://76xfcjlfx5nb"]
+
+[ext_resource type="Script" uid="uid://bytkxvsdd7cg" path="res://rooms/gameplay/minigames/fan/minigame_fan.gd" id="1_qs7vi"]
+
+[node name="MinigameFan" type="Node2D"]
+script = ExtResource("1_qs7vi")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
