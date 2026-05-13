@@ -20,7 +20,8 @@ func select_from_category(category: int, conditions="", columns=["*"]) -> Varian
 	if len(conditions) == 0:
 		conditions += category_clause
 	else:
-		conditions += "AND %s" % category_clause
+		conditions += " AND %s" % category_clause
+	conditions += " ORDER BY dishes.ordering_index ASC"
 	return select_all(conditions, columns)
 
 

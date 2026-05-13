@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfqucwhw474rs"
-path="res://.godot/imported/surya_at_the_food_truck.png-2923b8fb133161f99e7e7eb3e5b3757d.ctex"
+uid="uid://bw8slkcrt03lr"
+path="res://.godot/imported/water_167x.png-9261f68a9201fdca4c6d75f1cd7f66c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/story/surya_at_the_food_truck.png"
-dest_files=["res://.godot/imported/surya_at_the_food_truck.png-2923b8fb133161f99e7e7eb3e5b3757d.ctex"]
+source_file="res://rooms/gameplay/minigames/shared/water/water_167x.png"
+dest_files=["res://.godot/imported/water_167x.png-9261f68a9201fdca4c6d75f1cd7f66c9.ctex"]
 
 [params]
 

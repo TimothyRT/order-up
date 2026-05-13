@@ -33,6 +33,7 @@ scale = Vector2(1.0769448, 1.0769448)
 texture = ExtResource("5_6xklo")
 
 [node name="LiftedItem" parent="FrameThickF" instance=ExtResource("6_6xklo")]
+unique_name_in_owner = true
 position = Vector2(-112, 406)
 
 [node name="FrameThickO" type="Sprite2D" parent="."]

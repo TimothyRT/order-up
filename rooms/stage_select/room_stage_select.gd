@@ -71,14 +71,14 @@ func _on_button_focused_while_outside_view(button: Control) -> void:
 
 
 func _on_dish_selected(dish_id: String) -> void:
-	print("Dish Selected: %s" % dish_id)
-	var recipe_arr = DishService.select_dish_recipe(dish_id)
-	print("Dish Selected 1: %s" % str(recipe_arr))
-	if recipe_arr is Array and not recipe_arr.is_empty():
-		print("Dish Selected 2")
-		state["recipe"] = recipe_arr
-		state["is_multiplayer"] = is_multiplayer
-		room_switch_requested.emit(&"Gameplay")
+	if dish_id == "start":
+		room_switch_requested.emit(&"Story")
+	else:
+		var recipe_arr = DishService.select_dish_recipe(dish_id)
+		if recipe_arr is Array and not recipe_arr.is_empty():
+			state["recipe"] = recipe_arr
+			state["is_multiplayer"] = is_multiplayer
+			room_switch_requested.emit(&"Gameplay")
 
 
 func _ready() -> void:

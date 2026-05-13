@@ -27,6 +27,8 @@ texture = ExtResource("4_w5yki")
 [node name="BatterBowl" parent="FrameThickF" instance=ExtResource("5_d5dtb")]
 unique_name_in_owner = true
 position = Vector2(0, 88)
+play_at_start = -1
+disappear_after_start = false
 
 [node name="FrameThickO" type="Sprite2D" parent="."]
 texture = ExtResource("6_c8v56")

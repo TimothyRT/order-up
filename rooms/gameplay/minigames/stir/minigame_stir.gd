@@ -3,7 +3,7 @@ extends Minigame
 
 func _ready() -> void:
 	pause_time = 0.0
-	progress_threshold = 20
+	progress_threshold = 8
 	%GasStoveAudio.play()
 	super()
 

@@ -63,23 +63,22 @@ func _ready() -> void:
 	super()
 
 
-func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.LIFT:
-		if progress >= len(ingredient_sequence):
-			return
-		
-		if current_hand_position == highlighted_ingredient:
-			collected_ingredients.append(highlighted_ingredient)
-			%IngredientGroup.get_child(highlighted_ingredient).texture = null
-			progress += 1
-			%CorrectAudio.play()
-			if progress < len(ingredient_sequence):
-				highlighted_ingredient = ingredient_sequence[progress]
-			else:
-				await get_tree().create_timer(0.8).timeout
-				%HighlightedIngredient.visible = false
+func _on_motion_detected(_motion: int) -> void:
+	if progress >= len(ingredient_sequence):
+		return
+	
+	if current_hand_position == highlighted_ingredient:
+		collected_ingredients.append(highlighted_ingredient)
+		%IngredientGroup.get_child(highlighted_ingredient).texture = null
+		progress += 1
+		%CorrectAudio.play()
+		if progress < len(ingredient_sequence):
+			highlighted_ingredient = ingredient_sequence[progress]
 		else:
-			%BuzzerAudio.play()
+			await get_tree().create_timer(0.8).timeout
+			%HighlightedIngredient.visible = false
+	else:
+		%BuzzerAudio.play()
 
 
 func _on_hand_timer_timeout() -> void:

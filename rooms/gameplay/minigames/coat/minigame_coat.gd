@@ -15,8 +15,7 @@ func _ready() -> void:
 
 func _on_motion_detected(motion: int) -> void:
 	if motion == MotionRecognition.MOTION.POUR and not %BatterBowl.animation_is_playing:
-		%BatterBowl.play_animation()
-		await %BatterBowl.animation_finished
 		progress += 1
 		if progress < progress_threshold:
+			await %BatterBowl.animation_player.animation_finished
 			%BatterBowl.reset_animation()

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://coji8r1q0va2a"]
+
+[ext_resource type="Script" uid="uid://mx673lgk6ci6" path="res://rooms/story/room_story.gd" id="1_mq74m"]
+[ext_resource type="PackedScene" uid="uid://bd668e2v4xe64" path="res://rooms/story/story_news.tscn" id="4_uh7rq"]
+
+[node name="RoomStory" type="Node"]
+script = ExtResource("1_mq74m")
+metadata/_custom_type_script = "uid://b56t1yahd1mo4"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="CenterContainer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+
+[node name="AnimatableStoryNews" parent="CenterContainer/Container" instance=ExtResource("4_uh7rq")]
+unique_name_in_owner = true
+position = Vector2(964, 942)

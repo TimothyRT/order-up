@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diprfqgao5kxk"
-path="res://.godot/imported/rect_h_large_f.png-b9577e4e719e27b954899f9cea13d175.ctex"
+uid="uid://dppw6eglpcjep"
+path="res://.godot/imported/rect_h_small_o.png-40b8f287cbeec1d8f809c5dd84755bcb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/story/assets/rect_h_large_f.png"
-dest_files=["res://.godot/imported/rect_h_large_f.png-b9577e4e719e27b954899f9cea13d175.ctex"]
+source_file="res://rooms/story/assets/rect_h_small_o.png"
+dest_files=["res://.godot/imported/rect_h_small_o.png-40b8f287cbeec1d8f809c5dd84755bcb.ctex"]
 
 [params]
 

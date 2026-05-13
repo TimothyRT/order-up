@@ -1,14 +1,15 @@
 id,label,dish_icon,ordering_index,is_tutorial
-"hit","Hit","",0,1
-"shake","Shake","",1,1
-"swing","Swing","",2,1
-"fan","Fan","",3,1
-"stir","Stir","",4,1
-"spin","Spin","",5,1
-"lift","Lift","",6,1
-"pour","Pour","",7,1
-"kerak","Kerak Telor","uid://bd6f3kd7vjs5b",3,0
-"klepon","Klepon","uid://chkm5tonge8d5",1,0
-"nasgor","Nasi Goreng","uid://cso8nhnq2nn02",0,0
-"coto","Coto Makassar","uid://dyuyiobl6bb1w",4,0
-"pisgor","Pisang Goreng","uid://dl51ctlugl3tb",2,0
+"start","Start","",0,1
+"hit","Hit","",1,1
+"shake","Shake","",2,1
+"swing","Swing","",3,1
+"fan","Fan","",4,1
+"stir","Stir","",5,1
+"spin","Spin","",6,1
+"lift","Lift","",7,1
+"pour","Pour","",8,1
+"kerak","Kerak Telor","uid://bd6f3kd7vjs5b",2,0
+"klepon","Klepon","uid://chkm5tonge8d5",4,0
+"nasgor","Nasi Goreng","uid://cso8nhnq2nn02",3,0
+"coto","Coto Makassar","uid://dyuyiobl6bb1w",1,0
+"pisgor","Pisang Goreng","uid://dl51ctlugl3tb",0,0

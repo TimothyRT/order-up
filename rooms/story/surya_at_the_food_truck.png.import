@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2k10ofloys5r"
-path="res://.godot/imported/pages_back.png-becb8ffd232f01e435bd464bd3eee0c4.ctex"
+uid="uid://bfqucwhw474rs"
+path="res://.godot/imported/surya_at_the_food_truck.png-f14edb81d85366299a1ca6f6c873247e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/story/assets/pages_back.png"
-dest_files=["res://.godot/imported/pages_back.png-becb8ffd232f01e435bd464bd3eee0c4.ctex"]
+source_file="res://rooms/story/surya_at_the_food_truck.png"
+dest_files=["res://.godot/imported/surya_at_the_food_truck.png-f14edb81d85366299a1ca6f6c873247e.ctex"]
 
 [params]
 

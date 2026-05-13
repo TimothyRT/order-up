@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbnikiwry5kkk"]
+[gd_scene load_steps=11 format=3 uid="uid://bbnikiwry5kkk"]
 
 [ext_resource type="Script" uid="uid://c80jn3vd88qby" path="res://rooms/gameplay/frames/minigame_frame.gd" id="1_8hwth"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_3kfwg"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bpbcrllt2hsmg" path="res://rooms/gameplay/minigames/shared/sfx/twhing.wav" id="4_3ihof"]
 [ext_resource type="Material" uid="uid://blwn851l5ji1d" path="res://rooms/gameplay/minigames/crack/bubble_shader_material.tres" id="4_p7aun"]
 [ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="5_3ihof"]
+[ext_resource type="PackedScene" uid="uid://bx1p603d7aaih" path="res://rooms/gameplay/minigames/shared/score_display/score_display.tscn" id="7_vivhl"]
 
 [sub_resource type="Animation" id="Animation_3ihof"]
 length = 0.001
@@ -60,19 +61,15 @@ unique_name_in_owner = true
 position = Vector2(470, 474)
 
 [node name="FrameThickF" type="Sprite2D" parent="."]
-visible = false
+unique_name_in_owner = true
 clip_children = 2
 position = Vector2(470, 474)
 texture = ExtResource("2_3kfwg")
 
 [node name="FrameThickO" type="Sprite2D" parent="."]
-visible = false
+unique_name_in_owner = true
 position = Vector2(470, 474)
 texture = ExtResource("3_al4qn")
-
-[node name="FinishAudio" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("4_3ihof")
 
 [node name="StepXofYLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -88,9 +85,21 @@ theme_override_font_sizes/font_size = 96
 text = "Step X of Y"
 horizontal_alignment = 1
 
+[node name="FinishAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_3ihof")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_77kkd")
 }
 speed_scale = 2.0
+
+[node name="ScoreDisplay" parent="." instance=ExtResource("7_vivhl")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 54.689125
+offset_top = 61.885063
+offset_right = 54.68914
+offset_bottom = 61.885063

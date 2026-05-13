@@ -240,8 +240,9 @@ _data = {
 &"success": SubResource("Animation_yrvai")
 }
 
-[node name="LiftedItem" type="Node2D"]
+[node name="LiftedItem" type="Node2D" node_paths=PackedStringArray("water_node")]
 script = ExtResource("1_g3kx8")
+water_node = NodePath("MarkerSplash/Splash")
 
 [node name="MarkerGrabberBack" type="Marker2D" parent="."]
 position = Vector2(-53, -820)

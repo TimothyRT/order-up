@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dppw6eglpcjep"
-path="res://.godot/imported/rect_h_small_o.png-38f7d945906d5ee7366a4fd8645532b7.ctex"
+uid="uid://b3fciexxg4ikk"
+path="res://.godot/imported/ladle.png-76bde714048697443d53231f5fadbf8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/story/assets/rect_h_small_o.png"
-dest_files=["res://.godot/imported/rect_h_small_o.png-38f7d945906d5ee7366a4fd8645532b7.ctex"]
+source_file="res://rooms/gameplay/minigames/shared/objects/spoon/ladle.png"
+dest_files=["res://.godot/imported/ladle.png-76bde714048697443d53231f5fadbf8a.ctex"]
 
 [params]
 

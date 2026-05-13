@@ -5,6 +5,33 @@
 [ext_resource type="Texture2D" uid="uid://56ih78qjaq3d" path="res://rooms/gameplay/minigames/shared/objects/pan/pan_front.png" id="3_bbnqt"]
 [ext_resource type="Texture2D" uid="uid://bq25w4f7frwyq" path="res://rooms/gameplay/minigames/shared/objects/kerak_telor/kerak_telor_white.png" id="3_vimco"]
 
+[sub_resource type="Animation" id="Animation_bbnqt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase/PanBack/MarkerFood:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 126)]
+}
+
 [sub_resource type="Animation" id="Animation_vimco"]
 resource_name = "fry"
 length = 0.8
@@ -32,33 +59,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
 "update": 0,
 "values": [Vector2(-8, 125), Vector2(-18.42168, 116.99356), Vector2(-8.171486, 136.99756), Vector2(-8, 125)]
-}
-
-[sub_resource type="Animation" id="Animation_bbnqt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarkerBase:skew")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarkerBase/PanBack/MarkerFood:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-8, 126)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bbnqt"]

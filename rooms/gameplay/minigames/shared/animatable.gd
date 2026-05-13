@@ -7,6 +7,10 @@ extends Node2D
 @export var play_at_start: int = -1
 @export var disappear_after_start := false
 
+var animation_is_playing: bool:
+	get:
+		return %AnimationPlayer.is_playing()
+
 
 func set_color(player: int) -> void:
 	for hand in hand_nodes:
@@ -19,6 +23,10 @@ func play_action(idx: int) -> void:
 	if idx < 0 or idx >= animation_list.size():
 		return
 	%AnimationPlayer.play(animation_list[idx])
+
+
+func reset_animation() -> void:
+	%AnimationPlayer.play(&"RESET")
 
 
 func _ready() -> void:

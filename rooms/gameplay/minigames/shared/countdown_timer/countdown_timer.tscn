@@ -43,6 +43,7 @@ _data = {
 }
 
 [node name="CountdownTimer" type="Node2D"]
+z_index = 7
 script = ExtResource("1_l11yt")
 
 [node name="Sprite" type="Sprite2D" parent="."]

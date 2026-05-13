@@ -9,4 +9,5 @@ func _ready() -> void:
 
 
 func _on_motion_detected(_motion: int) -> void:
-	play_action(0)
+	if _motion == MotionRecognition.MOTION.FAN:
+		play_action(0)

@@ -1,0 +1,222 @@
+[gd_scene load_steps=13 format=3 uid="uid://c80w13alth4ys"]
+
+[ext_resource type="Script" uid="uid://bkh3d0v76bifr" path="res://rooms/gameplay/minigames/stir/animatable_pan_coto.gd" id="1_78rl0"]
+[ext_resource type="Texture2D" uid="uid://di8ux3u35xvvw" path="res://rooms/gameplay/minigames/shared/objects/pan/pan_back.png" id="2_d452a"]
+[ext_resource type="Texture2D" uid="uid://5i23koxff1mr" path="res://rooms/gameplay/minigames/shared/objects/soup/soup_coto.png" id="3_46b6k"]
+[ext_resource type="Texture2D" uid="uid://56ih78qjaq3d" path="res://rooms/gameplay/minigames/shared/objects/pan/pan_front.png" id="3_j2hbu"]
+[ext_resource type="PackedScene" uid="uid://htj2g8xhhlpu" path="res://rooms/gameplay/minigames/shared/water/water_bubble_particles.tscn" id="4_46b6k"]
+[ext_resource type="Texture2D" uid="uid://r7um0l3c877l" path="res://rooms/gameplay/minigames/shared/objects/beef/beef_in_coto_2.png" id="5_lvfo4"]
+[ext_resource type="Texture2D" uid="uid://d21wcp666hvvo" path="res://rooms/gameplay/minigames/shared/objects/beef/beef_in_coto_1.png" id="6_2x6s2"]
+[ext_resource type="Texture2D" uid="uid://b3fciexxg4ikk" path="res://rooms/gameplay/minigames/shared/objects/spoon/ladle.png" id="6_78rl0"]
+[ext_resource type="Texture2D" uid="uid://bw8slkcrt03lr" path="res://rooms/gameplay/minigames/shared/water/water_167x.png" id="7_qvslx"]
+
+[sub_resource type="Animation" id="Animation_78rl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase/MarkerWater/MarkerLadle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-157.7369, -361.9325)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase/MarkerWater/MarkerMeat2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(32.1912, -1229.4218)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerBase/MarkerWater/MarkerMeat1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.14608, 149.36908)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarkerBase/MarkerWater/SoupCoto:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.8232764, 4.407749)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarkerBase/MarkerWater/MarkerLadle:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_53i5f"]
+resource_name = "stir"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase/MarkerWater/MarkerLadle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.099999994, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-157.7369, -361.9325), Vector2(-85.84321, 40.214844), Vector2(13.949509, 218.30872), Vector2(123.3996, -5.744873), Vector2(86.91623, -511.30154), Vector2(-89.06232, -482.5767), Vector2(-157.7369, -361.9325)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase/MarkerWater/MarkerMeat2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(32.1912, -1229.4218), Vector2(32.1912, -1229.4218), Vector2(33.26424, -1189.2072), Vector2(32.1912, -1229.4218), Vector2(32.1912, -1229.4218)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerBase/MarkerWater/MarkerMeat1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(-2.14608, 149.36908), Vector2(-2.14608, 149.36908), Vector2(-1.07304, 235.5435), Vector2(-2.14608, 149.36908), Vector2(-2.14608, 149.36908)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarkerBase/MarkerWater/SoupCoto:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.4, 0.5),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(0.8232764, 4.407749), Vector2(0.856, 4.232), Vector2(0.79, 4.584), Vector2(0.8232764, 4.407749)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarkerBase/MarkerWater/MarkerLadle:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [0.0, -0.05235987755982989, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mepfc"]
+_data = {
+&"RESET": SubResource("Animation_78rl0"),
+&"stir": SubResource("Animation_53i5f")
+}
+
+[node name="AnimatablePanCoto" type="Node2D"]
+script = ExtResource("1_78rl0")
+animation_list = Array[StringName]([&"stir"])
+metadata/_custom_type_script = "uid://cbiyrmbciul36"
+
+[node name="MarkerBase" type="Marker2D" parent="."]
+position = Vector2(-2, -32)
+
+[node name="PanBack" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(-4, -15)
+texture = ExtResource("2_d452a")
+
+[node name="MarkerWater" type="Marker2D" parent="MarkerBase"]
+position = Vector2(4, 121.999985)
+scale = Vector2(0.9319317, 0.17406556)
+
+[node name="SoupCoto" type="Sprite2D" parent="MarkerBase/MarkerWater"]
+position = Vector2(-11.803444, -781.3148)
+scale = Vector2(0.8232764, 4.407749)
+texture = ExtResource("3_46b6k")
+
+[node name="MarkerMeat2" type="Marker2D" parent="MarkerBase/MarkerWater"]
+position = Vector2(32.1912, -1229.4218)
+scale = Vector2(1, 0.9999997)
+
+[node name="BeefInCoto2" type="Sprite2D" parent="MarkerBase/MarkerWater/MarkerMeat2"]
+position = Vector2(-3.21912, -149.36902)
+scale = Vector2(0.7677064, 4.1102333)
+texture = ExtResource("5_lvfo4")
+
+[node name="SoupBubbleParticles" parent="MarkerBase/MarkerWater" instance=ExtResource("4_46b6k")]
+modulate = Color(1, 0.9433333, 0.65999997, 0.8627451)
+position = Vector2(-5.3652, -746.8449)
+scale = Vector2(1.07304, 5.7449603)
+
+[node name="MarkerLadle" type="Marker2D" parent="MarkerBase/MarkerWater"]
+position = Vector2(-157.7369, -361.9325)
+scale = Vector2(1.07304, 5.744961)
+
+[node name="Ladle" type="Sprite2D" parent="MarkerBase/MarkerWater/MarkerLadle"]
+position = Vector2(-30, -216)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("6_78rl0")
+
+[node name="MarkerOverlay" type="Marker2D" parent="MarkerBase/MarkerWater/MarkerLadle"]
+position = Vector2(2.9999847, -2)
+rotation = -3.1415925
+scale = Vector2(1, -1)
+
+[node name="Water167x" type="Sprite2D" parent="MarkerBase/MarkerWater/MarkerLadle/MarkerOverlay"]
+modulate = Color(0.9882353, 0.6862745, 0.09019608, 1)
+position = Vector2(-3, -54)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+texture = ExtResource("7_qvslx")
+
+[node name="MarkerMeat1" type="Marker2D" parent="MarkerBase/MarkerWater"]
+position = Vector2(-2.14608, 149.36908)
+scale = Vector2(1, 0.9999998)
+
+[node name="BeefInCoto1" type="Sprite2D" parent="MarkerBase/MarkerWater/MarkerMeat1"]
+position = Vector2(-66.52849, -723.86536)
+scale = Vector2(0.87613934, 4.690774)
+texture = ExtResource("6_2x6s2")
+
+[node name="PanFront" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(-51, 92)
+texture = ExtResource("3_j2hbu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_mepfc")
+}
+speed_scale = 1.6

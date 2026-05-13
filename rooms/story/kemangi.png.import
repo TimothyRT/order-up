@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcu86172mear2"
-path="res://.godot/imported/rect_h_small_f.png-3f620be3168b311e1be5e29f7c7a06fd.ctex"
+uid="uid://bssg83ye66wnh"
+path="res://.godot/imported/kemangi.png-96886d7bfecf301b998ed80e00478625.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/story/assets/rect_h_small_f.png"
-dest_files=["res://.godot/imported/rect_h_small_f.png-3f620be3168b311e1be5e29f7c7a06fd.ctex"]
+source_file="res://rooms/story/kemangi.png"
+dest_files=["res://.godot/imported/kemangi.png-96886d7bfecf301b998ed80e00478625.ctex"]
 
 [params]
 

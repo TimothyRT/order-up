@@ -8,6 +8,7 @@ signal lifting_failed
 
 func configure_visuals() -> void:
 	nodes_with_variable_color.append(water)
+	nodes_with_variable_color.append(%LiftedItem.water_node)
 	super()
 
 

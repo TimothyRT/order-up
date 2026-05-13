@@ -1,11 +1,11 @@
-extends Node2D
+extends Animatable
 
 
+@export var ingredient: Node2D
+@export var ingredient_addition: Node2D
+@export var spoon: Node2D
+@export var spoon_overlay: Node2D
 
-func _on_progress_changed(_new_progress_value: int, _progress_diff: int) -> void:
-	%AnimationPlayer.play(&"stir")
 
-
-func _ready() -> void:
-	if owner:
-		owner.progress_changed.connect(_on_progress_changed)
+func _on_progress_incremented(_new_progress_value: int) -> void:
+	play_action(0)

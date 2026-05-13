@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ssvfvxu2u35v"
-path="res://.godot/imported/rect_v_o.png-c7c71169b1fd6993f05069039301ee37.ctex"
+uid="uid://dx21eut1yvnl4"
+path="res://.godot/imported/splash_mini.png-54838e4f8b460a556e21285e84f105a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/gameplay/story/assets/rect_v_o.png"
-dest_files=["res://.godot/imported/rect_v_o.png-c7c71169b1fd6993f05069039301ee37.ctex"]
+source_file="res://rooms/gameplay/minigames/shared/water/splash_mini.png"
+dest_files=["res://.godot/imported/splash_mini.png-54838e4f8b460a556e21285e84f105a2.ctex"]
 
 [params]
 

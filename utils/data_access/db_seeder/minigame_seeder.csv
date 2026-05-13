@@ -6,7 +6,7 @@ id,description,scene
 "crack","Time your HITs to crack the eggs","uid://bf0xfnp4kdvsc"
 "grind","SWING LEFT and RIGHT to grind the ingredients","uid://rovym6mxyn1u"
 "knead","SWING LEFT and RIGHT to knead the batter","uid://1lujhnme75js"
-"pick","LIFT the required ingredient at the right time","uid://bmq27boelc242"
+"pick","Perform ANY motion with your phone to pick the ingredient required","uid://bmq27boelc242"
 "sprinkle","POUR the jar, then SHAKE it","uid://2fuupsbvwtay"
 "stir","STIR to mix the ingredients well","uid://cls2d7iky5hmt"
 "pour","POUR the ingredient into the bowl","uid://3pm8shrauurr"
@@ -18,3 +18,4 @@ id,description,scene
 "wrap","SPIN to wrap the food up","uid://detl2jihhto8c"
 "sprinkle_klepon","POUR the jar, then SHAKE it","uid://bkuexyhda7vv1"
 "fan","FAN to maintain the heat","uid://76xfcjlfx5nb"
+"flip","SPIN to flip the food","uid://8m3f3l6jd641"

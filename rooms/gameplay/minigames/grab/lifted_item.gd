@@ -1,6 +1,9 @@
 extends Node2D
 
 
+@export var water_node: Node2D
+
+
 func _ready() -> void:
 	if owner:
 		owner.progress_changed.connect(_on_progress_changed)

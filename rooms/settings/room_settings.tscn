@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://186dyh4npvmq"]
+[gd_scene load_steps=4 format=3 uid="uid://186dyh4npvmq"]
 
 [ext_resource type="Script" uid="uid://b6rca3d57k06e" path="res://rooms/settings/room_settings.gd" id="1_ww7y8"]
 [ext_resource type="Texture2D" uid="uid://k3gwrhab55yh" path="res://rooms/shared/modal_box/modal_box_base_large.png" id="2_n3n2n"]
 [ext_resource type="PackedScene" uid="uid://cm0jtndiubcwx" path="res://rooms/shared/volume_settings/volume_settings.tscn" id="3_mffcr"]
-[ext_resource type="PackedScene" uid="uid://bd668e2v4xe64" path="res://rooms/gameplay/story/story_news.tscn" id="4_dn5ll"]
 
 [node name="RoomSettings" type="Node"]
 script = ExtResource("1_ww7y8")
@@ -30,6 +29,3 @@ offset_left = 248.0
 offset_top = 488.0
 offset_right = 668.0
 offset_bottom = 688.0
-
-[node name="AnimatableStoryNews" parent="CenterContainer/Container" instance=ExtResource("4_dn5ll")]
-position = Vector2(964, 942)

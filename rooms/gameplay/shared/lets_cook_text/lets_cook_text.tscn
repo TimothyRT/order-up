@@ -66,6 +66,7 @@ _data = {
 }
 
 [node name="LetsCookText" type="Node2D"]
+z_index = 8
 script = ExtResource("1_s3hyd")
 metadata/_custom_type_script = "uid://bfeeam7ryiim2"
 

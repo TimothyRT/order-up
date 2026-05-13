@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://m4kyeqw77ibf"]
+
+[ext_resource type="Script" uid="uid://7qwrru3v2138" path="res://rooms/gameplay/minigames/stir/minigame_stir.gd" id="1_vvxmn"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_n3fr0"]
+[ext_resource type="Texture2D" uid="uid://dngedx0s7txp3" path="res://backgrounds/pattern_bg/bg_white_ornament.png" id="3_3js7t"]
+[ext_resource type="PackedScene" uid="uid://46ik2b468pel" path="res://rooms/gameplay/minigames/fan/stove.tscn" id="3_ckuei"]
+[ext_resource type="PackedScene" uid="uid://c80w13alth4ys" path="res://rooms/gameplay/minigames/stir/animatable_pan_coto.tscn" id="3_e0scg"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_aru6n"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="5_1mbrs"]
+[ext_resource type="AudioStream" uid="uid://c1eq17a1qq0g7" path="res://rooms/gameplay/minigames/shared/sfx/sizzling.wav" id="6_221fc"]
+[ext_resource type="Script" uid="uid://dkimue6n1nxxa" path="res://utils/motion_recognition/audio/looping_audio.gd" id="7_5lqbe"]
+[ext_resource type="AudioStream" uid="uid://fa7w0pww4qtm" path="res://rooms/gameplay/minigames/shared/sfx/gas_stove.wav" id="8_tny4m"]
+
+[node name="MinigameStirPan" type="Node2D"]
+script = ExtResource("1_vvxmn")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_n3fr0")
+
+[node name="ColorRect" type="ColorRect" parent="FrameThickF"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -467.5
+offset_top = -467.0
+offset_right = -467.5
+offset_bottom = -467.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.42427102, 0.29849616, 0.4252335, 1)
+
+[node name="BgWhiteOrnament" type="Sprite2D" parent="FrameThickF"]
+position = Vector2(-302, -31)
+texture = ExtResource("3_3js7t")
+
+[node name="AnimatableStove" parent="FrameThickF" instance=ExtResource("3_ckuei")]
+position = Vector2(1, 421)
+
+[node name="AnimatablePanCoto" parent="FrameThickF" instance=ExtResource("3_e0scg")]
+position = Vector2(0, 66)
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("4_aru6n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MinigameProgressBar" parent="." instance=ExtResource("5_1mbrs")]
+position = Vector2(-277, 345)
+
+[node name="SizzlingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_221fc")
+autoplay = true
+script = ExtResource("7_5lqbe")
+metadata/_custom_type_script = "uid://dkimue6n1nxxa"
+
+[node name="GasStoveAudio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_tny4m")

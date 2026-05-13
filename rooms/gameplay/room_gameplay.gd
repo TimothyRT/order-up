@@ -80,6 +80,10 @@ func _on_minigame_finished(player: int) -> void:
 	minigames_progress[player].append(true)
 	minigame_current[player] = (minigame_current[player] + 1) % len(minigames)
 	
+	var minigame: Minigame = get_frame(player).minigame
+	print("minigame time left: %d" % minigame.time_left)
+	get_frame(player).score += minigame.time_left
+	
 	if len(minigames_progress[player]) == len(minigames):
 		dishes_progress[player].append(true)
 		minigames_progress[player].clear()

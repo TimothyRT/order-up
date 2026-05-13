@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvfrq4r3l2op0"]
+
+[ext_resource type="Script" uid="uid://dv24a2t7k07lv" path="res://rooms/gameplay/minigames/flip/flipped_item.gd" id="1_t7r6f"]
+[ext_resource type="Texture2D" uid="uid://cppvkohmcdbas" path="res://rooms/gameplay/minigames/shared/objects/banana/pisgor_02.png" id="3_0fetm"]
+[ext_resource type="Texture2D" uid="uid://7e6gx16j28xt" path="res://rooms/gameplay/minigames/flip/icon_flip.png" id="3_7o53d"]
+[ext_resource type="Texture2D" uid="uid://dx21eut1yvnl4" path="res://rooms/gameplay/minigames/shared/water/splash_mini.png" id="3_rlcps"]
+
+[sub_resource type="Animation" id="Animation_0fetm"]
+resource_name = "flip"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [0.0, 12.566370614359172]
+}
+
+[sub_resource type="Animation" id="Animation_b08o2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Marker2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerRipple:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t7r6f"]
+resource_name = "float"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.7),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [Vector2(0, -3), Vector2(0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerRipple:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iqthk"]
+_data = {
+&"RESET": SubResource("Animation_b08o2"),
+&"flip": SubResource("Animation_0fetm"),
+&"float": SubResource("Animation_t7r6f")
+}
+
+[node name="FlippedItem" type="Node2D" node_paths=PackedStringArray("water_node")]
+script = ExtResource("1_t7r6f")
+water_node = NodePath("MarkerRipple/SplashMini")
+animation_list = Array[StringName]([&"flip", &"float"])
+play_at_start = 1
+metadata/_custom_type_script = "uid://cbiyrmbciul36"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Pisgor" type="Sprite2D" parent="Marker2D"]
+position = Vector2(-3, -39)
+rotation = -0.14600457
+texture = ExtResource("3_0fetm")
+
+[node name="MarkerRipple" type="Marker2D" parent="."]
+position = Vector2(-9, 2)
+rotation = 0.009560486
+
+[node name="SplashMini" type="Sprite2D" parent="MarkerRipple"]
+position = Vector2(2.779427, -4.3448005)
+scale = Vector2(0.9264755, 1.0862)
+texture = ExtResource("3_rlcps")
+
+[node name="IconFlip" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -165)
+texture = ExtResource("3_7o53d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_iqthk")
+}

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct1nv5birs1tf"]
+
+[ext_resource type="Script" uid="uid://cwsivvkbgnm7d" path="res://rooms/gameplay/minigames/shared/asset_package/asset_package.gd" id="1_k4qyf"]
+[ext_resource type="Texture2D" uid="uid://lmsdc8wdw3vv" path="res://rooms/gameplay/minigames/shared/water/pan_water.png" id="2_xp8rs"]
+[ext_resource type="Texture2D" uid="uid://bw8slkcrt03lr" path="res://rooms/gameplay/minigames/shared/water/water_167x.png" id="3_5qs6m"]
+[ext_resource type="Texture2D" uid="uid://b3fciexxg4ikk" path="res://rooms/gameplay/minigames/shared/objects/spoon/ladle.png" id="3_qrl21"]
+
+[node name="AssetCoto" type="Node"]
+script = ExtResource("1_k4qyf")
+metadata/_custom_type_script = "uid://cwsivvkbgnm7d"
+
+[node name="PanWater" type="Sprite2D" parent="."]
+texture = ExtResource("2_xp8rs")
+
+[node name="Nothing" type="Sprite2D" parent="."]
+
+[node name="Ladle" type="Sprite2D" parent="."]
+scale = Vector2(-1, 1)
+texture = ExtResource("3_qrl21")
+
+[node name="Water167x2" type="Sprite2D" parent="."]
+texture = ExtResource("3_5qs6m")

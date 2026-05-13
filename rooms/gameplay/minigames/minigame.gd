@@ -61,6 +61,9 @@ var color_code: String
 @export var time_limit: int
 
 var timer: CountdownTimer
+var time_left: int:
+	get:
+		return timer.allotted_time - timer.seconds_passed
 
 
 func start_minigame() -> void:
@@ -108,6 +111,12 @@ func configure_color() -> void:
 		node.modulate = Color(color_code)
 	for node in nodes_with_variable_self_color:
 		node.self_modulate = Color(color_code)
+
+
+func configure_visuals() -> void:
+	configure_visual_assets()
+	configure_color()
+	visuals_configured.emit()
 
 
 func _on_classification_made(incoming_player_id: int, _input_arr: Array, predicted_motion: int) -> void:	
@@ -171,16 +180,11 @@ func _input(event: InputEvent) -> void:
 			motion_detected.emit(motion)
 
 
-func configure_visuals() -> void:
-	configure_visual_assets()
-	configure_color()
-	visuals_configured.emit()
-
-
 func _ready() -> void:
 	player_changed.connect(_on_player_changed)
-	var countdown_timer = get_node("CountdownTimer")
-	if not timer and countdown_timer:
-		timer = countdown_timer
-	countdown_timer.countdown_stopped.connect(_on_countdown_stopped)
+	if not timer:
+		var countdown_timer = get_node("CountdownTimer")
+		if countdown_timer:
+			timer = countdown_timer
+			timer.countdown_stopped.connect(_on_countdown_stopped)
 	start_minigame()

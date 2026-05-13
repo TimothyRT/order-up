@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://bcn703c74g5lg"]
+
+[ext_resource type="Script" uid="uid://dlwvkxymd5fjg" path="res://rooms/gameplay/minigames/flip/flip_pan.gd" id="1_lsy3j"]
+[ext_resource type="Texture2D" uid="uid://di8ux3u35xvvw" path="res://rooms/gameplay/minigames/shared/objects/pan/pan_back.png" id="2_lsy3j"]
+[ext_resource type="Texture2D" uid="uid://lmsdc8wdw3vv" path="res://rooms/gameplay/minigames/shared/water/pan_water.png" id="3_ncbhw"]
+[ext_resource type="Texture2D" uid="uid://56ih78qjaq3d" path="res://rooms/gameplay/minigames/shared/objects/pan/pan_front.png" id="4_n0kii"]
+[ext_resource type="PackedScene" uid="uid://dvfrq4r3l2op0" path="res://rooms/gameplay/minigames/flip/flipped_item.tscn" id="4_ncbhw"]
+[ext_resource type="PackedScene" uid="uid://htj2g8xhhlpu" path="res://rooms/gameplay/minigames/shared/water/water_bubble_particles.tscn" id="5_n0kii"]
+
+[sub_resource type="Animation" id="Animation_bbnqt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase/PanBack/MarkerFood:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 126)]
+}
+
+[sub_resource type="Animation" id="Animation_vimco"]
+resource_name = "fry"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5),
+"update": 0,
+"values": [0.0, 0.01745329251994329, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase/PanBack/MarkerFood:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.55, 0.8),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5881624, -2.5),
+"update": 0,
+"values": [Vector2(-5, 125), Vector2(-9, 119.997), Vector2(-12, 123), Vector2(-8, 125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bbnqt"]
+_data = {
+&"RESET": SubResource("Animation_bbnqt"),
+&"fry": SubResource("Animation_vimco")
+}
+
+[node name="AnimatableFlipPan" type="Node2D" node_paths=PackedStringArray("base_node", "flippable_group")]
+script = ExtResource("1_lsy3j")
+base_node = NodePath("MarkerBase/PanBack/MarkerFood/Food")
+flippable_group = NodePath("MarkerBase/PanBack/MarkerFood/MarkerGroup")
+animation_list = Array[StringName]([&"fry"])
+play_at_start = 0
+metadata/_custom_type_script = "uid://cbiyrmbciul36"
+
+[node name="MarkerBase" type="Marker2D" parent="."]
+position = Vector2(1, 0)
+
+[node name="PanBack" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(34, -143)
+texture = ExtResource("2_lsy3j")
+
+[node name="MarkerFood" type="Marker2D" parent="MarkerBase/PanBack"]
+position = Vector2(-8, 126)
+
+[node name="Food" type="Sprite2D" parent="MarkerBase/PanBack/MarkerFood"]
+position = Vector2(2, -115)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("3_ncbhw")
+
+[node name="MarkerGroup" type="Marker2D" parent="MarkerBase/PanBack/MarkerFood"]
+position = Vector2(2.000002, -114.99999)
+
+[node name="FlippedItem" parent="MarkerBase/PanBack/MarkerFood/MarkerGroup" instance=ExtResource("4_ncbhw")]
+position = Vector2(50.843822, -63.856525)
+
+[node name="FlippedItem6" parent="MarkerBase/PanBack/MarkerFood/MarkerGroup" instance=ExtResource("4_ncbhw")]
+position = Vector2(-50.799088, -34.315216)
+
+[node name="FlippedItem2" parent="MarkerBase/PanBack/MarkerFood/MarkerGroup" instance=ExtResource("4_ncbhw")]
+position = Vector2(-123.69217, 38.920174)
+
+[node name="FlippedItem3" parent="MarkerBase/PanBack/MarkerFood/MarkerGroup" instance=ExtResource("4_ncbhw")]
+position = Vector2(141.81934, 12.967731)
+
+[node name="FlippedItem4" parent="MarkerBase/PanBack/MarkerFood/MarkerGroup" instance=ExtResource("4_ncbhw")]
+position = Vector2(96.5056, 51.989494)
+
+[node name="FlippedItem5" parent="MarkerBase/PanBack/MarkerFood/MarkerGroup" instance=ExtResource("4_ncbhw")]
+position = Vector2(-5.312874, 119.99977)
+
+[node name="WaterBubbleParticles" parent="MarkerBase/PanBack/MarkerFood" instance=ExtResource("5_n0kii")]
+position = Vector2(17, -106)
+
+[node name="PanFront" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(-12, -29)
+texture = ExtResource("4_n0kii")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_bbnqt")
+}
+speed_scale = 0.5

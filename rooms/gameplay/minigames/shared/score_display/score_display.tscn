@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx1p603d7aaih"]
+
+[ext_resource type="Script" uid="uid://csujyj88uvg82" path="res://rooms/gameplay/minigames/shared/score_display/score_display.gd" id="1_6ei68"]
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="2_cvfii"]
+
+[node name="ScoreDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6ei68")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_cvfii")
+text = "Score: X"
