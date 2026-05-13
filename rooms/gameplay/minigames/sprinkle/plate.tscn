@@ -1,13 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7jwbd1bihuuh"]
+[gd_scene load_steps=12 format=3 uid="uid://b7jwbd1bihuuh"]
 
 [ext_resource type="Texture2D" uid="uid://i0rp5wccrnme" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/plate_shadow.svg" id="1_2ydk6"]
-[ext_resource type="Script" uid="uid://dn6m2wyeowe48" path="res://rooms/gameplay/minigames/sprinkle/plate.gd" id="1_s33y1"]
+[ext_resource type="Script" uid="uid://j2ct1raf3bvc" path="res://rooms/gameplay/minigames/sprinkle/sprinkable.gd" id="1_xoeo6"]
+[ext_resource type="Texture2D" uid="uid://djqmrdssdbl0g" path="res://rooms/gameplay/minigames/shared/objects/serundeng/serundeng_01.svg" id="2_63nc1"]
 [ext_resource type="Texture2D" uid="uid://cykfg35yvbsla" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/plate.svg" id="2_ufla6"]
 [ext_resource type="Texture2D" uid="uid://dsjhk0ws8tg6f" path="res://rooms/gameplay/minigames/shared/objects/kerak_telor/kerak_telor_orange.svg" id="3_ufla6"]
+[ext_resource type="Texture2D" uid="uid://cowdypww81jif" path="res://rooms/gameplay/minigames/shared/objects/serundeng/serundeng_02.svg" id="3_y028s"]
+[ext_resource type="Texture2D" uid="uid://c8np5t0yxancj" path="res://rooms/gameplay/minigames/shared/objects/serundeng/serundeng_03.svg" id="4_mt4ml"]
+[ext_resource type="Texture2D" uid="uid://fw4nii7hp47u" path="res://rooms/gameplay/minigames/shared/objects/serundeng/serundeng_04.svg" id="5_2vlgl"]
+[ext_resource type="Texture2D" uid="uid://ca478gvgnfbv4" path="res://rooms/gameplay/minigames/shared/objects/serundeng/serundeng_05.svg" id="6_op2va"]
+[ext_resource type="Texture2D" uid="uid://c10g56y7suu1t" path="res://rooms/gameplay/minigames/shared/objects/serundeng/serundeng_06.svg" id="7_fuxn3"]
+[ext_resource type="Texture2D" uid="uid://bjvi4w5sgrbvq" path="res://rooms/gameplay/minigames/shared/objects/serundeng/serundeng_07.svg" id="8_6wg4q"]
 
-[node name="Plate" type="Node2D" node_paths=PackedStringArray("marker_group")]
-script = ExtResource("1_s33y1")
-marker_group = NodePath("Marker2D/Egg")
+[node name="PlateSprinkable" type="Node2D" node_paths=PackedStringArray("sprinkable_group")]
+script = ExtResource("1_xoeo6")
+sprinkable_group = NodePath("Marker2D/Egg")
+sprinkle_textures = Array[Texture2D]([ExtResource("2_63nc1"), ExtResource("3_y028s"), ExtResource("4_mt4ml"), ExtResource("5_2vlgl"), ExtResource("6_op2va"), ExtResource("7_fuxn3"), ExtResource("8_6wg4q")])
+metadata/_custom_type_script = "uid://j2ct1raf3bvc"
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(2, 45)

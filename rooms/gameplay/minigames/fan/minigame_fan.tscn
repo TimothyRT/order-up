@@ -1,7 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://76xfcjlfx5nb"]
+[gd_scene load_steps=11 format=3 uid="uid://76xfcjlfx5nb"]
 
 [ext_resource type="Script" uid="uid://bytkxvsdd7cg" path="res://rooms/gameplay/minigames/fan/minigame_fan.gd" id="1_qs7vi"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_dg4a6"]
+[ext_resource type="Texture2D" uid="uid://fxt53v813hc8" path="res://rooms/gameplay/frames/bg/yellow_bg.png" id="3_dg4a6"]
+[ext_resource type="PackedScene" uid="uid://46ik2b468pel" path="res://rooms/gameplay/minigames/fan/stove.tscn" id="4_mlaav"]
+[ext_resource type="PackedScene" uid="uid://c2jsvoe3qtmov" path="res://rooms/gameplay/minigames/fan/heat_bar.tscn" id="4_v54dv"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_wpedi"]
+[ext_resource type="Texture2D" uid="uid://dquywcv78vggu" path="res://rooms/gameplay/frames/bg/pan_bg.png" id="4_xtyce"]
+[ext_resource type="PackedScene" uid="uid://l38myh8kwnrf" path="res://rooms/gameplay/minigames/fan/pan.tscn" id="6_xtyce"]
+[ext_resource type="PackedScene" uid="uid://cba5602oj051h" path="res://rooms/gameplay/minigames/fan/fanning_hand.tscn" id="7_fpqxm"]
+[ext_resource type="Script" uid="uid://befmps212os7l" path="res://rooms/gameplay/minigames/fan/fanning_hand.gd" id="8_cxp5m"]
 
 [node name="MinigameFan" type="Node2D"]
 script = ExtResource("1_qs7vi")
 metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+self_modulate = Color(0.92156863, 0.8509804, 0.6117647, 1)
+clip_children = 2
+texture = ExtResource("2_dg4a6")
+
+[node name="Background" type="Sprite2D" parent="FrameThickF"]
+texture = ExtResource("3_dg4a6")
+
+[node name="PanBg" type="Sprite2D" parent="FrameThickF"]
+position = Vector2(-6, 423)
+texture = ExtResource("4_xtyce")
+
+[node name="AnimatableStove" parent="FrameThickF" instance=ExtResource("4_mlaav")]
+position = Vector2(-10, 418)
+
+[node name="AnimatablePan" parent="FrameThickF/AnimatableStove" instance=ExtResource("6_xtyce")]
+position = Vector2(-38, -275)
+
+[node name="AnimatableFanningHand" parent="FrameThickF/AnimatableStove" instance=ExtResource("7_fpqxm")]
+position = Vector2(-257, -637)
+rotation = 0.508962
+script = ExtResource("8_cxp5m")
+
+[node name="AnimatableHeatBar" parent="." instance=ExtResource("4_v54dv")]
+position = Vector2(33, 378)
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("4_wpedi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

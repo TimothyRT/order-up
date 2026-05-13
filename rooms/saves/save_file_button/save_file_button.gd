@@ -45,12 +45,10 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
-	if not disabled:
-		SaveService.insert_new_save(save_number)
-		owner.state["save_number"] = save_number
-	
-	if owner:
-		owner.room_switch_requested.emit(&"Stage select")
+	if disabled:
+		return
+	if owner and owner is Room and owner.has_signal(&"save_selected"):
+		owner.save_selected.emit(save_number)
 
 
 func _on_button_focus_entered() -> void:

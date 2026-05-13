@@ -43,6 +43,10 @@ dishes:
   ordering_index:
     "data_type": "int"
     "not_null": true
+  is_tutorial:
+    "data_type": "int"
+    "not_null": true
+    "default": 0
 
 minigames:
   id:

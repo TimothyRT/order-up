@@ -4,7 +4,7 @@ extends Minigame
 
 signal pouring_started
 
-@export var plate: Node2D
+@export var sprinkable: Sprinkable
 
 var poured := false:
 	set(val):
@@ -16,13 +16,16 @@ var poured := false:
 
 func _ready() -> void:
 	pause_time = 0.0
-	progress_threshold = plate.get_serundeng_count()
+	progress_threshold = sprinkable.sprinkable_count
 	super()
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.POUR:
+	if not poured and motion == MotionRecognition.MOTION.POUR:
 		poured = true
+	
+	print("script: %s" % str(get_script()))
+	print("script: %s" % str(get_script().get_base_script()))
 	
 	if poured and motion == MotionRecognition.MOTION.SHAKE:
 		progress += 1

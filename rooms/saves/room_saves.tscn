@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b61n4xr40tp11" path="res://rooms/saves/room_saves.gd" id="1_f0gxx"]
 [ext_resource type="PackedScene" uid="uid://b1iqdjxe1mrai" path="res://rooms/saves/save_file_button/save_file_button.tscn" id="2_3gj48"]
-[ext_resource type="Script" uid="uid://bu7sy7yvjfgn6" path="res://rooms/saves/deletion_modal_controller.gd" id="3_mobn1"]
+[ext_resource type="Script" path="res://rooms/saves/deletion_modal_controller.gd" id="3_mobn1"]
 [ext_resource type="PackedScene" uid="uid://brks0plyxcldr" path="res://rooms/shared/modal_box/modal_box.tscn" id="3_xjtt5"]
 
 [node name="RoomSaves" type="Node"]
@@ -35,8 +35,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 save_number = 1
-unlocked_dishes_count = null
-unlocked_dishes_max = null
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/Control/HBoxContainer"]
 layout_mode = 2
@@ -46,8 +44,6 @@ alignment = 2
 unique_name_in_owner = true
 layout_mode = 2
 save_number = 2
-unlocked_dishes_count = null
-unlocked_dishes_max = null
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/Control/HBoxContainer"]
 layout_mode = 2
@@ -56,8 +52,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 save_number = 3
-unlocked_dishes_count = null
-unlocked_dishes_max = null
 
 [node name="ModalContainer" type="Control" parent="."]
 custom_minimum_size = Vector2(1920, 1080)

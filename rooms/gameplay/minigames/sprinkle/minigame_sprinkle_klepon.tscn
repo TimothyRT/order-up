@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkuexyhda7vv1"]
+
+[ext_resource type="Script" uid="uid://u8b73vjtamfy" path="res://rooms/gameplay/minigames/sprinkle/minigame_sprinkle_klepon.gd" id="1_ckees"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_ckees"]
+[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_bg.svg" id="3_r2l04"]
+[ext_resource type="Texture2D" uid="uid://i0rp5wccrnme" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/plate_shadow.svg" id="4_o48b4"]
+[ext_resource type="PackedScene" uid="uid://b3b844r8qjgwf" path="res://rooms/gameplay/minigames/sprinkle/klepon.tscn" id="5_ckees"]
+[ext_resource type="Texture2D" uid="uid://by7quo8etp105" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/plate_new.svg" id="5_g5582"]
+[ext_resource type="PackedScene" uid="uid://bdhlht0c7nd8n" path="res://rooms/gameplay/minigames/sprinkle/jar.tscn" id="5_m7351"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="6_g5582"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="7_mkj50"]
+
+[node name="MinigameSprinkleKlepon" type="Node2D" node_paths=PackedStringArray("sprinkable")]
+script = ExtResource("1_ckees")
+sprinkable = NodePath("FrameThickF/Sprinkable")
+metadata/_custom_type_script = "uid://bgxmiefbe4s0v"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_ckees")
+
+[node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
+texture = ExtResource("3_r2l04")
+
+[node name="PlateShadow" type="Sprite2D" parent="FrameThickF"]
+position = Vector2(-0.1003952, 78.5)
+scale = Vector2(1.3999981, 1)
+texture = ExtResource("4_o48b4")
+
+[node name="PlateNew" type="Sprite2D" parent="FrameThickF"]
+position = Vector2(30.899597, 44.5)
+texture = ExtResource("5_g5582")
+
+[node name="Sprinkable" parent="FrameThickF" instance=ExtResource("5_ckees")]
+position = Vector2(46.899597, 29.500004)
+scale = Vector2(1.2, 1.2)
+
+[node name="Jar" parent="FrameThickF" instance=ExtResource("5_m7351")]
+unique_name_in_owner = true
+position = Vector2(-36.100403, 70.5)
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("6_g5582")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MinigameProgressBar" parent="." instance=ExtResource("7_mkj50")]
+position = Vector2(-262, 293)

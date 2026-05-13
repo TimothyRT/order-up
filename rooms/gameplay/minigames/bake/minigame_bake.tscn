@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu7xl2flbm0ba"]
+[gd_scene load_steps=10 format=3 uid="uid://cu7xl2flbm0ba"]
 
 [ext_resource type="Script" uid="uid://crhejpalj3p81" path="res://rooms/gameplay/minigames/bake/minigame_bake.gd" id="1_h3adq"]
 [ext_resource type="Texture2D" uid="uid://dwki3v8mhtw7n" path="res://rooms/gameplay/minigames/bake/oven-f.png" id="1_u0vf4"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://djqmcvnailcn6" path="res://rooms/gameplay/minigames/bake/alarm-f.png" id="4_tloc2"]
 [ext_resource type="Texture2D" uid="uid://cgo07xs57maox" path="res://rooms/gameplay/minigames/bake/alarm-o.png" id="5_onb06"]
 [ext_resource type="AudioStream" uid="uid://soia3lu2da1a" path="res://rooms/gameplay/stations/oven_ding.wav" id="7_exv15"]
-[ext_resource type="Texture2D" uid="uid://cuvawldakv8ig" path="res://cheesecake.png" id="8_tloc2"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="9_toyls"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="10_0tirf"]
 
@@ -46,7 +45,6 @@ unique_name_in_owner = true
 visible = false
 position = Vector2(-1, -5)
 scale = Vector2(1.011347, 1.011347)
-texture = ExtResource("8_tloc2")
 
 [node name="FrameThickO" type="Sprite2D" parent="."]
 texture = ExtResource("9_toyls")

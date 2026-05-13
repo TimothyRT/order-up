@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2jsvoe3qtmov"]
+
+[ext_resource type="Texture2D" uid="uid://blreh0u7ohd8q" path="res://rooms/gameplay/minigames/fan/bar_back.png" id="1_joqq0"]
+[ext_resource type="Script" uid="uid://bde63sliyraqo" path="res://rooms/gameplay/minigames/fan/heat_bar.gd" id="1_un02p"]
+[ext_resource type="Texture2D" uid="uid://b52sc1rsm4msb" path="res://rooms/gameplay/minigames/fan/bar_frame.png" id="2_h8lxx"]
+[ext_resource type="Texture2D" uid="uid://btsj1l5cmbf10" path="res://rooms/gameplay/minigames/fan/smiley_base.png" id="2_vhy07"]
+[ext_resource type="Texture2D" uid="uid://dwpsp8e0d2845" path="res://rooms/gameplay/minigames/fan/bar_gradient.svg" id="3_ew1dq"]
+[ext_resource type="Texture2D" uid="uid://cgc7jcn4mxmn3" path="res://rooms/gameplay/minigames/fan/smiley.png" id="4_0i1ie"]
+[ext_resource type="Texture2D" uid="uid://bibs8d1rx46yq" path="res://rooms/gameplay/minigames/fan/green.png" id="4_tghys"]
+[ext_resource type="Texture2D" uid="uid://btu2xu40jkvbj" path="res://rooms/gameplay/minigames/fan/bar_arrow.png" id="5_un02p"]
+
+[node name="AnimatableHeatBar" type="Node2D"]
+script = ExtResource("1_un02p")
+metadata/_custom_type_script = "uid://cbiyrmbciul36"
+
+[node name="MarkerBase" type="Marker2D" parent="."]
+
+[node name="BarBack" type="Sprite2D" parent="MarkerBase"]
+clip_children = 1
+position = Vector2(3.5, -61.5)
+texture = ExtResource("1_joqq0")
+
+[node name="BarGradient" type="Sprite2D" parent="MarkerBase/BarBack"]
+texture = ExtResource("3_ew1dq")
+
+[node name="Green" type="Sprite2D" parent="MarkerBase/BarBack"]
+position = Vector2(70.5, -0.5)
+texture = ExtResource("4_tghys")
+
+[node name="SmileyBase" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(68, -162)
+texture = ExtResource("2_vhy07")
+
+[node name="BarFrame" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(3.5, -54.5)
+texture = ExtResource("2_h8lxx")
+
+[node name="Smiley" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(75, -147)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_0i1ie")
+
+[node name="Line2D" type="Line2D" parent="."]
+unique_name_in_owner = true
+points = PackedVector2Array(300, 30, -300, 30)
+width = 0.0
+
+[node name="MarkerArrow" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-296, 23)
+rotation = -3.1415925
+
+[node name="BarArrow" type="Sprite2D" parent="MarkerArrow"]
+position = Vector2(1, -23)
+texture = ExtResource("5_un02p")

@@ -1,7 +1,6 @@
 extends Room
 
 
-const COUNTDOWN_TIMER := preload("uid://cy2b0y8obtgyt")
 const LETS_COOK_TEXT := preload("uid://d1eq3hbiwpduh")
 
 var is_multiplayer := false
@@ -22,10 +21,6 @@ var dishes_progress := {
 	2: []
 }
 
-var time_limited := true
-var time_limit: int = 120
-var timer: CountdownTimer
-
 
 func load_minigames(recipe_arr: Array) -> void:
 	recipe_steps = recipe_arr
@@ -39,13 +34,14 @@ func load_minigames(recipe_arr: Array) -> void:
 		minigame.color_code = recipe_step.color
 		minigame.time_limit = recipe_step.time_limit
 		minigame.configure_visuals()
+		minigame.setup_timer()
 		minigames.append(minigame)
 
 
 func begin_first_minigame() -> void:
 	if not minigames or len(minigames) == 0:
 		return
-
+	
 	%FrameLeft.set_minigame(minigames[0].duplicate(), minigame_current[1], len(minigames))
 	
 	if is_multiplayer:
@@ -61,7 +57,7 @@ func begin_first_minigame() -> void:
 func enter(room_state: Dictionary) -> void:
 	%PauseMenu.quit_pressed.connect(_on_quit_pressed)
 	
-	is_multiplayer = room_state.get("multiplayer", true)
+	is_multiplayer = room_state.get("is_multiplayer", false)
 	%FrameLeft.minigame_finished.connect(_on_minigame_finished)
 	%FrameRight.visible = false
 	if is_multiplayer:
@@ -80,14 +76,6 @@ func get_frame(player: int) -> MinigameFrame:
 		return %FrameRight
 
 
-func _setup_timer() -> void:
-	if time_limited:
-		timer = COUNTDOWN_TIMER.instantiate()
-		timer.allotted_time = time_limit
-		add_child(timer)
-		timer.position = Vector2(400.0, -300.0)
-
-
 func _on_minigame_finished(player: int) -> void:
 	minigames_progress[player].append(true)
 	minigame_current[player] = (minigame_current[player] + 1) % len(minigames)
@@ -98,7 +86,12 @@ func _on_minigame_finished(player: int) -> void:
 		minigame_current[player] = 0
 		load_minigames(state.get("recipe", []))
 	
-	get_frame(player).set_minigame(minigames[minigame_current[player]].duplicate(), minigame_current[player], len(minigames))
+	var minigame_instance := minigames[minigame_current[player]].duplicate()
+	get_frame(player).set_minigame(
+		minigame_instance,
+		minigame_current[player],
+		len(minigames)
+	)
 
 
 func _on_quit_pressed() -> void:

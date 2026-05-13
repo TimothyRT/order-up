@@ -1,0 +1,317 @@
+[gd_scene load_steps=23 format=3 uid="uid://bd668e2v4xe64"]
+
+[ext_resource type="Texture2D" uid="uid://c2k10ofloys5r" path="res://rooms/gameplay/story/assets/pages_back.png" id="1_72k5f"]
+[ext_resource type="Script" uid="uid://cp55wcnl3wp3o" path="res://rooms/gameplay/story/story_news.gd" id="1_e4lln"]
+[ext_resource type="Texture2D" uid="uid://bcxfpkj8s5rjl" path="res://rooms/gameplay/story/assets/page_front.png" id="2_iuwh4"]
+[ext_resource type="Theme" uid="uid://wagcy0qjcqhw" path="res://rooms/gameplay/story/story_theme.tres" id="3_iuwh4"]
+[ext_resource type="Texture2D" uid="uid://diprfqgao5kxk" path="res://rooms/gameplay/story/assets/rect_h_large_f.png" id="5_l6i23"]
+[ext_resource type="Texture2D" uid="uid://bfqucwhw474rs" path="res://rooms/gameplay/story/surya_at_the_food_truck.png" id="6_1j6tq"]
+[ext_resource type="Texture2D" uid="uid://ovqmkrrc6gri" path="res://rooms/gameplay/story/assets/rect_h_large_o.png" id="6_sqpul"]
+[ext_resource type="Texture2D" uid="uid://bcu86172mear2" path="res://rooms/gameplay/story/assets/rect_h_small_f.png" id="7_kvgm0"]
+[ext_resource type="Texture2D" uid="uid://dppw6eglpcjep" path="res://rooms/gameplay/story/assets/rect_h_small_o.png" id="8_5mvsf"]
+[ext_resource type="Texture2D" uid="uid://t8ag00umvg80" path="res://rooms/gameplay/frames/bg/kitchen_bg_1.svg" id="8_kodht"]
+[ext_resource type="Texture2D" uid="uid://dv70irmsoo66r" path="res://rooms/gameplay/story/assets/rect_v_f.png" id="9_3x8hr"]
+[ext_resource type="Texture2D" uid="uid://ssvfvxu2u35v" path="res://rooms/gameplay/story/assets/rect_v_o.png" id="10_0y8tm"]
+[ext_resource type="Texture2D" uid="uid://fxt53v813hc8" path="res://rooms/gameplay/frames/bg/yellow_bg.png" id="10_oymxg"]
+[ext_resource type="Texture2D" uid="uid://bd6f3kd7vjs5b" path="res://rooms/stage_select/dish_select_button/dish_icons/kerak_telor.svg" id="10_sflo1"]
+[ext_resource type="Texture2D" uid="uid://dyuyiobl6bb1w" path="res://rooms/stage_select/dish_select_button/dish_icons/coto_makassar.svg" id="11_1j6tq"]
+[ext_resource type="Texture2D" uid="uid://cso8nhnq2nn02" path="res://rooms/stage_select/dish_select_button/dish_icons/fried_rice.svg" id="11_e4lln"]
+[ext_resource type="Texture2D" uid="uid://bssg83ye66wnh" path="res://rooms/gameplay/story/kemangi.png" id="11_oymxg"]
+[ext_resource type="Texture2D" uid="uid://dl51ctlugl3tb" path="res://rooms/stage_select/dish_select_button/dish_icons/banana_fritters.png" id="13_6aene"]
+[ext_resource type="Texture2D" uid="uid://chkm5tonge8d5" path="res://rooms/stage_select/dish_select_button/dish_icons/klepon.svg" id="14_5tfp0"]
+
+[sub_resource type="Animation" id="Animation_kvgm0"]
+resource_name = "appear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(-2.5, -2.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 18.84955592153876]
+}
+
+[sub_resource type="Animation" id="Animation_1j6tq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5mvsf"]
+_data = {
+&"RESET": SubResource("Animation_1j6tq"),
+&"appear": SubResource("Animation_kvgm0")
+}
+
+[node name="AnimatableStoryNews" type="Node2D"]
+script = ExtResource("1_e4lln")
+animation_list = Array[StringName]([&"appear"])
+play_at_start = 0
+metadata/_custom_type_script = "uid://cbiyrmbciul36"
+
+[node name="MarkerBase" type="Marker2D" parent="."]
+
+[node name="PagesBack" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(-20, -396)
+texture = ExtResource("1_72k5f")
+
+[node name="PageFront" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(8, -367)
+texture = ExtResource("2_iuwh4")
+
+[node name="Control" type="Control" parent="MarkerBase/PageFront"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -609.0
+offset_top = -381.0
+offset_right = -149.0
+offset_bottom = -281.0
+rotation = -0.03528282
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelLogo" type="Label" parent="MarkerBase/PageFront/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_iuwh4")
+theme_type_variation = &"story_logo"
+text = "CALVIN POST"
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="MarkerBase/PageFront"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -95.00001
+offset_top = -399.00006
+offset_right = 665.0
+offset_bottom = -299.00006
+rotation = -0.03528282
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelTitle" type="Label" parent="MarkerBase/PageFront/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_iuwh4")
+theme_type_variation = &"story_title"
+text = "FOOD TRUCK ROADSHOW DI IBU KOTA"
+horizontal_alignment = 3
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control3" type="Control" parent="MarkerBase/PageFront"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -726.00006
+offset_top = -204.0
+offset_right = -426.00006
+offset_bottom = -44.0
+rotation = -0.03528282
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelHeader" type="Label" parent="MarkerBase/PageFront/Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_iuwh4")
+theme_type_variation = &"story_header"
+text = "LOREM IPSUM DOLOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control4" type="Control" parent="MarkerBase/PageFront"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 208.99994
+offset_top = -235.0
+offset_right = 688.99994
+offset_bottom = -55.0
+rotation = -0.03528282
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelHeader" type="Label" parent="MarkerBase/PageFront/Control4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_iuwh4")
+theme_type_variation = &"story_header"
+text = "NIKMATI WARISAN LOKAL KHAS NUSANTARA DI ACARA FOOD TRUCK"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control5" type="Control" parent="MarkerBase/PageFront"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -332.99994
+offset_top = 234.0
+offset_right = 147.00006
+offset_bottom = 414.0
+rotation = -0.03528282
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelParagraph" type="Label" parent="MarkerBase/PageFront/Control5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_iuwh4")
+theme_type_variation = &"story_paragraph"
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel aliquet odio. Donec quis aliquam magna. Quisque egestas lacus vel purus vulputate pellentesque et non risus. Nunc eu feugiat ipsum. Pellentesque vitae dolor eu nisi fermentum fringilla id mattis mi. Fusce pulvinar fringilla leo vitae lacinia."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="Control6" type="Control" parent="MarkerBase/PageFront"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -695.0
+offset_top = 326.0
+offset_right = -415.0
+offset_bottom = 446.0
+rotation = -0.03528282
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelParagraph" type="Label" parent="MarkerBase/PageFront/Control6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_iuwh4")
+theme_type_variation = &"story_paragraph"
+text = "Lorem ipsum"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Node2D" type="Node2D" parent="MarkerBase/PageFront"]
+position = Vector2(-83, 185)
+
+[node name="RectHLargeF" type="Sprite2D" parent="MarkerBase/PageFront/Node2D"]
+clip_children = 1
+position = Vector2(-4, -197.5)
+texture = ExtResource("5_l6i23")
+
+[node name="SuryaAtTheFoodTruck" type="Sprite2D" parent="MarkerBase/PageFront/Node2D/RectHLargeF"]
+position = Vector2(110, -5.5)
+texture = ExtResource("6_1j6tq")
+
+[node name="RectHLargeO" type="Sprite2D" parent="MarkerBase/PageFront/Node2D"]
+position = Vector2(-6, -195.5)
+texture = ExtResource("6_sqpul")
+
+[node name="Node2D2" type="Node2D" parent="MarkerBase/PageFront"]
+position = Vector2(390, 186)
+
+[node name="RectHSmallF" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2"]
+clip_children = 1
+position = Vector2(-0.5, -114.5)
+texture = ExtResource("7_kvgm0")
+
+[node name="KitchenBg1" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2/RectHSmallF"]
+position = Vector2(48.499954, -262.5)
+texture = ExtResource("8_kodht")
+
+[node name="KerakTelor" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2/RectHSmallF"]
+position = Vector2(-134.50003, 18.5)
+texture = ExtResource("10_sflo1")
+
+[node name="FriedRice" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2/RectHSmallF"]
+position = Vector2(-8.500032, 38.500008)
+texture = ExtResource("11_e4lln")
+
+[node name="CotoMakassar" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2/RectHSmallF"]
+position = Vector2(114.5, 66.5)
+texture = ExtResource("11_1j6tq")
+
+[node name="BananaFritters" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2/RectHSmallF"]
+position = Vector2(-133.50003, 74.500015)
+texture = ExtResource("13_6aene")
+
+[node name="Klepon" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2/RectHSmallF"]
+position = Vector2(-8.5000305, 83.49999)
+texture = ExtResource("14_5tfp0")
+
+[node name="RectHSmallO" type="Sprite2D" parent="MarkerBase/PageFront/Node2D2"]
+position = Vector2(-1, -122)
+texture = ExtResource("8_5mvsf")
+
+[node name="Node2D3" type="Node2D" parent="MarkerBase/PageFront"]
+position = Vector2(-574, 300)
+
+[node name="RectVF" type="Sprite2D" parent="MarkerBase/PageFront/Node2D3"]
+clip_children = 1
+position = Vector2(11.5, -174.5)
+texture = ExtResource("9_3x8hr")
+
+[node name="YellowBg" type="Sprite2D" parent="MarkerBase/PageFront/Node2D3/RectVF"]
+position = Vector2(-40.5, -83.5)
+texture = ExtResource("10_oymxg")
+
+[node name="Kemangi" type="Sprite2D" parent="MarkerBase/PageFront/Node2D3/RectVF"]
+position = Vector2(-21.5, 107.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_oymxg")
+
+[node name="RectVO" type="Sprite2D" parent="MarkerBase/PageFront/Node2D3"]
+position = Vector2(11, -173)
+texture = ExtResource("10_0y8tm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_5mvsf")
+}

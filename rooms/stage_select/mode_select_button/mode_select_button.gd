@@ -1,6 +1,7 @@
 extends TextureButton
 
 
+@export var for_multiplayer: bool = false
 var other: TextureButton
 
 
@@ -20,6 +21,8 @@ func _ready() -> void:
 func _pressed() -> void:
 	self.modulate = Color(1, 1, 1)
 	other.modulate = Color("787878")
+	if owner:
+		owner.is_multiplayer = for_multiplayer
 
 
 func _on_focus_entered() -> void:

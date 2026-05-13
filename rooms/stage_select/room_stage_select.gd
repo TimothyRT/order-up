@@ -3,44 +3,57 @@ extends Room
 
 const dish_select_button := preload("uid://drnejreq5cqmn")
 
+@export var button_containers: Dictionary[StringName, Container]
+
+var is_multiplayer: int
 var mode_select_button_group := ButtonGroup.new()
 
 
 func setup_buttons() -> void:
-	for child in %DishFlowContainer.get_children():
-		%DishFlowContainer.remove_child(child)
-		child.queue_free()
+	for key in button_containers:
+		var category: int
+		match key:
+			&"tutorial":
+				category = DishService.Category.TUTORIAL
+			_:
+				category = DishService.Category.REGULAR
+		
+		var container := button_containers[key]
+		for child in container.get_children():
+			container.remove_child(child)
+			child.queue_free()
 	
-	var buttons: Array[DishSelectButton] = []
-	for dish: Dictionary in DishService.select_all():
-		var button: DishSelectButton = dish_select_button.instantiate()
-		button.dish_id = dish.id
-		button.label = dish.label
-		button.dish_icon = load(dish.dish_icon)
-		%DishFlowContainer.add_child(button)
-		button.set_owner(self)
-		buttons.append(button)
-		button.focused_while_outside_view.connect(_on_button_focused_while_outside_view)
-		button.dish_selected.connect(_on_dish_selected)
+		var buttons: Array[DishSelectButton] = []
+		for dish: Dictionary in DishService.select_from_category(category):
+			var button: DishSelectButton = dish_select_button.instantiate()
+			button.dish_id = dish.id
+			button.label = dish.label
+			button.dish_icon = load(dish.dish_icon)
+			container.add_child(button)
+			button.set_owner(self)
+			buttons.append(button)
+			button.focused_while_outside_view.connect(_on_button_focused_while_outside_view)
+			button.dish_selected.connect(_on_dish_selected)
 	
-	for i in range(len(buttons)):
-		var button := buttons[i]
-		if (i + 2) < len(buttons):
-			button.focus_neighbor_bottom = buttons[i + 2].get_path()
-		if (i - 2) >= 0:
-			button.focus_neighbor_top = buttons[i - 2].get_path()
-		if (i - 1) >= 0:
-			if i % 2 == 0:
-				button.focus_neighbor_left = %ModeSelectButton.get_path()
-			else:
-				button.focus_neighbor_left = buttons[i - 1].get_path()
-		if (i + 1) < len(buttons):
-			button.focus_neighbor_right = buttons[i + 1].get_path()
+		for i in range(len(buttons)):
+			var button := buttons[i]
+			if (i + 2) < len(buttons):
+				button.focus_neighbor_bottom = buttons[i + 2].get_path()
+			if (i - 2) >= 0:
+				button.focus_neighbor_top = buttons[i - 2].get_path()
+			if (i - 1) >= 0:
+				if i % 2 == 0:
+					button.focus_neighbor_left = %ModeSelectButton.get_path()
+				else:
+					button.focus_neighbor_left = buttons[i - 1].get_path()
+			if (i + 1) < len(buttons):
+				button.focus_neighbor_right = buttons[i + 1].get_path()
 
 
 func reset_focus() -> void:
-	if %DishFlowContainer.get_child_count() > 0:
-		var first_button = %DishFlowContainer.get_child(0)
+	var container := button_containers[&"tutorial"]
+	if container.get_child_count() > 0:
+		var first_button = container.get_child(0)
 		first_button.grab_click_focus()
 		first_button.grab_focus.call_deferred()
 
@@ -58,9 +71,13 @@ func _on_button_focused_while_outside_view(button: Control) -> void:
 
 
 func _on_dish_selected(dish_id: String) -> void:
+	print("Dish Selected: %s" % dish_id)
 	var recipe_arr = DishService.select_dish_recipe(dish_id)
+	print("Dish Selected 1: %s" % str(recipe_arr))
 	if recipe_arr is Array and not recipe_arr.is_empty():
+		print("Dish Selected 2")
 		state["recipe"] = recipe_arr
+		state["is_multiplayer"] = is_multiplayer
 		room_switch_requested.emit(&"Gameplay")
 
 

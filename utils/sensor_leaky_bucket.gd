@@ -27,8 +27,6 @@ func _physics_process(_delta: float) -> void:
 		for key in bucket:
 			sensor_sample_dict[key] = bucket[key].pop_front()
 		SignalBus.client_sensor_retrieved.emit(sensor_sample_dict)
-	
-	#print("TESTING: %d" % [len(bucket['gesture'])])
 
 
 func _on_client_sensor_batch_received(data_dict: Dictionary) -> void:

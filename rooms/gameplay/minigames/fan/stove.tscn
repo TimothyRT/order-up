@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://46ik2b468pel"]
+
+[ext_resource type="Script" uid="uid://dj8v2u5kugjlu" path="res://rooms/gameplay/minigames/fan/stove.gd" id="1_q0yss"]
+[ext_resource type="Texture2D" uid="uid://d0jos67so7tnc" path="res://rooms/gameplay/minigames/shared/objects/charcoal_stove/charcoal_stove_back.png" id="2_polf5"]
+[ext_resource type="Texture2D" uid="uid://csux45245724f" path="res://rooms/gameplay/minigames/shared/objects/charcoal_stove/charcoal_stove_fire.png" id="3_811xg"]
+[ext_resource type="Texture2D" uid="uid://bxg0hqqxh008a" path="res://rooms/gameplay/minigames/shared/objects/charcoal_stove/charcoal_stove_base.png" id="4_tilnl"]
+[ext_resource type="Texture2D" uid="uid://c2nu4fynl0beb" path="res://rooms/gameplay/minigames/shared/objects/charcoal_stove/charcoal_stove_top.png" id="5_mxlbx"]
+
+[sub_resource type="Animation" id="Animation_6hmfj"]
+resource_name = "idle"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase/Marker2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.08726646259971647, 0.05235987755982989, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase/Marker2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.95, 1.05), Vector2(1.05, 0.95), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerBase/MarkerTop:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(-2.5, -2.5, -2.5, -2.5),
+"update": 0,
+"values": [0.0, -0.017453292519943295, 0.017453292519943295, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_q0yss"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkerBase/Marker2D:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkerBase/Marker2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarkerBase/MarkerTop:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nj5m"]
+_data = {
+&"RESET": SubResource("Animation_q0yss"),
+&"idle": SubResource("Animation_6hmfj")
+}
+
+[node name="AnimatableStove" type="Node2D"]
+script = ExtResource("1_q0yss")
+animation_list = Array[StringName]([&"idle"])
+metadata/_custom_type_script = "uid://cbiyrmbciul36"
+
+[node name="MarkerBase" type="Marker2D" parent="."]
+
+[node name="CharcoalStoveBack" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(-5, -239)
+texture = ExtResource("2_polf5")
+
+[node name="Marker2D" type="Marker2D" parent="MarkerBase"]
+position = Vector2(4, -165)
+
+[node name="CharcoalStoveFire" type="Sprite2D" parent="MarkerBase/Marker2D"]
+position = Vector2(-8, -55)
+texture = ExtResource("3_811xg")
+
+[node name="CharcoalStoveBase" type="Sprite2D" parent="MarkerBase"]
+position = Vector2(-5, -81)
+texture = ExtResource("4_tilnl")
+
+[node name="MarkerTop" type="Marker2D" parent="MarkerBase"]
+position = Vector2(-23, -103)
+
+[node name="CharcoalStoveTop" type="Sprite2D" parent="MarkerBase/MarkerTop"]
+position = Vector2(21, -128)
+texture = ExtResource("5_mxlbx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_6nj5m")
+}
+speed_scale = 0.3

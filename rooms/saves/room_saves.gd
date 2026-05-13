@@ -1,6 +1,8 @@
 extends Room
 
 
+signal save_selected(save_idx: int)
+
 @onready var save_buttons: Array[SaveFileButton] = [
 	%SaveFileButton1,
 	%SaveFileButton2,
@@ -60,10 +62,17 @@ func show_deletion_modal(save: int) -> void:
 	%DeletionModalController.toggle_on(save)
 
 
+func _on_save_selected(save: int) -> void:
+	SaveService.insert_new_save(save)
+	state["save_number"] = save
+	room_switch_requested.emit(&"Stage select")
+
+
 func _on_save_deleted(_save: int) -> void:
 	reset_button_states()
 
 
 func _ready() -> void:
 	setup_buttons()
+	save_selected.connect(_on_save_selected)
 	%DeletionModalController.save_deleted.connect(_on_save_deleted)

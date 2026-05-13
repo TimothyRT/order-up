@@ -1,15 +1,19 @@
-extends Node2D
+class_name Jar
+extends Animatable
+
+
+@export var sprite: Sprite2D
 
 
 func _ready() -> void:
 	if owner:
 		owner.pouring_started.connect(_on_pouring_started)
-		owner.progress_changed.connect(_on_progress_changed)
+	super()
 
 
 func _on_pouring_started() -> void:
-	%AnimationPlayer.play(&"pour")
+	play_action(0)
 
 
-func _on_progress_changed(_new_progress_value: int, _progress_diff: int) -> void:
-	%AnimationPlayer.play(&"shake")
+func _on_progress_incremented(_new_progress_value: int) -> void:
+	play_action(1)

@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://b3b844r8qjgwf"]
+
+[ext_resource type="Script" uid="uid://j2ct1raf3bvc" path="res://rooms/gameplay/minigames/sprinkle/sprinkable.gd" id="1_mcghx"]
+[ext_resource type="Texture2D" uid="uid://cxubeecrrhtgh" path="res://rooms/gameplay/minigames/shared/objects/klepon/klepon_balled_up.png" id="2_34km0"]
+[ext_resource type="Texture2D" uid="uid://byt51u055isd6" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_a.png" id="2_gkfon"]
+[ext_resource type="Texture2D" uid="uid://ddg4alcwf6q1h" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_b.png" id="3_w4vnp"]
+[ext_resource type="Texture2D" uid="uid://cw22knd6p3oyj" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_c.png" id="4_xaopf"]
+[ext_resource type="Texture2D" uid="uid://7p1ew7o28cwv" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_d.png" id="5_muhag"]
+[ext_resource type="Texture2D" uid="uid://giiu47l4ctqf" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_e.png" id="6_0nr14"]
+[ext_resource type="Texture2D" uid="uid://1ig55npspo0h" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_f.png" id="7_3jcsh"]
+[ext_resource type="Texture2D" uid="uid://bcpeky8jwy1qv" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_g.png" id="8_puibi"]
+[ext_resource type="Texture2D" uid="uid://dlvdgjdl0h2o5" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_h.png" id="9_pia1n"]
+[ext_resource type="Texture2D" uid="uid://cgtnmk8tixlg5" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_i.png" id="10_ml74d"]
+[ext_resource type="Texture2D" uid="uid://ckwqr5dikcpso" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_j.png" id="11_36hme"]
+[ext_resource type="Texture2D" uid="uid://itbad8jdqrp5" path="res://rooms/gameplay/minigames/shared/objects/klepon/shaving_k.png" id="12_4nlaw"]
+
+[node name="Sprinkable" type="Node2D" node_paths=PackedStringArray("sprinkable_group")]
+script = ExtResource("1_mcghx")
+sprinkable_group = NodePath("Marker2D")
+sprinkle_textures = Array[Texture2D]([ExtResource("2_gkfon"), ExtResource("3_w4vnp"), ExtResource("4_xaopf"), ExtResource("5_muhag"), ExtResource("6_0nr14"), ExtResource("7_3jcsh"), ExtResource("8_puibi"), ExtResource("9_pia1n"), ExtResource("10_ml74d"), ExtResource("11_36hme"), ExtResource("12_4nlaw")])
+metadata/_custom_type_script = "uid://j2ct1raf3bvc"
+
+[node name="KleponBalledUp6" type="Sprite2D" parent="."]
+position = Vector2(-111, -75)
+texture = ExtResource("2_34km0")
+
+[node name="KleponBalledUp3" type="Sprite2D" parent="."]
+position = Vector2(44, -49)
+texture = ExtResource("2_34km0")
+
+[node name="KleponBalledUp" type="Sprite2D" parent="."]
+position = Vector2(-74, -3)
+texture = ExtResource("2_34km0")
+
+[node name="KleponBalledUp4" type="Sprite2D" parent="."]
+position = Vector2(-184, 37)
+texture = ExtResource("2_34km0")
+
+[node name="KleponBalledUp5" type="Sprite2D" parent="."]
+position = Vector2(154, -15)
+texture = ExtResource("2_34km0")
+
+[node name="KleponBalledUp2" type="Sprite2D" parent="."]
+position = Vector2(18, 33)
+texture = ExtResource("2_34km0")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-34, -6)
+
+[node name="Marker2D2" type="Marker2D" parent="Marker2D"]
+position = Vector2(-116, -91)
+
+[node name="Marker2D3" type="Marker2D" parent="Marker2D"]
+position = Vector2(-43, -78)
+
+[node name="Marker2D4" type="Marker2D" parent="Marker2D"]
+position = Vector2(-21, -21)
+
+[node name="Marker2D5" type="Marker2D" parent="Marker2D"]
+position = Vector2(-129, 17)
+
+[node name="Marker2D6" type="Marker2D" parent="Marker2D"]
+position = Vector2(-180, 61)
+
+[node name="Marker2D7" type="Marker2D" parent="Marker2D"]
+position = Vector2(-44, 18)
+
+[node name="Marker2D8" type="Marker2D" parent="Marker2D"]
+position = Vector2(-66, -23)
+
+[node name="Marker2D9" type="Marker2D" parent="Marker2D"]
+position = Vector2(-91, 42)
+
+[node name="Marker2D10" type="Marker2D" parent="Marker2D"]
+position = Vector2(34, -39)
+
+[node name="Marker2D11" type="Marker2D" parent="Marker2D"]
+position = Vector2(98, -31)
+
+[node name="Marker2D12" type="Marker2D" parent="Marker2D"]
+position = Vector2(73, -70)
+
+[node name="Marker2D13" type="Marker2D" parent="Marker2D"]
+position = Vector2(127, -65)
+
+[node name="Marker2D14" type="Marker2D" parent="Marker2D"]
+position = Vector2(165, -29)
+
+[node name="Marker2D15" type="Marker2D" parent="Marker2D"]
+position = Vector2(246, -16)
+
+[node name="Marker2D16" type="Marker2D" parent="Marker2D"]
+position = Vector2(-108, -51)
+
+[node name="Marker2D17" type="Marker2D" parent="Marker2D"]
+position = Vector2(199, 8)
+
+[node name="Marker2D18" type="Marker2D" parent="Marker2D"]
+position = Vector2(78, 21)
+
+[node name="Marker2D19" type="Marker2D" parent="Marker2D"]
+position = Vector2(10, 31)
+
+[node name="Marker2D20" type="Marker2D" parent="Marker2D"]
+position = Vector2(60, 60)
+
+[node name="Marker2D21" type="Marker2D" parent="Marker2D"]
+position = Vector2(-203, 14)
+
+[node name="Marker2D22" type="Marker2D" parent="Marker2D"]
+position = Vector2(148, 17)

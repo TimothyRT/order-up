@@ -6,10 +6,10 @@ uid="uid://dkel7uu4ggtxa"
 
 [deps]
 
-files=["res://utils/data_access/db_seeder/dish_seeder.label.translation", "res://utils/data_access/db_seeder/dish_seeder.dish.translation", "res://utils/data_access/db_seeder/dish_seeder.ordering.translation"]
+files=["res://utils/data_access/db_seeder/dish_seeder.label.translation", "res://utils/data_access/db_seeder/dish_seeder.dish.translation", "res://utils/data_access/db_seeder/dish_seeder.ordering.translation", "res://utils/data_access/db_seeder/dish_seeder.is.translation"]
 
 source_file="res://utils/data_access/db_seeder/dish_seeder.csv"
-dest_files=["res://utils/data_access/db_seeder/dish_seeder.label.translation", "res://utils/data_access/db_seeder/dish_seeder.dish.translation", "res://utils/data_access/db_seeder/dish_seeder.ordering.translation"]
+dest_files=["res://utils/data_access/db_seeder/dish_seeder.label.translation", "res://utils/data_access/db_seeder/dish_seeder.dish.translation", "res://utils/data_access/db_seeder/dish_seeder.ordering.translation", "res://utils/data_access/db_seeder/dish_seeder.is.translation"]
 
 [params]
 

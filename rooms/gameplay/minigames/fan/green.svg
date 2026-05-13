@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="77.561447mm"
+   height="53.803688mm"
+   viewBox="0 0 77.561448 53.803688"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="green.svg"
+   inkscape:export-filename="green.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.3701319"
+     inkscape:cx="173.34098"
+     inkscape:cy="41.966763"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4"
+       id="radialGradient6"
+       cx="120.98146"
+       cy="29.221254"
+       fx="120.98146"
+       fy="29.221254"
+       r="50.373623"
+       gradientTransform="matrix(1,0,0,0.69640126,12.168575,-7.1205535)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient4"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#b4f8a4;stop-opacity:0.81940299;"
+         offset="0"
+         id="stop5" />
+      <stop
+         style="stop-color:#56c30f;stop-opacity:0.59850746;"
+         offset="1"
+         id="stop6" />
+    </linearGradient>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4"
+       x="-0.23978629"
+       y="-0.3652819"
+       width="1.4795726"
+       height="1.7305638">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="8.8949964"
+         id="feGaussianBlur4" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-55.299017,-138.49935)">
+    <ellipse
+       style="mix-blend-mode:normal;fill:url(#radialGradient6);stroke-width:1.25073;stroke-linejoin:round;stroke-miterlimit:3.1;filter:url(#filter4)"
+       id="path4"
+       cx="133.15004"
+       cy="13.229167"
+       rx="44.514622"
+       ry="29.221256"
+       transform="matrix(0.58881239,0,0,0.53198033,15.679347,158.36354)"
+       inkscape:export-filename="green.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

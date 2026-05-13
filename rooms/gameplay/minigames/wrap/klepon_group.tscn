@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://kruaqrcx3fsc"]
+
+[ext_resource type="Script" uid="uid://dk8bp3uc0sakd" path="res://rooms/gameplay/minigames/wrap/klepon_group.gd" id="1_ic3ne"]
+[ext_resource type="PackedScene" uid="uid://bshatjynruqui" path="res://rooms/gameplay/minigames/wrap/klepon.tscn" id="2_5ym7x"]
+
+[node name="KleponGroup" type="Node2D" node_paths=PackedStringArray("item_group")]
+script = ExtResource("1_ic3ne")
+item_group = NodePath("MarkerBase")
+metadata/_custom_type_script = "uid://cbiyrmbciul36"
+
+[node name="MarkerBase" type="Marker2D" parent="."]
+
+[node name="MarkerKlepon1" type="Marker2D" parent="MarkerBase"]
+position = Vector2(-192, -443)
+
+[node name="Klepon" parent="MarkerBase/MarkerKlepon1" instance=ExtResource("2_5ym7x")]
+
+[node name="MarkerKlepon2" type="Marker2D" parent="MarkerBase"]
+position = Vector2(133, -442)
+
+[node name="Klepon" parent="MarkerBase/MarkerKlepon2" instance=ExtResource("2_5ym7x")]
+
+[node name="MarkerKlepon3" type="Marker2D" parent="MarkerBase"]
+position = Vector2(-194, -247)
+
+[node name="Klepon" parent="MarkerBase/MarkerKlepon3" instance=ExtResource("2_5ym7x")]
+
+[node name="MarkerKlepon4" type="Marker2D" parent="MarkerBase"]
+position = Vector2(130, -245)
+
+[node name="Klepon" parent="MarkerBase/MarkerKlepon4" instance=ExtResource("2_5ym7x")]
+
+[node name="MarkerKlepon5" type="Marker2D" parent="MarkerBase"]
+position = Vector2(-197, -44)
+
+[node name="Klepon" parent="MarkerBase/MarkerKlepon5" instance=ExtResource("2_5ym7x")]
+
+[node name="MarkerKlepon6" type="Marker2D" parent="MarkerBase"]
+position = Vector2(128, -37)
+
+[node name="Klepon" parent="MarkerBase/MarkerKlepon6" instance=ExtResource("2_5ym7x")]

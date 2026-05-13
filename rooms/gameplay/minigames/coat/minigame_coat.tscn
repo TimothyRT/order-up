@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmck3mgmesiev" path="res://rooms/gameplay/minigames/coat/minigame_coat.gd" id="1_iqxly"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_bc54y"]
-[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_background.svg" id="3_8xcu5"]
+[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_bg.svg" id="3_8xcu5"]
 [ext_resource type="Texture2D" uid="uid://i0rp5wccrnme" path="res://rooms/gameplay/minigames/shared/objects/bowl and plate/plate_shadow.svg" id="4_w5yki"]
 [ext_resource type="PackedScene" uid="uid://tv2wan3khlja" path="res://rooms/gameplay/minigames/coat/batter_bowl.tscn" id="5_d5dtb"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="6_c8v56"]

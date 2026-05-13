@@ -1,11 +1,15 @@
-extends Node2D
+@icon("uid://codc4gosiudoo")
 class_name Minigame
+extends Node2D
 
+
+const COUNTDOWN_TIMER := preload("uid://cy2b0y8obtgyt")
 
 signal minigame_started
 signal minigame_finished
 signal minigame_paused
 signal minigame_unpaused
+signal motion_detected
 signal player_changed
 signal progress_changed(new_progress_value: int, progress_diff: int)
 signal progress_threshold_changed(new_threshold_value: int, threshold_diff: int)
@@ -47,16 +51,16 @@ var nodes_with_variable_texture: Array[CanvasItem] = []
 var nodes_with_variable_color: Array[CanvasItem] = []
 var nodes_with_variable_self_color: Array[CanvasItem] = []
 
-var quality: float = 5.0
-
-var description: String:
+@export var description: String:
 	set(val):
 		description = val
 		if label_node:
 			label_node.text = description
 var asset_package_uid: String
 var color_code: String
-var time_limit: int
+@export var time_limit: int
+
+var timer: CountdownTimer
 
 
 func start_minigame() -> void:
@@ -78,8 +82,11 @@ func pause_minigame(time_s=0.0) -> void:
 	paused = false
 
 
-func setup_visually_variable_nodes() -> void:
-	pass
+func setup_timer() -> void:
+	timer = COUNTDOWN_TIMER.instantiate()
+	timer.allotted_time = time_limit
+	add_child(timer)
+	timer.position = Vector2(400.0, -300.0)
 
 
 func configure_visual_assets() -> void:
@@ -103,13 +110,6 @@ func configure_color() -> void:
 		node.self_modulate = Color(color_code)
 
 
-#func _on_peak_detected() -> void:
-	#if finished:
-		#return
-	#pause_minigame(pause_time)
-	#var res: Array = await SignalBus.classification_made
-	#_on_motion_detected(res[1])
-	
 func _on_classification_made(incoming_player_id: int, _input_arr: Array, predicted_motion: int) -> void:	
 	if incoming_player_id != player:
 		return
@@ -123,6 +123,7 @@ func _on_classification_made(incoming_player_id: int, _input_arr: Array, predict
 	print("[Minigame P%d] ACCEPTED motion!" % player)
 	pause_minigame(pause_time)
 	_on_motion_detected(predicted_motion)
+	motion_detected.emit(predicted_motion)
 
 
 func _on_motion_detected(_motion: int) -> void:
@@ -133,10 +134,13 @@ func _on_player_changed() -> void:
 	pass
 
 
+func _on_countdown_stopped() -> void:
+	pass
+
+
 func _input(event: InputEvent) -> void:
 	if not Config.KEYBOARD_INPUT:
 		return
-	print("finished: %s; paused: %s" % [str(finished), str(paused)])
 	if finished or paused:
 		return
 	if event is InputEventKey:
@@ -164,6 +168,7 @@ func _input(event: InputEvent) -> void:
 				_:
 					return
 			_on_motion_detected(motion)
+			motion_detected.emit(motion)
 
 
 func configure_visuals() -> void:
@@ -174,4 +179,8 @@ func configure_visuals() -> void:
 
 func _ready() -> void:
 	player_changed.connect(_on_player_changed)
+	var countdown_timer = get_node("CountdownTimer")
+	if not timer and countdown_timer:
+		timer = countdown_timer
+	countdown_timer.countdown_stopped.connect(_on_countdown_stopped)
 	start_minigame()

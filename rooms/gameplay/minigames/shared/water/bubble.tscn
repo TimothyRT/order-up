@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c212an0dqor8g"]
+
+[ext_resource type="Script" uid="uid://dpow4fvbtfaxt" path="res://rooms/gameplay/minigames/shared/water/bubble.gd" id="1_sdxcg"]
+
+[node name="Bubble" type="Node2D"]
+script = ExtResource("1_sdxcg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true

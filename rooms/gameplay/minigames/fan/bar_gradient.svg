@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="670"
+   height="100"
+   viewBox="0 0 177.27083 26.458333"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="bar_gradient.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="0.48441477"
+     inkscape:cx="145.53644"
+     inkscape:cy="-143.47209"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#fefbd2;stop-opacity:1;"
+         offset="0.22409639"
+         id="stop4" />
+      <stop
+         style="stop-color:#fdec4d;stop-opacity:1;"
+         offset="0.42409641"
+         id="stop1" />
+      <stop
+         style="stop-color:#fdc149;stop-opacity:1;"
+         offset="0.66265064"
+         id="stop3" />
+      <stop
+         style="stop-color:#f16543;stop-opacity:1;"
+         offset="0.90000004"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="-2.8910932e-08"
+       y1="13.229167"
+       x2="177.27083"
+       y2="13.229167"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:url(#linearGradient2);stroke-width:0.699999;stroke-linejoin:round;stroke-miterlimit:3.1;fill-opacity:1"
+       id="rect1"
+       width="177.27083"
+       height="26.458334"
+       x="-2.8910929e-08"
+       y="-4.012966e-09" />
+  </g>
+</svg>

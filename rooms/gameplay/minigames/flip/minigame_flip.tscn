@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://8m3f3l6jd641"]
+
+[ext_resource type="Script" uid="uid://csqf5b58jqi2t" path="res://rooms/gameplay/minigames/minigame.gd" id="1_petqv"]
+[ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_2ywnb"]
+[ext_resource type="Texture2D" uid="uid://bmgikjwp027nu" path="res://rooms/gameplay/frames/bg/wooden_bg.svg" id="3_fbv7r"]
+[ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="4_l12qn"]
+[ext_resource type="PackedScene" uid="uid://nrm45lcxyqqm" path="res://rooms/gameplay/minigames/shared/progress_bar/minigame_progress_bar.tscn" id="5_x2fj1"]
+
+[node name="MinigameFlip" type="Node2D"]
+script = ExtResource("1_petqv")
+metadata/_custom_type_script = "uid://csqf5b58jqi2t"
+
+[node name="FrameThickF" type="Sprite2D" parent="."]
+clip_children = 2
+texture = ExtResource("2_2ywnb")
+
+[node name="WoodenBackground" type="Sprite2D" parent="FrameThickF"]
+texture = ExtResource("3_fbv7r")
+
+[node name="FrameThickO" type="Sprite2D" parent="."]
+texture = ExtResource("4_l12qn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MinigameProgressBar" parent="." instance=ExtResource("5_x2fj1")]
+position = Vector2(-262, 293)

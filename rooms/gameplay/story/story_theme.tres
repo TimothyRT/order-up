@@ -1,0 +1,96 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://wagcy0qjcqhw"]
+
+[ext_resource type="FontFile" uid="uid://dbyl7ty05kb3g" path="res://fonts/Garamond.ttf" id="1_p8qen"]
+[ext_resource type="FontFile" uid="uid://cfa7ortiqqkum" path="res://fonts/GaramondBold.ttf" id="2_al70n"]
+[ext_resource type="FontFile" uid="uid://cuw7m5yl5evpi" path="res://fonts/Impact.ttf" id="3_ykrhe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw1d0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw1d0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykrhe"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.365, 0.365, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghkwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0n08o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kxgn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snmwa"]
+
+[resource]
+Label/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 0)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("1_p8qen")
+Label/styles/focus = SubResource("StyleBoxFlat_jw1d0")
+Label/styles/normal = SubResource("StyleBoxEmpty_jw1d0")
+story_header/base_type = &"Label"
+story_header/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+story_header/colors/font_outline_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+story_header/colors/font_shadow_color = Color(0, 0, 0, 1)
+story_header/constants/line_spacing = 0
+story_header/constants/outline_size = 0
+story_header/constants/shadow_offset_x = 0
+story_header/constants/shadow_offset_y = 0
+story_header/constants/shadow_outline_size = 0
+story_header/font_sizes/font_size = 42
+story_header/fonts/font = ExtResource("3_ykrhe")
+story_header/styles/focus = SubResource("StyleBoxFlat_ykrhe")
+story_header/styles/normal = SubResource("StyleBoxEmpty_ghkwf")
+story_logo/base_type = &"Label"
+story_logo/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+story_logo/colors/font_outline_color = Color(0.069465004, 0.11, 0.0363, 0)
+story_logo/colors/font_shadow_color = Color(0, 0, 0, 1)
+story_logo/constants/line_spacing = 0
+story_logo/constants/outline_size = 0
+story_logo/constants/shadow_offset_x = 0
+story_logo/constants/shadow_offset_y = 0
+story_logo/constants/shadow_outline_size = 0
+story_logo/font_sizes/font_size = 64
+story_logo/fonts/font = ExtResource("2_al70n")
+story_logo/styles/focus = SubResource("StyleBoxFlat_ykrhe")
+story_logo/styles/normal = SubResource("StyleBoxEmpty_0n08o")
+story_paragraph/base_type = &"Label"
+story_paragraph/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+story_paragraph/colors/font_outline_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+story_paragraph/colors/font_shadow_color = Color(0, 0, 0, 1)
+story_paragraph/constants/line_spacing = 0
+story_paragraph/constants/outline_size = 0
+story_paragraph/constants/shadow_offset_x = 0
+story_paragraph/constants/shadow_offset_y = 0
+story_paragraph/constants/shadow_outline_size = 0
+story_paragraph/font_sizes/font_size = 32
+story_paragraph/fonts/font = ExtResource("1_p8qen")
+story_paragraph/styles/focus = SubResource("StyleBoxFlat_ykrhe")
+story_paragraph/styles/normal = SubResource("StyleBoxEmpty_4kxgn")
+story_title/base_type = &"Label"
+story_title/colors/font_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+story_title/colors/font_outline_color = Color(0.06666667, 0.105882354, 0.03529412, 1)
+story_title/colors/font_shadow_color = Color(0, 0, 0, 1)
+story_title/constants/line_spacing = 0
+story_title/constants/outline_size = 0
+story_title/constants/shadow_offset_x = 0
+story_title/constants/shadow_offset_y = 0
+story_title/constants/shadow_outline_size = 0
+story_title/font_sizes/font_size = 50
+story_title/fonts/font = ExtResource("3_ykrhe")
+story_title/styles/focus = SubResource("StyleBoxFlat_ykrhe")
+story_title/styles/normal = SubResource("StyleBoxEmpty_snmwa")

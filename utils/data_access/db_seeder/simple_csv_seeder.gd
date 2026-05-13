@@ -10,4 +10,3 @@ func seed() -> void:
 		return
 	var rows: Array = CSVToDict.load_csv(file_uid)
 	get_service().insert_many(rows)
-	print("seeding %s; %s" % [get_service(), str(rows)])

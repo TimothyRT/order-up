@@ -15,3 +15,6 @@ id,description,scene
 "steam","LIFT the cap when the food has fully steamed","uid://dktv2w5c5da51"
 "sprinkle_bowl","POUR the jar, then SHAKE it","uid://brod4yt7cwdp6"
 "grab","LIFT when you have gathered your energy","uid://0o27derx2ox5"
+"wrap","SPIN to wrap the food up","uid://detl2jihhto8c"
+"sprinkle_klepon","POUR the jar, then SHAKE it","uid://bkuexyhda7vv1"
+"fan","FAN to maintain the heat","uid://76xfcjlfx5nb"

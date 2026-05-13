@@ -10,10 +10,12 @@ signal minigame_finished(player: int)
 
 func set_minigame(minigame_node: Minigame, minigame_current: int, minigame_total: int) -> void:
 	clear_minigame()
+	print("[1] minigame_node's time_limit: %s" % str(minigame_node.time_limit))
 	%Placeholder.add_child(minigame_node)
 	minigame_node.player = player
 	minigame_node.minigame_started.connect(_on_minigame_started)
 	minigame_node.minigame_finished.connect(_on_minigame_finished)
+	print("[2] minigame_node's time_limit: %s" % str(minigame_node.time_limit))
 	
 	%StepXofYLabel.text = "Step %d of %d" % [minigame_current + 1, minigame_total]
 
