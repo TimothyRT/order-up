@@ -1,8 +1,9 @@
-class_name PauseButton
+class_name IconButton
 extends TextureButton
 
 
 func _ready() -> void:
+	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	mouse_entered.connect(_on_entered)
 	mouse_exited.connect(_on_exited)
 	focus_entered.connect(_on_entered)

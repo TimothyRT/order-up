@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://quudq7imgrd6"]
+[gd_scene load_steps=11 format=3 uid="uid://quudq7imgrd6"]
 
 [ext_resource type="Script" uid="uid://uln8ngrljvhr" path="res://rooms/stage_select/room_stage_select.gd" id="1_026h8"]
 [ext_resource type="PackedScene" uid="uid://drnejreq5cqmn" path="res://rooms/stage_select/dish_select_button/dish_select_button.tscn" id="2_05hxn"]
@@ -9,13 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://chkm5tonge8d5" path="res://rooms/stage_select/dish_select_button/dish_icons/klepon.svg" id="4_5c5bk"]
 [ext_resource type="Texture2D" uid="uid://cso8nhnq2nn02" path="res://rooms/stage_select/dish_select_button/dish_icons/fried_rice.svg" id="5_xpg3v"]
 [ext_resource type="Texture2D" uid="uid://dyuyiobl6bb1w" path="res://rooms/stage_select/dish_select_button/dish_icons/coto_makassar.svg" id="6_twlvj"]
+[ext_resource type="PackedScene" uid="uid://b0vw0wjut7mx7" path="res://rooms/shared/back_button/back_button.tscn" id="10_0334x"]
 
-[node name="RoomStageSelect" type="Node" node_paths=PackedStringArray("button_containers")]
+[node name="RoomStageSelect" type="Node" node_paths=PackedStringArray("button_containers", "back_button")]
 script = ExtResource("1_026h8")
 button_containers = {
 &"regular": NodePath("CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer/ButtonContainerRegular"),
 &"tutorial": NodePath("CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer/ButtonContainerTutorial")
 }
+back_button = NodePath("Control/BackButton")
 metadata/_custom_type_script = "uid://b56t1yahd1mo4"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -121,3 +123,19 @@ dish_icon = ExtResource("5_xpg3v")
 layout_mode = 2
 label = "Coto Makassar"
 dish_icon = ExtResource("6_twlvj")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="BackButton" parent="Control" instance=ExtResource("10_0334x")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 148.0
+offset_bottom = 149.0
+mouse_behavior_recursive = 2

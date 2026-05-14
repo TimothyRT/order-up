@@ -89,7 +89,7 @@ func setup_timer() -> void:
 	timer = COUNTDOWN_TIMER.instantiate()
 	timer.allotted_time = time_limit
 	add_child(timer)
-	timer.position = Vector2(400.0, -300.0)
+	timer.position = Vector2(-460.0, -200.0)
 
 
 func configure_visual_assets() -> void:
@@ -105,6 +105,7 @@ func configure_visual_assets() -> void:
 
 
 func configure_color() -> void:
+	print("self: %s" % self)
 	if not color_code:
 		return
 	for node in nodes_with_variable_color:

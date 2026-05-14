@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dge2k4peo23x0"]
+[gd_scene load_steps=6 format=3 uid="uid://dge2k4peo23x0"]
 
 [ext_resource type="Script" uid="uid://b61n4xr40tp11" path="res://rooms/saves/room_saves.gd" id="1_f0gxx"]
 [ext_resource type="PackedScene" uid="uid://b1iqdjxe1mrai" path="res://rooms/saves/save_file_button/save_file_button.tscn" id="2_3gj48"]
 [ext_resource type="Script" path="res://rooms/saves/deletion_modal_controller.gd" id="3_mobn1"]
 [ext_resource type="PackedScene" uid="uid://brks0plyxcldr" path="res://rooms/shared/modal_box/modal_box.tscn" id="3_xjtt5"]
+[ext_resource type="PackedScene" uid="uid://b0vw0wjut7mx7" path="res://rooms/shared/back_button/back_button.tscn" id="5_s7ulu"]
 
-[node name="RoomSaves" type="Node"]
+[node name="RoomSaves" type="Node" node_paths=PackedStringArray("back_button")]
 script = ExtResource("1_f0gxx")
+back_button = NodePath("Control/BackButton")
 metadata/_custom_type_script = "uid://b56t1yahd1mo4"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -91,3 +93,19 @@ unique_name_in_owner = true
 layout_mode = 2
 header_text = "Caution!"
 message_text = "Do you wish to delete save file #1?"
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="BackButton" parent="Control" instance=ExtResource("5_s7ulu")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 148.0
+offset_bottom = 149.0
+mouse_behavior_recursive = 2

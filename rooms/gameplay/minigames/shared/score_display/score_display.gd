@@ -15,11 +15,14 @@ var displayed_score: int:
 
 
 func _on_score_changed(val: int) -> void:
+	if not %Back.visible:
+		%Back.visible = true
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "displayed_score", val, 0.5)
 
 
 func _ready() -> void:
+	%Back.visible = false
 	%Label.text = ""
 	score_changed.connect(_on_score_changed)
 

@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://186dyh4npvmq"]
+[gd_scene load_steps=5 format=3 uid="uid://186dyh4npvmq"]
 
 [ext_resource type="Script" uid="uid://b6rca3d57k06e" path="res://rooms/settings/room_settings.gd" id="1_ww7y8"]
 [ext_resource type="Texture2D" uid="uid://k3gwrhab55yh" path="res://rooms/shared/modal_box/modal_box_base_large.png" id="2_n3n2n"]
 [ext_resource type="PackedScene" uid="uid://cm0jtndiubcwx" path="res://rooms/shared/volume_settings/volume_settings.tscn" id="3_mffcr"]
+[ext_resource type="PackedScene" uid="uid://b0vw0wjut7mx7" path="res://rooms/shared/back_button/back_button.tscn" id="4_dn5ll"]
 
-[node name="RoomSettings" type="Node"]
+[node name="RoomSettings" type="Node" node_paths=PackedStringArray("back_button")]
 script = ExtResource("1_ww7y8")
+back_button = NodePath("Control/BackButton")
 metadata/_custom_type_script = "uid://b56t1yahd1mo4"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -20,12 +22,27 @@ custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
 
 [node name="ModalBoxBaseLarge" type="Sprite2D" parent="CenterContainer/Container"]
-position = Vector2(502, 667)
+position = Vector2(973, 550)
 texture = ExtResource("2_n3n2n")
 
-[node name="VolumeSettings" parent="CenterContainer/Container" instance=ExtResource("3_mffcr")]
+[node name="VolumeSettings" parent="CenterContainer/Container/ModalBoxBaseLarge" instance=ExtResource("3_mffcr")]
+offset_left = -254.0
+offset_top = -179.0
+offset_right = 166.0
+offset_bottom = 21.0
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="BackButton" parent="Control" instance=ExtResource("4_dn5ll")]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 488.0
-offset_right = 668.0
-offset_bottom = 688.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 148.0
+offset_bottom = 149.0
+mouse_behavior_recursive = 2

@@ -60,10 +60,10 @@ script = ExtResource("3_a103s")
 [node name="PauseButton" parent="PauseController" instance=ExtResource("3_pe4hu")]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 13.0
-offset_top = 12.0
-offset_right = 151.0
-offset_bottom = 151.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 148.0
+offset_bottom = 149.0
 pivot_offset = Vector2(65, 65)
 
 [node name="PauseOverlay" type="ColorRect" parent="PauseController"]
@@ -77,14 +77,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.26, 0.26, 0.26, 0.78431374)
 
-[node name="PauseMenu" parent="PauseController/PauseOverlay" instance=ExtResource("4_o0ugv")]
+[node name="CenterContainer" type="CenterContainer" parent="PauseController/PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="PauseController/PauseOverlay/CenterContainer" instance=ExtResource("4_o0ugv")]
 unique_name_in_owner = true
 process_mode = 2
-layout_mode = 0
-offset_left = 622.0
-offset_top = 218.0
-offset_right = 1422.0
-offset_bottom = 918.0
+layout_mode = 2
 
 [node name="LetsCookAudio" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true

@@ -72,6 +72,10 @@ func _on_save_deleted(_save: int) -> void:
 	reset_button_states()
 
 
+func _on_back_pressed() -> void:
+	room_switch_requested.emit(&"Title menu")
+
+
 func _ready() -> void:
 	setup_buttons()
 	save_selected.connect(_on_save_selected)

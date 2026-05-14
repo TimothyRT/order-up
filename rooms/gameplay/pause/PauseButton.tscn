@@ -1,9 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://caw10bgcn63gt"]
 
 [ext_resource type="Texture2D" uid="uid://chsitewo0cjbv" path="res://rooms/gameplay/pause/pause_button.png" id="1_cha86"]
-[ext_resource type="Script" uid="uid://cvv78gp52uppt" path="res://rooms/gameplay/pause/pause_button.gd" id="2_wqxb3"]
+[ext_resource type="Script" uid="uid://dwj8t1xeqeo2w" path="res://rooms/shared/icon_button.gd" id="2_wqxb3"]
 
 [node name="PauseButton" type="TextureButton"]
-mouse_default_cursor_shape = 2
+offset_right = 40.0
+offset_bottom = 40.0
 texture_normal = ExtResource("1_cha86")
 script = ExtResource("2_wqxb3")
+metadata/_custom_type_script = "uid://dwj8t1xeqeo2w"

@@ -70,9 +70,10 @@ _data = {
 &"fry": SubResource("Animation_vimco")
 }
 
-[node name="AnimatableFlipPan" type="Node2D" node_paths=PackedStringArray("base_node", "flippable_group")]
+[node name="AnimatableFlipPan" type="Node2D" node_paths=PackedStringArray("base_node", "particle_emitter", "flippable_group")]
 script = ExtResource("1_lsy3j")
 base_node = NodePath("MarkerBase/PanBack/MarkerFood/Food")
+particle_emitter = NodePath("MarkerBase/PanBack/MarkerFood/WaterBubbleParticles")
 flippable_group = NodePath("MarkerBase/PanBack/MarkerFood/MarkerGroup")
 animation_list = Array[StringName]([&"fry"])
 play_at_start = 0

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0vw0wjut7mx7"]
+
+[ext_resource type="Texture2D" uid="uid://ix0cm54yrljd" path="res://rooms/shared/back_button/back_button.png" id="1_v2l6t"]
+[ext_resource type="Script" uid="uid://dwj8t1xeqeo2w" path="res://rooms/shared/icon_button.gd" id="2_tiwwr"]
+
+[node name="BackButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_v2l6t")
+script = ExtResource("2_tiwwr")
+metadata/_custom_type_script = "uid://dwj8t1xeqeo2w"

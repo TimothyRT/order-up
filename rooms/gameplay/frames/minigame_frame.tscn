@@ -99,7 +99,7 @@ speed_scale = 2.0
 [node name="ScoreDisplay" parent="." instance=ExtResource("7_vivhl")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 54.689125
-offset_top = 61.885063
-offset_right = 54.68914
-offset_bottom = 61.885063
+offset_left = -94.986374
+offset_top = 408.72925
+offset_right = -94.98636
+offset_bottom = 408.72925

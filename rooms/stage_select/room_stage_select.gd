@@ -81,6 +81,10 @@ func _on_dish_selected(dish_id: String) -> void:
 			room_switch_requested.emit(&"Gameplay")
 
 
+func _on_back_pressed() -> void:
+	room_switch_requested.emit(&"Save file select")
+
+
 func _ready() -> void:
 	setup_buttons()
 	reset_focus()

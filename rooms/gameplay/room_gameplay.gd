@@ -84,6 +84,7 @@ func _on_minigame_finished(player: int) -> void:
 	print("minigame time left: %d" % minigame.time_left)
 	get_frame(player).score += minigame.time_left
 	
+	# if player reached final minigame
 	if len(minigames_progress[player]) == len(minigames):
 		dishes_progress[player].append(true)
 		minigames_progress[player].clear()

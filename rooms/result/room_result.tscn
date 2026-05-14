@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct4lrs66crucj"]
+[gd_scene load_steps=6 format=3 uid="uid://ct4lrs66crucj"]
 
 [ext_resource type="Script" uid="uid://bwm7c7osx1do0" path="res://rooms/result/room_result.gd" id="1_jcvuo"]
 [ext_resource type="PackedScene" uid="uid://b04tejge3ghqc" path="res://rooms/result/character/victory/character_victory.tscn" id="2_fgdre"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_m6evq"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_ddba6"]
+[ext_resource type="PackedScene" uid="uid://b0vw0wjut7mx7" path="res://rooms/shared/back_button/back_button.tscn" id="5_ddba6"]
 
-[node name="RoomResult" type="Node"]
+[node name="RoomResult" type="Node" node_paths=PackedStringArray("back_button")]
 script = ExtResource("1_jcvuo")
+back_button = NodePath("Control/BackButton")
 metadata/_custom_type_script = "uid://b56t1yahd1mo4"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -34,3 +36,29 @@ texture = ExtResource("3_ddba6")
 
 [node name="CharacterVictory" parent="CenterContainer/HBoxContainer/Control" instance=ExtResource("2_fgdre")]
 position = Vector2(553, 663)
+
+[node name="Control" type="Control" parent="CenterContainer/HBoxContainer/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/Control/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="BackButton" parent="Control" instance=ExtResource("5_ddba6")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 148.0
+offset_bottom = 149.0
+mouse_behavior_recursive = 2
