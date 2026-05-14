@@ -7,8 +7,7 @@ func _enter_tree() -> void:
 
 func insert_new_save(id: int) -> void:
 	insert({
-		&"id": id,
-		&"last_unlocked_dish": 0,
+		&"id": id
 	})
 
 

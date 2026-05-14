@@ -51,7 +51,6 @@ func reset_button_states() -> void:
 		var save = SaveService.select_by_id(id)
 		if save:
 			btn.save_number = save.id
-			btn.unlocked_dishes_count = SaveService.get_unlocked_dishes_count(id)
 			btn.enabled = true
 		else:
 			btn.enabled = false

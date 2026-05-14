@@ -4,8 +4,6 @@ extends Button
 
 
 @export var save_number := 0
-@export var unlocked_dishes_count := 0
-@export var unlocked_dishes_max := 9
 
 var delete_button: TextureButton
 
@@ -13,23 +11,17 @@ var save_number_label_text := """SAVE
 #%d
 """
 
-var unlocked_moves_label_text := "Unlocked dishes: %d/%d"
-
 @onready var enabled := true:
 	set(value):
 		enabled = value
 		if enabled:
 			%Button.modulate = Color(1, 1, 1)
 			%SaveNumberLabel.text = save_number_label_text % save_number
-			%UnlockedMovesLabel.text = unlocked_moves_label_text % [
-				unlocked_dishes_count,
-				unlocked_dishes_max
-			]
 		else:
 			%AnimationPlayer.stop()
 			%Button.modulate = Color("#111b09")
 			%SaveNumberLabel.text = ""
-			%UnlockedMovesLabel.text = "Make new save file"
+		%UnlockedMovesLabel.reset_text(enabled)
 
 
 func _ready() -> void:

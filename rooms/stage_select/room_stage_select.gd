@@ -24,9 +24,12 @@ func setup_buttons() -> void:
 			child.queue_free()
 	
 		var buttons: Array[DishSelectButton] = []
-		for dish: Dictionary in DishService.select_from_category(category):
+		
+		for dish: Dictionary in DishService.select_playable(
+				state["save_id"],
+				category):
 			var button: DishSelectButton = dish_select_button.instantiate()
-			button.dish_id = dish.id
+			button.dish_id = dish.dish_id
 			button.label = dish.label
 			button.dish_icon = load(dish.dish_icon)
 			container.add_child(button)
@@ -86,7 +89,9 @@ func _on_back_pressed() -> void:
 	room_switch_requested.emit(&"Save file select")
 
 
-func _ready() -> void:
+func enter(room_state: Dictionary) -> void:
+	super(room_state)
+	
 	setup_buttons()
 	reset_focus()
 	
@@ -95,3 +100,6 @@ func _ready() -> void:
 	
 	%ModeSelectButton.button_pressed = true
 	%ModeSelectButton._pressed()
+	
+	%TutorialLabel.reset_text()
+	%RegularLabel.reset_text()

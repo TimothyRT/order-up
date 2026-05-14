@@ -2,6 +2,11 @@ extends Room
 
 
 func leave() -> void:
+	DishCompletionService.modify_high_score(
+		0,
+		"start",
+		state["save_id"],
+	)
 	room_switch_requested.emit(&"Stage select")
 
 

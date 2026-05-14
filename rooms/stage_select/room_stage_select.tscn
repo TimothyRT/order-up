@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://quudq7imgrd6"]
+[gd_scene load_steps=12 format=3 uid="uid://quudq7imgrd6"]
 
 [ext_resource type="Script" uid="uid://uln8ngrljvhr" path="res://rooms/stage_select/room_stage_select.gd" id="1_026h8"]
 [ext_resource type="PackedScene" uid="uid://drnejreq5cqmn" path="res://rooms/stage_select/dish_select_button/dish_select_button.tscn" id="2_05hxn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bd6f3kd7vjs5b" path="res://rooms/stage_select/dish_select_button/dish_icons/kerak_telor.svg" id="3_0k8ij"]
 [ext_resource type="Texture2D" uid="uid://c6tvop76yl8vw" path="res://rooms/stage_select/mode_select_button/cook-off_mode.svg" id="3_twlvj"]
 [ext_resource type="Texture2D" uid="uid://chkm5tonge8d5" path="res://rooms/stage_select/dish_select_button/dish_icons/klepon.svg" id="4_5c5bk"]
+[ext_resource type="Script" uid="uid://bqxua5jxpum7" path="res://rooms/stage_select/category_label.gd" id="5_6rrvh"]
 [ext_resource type="Texture2D" uid="uid://cso8nhnq2nn02" path="res://rooms/stage_select/dish_select_button/dish_icons/fried_rice.svg" id="5_xpg3v"]
 [ext_resource type="Texture2D" uid="uid://dyuyiobl6bb1w" path="res://rooms/stage_select/dish_select_button/dish_icons/coto_makassar.svg" id="6_twlvj"]
 [ext_resource type="PackedScene" uid="uid://b0vw0wjut7mx7" path="res://rooms/shared/back_button/back_button.tscn" id="10_0334x"]
@@ -79,9 +80,13 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 
 [node name="TutorialLabel" type="Label" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_84nsn")
 text = "Tutorial (0/9)"
+script = ExtResource("5_6rrvh")
+category = &"Tutorial"
+metadata/_custom_type_script = "uid://bqxua5jxpum7"
 
 [node name="ButtonContainerTutorial" type="HFlowContainer" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -93,10 +98,14 @@ last_wrap_alignment = 1
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 
-[node name="DishesLabel" type="Label" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="RegularLabel" type="Label" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_84nsn")
-text = "Dishes (0/10)"
+text = "Regular (0/9)"
+script = ExtResource("5_6rrvh")
+category = &"Regular"
+metadata/_custom_type_script = "uid://bqxua5jxpum7"
 
 [node name="ButtonContainerRegular" type="HFlowContainer" parent="CenterContainer/HBoxContainer/RightGroup/MarginContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true

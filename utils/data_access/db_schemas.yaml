@@ -84,9 +84,6 @@ saves:
   id:
     "data_type": "int"
     "primary_key": true
-  last_unlocked_dish:
-    "data_type": "int"
-    "foreign_key": "dishes.id"
 
 dish_completions:
   id:

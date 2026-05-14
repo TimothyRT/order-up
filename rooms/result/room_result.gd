@@ -35,7 +35,6 @@ func update_high_score() -> void:
 			state["dish_id"],
 			state["save_id"]
 		)
-		print("changed: %s" % str(changed))
 		if changed:
 			high_score_changed.emit(player, score)
 		else:
