@@ -105,7 +105,6 @@ func configure_visual_assets() -> void:
 
 
 func configure_color() -> void:
-	print("self: %s" % self)
 	if not color_code:
 		return
 	for node in nodes_with_variable_color:

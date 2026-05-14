@@ -39,23 +39,25 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-257, 314)
 texture = ExtResource("4_8dacg")
 
-[node name="EggBubbleBottom" type="Sprite2D" parent="FrameThickF"]
-material = ExtResource("5_agqiu")
-position = Vector2(-222, 261)
-texture = ExtResource("5_m2xnh")
-
-[node name="EggBubbleTop" type="Sprite2D" parent="FrameThickF"]
-material = ExtResource("5_agqiu")
-position = Vector2(-201, -291)
-texture = ExtResource("6_agqiu")
-
 [node name="Bar" parent="FrameThickF" instance=ExtResource("5_vcrty")]
 unique_name_in_owner = true
-position = Vector2(-380, -51)
+position = Vector2(291, -53)
+
+[node name="EggBubbleBottom" type="Sprite2D" parent="FrameThickF/Bar"]
+material = ExtResource("5_agqiu")
+position = Vector2(-132, 298)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_m2xnh")
+
+[node name="EggBubbleTop" type="Sprite2D" parent="FrameThickF/Bar"]
+material = ExtResource("5_agqiu")
+position = Vector2(-152, -246)
+scale = Vector2(-1, 1)
+texture = ExtResource("6_agqiu")
 
 [node name="Egg" parent="FrameThickF" instance=ExtResource("9_o2ch3")]
 unique_name_in_owner = true
-position = Vector2(-101, 176)
+position = Vector2(-125, 174)
 
 [node name="FrameThickO" type="Sprite2D" parent="."]
 texture = ExtResource("4_vcrty")

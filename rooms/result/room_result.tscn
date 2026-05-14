@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct4lrs66crucj"]
+[gd_scene load_steps=11 format=3 uid="uid://ct4lrs66crucj"]
 
 [ext_resource type="Script" uid="uid://bwm7c7osx1do0" path="res://rooms/result/room_result.gd" id="1_jcvuo"]
 [ext_resource type="PackedScene" uid="uid://b04tejge3ghqc" path="res://rooms/result/character/victory/character_victory.tscn" id="2_fgdre"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_m6evq"]
 [ext_resource type="Texture2D" uid="uid://clr7bkkst6yr6" path="res://rooms/gameplay/frames/frame_thick-o.svg" id="3_ddba6"]
-[ext_resource type="PackedScene" uid="uid://b0vw0wjut7mx7" path="res://rooms/shared/back_button/back_button.tscn" id="5_ddba6"]
+[ext_resource type="Theme" uid="uid://bgq684mfybslc" path="res://rooms/gameplay/minigames/minigame_theme.tres" id="5_to8w0"]
+[ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="6_p4k28"]
+[ext_resource type="Script" uid="uid://ccu08hrio2o0q" path="res://rooms/result/player_score_label.gd" id="7_0cokh"]
+[ext_resource type="Texture2D" uid="uid://durgkvneux8jo" path="res://rooms/gameplay/pause/line.svg" id="7_y1xuh"]
+[ext_resource type="Script" uid="uid://b7tm1c08m4c0c" path="res://rooms/result/high_score_label.gd" id="8_0cokh"]
+[ext_resource type="Script" uid="uid://cg35k63r1kn8b" path="res://rooms/result/victor_label.gd" id="9_vm0c6"]
 
 [node name="RoomResult" type="Node" node_paths=PackedStringArray("back_button")]
 script = ExtResource("1_jcvuo")
-back_button = NodePath("Control/BackButton")
+back_button = NodePath("CenterContainer/HBoxContainer/Control/Control/VBoxContainer/BackButton")
 metadata/_custom_type_script = "uid://b56t1yahd1mo4"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -39,26 +44,77 @@ position = Vector2(553, 663)
 
 [node name="Control" type="Control" parent="CenterContainer/HBoxContainer/Control"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 759.0
+offset_top = 186.0
+offset_right = 1359.0
+offset_bottom = 886.0
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/Control/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/Control/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_to8w0")
 
-[node name="Control" type="Control" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
+[node name="TitleLabel" type="Label" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "ROUND RESULT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="BackButton" parent="Control" instance=ExtResource("5_ddba6")]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 148.0
-offset_bottom = 149.0
-mouse_behavior_recursive = 2
+[node name="Line" type="Sprite2D" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer/TitleLabel"]
+position = Vector2(301, 72)
+texture = ExtResource("7_y1xuh")
+
+[node name="Spacer100" type="Control" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Player1ScoreLabel" type="Label" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Player 1's score: X"
+autowrap_mode = 2
+script = ExtResource("7_0cokh")
+player = 1
+
+[node name="Player2ScoreLabel" type="Label" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Player 2's score: X"
+autowrap_mode = 2
+script = ExtResource("7_0cokh")
+player = 2
+
+[node name="HighScoreLabel" type="Label" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "A new high score has been achieved by player X."
+autowrap_mode = 2
+script = ExtResource("8_0cokh")
+
+[node name="VictorLabel" type="Label" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Player X wins this round!"
+autowrap_mode = 2
+script = ExtResource("9_vm0c6")
+
+[node name="Spacer50" type="Control" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/HBoxContainer/Control/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_p4k28")
+text = "Go Back?"

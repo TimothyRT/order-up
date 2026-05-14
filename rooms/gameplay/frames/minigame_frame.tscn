@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbnikiwry5kkk"]
+[gd_scene load_steps=12 format=3 uid="uid://bbnikiwry5kkk"]
 
 [ext_resource type="Script" uid="uid://c80jn3vd88qby" path="res://rooms/gameplay/frames/minigame_frame.gd" id="1_8hwth"]
 [ext_resource type="Texture2D" uid="uid://dmgneq0er455i" path="res://rooms/gameplay/frames/frame_thick-f.svg" id="2_3kfwg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://blwn851l5ji1d" path="res://rooms/gameplay/minigames/crack/bubble_shader_material.tres" id="4_p7aun"]
 [ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="5_3ihof"]
 [ext_resource type="PackedScene" uid="uid://bx1p603d7aaih" path="res://rooms/gameplay/minigames/shared/score_display/score_display.tscn" id="7_vivhl"]
+[ext_resource type="PackedScene" uid="uid://dpd6rjre6800w" path="res://rooms/gameplay/minigames/shared/video_display/video_display.tscn" id="8_77kkd"]
 
 [sub_resource type="Animation" id="Animation_3ihof"]
 length = 0.001
@@ -103,3 +104,10 @@ offset_left = -94.986374
 offset_top = 408.72925
 offset_right = -94.98636
 offset_bottom = 408.72925
+
+[node name="VideoDisplay" parent="." instance=ExtResource("8_77kkd")]
+layout_mode = 1
+offset_left = -96.42557
+offset_top = 692.2492
+offset_right = -96.42554
+offset_bottom = 692.2492

@@ -76,6 +76,7 @@ func _on_dish_selected(dish_id: String) -> void:
 	else:
 		var recipe_arr = DishService.select_dish_recipe(dish_id)
 		if recipe_arr is Array and not recipe_arr.is_empty():
+			state["dish_id"] = dish_id
 			state["recipe"] = recipe_arr
 			state["is_multiplayer"] = is_multiplayer
 			room_switch_requested.emit(&"Gameplay")

@@ -6,7 +6,7 @@ extends Node
 signal room_entered
 signal room_switch_requested(room_label: String)
 
-@export var back_button: IconButton
+@export var back_button: BaseButton
 
 var state: Dictionary
 

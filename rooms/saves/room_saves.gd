@@ -64,7 +64,7 @@ func show_deletion_modal(save: int) -> void:
 
 func _on_save_selected(save: int) -> void:
 	SaveService.insert_new_save(save)
-	state["save_number"] = save
+	state["save_id"] = save
 	room_switch_requested.emit(&"Stage select")
 
 

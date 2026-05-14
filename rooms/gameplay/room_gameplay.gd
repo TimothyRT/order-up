@@ -16,9 +16,10 @@ var minigames_progress := {
 	1: [],
 	2: []
 }
-var dishes_progress := {
-	1: [],
-	2: []
+var count_player_completed := 0
+var score_total := {
+	1: 0,
+	2: 0
 }
 
 
@@ -76,20 +77,40 @@ func get_frame(player: int) -> MinigameFrame:
 		return %FrameRight
 
 
+func finish_gameplay() -> void:
+	state["score"] = score_total
+	await get_tree().create_timer(2.0).timeout
+	room_switch_requested.emit(&"Result")
+
+
+func disable_frame(player: int) -> void:
+	var frame: MinigameFrame = get_frame(player)
+	frame.process_mode = Node.PROCESS_MODE_DISABLED
+	var tween = get_tree().create_tween()
+	tween.tween_property(frame, "modulate", Color("565656ff"), 1.4)
+
+
 func _on_minigame_finished(player: int) -> void:
 	minigames_progress[player].append(true)
 	minigame_current[player] = (minigame_current[player] + 1) % len(minigames)
 	
 	var minigame: Minigame = get_frame(player).minigame
-	print("minigame time left: %d" % minigame.time_left)
+	score_total[player] += minigame.time_left
 	get_frame(player).score += minigame.time_left
 	
 	# if player reached final minigame
 	if len(minigames_progress[player]) == len(minigames):
-		dishes_progress[player].append(true)
-		minigames_progress[player].clear()
-		minigame_current[player] = 0
-		load_minigames(state.get("recipe", []))
+		count_player_completed += 1
+		
+		if is_multiplayer:
+			if count_player_completed == 2:  # both are done
+				finish_gameplay()
+			else:  # only one is done
+				disable_frame(player)
+		else:  # singleplayer
+			disable_frame(player)
+			finish_gameplay()
+		return
 	
 	var minigame_instance := minigames[minigame_current[player]].duplicate()
 	get_frame(player).set_minigame(
