@@ -7,7 +7,6 @@ const DB_PATH := "user://game_db"
 const CANONICAL_DB_PATH := "user://game_db.db"
 
 var db: SQLite
-var clear_db_at_start := true
 
 
 func open_conn() -> void:
@@ -36,7 +35,7 @@ func check_file_existence() -> bool:
 
 
 func _ready() -> void:
-	if clear_db_at_start:
+	if Config.wipe_db_at_start:
 		if FileAccess.file_exists(CANONICAL_DB_PATH):
 			var err = DirAccess.remove_absolute(CANONICAL_DB_PATH)
 			if err == OK:
