@@ -12,5 +12,5 @@ func _ready() -> void:
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.FAN:
+	if motion == MotionRecognition.Motion.FAN:
 		progress += 1

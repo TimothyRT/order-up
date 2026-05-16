@@ -48,7 +48,7 @@ texture = ExtResource("4_wpedi")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 4.0
+wait_time = 0.2
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

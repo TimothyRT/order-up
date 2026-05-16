@@ -13,6 +13,7 @@ signal motion_detected
 signal player_changed
 signal progress_changed(new_progress_value: int, progress_diff: int)
 signal progress_threshold_changed(new_threshold_value: int, threshold_diff: int)
+signal video_play_requested(motion: int)
 signal visuals_configured
 
 @export var label_node: Label
@@ -50,6 +51,8 @@ var progress_threshold := 3:
 var nodes_with_variable_texture: Array[CanvasItem] = []
 var nodes_with_variable_color: Array[CanvasItem] = []
 var nodes_with_variable_self_color: Array[CanvasItem] = []
+
+var minigame_frame: MinigameFrame
 
 @export var description: String:
 	set(val):
@@ -98,7 +101,6 @@ func configure_visual_assets() -> void:
 	var pkg: AssetPackage = load(asset_package_uid).instantiate()
 	var i := 0
 	for node in nodes_with_variable_texture:
-		print("THIS: %s, %s" % [node, nodes_with_variable_texture])
 		node.texture = pkg.get_asset(i)
 		i += 1
 	pkg.queue_free()
@@ -117,6 +119,15 @@ func configure_visuals() -> void:
 	configure_visual_assets()
 	configure_color()
 	visuals_configured.emit()
+
+
+func play_video(motion: int) -> void:
+	print("[emit] Emitter node: ", self)
+	print(video_play_requested.get_connections())
+	video_play_requested.emit(motion)
+	print("[emit] minigame instance id %s" % str(get_instance_id()))
+	print("[emit] script %s" % str(get_script()))
+	print("[emit] video play requested" % str(video_play_requested))
 
 
 func _on_classification_made(incoming_player_id: int, _input_arr: Array, predicted_motion: int) -> void:	
@@ -157,23 +168,23 @@ func _input(event: InputEvent) -> void:
 			var motion: int
 			match event.keycode:
 				KEY_Q:
-					motion = MotionRecognition.MOTION.HIT
+					motion = MotionRecognition.Motion.HIT
 				KEY_W:
-					motion = MotionRecognition.MOTION.SHAKE
+					motion = MotionRecognition.Motion.SHAKE
 				KEY_E:
-					motion = MotionRecognition.MOTION.SWING_LEFT
+					motion = MotionRecognition.Motion.SWING_LEFT
 				KEY_R:
-					motion = MotionRecognition.MOTION.SWING_RIGHT
+					motion = MotionRecognition.Motion.SWING_RIGHT
 				KEY_T:
-					motion = MotionRecognition.MOTION.FAN
+					motion = MotionRecognition.Motion.FAN
 				KEY_Y:
-					motion = MotionRecognition.MOTION.STIR
+					motion = MotionRecognition.Motion.STIR
 				KEY_U:
-					motion = MotionRecognition.MOTION.SPIN
+					motion = MotionRecognition.Motion.SPIN
 				KEY_I:
-					motion = MotionRecognition.MOTION.LIFT
+					motion = MotionRecognition.Motion.LIFT
 				KEY_O:
-					motion = MotionRecognition.MOTION.POUR
+					motion = MotionRecognition.Motion.POUR
 				_:
 					return
 			_on_motion_detected(motion)

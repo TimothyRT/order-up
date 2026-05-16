@@ -11,6 +11,11 @@ func insert_new_save(id: int) -> void:
 	})
 
 
+func delete_existing_save(id: int) -> void:
+	delete_by_id(id)
+	DishCompletionService.delete_all("save_id = %d" % id)
+
+
 func get_unlocked_dishes_count(id: int) -> int:
 	# TODO: Implement actual functionality
 	return 6

@@ -15,9 +15,10 @@ func configure_visuals() -> void:
 func _ready() -> void:
 	pause_time = 0.0
 	progress_threshold = flippable_container.flippable_count
+	play_video(MotionRecognition.Motion.SPIN)
 	super()
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.FAN:
+	if motion == MotionRecognition.Motion.SPIN:
 		progress += 1

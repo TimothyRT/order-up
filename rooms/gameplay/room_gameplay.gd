@@ -43,7 +43,9 @@ func begin_first_minigame() -> void:
 	if not minigames or len(minigames) == 0:
 		return
 	
-	%FrameLeft.set_minigame(minigames[0].duplicate(), minigame_current[1], len(minigames))
+	var new_instance = minigames[0].duplicate()
+	%FrameLeft.set_minigame(new_instance, minigame_current[1], len(minigames))
+	%FrameLeft.minigame.video_play_requested.connect(%FrameLeft._on_video_play_requested)
 	
 	if is_multiplayer:
 		%FrameRight.set_minigame(minigames[0].duplicate(), minigame_current[2], len(minigames))

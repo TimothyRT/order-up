@@ -28,18 +28,18 @@ func configure_visuals() -> void:
 func _ready() -> void:
 	pause_time = 0.0
 	progress_threshold = 1
+	play_video(MotionRecognition.Motion.FAN)
 	super()
 
 
 func _physics_process(delta: float) -> void:
 	heat -= delta * HEAT_DECREASE_RATE
-	
 	if heat < heat_lower_bound or heat >= heat_upper_bound:
 		%Timer.start(4.0)
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.FAN:
+	if motion == MotionRecognition.Motion.FAN:
 		heat += HEAT_INCREASE_RATE
 
 

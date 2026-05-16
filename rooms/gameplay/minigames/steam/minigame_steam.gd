@@ -22,11 +22,12 @@ func _ready() -> void:
 	%Timer.wait_time = wait_time
 	%Timer.timeout.connect(_on_timer_timeout)
 	%Timer.start()
+	play_video(MotionRecognition.Motion.LIFT)
 	super()
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.LIFT:
+	if motion == MotionRecognition.Motion.LIFT:
 		if is_steaming:
 			progress += 1
 

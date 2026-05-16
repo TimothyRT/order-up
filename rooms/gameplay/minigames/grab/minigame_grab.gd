@@ -15,11 +15,12 @@ func configure_visuals() -> void:
 func _ready() -> void:
 	pause_time = 0.9
 	progress_threshold = 2
+	play_video(MotionRecognition.Motion.LIFT)
 	super()
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.LIFT:
+	if motion == MotionRecognition.Motion.LIFT:
 		if %Spinner.in_valid_area:
 			progress += 1
 		else:

@@ -14,7 +14,7 @@ func _on_high_score_changed(player: int, _new_score: int) -> void:
 	var score_dict = owner.player_score
 	visible = true
 	if not owner.is_multiplayer:
-		text = "A new high score has been set by you!"
+		text = "A new high score has been set!"
 		return
 	if score_dict[1] == score_dict[2]:
 		text = "A new high score has been set by both players!"

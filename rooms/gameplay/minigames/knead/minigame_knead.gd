@@ -24,16 +24,15 @@ func configure_visuals() -> void:
 func _ready() -> void:
 	pause_time = 0.0
 	progress_threshold = 12
-	
 	direction_changed.connect(%Arrow.flip_sprite)
 	direction_changed.connect(%BatterBowl.flip_sprite)
-	
+	play_video(MotionRecognition.Motion.SHAKE)
 	super()
 
 
 func _on_motion_detected(motion: int) -> void:	
-	if motion == MotionRecognition.MOTION.SWING_LEFT and direction_is_left:
+	if motion == MotionRecognition.Motion.SWING_LEFT and direction_is_left:
 		direction_is_left = false
 	
-	if motion == MotionRecognition.MOTION.SWING_RIGHT and not direction_is_left:
+	if motion == MotionRecognition.Motion.SWING_RIGHT and not direction_is_left:
 		direction_is_left = true

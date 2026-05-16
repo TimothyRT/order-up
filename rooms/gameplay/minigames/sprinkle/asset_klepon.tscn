@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7btka0pejwgu"]
+
+[ext_resource type="Texture2D" uid="uid://csdxm5cqh0bd6" path="res://rooms/gameplay/minigames/sprinkle/jar_coconut_shavings.png" id="1_htx18"]
+
+[node name="AssetKlepon" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_htx18")

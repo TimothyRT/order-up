@@ -4,7 +4,7 @@ extends Node
 const MIN_PEAK_THRESHOLD := 20.0
 const MIN_GYRO_THRESHOLD := 150.0
 
-enum MOTION {
+enum Motion {
 	HIT,
 	SHAKE,
 	SWING_LEFT,
@@ -96,31 +96,31 @@ func _on_classification_finished(player_id: int, input_arr: Array, predicted_mot
 	if predicted_motion != -1:
 		SignalBus.classification_made.emit(player_id, input_arr, predicted_motion)
 		match predicted_motion:
-			MOTION.HIT:
+			Motion.HIT:
 				time_steps_to_ignore[player_id] = 12
 				%AudioHit.play()
-			MOTION.SHAKE:
+			Motion.SHAKE:
 				time_steps_to_ignore[player_id] = 12
 				%AudioShake.play()
-			MOTION.SWING_LEFT:
+			Motion.SWING_LEFT:
 				time_steps_to_ignore[player_id] = 15
 				%AudioSwingLeft.play()
-			MOTION.SWING_RIGHT:
+			Motion.SWING_RIGHT:
 				time_steps_to_ignore[player_id] = 15
 				%AudioSwingRight.play()
-			MOTION.FAN:
+			Motion.FAN:
 				time_steps_to_ignore[player_id] = 12
 				%AudioFan.play()
-			MOTION.STIR:
+			Motion.STIR:
 				time_steps_to_ignore[player_id] = 12
 				%AudioStir.play()
-			MOTION.SPIN:
+			Motion.SPIN:
 				time_steps_to_ignore[player_id] = 12
 				%AudioSpin.play()
-			MOTION.LIFT:
+			Motion.LIFT:
 				time_steps_to_ignore[player_id] = 12
 				%AudioLift.play()
-			MOTION.POUR:
+			Motion.POUR:
 				time_steps_to_ignore[player_id] = 12
 				%AudioPour.play()
 

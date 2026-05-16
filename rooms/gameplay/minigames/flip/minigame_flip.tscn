@@ -12,6 +12,8 @@
 [node name="MinigameFlip" type="Node2D" node_paths=PackedStringArray("flippable_container")]
 script = ExtResource("1_fbv7r")
 flippable_container = NodePath("FrameThickF/AnimatableStove/AnimatableFlipPan")
+description = null
+time_limit = null
 metadata/_custom_type_script = "uid://csqf5b58jqi2t"
 
 [node name="FrameThickF" type="Sprite2D" parent="."]

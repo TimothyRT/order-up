@@ -60,11 +60,14 @@ func _ready() -> void:
 	)
 	highlighted_ingredient = ingredient_sequence[0]
 	
+	play_video(MotionRecognition.Motion.LIFT)
 	super()
 
 
-func _on_motion_detected(_motion: int) -> void:
+func _on_motion_detected(motion: int) -> void:
 	if progress >= len(ingredient_sequence):
+		return
+	if motion != MotionRecognition.Motion.LIFT:
 		return
 	
 	if current_hand_position == highlighted_ingredient:

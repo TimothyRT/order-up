@@ -27,4 +27,4 @@ func reset_text() -> void:
 		DishService.select_unlocked(save, category_idx) +
 		DishService.select_locked(save, category_idx)
 	)
-	text = "%s (%d/%d)" % [category, unlocked + 1, unlocked_and_locked]
+	text = "%s (%d/%d finished)" % [category, unlocked, unlocked_and_locked]

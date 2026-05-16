@@ -16,7 +16,7 @@ func reset_text(enabled: bool) -> void:
 				DishService.select_locked(save, 0) + 
 				DishService.select_locked(save, 1)
 			)
-			text = "Unlocked dishes: %d/%d" % [unlocked, unlocked_and_locked]
+			text = "Finished: %d/%d" % [unlocked, unlocked_and_locked]
 	
 	else:
 		text = "Make new save file"

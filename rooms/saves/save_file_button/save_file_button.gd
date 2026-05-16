@@ -21,7 +21,7 @@ var save_number_label_text := """SAVE
 			%AnimationPlayer.stop()
 			%Button.modulate = Color("#111b09")
 			%SaveNumberLabel.text = ""
-		%UnlockedMovesLabel.reset_text(enabled)
+		%FinishedDishesLabel.reset_text(enabled)
 
 
 func _ready() -> void:

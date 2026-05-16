@@ -12,7 +12,7 @@ func _on_player_score_changed(dict: Dictionary) -> void:
 		visible = true
 		if dict[1] > dict[2]:
 			text = "Player 1 wins this round!"
-		elif dict[2] < dict[1]:
+		elif dict[2] > dict[1]:
 			text = "Player 2 wins this round!"
 		else:
 			text = "It is a tie between player 1 and 2!"

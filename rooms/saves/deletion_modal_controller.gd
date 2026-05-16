@@ -11,7 +11,7 @@ var current_save: int:
 
 func _ready() -> void:
 	%ModalBox.proceed_pressed.connect(func():
-		SaveService.delete_by_id(current_save)
+		SaveService.delete_existing_save(current_save)
 		save_deleted.emit(current_save)
 		toggle_off()
 	)

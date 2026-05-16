@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://blwn851l5ji1d" path="res://rooms/gameplay/minigames/crack/bubble_shader_material.tres" id="4_p7aun"]
 [ext_resource type="Theme" uid="uid://begf4v2ehqq3k" path="res://rooms/shared/theme.tres" id="5_3ihof"]
 [ext_resource type="PackedScene" uid="uid://bx1p603d7aaih" path="res://rooms/gameplay/minigames/shared/score_display/score_display.tscn" id="7_vivhl"]
-[ext_resource type="PackedScene" uid="uid://dpd6rjre6800w" path="res://rooms/gameplay/minigames/shared/video_display/video_display.tscn" id="8_77kkd"]
+[ext_resource type="PackedScene" uid="uid://dpd6rjre6800w" path="res://rooms/gameplay/video_display/video_display.tscn" id="8_77kkd"]
 
 [sub_resource type="Animation" id="Animation_3ihof"]
 length = 0.001
@@ -106,6 +106,7 @@ offset_right = -94.98636
 offset_bottom = 408.72925
 
 [node name="VideoDisplay" parent="." instance=ExtResource("8_77kkd")]
+unique_name_in_owner = true
 layout_mode = 1
 offset_left = -96.42557
 offset_top = 692.2492

@@ -11,11 +11,12 @@ func configure_visuals() -> void:
 func _ready() -> void:
 	pause_time = 0.0
 	progress_threshold = %Ingredient.total_cuts_threshold
+	play_video(MotionRecognition.Motion.HIT)
 	super()
 
 
 func _on_motion_detected(motion: int) -> void:
-	if motion == MotionRecognition.MOTION.HIT:
+	if motion == MotionRecognition.Motion.HIT:
 		%Ingredient.cut()
 		%HandWithKnife.chop()
 		progress += 1
